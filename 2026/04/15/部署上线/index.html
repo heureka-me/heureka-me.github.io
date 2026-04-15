@@ -1,0 +1,254 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  
+  <title>部署上线 | Hexo</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta name="description" content="04. 部署上线VitePress 部署可以到各种静态托管平台。 一、构建项目12345678# 开发模式npm run docs:dev# 构建npm run docs:build# 预览npm run docs:preview   二、部署到 GitHub Pages1. 新建仓库创建 GitHub 仓库，例如 my-vitepress-site 2. 配置 base1234&#x2F;&#x2F; .vitep">
+<meta property="og:type" content="article">
+<meta property="og:title" content="部署上线">
+<meta property="og:url" content="http://example.com/2026/04/15/%E9%83%A8%E7%BD%B2%E4%B8%8A%E7%BA%BF/index.html">
+<meta property="og:site_name" content="Hexo">
+<meta property="og:description" content="04. 部署上线VitePress 部署可以到各种静态托管平台。 一、构建项目12345678# 开发模式npm run docs:dev# 构建npm run docs:build# 预览npm run docs:preview   二、部署到 GitHub Pages1. 新建仓库创建 GitHub 仓库，例如 my-vitepress-site 2. 配置 base1234&#x2F;&#x2F; .vitep">
+<meta property="og:locale" content="en_US">
+<meta property="article:published_time" content="2026-04-15T13:55:05.000Z">
+<meta property="article:modified_time" content="2026-04-15T13:55:05.532Z">
+<meta property="article:author" content="John Doe">
+<meta name="twitter:card" content="summary">
+  
+    <link rel="alternate" href="/atom.xml" title="Hexo" type="application/atom+xml">
+  
+  
+    <link rel="shortcut icon" href="/favicon.png">
+  
+  
+  
+<link rel="stylesheet" href="/css/style.css">
+
+  
+    
+<link rel="stylesheet" href="/fancybox/jquery.fancybox.min.css">
+
+  
+  
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/fork-awesome@1.2.0/css/fork-awesome.min.css">
+
+<meta name="generator" content="Hexo 8.1.1"></head>
+
+<body>
+  <div id="container">
+    <div id="wrap">
+      <header id="header">
+  <div id="banner"></div>
+  <div id="header-outer" class="outer">
+    <div id="header-title" class="inner">
+      <h1 id="logo-wrap">
+        <a href="/" id="logo">Hexo</a>
+      </h1>
+      
+    </div>
+    <div id="header-inner" class="inner">
+      <nav id="main-nav">
+        <a id="main-nav-toggle" class="nav-icon"><span class="fa fa-bars"></span></a>
+        
+          <a class="main-nav-link" href="/">Home</a>
+        
+          <a class="main-nav-link" href="/archives">Archives</a>
+        
+      </nav>
+      <nav id="sub-nav">
+        
+        
+          <a class="nav-icon" href="/atom.xml" title="RSS Feed"><span class="fa fa-rss"></span></a>
+        
+        <a class="nav-icon nav-search-btn" title="Search"><span class="fa fa-search"></span></a>
+      </nav>
+      <div id="search-form-wrap">
+        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="http://example.com"></form>
+      </div>
+    </div>
+  </div>
+</header>
+
+      <div class="outer">
+        <section id="main"><article id="post-部署上线" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+  <div class="article-meta">
+    <a href="/2026/04/15/%E9%83%A8%E7%BD%B2%E4%B8%8A%E7%BA%BF/" class="article-date">
+  <time class="dt-published" datetime="2026-04-15T13:55:05.000Z" itemprop="datePublished">2026-04-15</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="p-name article-title" itemprop="headline name">
+      部署上线
+    </h1>
+  
+
+      </header>
+    
+    <div class="e-content article-entry" itemprop="articleBody">
+      
+        <h1 id="04-部署上线"><a href="#04-部署上线" class="headerlink" title="04. 部署上线"></a>04. 部署上线</h1><p>VitePress 部署可以到各种静态托管平台。</p>
+<h2 id="一、构建项目"><a href="#一、构建项目" class="headerlink" title="一、构建项目"></a>一、构建项目</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 开发模式</span></span><br><span class="line">npm run docs:dev</span><br><span class="line"></span><br><span class="line"><span class="comment"># 构建</span></span><br><span class="line">npm run docs:build</span><br><span class="line"></span><br><span class="line"><span class="comment"># 预览</span></span><br><span class="line">npm run docs:preview</span><br></pre></td></tr></table></figure>
+
+<hr>
+<h2 id="二、部署到-GitHub-Pages"><a href="#二、部署到-GitHub-Pages" class="headerlink" title="二、部署到 GitHub Pages"></a>二、部署到 GitHub Pages</h2><h3 id="1-新建仓库"><a href="#1-新建仓库" class="headerlink" title="1. 新建仓库"></a>1. 新建仓库</h3><p>创建 GitHub 仓库，例如 <code>my-vitepress-site</code></p>
+<h3 id="2-配置-base"><a href="#2-配置-base" class="headerlink" title="2. 配置 base"></a>2. 配置 base</h3><figure class="highlight typescript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// .vitepress/config.ts</span></span><br><span class="line"><span class="keyword">export</span> <span class="keyword">default</span> <span class="title function_">defineConfig</span>(&#123;</span><br><span class="line">    <span class="attr">base</span>: <span class="string">&quot;/my-vitepress-site/&quot;</span>, <span class="comment">// 你的仓库名</span></span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
+
+<h3 id="3-推送代码"><a href="#3-推送代码" class="headerlink" title="3. 推送代码"></a>3. 推送代码</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">git add .</span><br><span class="line">git commit -m <span class="string">&quot;Initial commit&quot;</span></span><br><span class="line">git push origin main</span><br></pre></td></tr></table></figure>
+
+<h3 id="4-GitHub-Pages-设置"><a href="#4-GitHub-Pages-设置" class="headerlink" title="4. GitHub Pages 设置"></a>4. GitHub Pages 设置</h3><ul>
+<li>进入仓库 Settings → Pages</li>
+<li>Source 选择 <code>Deploy from a branch</code></li>
+<li>Branch 选择 <code>main/docs/.vitepress/dist</code></li>
+</ul>
+<hr>
+<h2 id="三、部署到-Vercel"><a href="#三、部署到-Vercel" class="headerlink" title="三、部署到 Vercel"></a>三、部署到 Vercel</h2><h3 id="1-安装-Vercel-CLI"><a href="#1-安装-Vercel-CLI" class="headerlink" title="1. 安装 Vercel CLI"></a>1. 安装 Vercel CLI</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm install -g vercel</span><br></pre></td></tr></table></figure>
+
+<h3 id="2-部署"><a href="#2-部署" class="headerlink" title="2. 部署"></a>2. 部署</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">vercel</span><br></pre></td></tr></table></figure>
+
+<hr>
+<h2 id="四、部署到-Netlify"><a href="#四、部署到-Netlify" class="headerlink" title="四、部署到 Netlify"></a>四、部署到 Netlify</h2><h3 id="1-连接仓库"><a href="#1-连接仓库" class="headerlink" title="1. 连接仓库"></a>1. 连接仓库</h3><p>在 Netlify 中导入 GitHub 仓库</p>
+<h3 id="2-配置构建命令"><a href="#2-配置构建命令" class="headerlink" title="2. 配置构建命令"></a>2. 配置构建命令</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">Build <span class="built_in">command</span>: npm run docs:build</span><br><span class="line">Publish directory: docs/.vitepress/dist</span><br></pre></td></tr></table></figure>
+
+<hr>
+<h2 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h2><p>VitePress 部署简单，多种托管平台可选。</p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://example.com/2026/04/15/%E9%83%A8%E7%BD%B2%E4%B8%8A%E7%BA%BF/" data-id="cuidm-nUR2UuMxgF674PHUkgp" data-title="部署上线" class="article-share-link"><span class="fa fa-share">Share</span></a>
+      
+      
+      
+    </footer>
+  </div>
+  
+    
+<nav id="article-nav">
+  
+    <a href="/2026/04/15/%E8%93%9D%E6%A1%A5%E6%9D%AF%E5%8D%95%E7%89%87%E6%9C%BA/" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Newer</strong>
+      <div class="article-nav-title">
+        
+          蓝桥杯单片机
+        
+      </div>
+    </a>
+  
+  
+    <a href="/2026/04/15/%E9%A1%B9%E7%9B%AE%E5%88%86%E6%9E%90/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Older</strong>
+      <div class="article-nav-title">项目分析</div>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+
+</section>
+        
+          <aside id="sidebar">
+  
+    
+
+  
+    
+
+  
+    
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Archives</h3>
+    <div class="widget">
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2026/04/">April 2026</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Recent Posts</h3>
+    <div class="widget">
+      <ul>
+        
+          <li>
+            <a href="/2026/04/15/1STM32%E7%AE%80%E4%BB%8B/">1.STM32简介</a>
+          </li>
+        
+          <li>
+            <a href="/2026/04/15/00%E9%A1%B9%E7%9B%AE%E8%83%8C%E6%99%AF/">00.项目背景</a>
+          </li>
+        
+          <li>
+            <a href="/2026/04/15/1Linux%E7%AE%80%E4%BB%8B/">1.Linux简介</a>
+          </li>
+        
+          <li>
+            <a href="/2026/04/15/CSS%E5%9F%BA%E7%A1%80%E4%B8%8E%E9%80%89%E6%8B%A9%E5%99%A8/">CSS基础与选择器</a>
+          </li>
+        
+          <li>
+            <a href="/2026/04/15/1ESP32%E7%AE%80%E4%BB%8B/">1.ESP32简介</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+
+  
+</aside>
+        
+      </div>
+      <footer id="footer">
+  
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      
+      &copy; 2026 John Doe<br>
+      Powered by <a href="https://hexo.io/" target="_blank">Hexo</a>
+    </div>
+  </div>
+</footer>
+
+    </div>
+    <nav id="mobile-nav">
+  
+    <a href="/" class="mobile-nav-link">Home</a>
+  
+    <a href="/archives" class="mobile-nav-link">Archives</a>
+  
+</nav>
+    
+
+
+<script src="/js/jquery-3.6.4.min.js"></script>
+
+
+
+  
+<script src="/fancybox/jquery.fancybox.min.js"></script>
+
+
+
+
+<script src="/js/script.js"></script>
+
+
+
+
+
+  </div>
+</body>
+</html>

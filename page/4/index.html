@@ -1,0 +1,962 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  
+  <title>Hexo</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta property="og:type" content="website">
+<meta property="og:title" content="Hexo">
+<meta property="og:url" content="http://example.com/page/4/index.html">
+<meta property="og:site_name" content="Hexo">
+<meta property="og:locale" content="en_US">
+<meta property="article:author" content="John Doe">
+<meta name="twitter:card" content="summary">
+  
+    <link rel="alternate" href="/atom.xml" title="Hexo" type="application/atom+xml">
+  
+  
+    <link rel="shortcut icon" href="/favicon.png">
+  
+  
+  
+<link rel="stylesheet" href="/css/style.css">
+
+  
+    
+<link rel="stylesheet" href="/fancybox/jquery.fancybox.min.css">
+
+  
+  
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/fork-awesome@1.2.0/css/fork-awesome.min.css">
+
+<meta name="generator" content="Hexo 8.1.1"></head>
+
+<body>
+  <div id="container">
+    <div id="wrap">
+      <header id="header">
+  <div id="banner"></div>
+  <div id="header-outer" class="outer">
+    <div id="header-title" class="inner">
+      <h1 id="logo-wrap">
+        <a href="/" id="logo">Hexo</a>
+      </h1>
+      
+    </div>
+    <div id="header-inner" class="inner">
+      <nav id="main-nav">
+        <a id="main-nav-toggle" class="nav-icon"><span class="fa fa-bars"></span></a>
+        
+          <a class="main-nav-link" href="/">Home</a>
+        
+          <a class="main-nav-link" href="/archives">Archives</a>
+        
+      </nav>
+      <nav id="sub-nav">
+        
+        
+          <a class="nav-icon" href="/atom.xml" title="RSS Feed"><span class="fa fa-rss"></span></a>
+        
+        <a class="nav-icon nav-search-btn" title="Search"><span class="fa fa-search"></span></a>
+      </nav>
+      <div id="search-form-wrap">
+        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="http://example.com"></form>
+      </div>
+    </div>
+  </div>
+</header>
+
+      <div class="outer">
+        <section id="main">
+  
+    <article id="post-组件化开发" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+  <div class="article-meta">
+    <a href="/2026/04/15/%E7%BB%84%E4%BB%B6%E5%8C%96%E5%BC%80%E5%8F%91/" class="article-date">
+  <time class="dt-published" datetime="2026-04-15T13:55:05.000Z" itemprop="datePublished">2026-04-15</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="p-name article-title" href="/2026/04/15/%E7%BB%84%E4%BB%B6%E5%8C%96%E5%BC%80%E5%8F%91/">组件化开发</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="e-content article-entry" itemprop="articleBody">
+      
+        <h1 id="05-组件化开发"><a href="#05-组件化开发" class="headerlink" title="05. 组件化开发"></a>05. 组件化开发</h1><p>小程序支持组件化开发，提高代码复用率。</p>
+<h2 id="一、创建组件"><a href="#一、创建组件" class="headerlink" title="一、创建组件"></a>一、创建组件</h2><h3 id="1-组件目录"><a href="#1-组件目录" class="headerlink" title="1. 组件目录"></a>1. 组件目录</h3><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">components/</span><br><span class="line">└── my-component/</span><br><span class="line">    ├── my-component.js</span><br><span class="line">    ├── my-component.json</span><br><span class="line">    ├── my-component.wxml</span><br><span class="line">    └── my-component.wxss</span><br></pre></td></tr></table></figure>
+
+<h3 id="2-组件配置"><a href="#2-组件配置" class="headerlink" title="2. 组件配置"></a>2. 组件配置</h3><figure class="highlight json"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// my-component.json</span></span><br><span class="line"><span class="punctuation">&#123;</span></span><br><span class="line">  <span class="attr">&quot;component&quot;</span><span class="punctuation">:</span> <span class="literal"><span class="keyword">true</span></span></span><br><span class="line"><span class="punctuation">&#125;</span></span><br></pre></td></tr></table></figure>
+
+<h3 id="3-组件逻辑"><a href="#3-组件逻辑" class="headerlink" title="3. 组件逻辑"></a>3. 组件逻辑</h3><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line"><span class="title class_">Component</span>(&#123;</span><br><span class="line">    <span class="attr">properties</span>: &#123;</span><br><span class="line">        <span class="attr">title</span>: &#123;</span><br><span class="line">            <span class="attr">type</span>: <span class="title class_">String</span>,</span><br><span class="line">            <span class="attr">value</span>: <span class="string">&quot;默认标题&quot;</span></span><br><span class="line">        &#125;</span><br><span class="line">    &#125;,</span><br><span class="line"></span><br><span class="line">    <span class="attr">data</span>: &#123;</span><br><span class="line">        <span class="attr">count</span>: <span class="number">0</span></span><br><span class="line">    &#125;,</span><br><span class="line"></span><br><span class="line">    <span class="attr">methods</span>: &#123;</span><br><span class="line">        <span class="title function_">handleTap</span>(<span class="params"></span>) &#123;</span><br><span class="line">            <span class="variable language_">this</span>.<span class="title function_">setData</span>(&#123;</span><br><span class="line">                <span class="attr">count</span>: <span class="variable language_">this</span>.<span class="property">data</span>.<span class="property">count</span> + <span class="number">1</span></span><br><span class="line">            &#125;);</span><br><span class="line">            <span class="variable language_">this</span>.<span class="title function_">triggerEvent</span>(<span class="string">&quot;customEvent&quot;</span>, &#123; <span class="attr">count</span>: <span class="variable language_">this</span>.<span class="property">data</span>.<span class="property">count</span> &#125;);</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
+
+<h3 id="4-组件模板"><a href="#4-组件模板" class="headerlink" title="4. 组件模板"></a>4. 组件模板</h3><figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">&lt;!-- my-component.wxml --&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">view</span> <span class="attr">class</span>=<span class="string">&quot;my-component&quot;</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">text</span>&gt;</span>&#123;&#123;title&#125;&#125;<span class="tag">&lt;/<span class="name">text</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">text</span>&gt;</span>次数：&#123;&#123;count&#125;&#125;<span class="tag">&lt;/<span class="name">text</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">button</span> <span class="attr">bindtap</span>=<span class="string">&quot;handleTap&quot;</span>&gt;</span>点击<span class="tag">&lt;/<span class="name">button</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">view</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
+<hr>
+<h2 id="二、使用组件"><a href="#二、使用组件" class="headerlink" title="二、使用组件"></a>二、使用组件</h2><h3 id="1-引入组件"><a href="#1-引入组件" class="headerlink" title="1. 引入组件"></a>1. 引入组件</h3><figure class="highlight json"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 页面的 json 文件</span></span><br><span class="line"><span class="punctuation">&#123;</span></span><br><span class="line">  <span class="attr">&quot;usingComponents&quot;</span><span class="punctuation">:</span> <span class="punctuation">&#123;</span></span><br><span class="line">    <span class="attr">&quot;my-component&quot;</span><span class="punctuation">:</span> <span class="string">&quot;/components/my-component/my-component&quot;</span></span><br><span class="line">  <span class="punctuation">&#125;</span></span><br><span class="line"><span class="punctuation">&#125;</span></span><br></pre></td></tr></table></figure>
+
+<h3 id="2-使用组件"><a href="#2-使用组件" class="headerlink" title="2. 使用组件"></a>2. 使用组件</h3><figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">my-component</span> <span class="attr">title</span>=<span class="string">&quot;我的组件&quot;</span> <span class="attr">bind:customEvent</span>=<span class="string">&quot;handleCustomEvent&quot;</span> /&gt;</span></span><br></pre></td></tr></table></figure>
+
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="title class_">Page</span>(&#123;</span><br><span class="line">    <span class="title function_">handleCustomEvent</span>(<span class="params">e</span>) &#123;</span><br><span class="line">        <span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="string">&quot;组件事件&quot;</span>, e.<span class="property">detail</span>);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
+
+<hr>
+<h2 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h2><p>组件化开发可以提高代码复用率和可维护性。</p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://example.com/2026/04/15/%E7%BB%84%E4%BB%B6%E5%8C%96%E5%BC%80%E5%8F%91/" data-id="cuidcej45cS0KeFXMav6gKWc_" data-title="组件化开发" class="article-share-link"><span class="fa fa-share">Share</span></a>
+      
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+
+  
+    <article id="post-盒模型与布局" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+  <div class="article-meta">
+    <a href="/2026/04/15/%E7%9B%92%E6%A8%A1%E5%9E%8B%E4%B8%8E%E5%B8%83%E5%B1%80/" class="article-date">
+  <time class="dt-published" datetime="2026-04-15T13:55:05.000Z" itemprop="datePublished">2026-04-15</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="p-name article-title" href="/2026/04/15/%E7%9B%92%E6%A8%A1%E5%9E%8B%E4%B8%8E%E5%B8%83%E5%B1%80/">盒模型与布局</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="e-content article-entry" itemprop="articleBody">
+      
+        <h1 id="05-盒模型与布局"><a href="#05-盒模型与布局" class="headerlink" title="05. 盒模型与布局"></a>05. 盒模型与布局</h1><p>理解 CSS 盒模型和布局机制是前端开发的核心，它们决定了元素在页面中的显示方式。</p>
+<h2 id="一、盒模型（Box-Model）"><a href="#一、盒模型（Box-Model）" class="headerlink" title="一、盒模型（Box Model）"></a>一、盒模型（Box Model）</h2><h3 id="盒模型结构"><a href="#盒模型结构" class="headerlink" title="盒模型结构"></a>盒模型结构</h3><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">┌─────────────────────────────────┐</span><br><span class="line">│         Margin（外边距）         │</span><br><span class="line">│  ┌───────────────────────────┐  │</span><br><span class="line">│  │      Border（边框）       │  │</span><br><span class="line">│  │  ┌─────────────────────┐  │  │</span><br><span class="line">│  │  │   Padding（内边距） │  │  │</span><br><span class="line">│  │  │  ┌───────────────┐  │  │  │</span><br><span class="line">│  │  │  │  Content     │  │  │  │</span><br><span class="line">│  │  │  │  （内容区域） │  │  │  │</span><br><span class="line">│  │  │  └───────────────┘  │  │  │</span><br><span class="line">│  │  └─────────────────────┘  │  │</span><br><span class="line">│  └───────────────────────────┘  │</span><br><span class="line">└─────────────────────────────────┘</span><br></pre></td></tr></table></figure>
+
+<h3 id="box-sizing-属性"><a href="#box-sizing-属性" class="headerlink" title="box-sizing 属性"></a>box-sizing 属性</h3><h4 id="1-content-box（默认值）"><a href="#1-content-box（默认值）" class="headerlink" title="1. content-box（默认值）"></a>1. content-box（默认值）</h4><figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-class">.box</span> &#123;</span><br><span class="line">    <span class="attribute">width</span>: <span class="number">200px</span>;</span><br><span class="line">    <span class="attribute">padding</span>: <span class="number">20px</span>;</span><br><span class="line">    <span class="attribute">border</span>: <span class="number">5px</span> solid black;</span><br><span class="line">    <span class="attribute">box-sizing</span>: content-box;</span><br><span class="line"></span><br><span class="line">    <span class="comment">/* 实际宽度 = width + padding + border */</span></span><br><span class="line">    <span class="comment">/* 实际宽度 = 200 + 40 + 10 = 250px */</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h4 id="2-border-box（推荐）"><a href="#2-border-box（推荐）" class="headerlink" title="2. border-box（推荐）"></a>2. border-box（推荐）</h4><figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-class">.box</span> &#123;</span><br><span class="line">    <span class="attribute">width</span>: <span class="number">200px</span>;</span><br><span class="line">    <span class="attribute">padding</span>: <span class="number">20px</span>;</span><br><span class="line">    <span class="attribute">border</span>: <span class="number">5px</span> solid black;</span><br><span class="line">    <span class="attribute">box-sizing</span>: border-box;</span><br><span class="line"></span><br><span class="line">    <span class="comment">/* 实际宽度 = width */</span></span><br><span class="line">    <span class="comment">/* 内容区域宽度 = width - padding - border */</span></span><br><span class="line">    <span class="comment">/* 内容区域宽度 = 200 - 40 - 10 = 150px */</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h4 id="全局设置（推荐）"><a href="#全局设置（推荐）" class="headerlink" title="全局设置（推荐）"></a>全局设置（推荐）</h4><figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">* &#123;</span><br><span class="line">    <span class="attribute">box-sizing</span>: border-box;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">/* 或者 */</span></span><br><span class="line">*, *<span class="selector-pseudo">::before</span>, *<span class="selector-pseudo">::after</span> &#123;</span><br><span class="line">    <span class="attribute">box-sizing</span>: border-box;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<hr>
+<h2 id="二、外边距-Margin"><a href="#二、外边距-Margin" class="headerlink" title="二、外边距 Margin"></a>二、外边距 Margin</h2><h3 id="单独设置"><a href="#单独设置" class="headerlink" title="单独设置"></a>单独设置</h3><figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/* 四个边 */</span></span><br><span class="line"><span class="attribute">margin-top</span>: <span class="number">20px</span>;</span><br><span class="line"><span class="attribute">margin-right</span>: <span class="number">30px</span>;</span><br><span class="line"><span class="attribute">margin-bottom</span>: <span class="number">20px</span>;</span><br><span class="line"><span class="attribute">margin-left</span>: <span class="number">30px</span>;</span><br><span class="line"></span><br><span class="line"><span class="comment">/* 简写（顺时针：上右下左） */</span></span><br><span class="line"><span class="attribute">margin</span>: <span class="number">20px</span> <span class="number">30px</span> <span class="number">20px</span> <span class="number">30px</span>;</span><br><span class="line"></span><br><span class="line"><span class="comment">/* 上 右 下=上 左=右 */</span></span><br><span class="line"><span class="attribute">margin</span>: <span class="number">20px</span> <span class="number">30px</span>;</span><br><span class="line"></span><br><span class="line"><span class="comment">/* 上下 左右 */</span></span><br><span class="line"><span class="attribute">margin</span>: <span class="number">20px</span> <span class="number">30px</span> <span class="number">20px</span>;</span><br><span class="line"></span><br><span class="line"><span class="comment">/* 四个方向相同 */</span></span><br><span class="line"><span class="attribute">margin</span>: <span class="number">20px</span>;</span><br><span class="line"></span><br><span class="line"><span class="comment">/* 自动（水平居中 */</span></span><br><span class="line"><span class="attribute">margin</span>: <span class="number">0</span> auto;</span><br></pre></td></tr></table></figure>
+
+<h3 id="外边距塌陷"><a href="#外边距塌陷" class="headerlink" title="外边距塌陷"></a>外边距塌陷</h3><figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/* 父子元素外边距塌陷 */</span></span><br><span class="line"><span class="selector-class">.parent</span> &#123;</span><br><span class="line">    <span class="attribute">overflow</span>: hidden; <span class="comment">/* 方案1：触发 BFC */</span></span><br><span class="line">    <span class="attribute">padding-top</span>: <span class="number">1px</span>; <span class="comment">/* 方案2：添加内边距 */</span></span><br><span class="line">    <span class="attribute">border-top</span>: <span class="number">1px</span> solid transparent; <span class="comment">/* 方案3：添加边框 */</span></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">/* 兄弟元素外边距塌陷（取最大值） */</span></span><br><span class="line"><span class="selector-class">.sibling1</span> &#123;</span><br><span class="line">    <span class="attribute">margin-bottom</span>: <span class="number">20px</span>;</span><br><span class="line">&#125;</span><br><span class="line"><span class="selector-class">.sibling2</span> &#123;</span><br><span class="line">    <span class="attribute">margin-top</span>: <span class="number">30px</span>; <span class="comment">/* 实际间距 30px */</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h3 id="负外边距"><a href="#负外边距" class="headerlink" title="负外边距"></a>负外边距</h3><figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/* 元素重叠 */</span></span><br><span class="line"><span class="selector-class">.element</span> &#123;</span><br><span class="line">    <span class="attribute">margin-left</span>: -<span class="number">20px</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">/* 特殊布局效果 */</span></span><br><span class="line"><span class="selector-class">.card</span> &#123;</span><br><span class="line">    <span class="attribute">margin-top</span>: -<span class="number">10px</span>;</span><br><span class="line">    <span class="comment">/* 元素向上移动 */</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<hr>
+<h2 id="三、内边距-Padding"><a href="#三、内边距-Padding" class="headerlink" title="三、内边距 Padding"></a>三、内边距 Padding</h2><figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/* 四个边 */</span></span><br><span class="line"><span class="attribute">padding-top</span>: <span class="number">10px</span>;</span><br><span class="line"><span class="attribute">padding-right</span>: <span class="number">20px</span>;</span><br><span class="line"><span class="attribute">padding-bottom</span>: <span class="number">10px</span>;</span><br><span class="line"><span class="attribute">padding-left</span>: <span class="number">20px</span>;</span><br><span class="line"></span><br><span class="line"><span class="comment">/* 简写 */</span></span><br><span class="line"><span class="attribute">padding</span>: <span class="number">10px</span> <span class="number">20px</span> <span class="number">10px</span> <span class="number">20px</span>;</span><br><span class="line"><span class="attribute">padding</span>: <span class="number">10px</span> <span class="number">20px</span>;</span><br><span class="line"><span class="attribute">padding</span>: <span class="number">10px</span> <span class="number">20px</span> <span class="number">10px</span>;</span><br><span class="line"><span class="attribute">padding</span>: <span class="number">10px</span>;</span><br></pre></td></tr></table></figure>
+
+<hr>
+<h2 id="四、边框-Border"><a href="#四、边框-Border" class="headerlink" title="四、边框 Border"></a>四、边框 Border</h2><figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/* 简写 */</span></span><br><span class="line"><span class="attribute">border</span>: <span class="number">1px</span> solid black;</span><br><span class="line"></span><br><span class="line"><span class="comment">/* 四个边 */</span></span><br><span class="line"><span class="attribute">border-top</span>: <span class="number">2px</span> dashed red;</span><br><span class="line"><span class="attribute">border-right</span>: <span class="number">2px</span> dotted blue;</span><br><span class="line"><span class="attribute">border-bottom</span>: <span class="number">2px</span> double green;</span><br><span class="line"><span class="attribute">border-left</span>: <span class="number">2px</span> solid yellow;</span><br><span class="line"></span><br><span class="line"><span class="comment">/* 独立属性 */</span></span><br><span class="line"><span class="attribute">border-width</span>: <span class="number">1px</span> <span class="number">2px</span> <span class="number">3px</span> <span class="number">4px</span>;</span><br><span class="line"><span class="attribute">border-style</span>: solid dashed dotted double;</span><br><span class="line"><span class="attribute">border-color</span>: black white black white;</span><br><span class="line"></span><br><span class="line"><span class="comment">/* 圆角 */</span></span><br><span class="line"><span class="attribute">border-radius</span>: <span class="number">5px</span>;</span><br><span class="line"><span class="attribute">border-radius</span>: <span class="number">5px</span> <span class="number">10px</span> <span class="number">15px</span> <span class="number">20px</span>;</span><br><span class="line"><span class="attribute">border-radius</span>: <span class="number">50%</span>; <span class="comment">/* 圆形 */</span></span><br><span class="line"><span class="attribute">border-radius</span>: <span class="number">10px</span> <span class="number">20px</span>; <span class="comment">/* 左上/右下 右上/左下 */</span></span><br><span class="line"></span><br><span class="line"><span class="comment">/* 轮廓（不占据空间） */</span></span><br><span class="line"><span class="attribute">outline</span>: <span class="number">2px</span> solid blue;</span><br><span class="line"><span class="attribute">outline-offset</span>: <span class="number">5px</span>;</span><br></pre></td></tr></table></figure>
+
+<hr>
+<h2 id="五、定位-Position"><a href="#五、定位-Position" class="headerlink" title="五、定位 Position"></a>五、定位 Position</h2><h3 id="1-static（默认值）"><a href="#1-static（默认值）" class="headerlink" title="1. static（默认值）"></a>1. static（默认值）</h3><figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-class">.element</span> &#123;</span><br><span class="line">    <span class="attribute">position</span>: static;</span><br><span class="line">    <span class="comment">/* 正常文档流 */</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h3 id="2-relative（相对定位）"><a href="#2-relative（相对定位）" class="headerlink" title="2. relative（相对定位）"></a>2. relative（相对定位）</h3><figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-class">.element</span> &#123;</span><br><span class="line">    <span class="attribute">position</span>: relative;</span><br><span class="line">    <span class="attribute">top</span>: <span class="number">10px</span>;</span><br><span class="line">    <span class="attribute">left</span>: <span class="number">20px</span>;</span><br><span class="line">    <span class="comment">/* 相对于自身原位置偏移 */</span></span><br><span class="line">    <span class="comment">/* 仍占据原位置空间 */</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h3 id="3-absolute（绝对定位）"><a href="#3-absolute（绝对定位）" class="headerlink" title="3. absolute（绝对定位）"></a>3. absolute（绝对定位）</h3><figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-class">.element</span> &#123;</span><br><span class="line">    <span class="attribute">position</span>: absolute;</span><br><span class="line">    <span class="attribute">top</span>: <span class="number">20px</span>;</span><br><span class="line">    <span class="attribute">left</span>: <span class="number">30px</span>;</span><br><span class="line">    <span class="comment">/* 相对于最近的已定位祖先元素 */</span></span><br><span class="line">    <span class="comment">/* 不占据文档流空间 */</span></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">/* 居中定位 */</span></span><br><span class="line"><span class="selector-class">.element</span> &#123;</span><br><span class="line">    <span class="attribute">position</span>: absolute;</span><br><span class="line">    <span class="attribute">top</span>: <span class="number">50%</span>;</span><br><span class="line">    <span class="attribute">left</span>: <span class="number">50%</span>;</span><br><span class="line">    <span class="attribute">transform</span>: <span class="built_in">translate</span>(-<span class="number">50%</span>, -<span class="number">50%</span>);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h3 id="4-fixed（固定定位）"><a href="#4-fixed（固定定位）" class="headerlink" title="4. fixed（固定定位）"></a>4. fixed（固定定位）</h3><figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-class">.element</span> &#123;</span><br><span class="line">    <span class="attribute">position</span>: fixed;</span><br><span class="line">    <span class="attribute">top</span>: <span class="number">0</span>;</span><br><span class="line">    <span class="attribute">right</span>: <span class="number">0</span>;</span><br><span class="line">    <span class="comment">/* 相对于视口永远固定 */</span></span><br><span class="line">    <span class="comment">/* 固定导航栏、回到顶部按钮 */</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h3 id="5-sticky（粘性定位）"><a href="#5-sticky（粘性定位）" class="headerlink" title="5. sticky（粘性定位）"></a>5. sticky（粘性定位）</h3><figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-class">.element</span> &#123;</span><br><span class="line">    <span class="attribute">position</span>: sticky;</span><br><span class="line">    <span class="attribute">top</span>: <span class="number">20px</span>;</span><br><span class="line">    <span class="comment">/* 滚动到阈值时固定 */</span></span><br><span class="line">    <span class="comment">/* 粘性表头、侧边栏 */</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<hr>
+<h2 id="六、浮动-Float"><a href="#六、浮动-Float" class="headerlink" title="六、浮动 Float"></a>六、浮动 Float</h2><figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-class">.element</span> &#123;</span><br><span class="line">    <span class="attribute">float</span>: left;</span><br><span class="line">    <span class="comment">/* float: right; */</span></span><br><span class="line">    <span class="comment">/* 元素脱离文档流 */</span></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">/* 清除浮动 */</span></span><br><span class="line"><span class="selector-class">.clearfix</span><span class="selector-pseudo">::after</span> &#123;</span><br><span class="line">    <span class="attribute">content</span>: <span class="string">&quot;&quot;</span>;</span><br><span class="line">    <span class="attribute">display</span>: block;</span><br><span class="line">    <span class="attribute">clear</span>: both;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">/* 或者 */</span></span><br><span class="line"><span class="selector-class">.clear</span> &#123;</span><br><span class="line">    <span class="attribute">clear</span>: both;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="selector-class">.clear-left</span> &#123;</span><br><span class="line">    <span class="attribute">clear</span>: left;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="selector-class">.clear-right</span> &#123;</span><br><span class="line">    <span class="attribute">clear</span>: right;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<hr>
+<h2 id="七、显示-Display"><a href="#七、显示-Display" class="headerlink" title="七、显示 Display"></a>七、显示 Display</h2><figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/* 块级元素 */</span></span><br><span class="line"><span class="attribute">display</span>: block;</span><br><span class="line"></span><br><span class="line"><span class="comment">/* 行内元素 */</span></span><br><span class="line"><span class="attribute">display</span>: inline;</span><br><span class="line"></span><br><span class="line"><span class="comment">/* 行内块 */</span></span><br><span class="line"><span class="attribute">display</span>: inline-block;</span><br><span class="line"></span><br><span class="line"><span class="comment">/* 隐藏 */</span></span><br><span class="line"><span class="attribute">display</span>: none;</span><br><span class="line"></span><br><span class="line"><span class="comment">/* Flex 布局 */</span></span><br><span class="line"><span class="attribute">display</span>: flex;</span><br><span class="line"></span><br><span class="line"><span class="comment">/* Grid 布局 */</span></span><br><span class="line"><span class="attribute">display</span>: grid;</span><br><span class="line"></span><br><span class="line"><span class="comment">/* 表格 */</span></span><br><span class="line"><span class="attribute">display</span>: table;</span><br><span class="line"><span class="attribute">display</span>: table-cell;</span><br><span class="line"><span class="attribute">display</span>: table-row;</span><br><span class="line"></span><br><span class="line"><span class="comment">/* 其他 */</span></span><br><span class="line"><span class="attribute">display</span>: inline-flex;</span><br><span class="line"><span class="attribute">display</span>: inline-grid;</span><br></pre></td></tr></table></figure>
+
+<hr>
+<h2 id="八、堆叠上下文-Z-Index"><a href="#八、堆叠上下文-Z-Index" class="headerlink" title="八、堆叠上下文 Z-Index"></a>八、堆叠上下文 Z-Index</h2><figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/* z-index 只对已定位元素生效 */</span></span><br><span class="line"><span class="selector-class">.element</span> &#123;</span><br><span class="line">    <span class="attribute">position</span>: relative;</span><br><span class="line">    <span class="attribute">z-index</span>: <span class="number">10</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">/* z-index 值越大，层级越靠上 */</span></span><br><span class="line"><span class="comment">/* 默认值：auto（等同于 0） */</span></span><br><span class="line"></span><br><span class="line"><span class="comment">/* 负值，可以藏在父元素后面 */</span></span><br><span class="line"><span class="selector-class">.element</span> &#123;</span><br><span class="line">    <span class="attribute">z-index</span>: -<span class="number">1</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">/* 新建堆叠上下文的条件 */</span></span><br><span class="line"><span class="comment">/* 1. position: relative/absolute/fixed 且 z-index 不为 auto */</span></span><br><span class="line"><span class="comment">/* 2. position: sticky 且 z-index 不为 auto */</span></span><br><span class="line"><span class="comment">/* 3. 不为 none 的 opacity */</span></span><br><span class="line"><span class="comment">/* 4. transform: translate(0) */</span></span><br><span class="line"><span class="comment">/* 5. filter: blur(0) */</span></span><br><span class="line"><span class="comment">/* 6. 其他... */</span></span><br></pre></td></tr></table></figure>
+
+<hr>
+<h2 id="九、溢出-Overflow"><a href="#九、溢出-Overflow" class="headerlink" title="九、溢出 Overflow"></a>九、溢出 Overflow</h2><figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/* 内容溢出处理 */</span></span><br><span class="line"><span class="attribute">overflow</span>: visible; <span class="comment">/* 默认：可见 */</span></span><br><span class="line"><span class="attribute">overflow</span>: hidden;  <span class="comment">/* 隐藏 */</span></span><br><span class="line"><span class="attribute">overflow</span>: scroll;  <span class="comment">/* 显示滚动条 */</span></span><br><span class="line"><span class="attribute">overflow</span>: auto;    <span class="comment">/* 必要时显示滚动条 */</span></span><br><span class="line"></span><br><span class="line"><span class="comment">/* 单独控制 */</span></span><br><span class="line"><span class="attribute">overflow-x</span>: auto;</span><br><span class="line"><span class="attribute">overflow-y</span>: auto;</span><br><span class="line"></span><br><span class="line"><span class="comment">/* 文本溢出省略 */</span></span><br><span class="line"><span class="selector-class">.text-ellipsis</span> &#123;</span><br><span class="line">    <span class="attribute">white-space</span>: nowrap;</span><br><span class="line">    <span class="attribute">overflow</span>: hidden;</span><br><span class="line">    <span class="attribute">text-overflow</span>: ellipsis;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">/* 多行文本省略 */</span></span><br><span class="line"><span class="selector-class">.multi-ellipsis</span> &#123;</span><br><span class="line">    <span class="attribute">display</span>: -webkit-box;</span><br><span class="line">    -webkit-<span class="selector-tag">line</span>-clamp: <span class="number">3</span>;</span><br><span class="line">    -webkit-<span class="attribute">box-orient</span>: vertical;</span><br><span class="line">    <span class="attribute">overflow</span>: hidden;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<hr>
+<h2 id="十、可见性-Visibility"><a href="#十、可见性-Visibility" class="headerlink" title="十、可见性 Visibility"></a>十、可见性 Visibility</h2><figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/* 隐藏元素，但仍占据空间 */</span></span><br><span class="line">element &#123;</span><br><span class="line">    <span class="attribute">visibility</span>: hidden;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">/* 显示元素 */</span></span><br><span class="line">element &#123;</span><br><span class="line">    <span class="attribute">visibility</span>: visible;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">/* 折叠（主要用于表格） */</span></span><br><span class="line">element &#123;</span><br><span class="line">    <span class="attribute">visibility</span>: collapse;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">/* display: none 与 visibility: hidden 的区别 */</span></span><br><span class="line"><span class="comment">/* display: none: 不占据空间，不响应事件 */</span></span><br><span class="line"><span class="comment">/* visibility: hidden: 占据空间，不响应事件 */</span></span><br></pre></td></tr></table></figure>
+
+<hr>
+<h2 id="十一、实际案例"><a href="#十一、实际案例" class="headerlink" title="十一、实际案例"></a>十一、实际案例</h2><h3 id="1-垂直居中"><a href="#1-垂直居中" class="headerlink" title="1. 垂直居中"></a>1. 垂直居中</h3><figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-class">.parent</span> &#123;</span><br><span class="line">    <span class="attribute">display</span>: flex;</span><br><span class="line">    <span class="attribute">align-items</span>: center;</span><br><span class="line">    <span class="attribute">justify-content</span>: center;</span><br><span class="line">    <span class="attribute">height</span>: <span class="number">300px</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">/* 或者 */</span></span><br><span class="line"><span class="selector-class">.element</span> &#123;</span><br><span class="line">    <span class="attribute">position</span>: absolute;</span><br><span class="line">    <span class="attribute">top</span>: <span class="number">50%</span>;</span><br><span class="line">    <span class="attribute">left</span>: <span class="number">50%</span>;</span><br><span class="line">    <span class="attribute">transform</span>: <span class="built_in">translate</span>(-<span class="number">50%</span>, -<span class="number">50%</span>);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">/* 或者 */</span></span><br><span class="line"><span class="selector-class">.parent</span> &#123;</span><br><span class="line">    <span class="attribute">line-height</span>: <span class="number">300px</span>;</span><br><span class="line">&#125;</span><br><span class="line"><span class="selector-class">.element</span> &#123;</span><br><span class="line">    <span class="attribute">display</span>: inline-block;</span><br><span class="line">    <span class="attribute">vertical-align</span>: middle;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h3 id="2-水平居中"><a href="#2-水平居中" class="headerlink" title="2. 水平居中"></a>2. 水平居中</h3><figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/* 块级元素 */</span></span><br><span class="line"><span class="selector-class">.element</span> &#123;</span><br><span class="line">    <span class="attribute">margin</span>: <span class="number">0</span> auto;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">/* Flex */</span></span><br><span class="line"><span class="selector-class">.parent</span> &#123;</span><br><span class="line">    <span class="attribute">display</span>: flex;</span><br><span class="line">    <span class="attribute">justify-content</span>: center;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">/* 绝对定位 */</span></span><br><span class="line"><span class="selector-class">.element</span> &#123;</span><br><span class="line">    <span class="attribute">position</span>: absolute;</span><br><span class="line">    <span class="attribute">left</span>: <span class="number">50%</span>;</span><br><span class="line">    <span class="attribute">transform</span>: <span class="built_in">translateX</span>(-<span class="number">50%</span>);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h3 id="3-三列布局"><a href="#3-三列布局" class="headerlink" title="3. 三列布局"></a>3. 三列布局</h3><figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-class">.container</span> &#123;</span><br><span class="line">    <span class="attribute">display</span>: flex;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="selector-class">.left</span> &#123;</span><br><span class="line">    <span class="attribute">width</span>: <span class="number">200px</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="selector-class">.center</span> &#123;</span><br><span class="line">    <span class="attribute">flex</span>: <span class="number">1</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="selector-class">.right</span> &#123;</span><br><span class="line">    <span class="attribute">width</span>: <span class="number">200px</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<hr>
+<h2 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h2><p>掌握盒模型和定位布局是前端开发的核心，理解各个属性的作用和使用场景对于构建复杂的页面布局至关重要。</p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://example.com/2026/04/15/%E7%9B%92%E6%A8%A1%E5%9E%8B%E4%B8%8E%E5%B8%83%E5%B1%80/" data-id="cuid6Rp-jNbxjC5wT1I0Y34_Z" data-title="盒模型与布局" class="article-share-link"><span class="fa fa-share">Share</span></a>
+      
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+
+  
+    <article id="post-蓝桥杯单片机" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+  <div class="article-meta">
+    <a href="/2026/04/15/%E8%93%9D%E6%A1%A5%E6%9D%AF%E5%8D%95%E7%89%87%E6%9C%BA/" class="article-date">
+  <time class="dt-published" datetime="2026-04-15T13:55:05.000Z" itemprop="datePublished">2026-04-15</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="p-name article-title" href="/2026/04/15/%E8%93%9D%E6%A1%A5%E6%9D%AF%E5%8D%95%E7%89%87%E6%9C%BA/">蓝桥杯单片机</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="e-content article-entry" itemprop="articleBody">
+      
+        <h1 id="蓝桥杯单片机"><a href="#蓝桥杯单片机" class="headerlink" title="蓝桥杯单片机"></a><center>蓝桥杯单片机</center></h1><h2 id="一、基础知识"><a href="#一、基础知识" class="headerlink" title="一、基础知识"></a>一、基础知识</h2><h3 id="01-LED亮灭控制"><a href="#01-LED亮灭控制" class="headerlink" title="01 LED亮灭控制"></a>01 LED亮灭控制</h3><figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"><span class="type">void</span> <span class="title function_">main</span><span class="params">()</span>&#123;</span><br><span class="line"></span><br><span class="line">	<span class="keyword">while</span>(<span class="number">1</span>)&#123;</span><br><span class="line">		P2 = ((P2 &amp; <span class="number">0x1F</span>) | <span class="number">0x80</span>); <span class="comment">// 闲鱼清零前三位，在写前三位 138译码器 </span></span><br><span class="line">		LED_Port = <span class="number">0xFF</span>; <span class="comment">//LED关</span></span><br><span class="line">		P2 &amp;= <span class="number">0x1F</span>; </span><br><span class="line">		delay();</span><br><span class="line"></span><br><span class="line">		P2 = ((P2 &amp; <span class="number">0x1F</span>) | <span class="number">0x80</span>); <span class="comment">// 闲鱼清零前三位，在写前三位 138译码器</span></span><br><span class="line">		LED_Port = <span class="number">0x00</span>; <span class="comment">//LED开</span></span><br><span class="line">		P2 &amp;= <span class="number">0x1F</span>; </span><br><span class="line">		delay();</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+<h3 id="02-LED按位移"><a href="#02-LED按位移" class="headerlink" title="02 LED按位移"></a>02 LED按位移</h3><figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="type">void</span> <span class="title function_">main</span><span class="params">()</span>&#123;</span><br><span class="line">    <span class="type">unsigned</span> <span class="type">char</span> i = <span class="number">0</span>; <span class="comment">//1111 1110  </span></span><br><span class="line">    cls_hardware();</span><br><span class="line">	<span class="keyword">while</span>(<span class="number">1</span>)&#123;</span><br><span class="line">        <span class="keyword">for</span>(i = <span class="number">0</span>;i &lt; <span class="number">8</span>;i ++)&#123;</span><br><span class="line">            P2 = (P2 &amp; <span class="number">0x1F</span>) | <span class="number">0x80</span>; <span class="comment">//选中Y4 LED ENA</span></span><br><span class="line">            P0 = <span class="number">0xFE</span>&lt;&lt;i;<span class="comment">//1111 1110  按位左移，低位取0</span></span><br><span class="line">            P2 &amp;= <span class="number">0x1F</span>;<span class="comment">//译码器复位</span></span><br><span class="line">            delay();<span class="comment">//延时200ms</span></span><br><span class="line">        &#125;</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+
+<h3 id="03-独立按键控制LED位移"><a href="#03-独立按键控制LED位移" class="headerlink" title="03 独立按键控制LED位移"></a>03 独立按键控制LED位移</h3><h2 id="二、真题练习"><a href="#二、真题练习" class="headerlink" title="二、真题练习"></a>二、真题练习</h2><h2 id="三、相关资料"><a href="#三、相关资料" class="headerlink" title="三、相关资料"></a>三、相关资料</h2><h3 id="01-中断系统"><a href="#01-中断系统" class="headerlink" title="01 中断系统"></a>01 中断系统</h3><ul>
+<li>STC15F2K60S2中断结构</br></li>
+</ul>
+<table>
+<thead>
+<tr>
+<th align="left">中断源</th>
+<th align="left">中断优先级级别</th>
+<th align="left">备注</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="left">定时器0中断 (T0)</td>
+<td align="left">2级（可配置为高或低优先级）</td>
+<td align="left">-</td>
+</tr>
+<tr>
+<td align="left">外部中断1 (INT1)</td>
+<td align="left">2级（可配置为高或低优先级）</td>
+<td align="left">-</td>
+</tr>
+<tr>
+<td align="left">定时器1中断 (T1)</td>
+<td align="left">2级（可配置为高或低优先级）</td>
+<td align="left">-</td>
+</tr>
+<tr>
+<td align="left">串口1中断</td>
+<td align="left">2级（可配置为高或低优先级）</td>
+<td align="left">-</td>
+</tr>
+<tr>
+<td align="left">A&#x2F;D转换中断</td>
+<td align="left">2级（可配置为高或低优先级）</td>
+<td align="left">-</td>
+</tr>
+<tr>
+<td align="left">低压检测中断 (LVD)</td>
+<td align="left">2级（可配置为高或低优先级）</td>
+<td align="left">-</td>
+</tr>
+<tr>
+<td align="left">CCP&#x2F;PWM&#x2F;PCA中断</td>
+<td align="left">2级（可配置为高或低优先级）</td>
+<td align="left">-</td>
+</tr>
+<tr>
+<td align="left">串口2中断</td>
+<td align="left">2级（可配置为高或低优先级）</td>
+<td align="left">-</td>
+</tr>
+<tr>
+<td align="left">SPI中断</td>
+<td align="left">2级（可配置为高或低优先级）</td>
+<td align="left">-</td>
+</tr>
+<tr>
+<td align="left">外部中断2 (INT2)</td>
+<td align="left">最低优先级</td>
+<td align="left">优先级固定，不可配置</td>
+</tr>
+<tr>
+<td align="left">外部中断3 (INT3)</td>
+<td align="left">最低优先级</td>
+<td align="left">优先级固定，不可配置</td>
+</tr>
+<tr>
+<td align="left">定时器2中断 (T2)</td>
+<td align="left">最低优先级</td>
+<td align="left">优先级固定，不可配置</td>
+</tr>
+<tr>
+<td align="left">外部中断4 (INT4)</td>
+<td align="left">最低优先级</td>
+<td align="left">优先级固定，不可配置</td>
+</tr>
+</tbody></table>
+<p><img src="/image.png" alt="alt text"></p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://example.com/2026/04/15/%E8%93%9D%E6%A1%A5%E6%9D%AF%E5%8D%95%E7%89%87%E6%9C%BA/" data-id="cuidDLFnELj1F8h0hQg4_Z2D8" data-title="蓝桥杯单片机" class="article-share-link"><span class="fa fa-share">Share</span></a>
+      
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+
+  
+    <article id="post-部署上线" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+  <div class="article-meta">
+    <a href="/2026/04/15/%E9%83%A8%E7%BD%B2%E4%B8%8A%E7%BA%BF/" class="article-date">
+  <time class="dt-published" datetime="2026-04-15T13:55:05.000Z" itemprop="datePublished">2026-04-15</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="p-name article-title" href="/2026/04/15/%E9%83%A8%E7%BD%B2%E4%B8%8A%E7%BA%BF/">部署上线</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="e-content article-entry" itemprop="articleBody">
+      
+        <h1 id="04-部署上线"><a href="#04-部署上线" class="headerlink" title="04. 部署上线"></a>04. 部署上线</h1><p>VitePress 部署可以到各种静态托管平台。</p>
+<h2 id="一、构建项目"><a href="#一、构建项目" class="headerlink" title="一、构建项目"></a>一、构建项目</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 开发模式</span></span><br><span class="line">npm run docs:dev</span><br><span class="line"></span><br><span class="line"><span class="comment"># 构建</span></span><br><span class="line">npm run docs:build</span><br><span class="line"></span><br><span class="line"><span class="comment"># 预览</span></span><br><span class="line">npm run docs:preview</span><br></pre></td></tr></table></figure>
+
+<hr>
+<h2 id="二、部署到-GitHub-Pages"><a href="#二、部署到-GitHub-Pages" class="headerlink" title="二、部署到 GitHub Pages"></a>二、部署到 GitHub Pages</h2><h3 id="1-新建仓库"><a href="#1-新建仓库" class="headerlink" title="1. 新建仓库"></a>1. 新建仓库</h3><p>创建 GitHub 仓库，例如 <code>my-vitepress-site</code></p>
+<h3 id="2-配置-base"><a href="#2-配置-base" class="headerlink" title="2. 配置 base"></a>2. 配置 base</h3><figure class="highlight typescript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// .vitepress/config.ts</span></span><br><span class="line"><span class="keyword">export</span> <span class="keyword">default</span> <span class="title function_">defineConfig</span>(&#123;</span><br><span class="line">    <span class="attr">base</span>: <span class="string">&quot;/my-vitepress-site/&quot;</span>, <span class="comment">// 你的仓库名</span></span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
+
+<h3 id="3-推送代码"><a href="#3-推送代码" class="headerlink" title="3. 推送代码"></a>3. 推送代码</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">git add .</span><br><span class="line">git commit -m <span class="string">&quot;Initial commit&quot;</span></span><br><span class="line">git push origin main</span><br></pre></td></tr></table></figure>
+
+<h3 id="4-GitHub-Pages-设置"><a href="#4-GitHub-Pages-设置" class="headerlink" title="4. GitHub Pages 设置"></a>4. GitHub Pages 设置</h3><ul>
+<li>进入仓库 Settings → Pages</li>
+<li>Source 选择 <code>Deploy from a branch</code></li>
+<li>Branch 选择 <code>main/docs/.vitepress/dist</code></li>
+</ul>
+<hr>
+<h2 id="三、部署到-Vercel"><a href="#三、部署到-Vercel" class="headerlink" title="三、部署到 Vercel"></a>三、部署到 Vercel</h2><h3 id="1-安装-Vercel-CLI"><a href="#1-安装-Vercel-CLI" class="headerlink" title="1. 安装 Vercel CLI"></a>1. 安装 Vercel CLI</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm install -g vercel</span><br></pre></td></tr></table></figure>
+
+<h3 id="2-部署"><a href="#2-部署" class="headerlink" title="2. 部署"></a>2. 部署</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">vercel</span><br></pre></td></tr></table></figure>
+
+<hr>
+<h2 id="四、部署到-Netlify"><a href="#四、部署到-Netlify" class="headerlink" title="四、部署到 Netlify"></a>四、部署到 Netlify</h2><h3 id="1-连接仓库"><a href="#1-连接仓库" class="headerlink" title="1. 连接仓库"></a>1. 连接仓库</h3><p>在 Netlify 中导入 GitHub 仓库</p>
+<h3 id="2-配置构建命令"><a href="#2-配置构建命令" class="headerlink" title="2. 配置构建命令"></a>2. 配置构建命令</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">Build <span class="built_in">command</span>: npm run docs:build</span><br><span class="line">Publish directory: docs/.vitepress/dist</span><br></pre></td></tr></table></figure>
+
+<hr>
+<h2 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h2><p>VitePress 部署简单，多种托管平台可选。</p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://example.com/2026/04/15/%E9%83%A8%E7%BD%B2%E4%B8%8A%E7%BA%BF/" data-id="cuidm-nUR2UuMxgF674PHUkgp" data-title="部署上线" class="article-share-link"><span class="fa fa-share">Share</span></a>
+      
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+
+  
+    <article id="post-项目分析" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+  <div class="article-meta">
+    <a href="/2026/04/15/%E9%A1%B9%E7%9B%AE%E5%88%86%E6%9E%90/" class="article-date">
+  <time class="dt-published" datetime="2026-04-15T13:55:05.000Z" itemprop="datePublished">2026-04-15</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="p-name article-title" href="/2026/04/15/%E9%A1%B9%E7%9B%AE%E5%88%86%E6%9E%90/">项目分析</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="e-content article-entry" itemprop="articleBody">
+      
+        <h1 id="Hexapod-项目分析报告"><a href="#Hexapod-项目分析报告" class="headerlink" title="Hexapod 项目分析报告"></a>Hexapod 项目分析报告</h1><p><img src="http://47.113.204.202:40027/i/2026/01/18/696c598b73164.png" alt="封面"></p>
+<h2 id="1-项目概述"><a href="#1-项目概述" class="headerlink" title="1. 项目概述"></a>1. 项目概述</h2><p>Hexapod-v2-7697是一个基于Linkit 7697开发板(本次复刻采用树莓派zero2w开发板代替)的六足机器人项目，提供了完整的机械设计、电子电路和软件代码，允许用户通过手机（iOS或Android）通过蓝牙低功耗（BLE）远程控制机器人的运动。</p>
+<h3 id="1-1-项目特点"><a href="#1-1-项目特点" class="headerlink" title="1.1 项目特点"></a>1.1 项目特点</h3><ul>
+<li><strong>无线控制</strong>：通过Linkit 7697的BLE功能实现手机远程控制</li>
+<li><strong>多自由度</strong>：6条腿，每条腿3个关节，共18个舵机（TowerPro MG92B）</li>
+<li><strong>模块化设计</strong>：机械、电子和软件部分分离，便于维护和扩展</li>
+<li><strong>开源共享</strong>：所有设计文件和代码均在GPL许可证下开源</li>
+</ul>
+<h3 id="1-2-技术架构"><a href="#1-2-技术架构" class="headerlink" title="1.2 技术架构"></a>1.2 技术架构</h3><table>
+<thead>
+<tr>
+<th>模块</th>
+<th>主要组件</th>
+<th>功能</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>机械结构</td>
+<td>3D打印PLA部件</td>
+<td>机器人身体和腿部结构</td>
+</tr>
+<tr>
+<td>电子控制</td>
+<td>Linkit 7697、PCA9685×2</td>
+<td>主控制器和舵机控制</td>
+</tr>
+<tr>
+<td>电源系统</td>
+<td>2S Lipo电池、mini360 DC-DC×7</td>
+<td>提供5V和6V电源</td>
+</tr>
+<tr>
+<td>软件系统</td>
+<td>Arduino程序、Python路径工具</td>
+<td>控制逻辑和路径生成</td>
+</tr>
+</tbody></table>
+<h2 id="2-机械部分分析"><a href="#2-机械部分分析" class="headerlink" title="2. 机械部分分析"></a>2. 机械部分分析</h2><h3 id="2-1-结构设计"><a href="#2-1-结构设计" class="headerlink" title="2.1 结构设计"></a>2.1 结构设计</h3><ul>
+<li><strong>身体结构</strong>：模块化设计，分为底部、顶部、前后壁和侧墙</li>
+<li><strong>腿部结构</strong>：每条腿由大腿、小腿和脚部组成，通过关节连接</li>
+<li><strong>材料</strong>：PLA塑料，使用Prusa i3 MK2S 3D打印机打印</li>
+</ul>
+<h3 id="2-2-关键部件"><a href="#2-2-关键部件" class="headerlink" title="2.2 关键部件"></a>2.2 关键部件</h3><ul>
+<li>腿部组件：thigh_top.stl、thigh_bottom.stl、leg_top.stl、leg_bottom.stl、foot_top.stl、foot_bottom.stl等</li>
+<li>关节组件：joint_top.stl、joint_bottom.stl、joint_cross.stl</li>
+<li>身体组件：body_top.stl、body_bottom.stl、body_side_wall.stl等</li>
+</ul>
+<h3 id="2-3-组装要求"><a href="#2-3-组装要求" class="headerlink" title="2.3 组装要求"></a>2.3 组装要求</h3><ul>
+<li>需要6条完全相同的腿</li>
+<li>关节处需要M2螺丝和螺母连接</li>
+<li>舵机需要精确安装以确保运动范围</li>
+</ul>
+<h2 id="3-电子部分分析"><a href="#3-电子部分分析" class="headerlink" title="3. 电子部分分析"></a>3. 电子部分分析</h2><h3 id="3-1-电路设计"><a href="#3-1-电路设计" class="headerlink" title="3.1 电路设计"></a>3.1 电路设计</h3><ul>
+<li><strong>主PCB</strong>：包含Linkit 7697和一个PCA9685舵机控制器</li>
+<li><strong>子PCB</strong>：两个子PCB，每个包含一个PCA9685和相关电路</li>
+<li><strong>电源系统</strong>：7个mini360 DC-DC转换器，1个提供5V给Linkit 7697，6个提供6V给每条腿的舵机</li>
+</ul>
+<h3 id="3-2-关键组件"><a href="#3-2-关键组件" class="headerlink" title="3.2 关键组件"></a>3.2 关键组件</h3><ul>
+<li><strong>Linkit 7697</strong>：主控制器，提供BLE通信功能</li>
+<li><strong>PCA9685</strong>：16通道PWM控制器，用于控制舵机</li>
+<li><strong>mini360 DC-DC</strong>：降压模块，将7.4V转换为5V和6V</li>
+<li><strong>电阻电容</strong>：用于电路保护和滤波</li>
+</ul>
+<h3 id="3-3-连接方式"><a href="#3-3-连接方式" class="headerlink" title="3.3 连接方式"></a>3.3 连接方式</h3><ul>
+<li>舵机通过3针接头连接到子PCB</li>
+<li>主PCB和子PCB通过I2C总线通信</li>
+<li>电源通过2针接头连接到电池</li>
+</ul>
+<h2 id="4-软件部分分析"><a href="#4-软件部分分析" class="headerlink" title="4. 软件部分分析"></a>4. 软件部分分析</h2><h3 id="4-1-软件架构"><a href="#4-1-软件架构" class="headerlink" title="4.1 软件架构"></a>4.1 软件架构</h3><ul>
+<li><strong>hexapod7697</strong>：Arduino程序，运行在Linkit 7697上<ul>
+<li>normal_mode：正常控制模式</li>
+<li>setting_mode：校准模式</li>
+<li>hexapod：核心控制类</li>
+<li>hal：硬件抽象层</li>
+</ul>
+</li>
+<li><strong>pathTool</strong>：Python工具，用于生成运动路径</li>
+</ul>
+<h3 id="4-2-核心功能"><a href="#4-2-核心功能" class="headerlink" title="4.2 核心功能"></a>4.2 核心功能</h3><ul>
+<li><strong>运动控制</strong>：前向、后向、左转、右转、旋转等</li>
+<li><strong>校准功能</strong>：调整舵机的零位和缩放比例</li>
+<li><strong>BLE通信</strong>：与手机应用程序通信</li>
+</ul>
+<h3 id="4-3-技术特点"><a href="#4-3-技术特点" class="headerlink" title="4.3 技术特点"></a>4.3 技术特点</h3><ul>
+<li>使用C++11和STL库</li>
+<li>面向对象设计</li>
+<li>硬件抽象层，便于移植</li>
+</ul>
+<h2 id="5-系统集成分析"><a href="#5-系统集成分析" class="headerlink" title="5. 系统集成分析"></a>5. 系统集成分析</h2><h3 id="5-1-机械与电子集成"><a href="#5-1-机械与电子集成" class="headerlink" title="5.1 机械与电子集成"></a>5.1 机械与电子集成</h3><ul>
+<li>舵机通过螺丝固定在3D打印部件上</li>
+<li>PCB安装在机器人身体内部</li>
+<li>电线通过身体内部的通道连接</li>
+</ul>
+<h3 id="5-2-软件与硬件集成"><a href="#5-2-软件与硬件集成" class="headerlink" title="5.2 软件与硬件集成"></a>5.2 软件与硬件集成</h3><ul>
+<li>Arduino程序通过I2C控制PCA9685</li>
+<li>PCA9685生成PWM信号控制舵机</li>
+<li>Linkit 7697通过BLE接收手机命令</li>
+</ul>
+<h3 id="5-3-控制系统工作流程"><a href="#5-3-控制系统工作流程" class="headerlink" title="5.3 控制系统工作流程"></a>5.3 控制系统工作流程</h3><ol>
+<li>手机发送控制命令通过BLE</li>
+<li>Linkit 7697接收命令并解析</li>
+<li>计算每个舵机的目标角度</li>
+<li>通过PCA9685控制舵机运动</li>
+<li>机器人执行相应的运动</li>
+</ol>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://example.com/2026/04/15/%E9%A1%B9%E7%9B%AE%E5%88%86%E6%9E%90/" data-id="cuidvMm8R3FNsETfJtCcP2WEV" data-title="项目分析" class="article-share-link"><span class="fa fa-share">Share</span></a>
+      
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+
+  
+    <article id="post-hello-world" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+  <div class="article-meta">
+    <a href="/2026/04/15/hello-world/" class="article-date">
+  <time class="dt-published" datetime="2026-04-15T13:30:54.965Z" itemprop="datePublished">2026-04-15</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="p-name article-title" href="/2026/04/15/hello-world/">Hello World</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="e-content article-entry" itemprop="articleBody">
+      
+        <p>Welcome to <a target="_blank" rel="noopener" href="https://hexo.io/">Hexo</a>! This is your very first post. Check <a target="_blank" rel="noopener" href="https://hexo.io/docs/">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a target="_blank" rel="noopener" href="https://hexo.io/docs/troubleshooting.html">troubleshooting</a> or you can ask me on <a target="_blank" rel="noopener" href="https://github.com/hexojs/hexo/issues">GitHub</a>.</p>
+<h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo new <span class="string">&quot;My New Post&quot;</span></span><br></pre></td></tr></table></figure>
+
+<p>More info: <a target="_blank" rel="noopener" href="https://hexo.io/docs/writing.html">Writing</a></p>
+<h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></table></figure>
+
+<p>More info: <a target="_blank" rel="noopener" href="https://hexo.io/docs/server.html">Server</a></p>
+<h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo generate</span><br></pre></td></tr></table></figure>
+
+<p>More info: <a target="_blank" rel="noopener" href="https://hexo.io/docs/generating.html">Generating</a></p>
+<h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure>
+
+<p>More info: <a target="_blank" rel="noopener" href="https://hexo.io/docs/one-command-deployment.html">Deployment</a></p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://example.com/2026/04/15/hello-world/" data-id="cuido4uuzPWwrY_IkgWBtBxZ0" data-title="Hello World" class="article-share-link"><span class="fa fa-share">Share</span></a>
+      
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+
+  
+    <article id="post-about" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+  <div class="article-meta">
+    <a href="/2026/04/15/about/" class="article-date">
+  <time class="dt-published" datetime="2026-04-15T04:00:00.000Z" itemprop="datePublished">2026-04-15</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="p-name article-title" href="/2026/04/15/about/">关于我-Heureka</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="e-content article-entry" itemprop="articleBody">
+      
+        <h1 id="关于我-Heureka"><a href="#关于我-Heureka" class="headerlink" title="关于我-Heureka"></a>关于我-Heureka</h1><h2 id="Motto"><a href="#Motto" class="headerlink" title="Motto"></a>Motto</h2><blockquote>
+<p>代码如诗，远方如谜，唯上下求索。</p>
+</blockquote>
+<h2 id="Introduction"><a href="#Introduction" class="headerlink" title="Introduction"></a>Introduction</h2><p>这里是 <strong>Heureka</strong>，一个物联网专业的编程爱好者。目前主要研究 <strong>物联网 (IoT)</strong>、<strong>嵌入式系统</strong> 以及 <strong>前端开发</strong> 等技术。</p>
+<p>这里主要用于记录我的学习笔记、分享技术心得以及展示个人实践项目。</p>
+<h2 id="Projects"><a href="#Projects" class="headerlink" title="Projects"></a>Projects</h2><h3 id="可自主预警的天气小助手"><a href="#可自主预警的天气小助手" class="headerlink" title="可自主预警的天气小助手"></a>可自主预警的天气小助手</h3><p>这是一个结合了嵌入式硬件与实时数据处理的项目。通过获取天气 API 数据，实现对极端天气的自动识别与预警提示，旨在为日常生活提供智能化的便利。</p>
+<ul>
+<li><strong>核心技术</strong>：ESP32&#x2F;STM32, 物联网协议, 前端展示界面。</li>
+<li><strong>详情查看</strong>：<a href="/docs/%E9%A1%B9%E7%9B%AE%E5%BC%80%E5%8F%91/%E5%8F%AF%E8%87%AA%E4%B8%BB%E9%A2%84%E8%AD%A6%E7%9A%84%E5%A4%A9%E6%B0%94%E5%B0%8F%E5%8A%A9%E6%89%8B/01.%E5%BC%80%E5%8F%91%E6%96%87%E6%A1%A3">工程解析</a></li>
+</ul>
+<h3 id="六足机器人复刻"><a href="#六足机器人复刻" class="headerlink" title="六足机器人复刻"></a>六足机器人复刻</h3><p>该项目是对经典开源六足机器人架构的复刻与优化。记录了从硬件组装、电路调试到运动算法编写的全过程。</p>
+<ul>
+<li><strong>核心技术</strong>：舵机控制算法, 运动学逆解, 嵌入式开发。</li>
+<li><strong>详情查看</strong>：<a href="/docs/%E9%A1%B9%E7%9B%AE%E5%A4%8D%E5%88%BB/%E5%85%AD%E8%B6%B3%E6%9C%BA%E5%99%A8%E4%BA%BA/01.%E9%A1%B9%E7%9B%AE%E5%88%86%E6%9E%90">项目分析</a></li>
+</ul>
+<h2 id="Copyright"><a href="#Copyright" class="headerlink" title="Copyright"></a>Copyright</h2><h3 id="一、如有侵权"><a href="#一、如有侵权" class="headerlink" title="一、如有侵权"></a>一、如有侵权</h3><p>本博客中的某些图片来源于互联网，仅供学术交流和非商业用途。我认为这些图片的使用符合公平使用原则。如果您是图片的版权拥有者，且不希望这些图片在本博客中出现，请通过下面的联系方式联系我，我将及时删除。</p>
+<h3 id="二、标志版权"><a href="#二、标志版权" class="headerlink" title="二、标志版权"></a>二、标志版权</h3><p>本博客的标志图来源于互联网，作者不详。我们非常感谢原作者创作如此精美的图片，如果您是标志图的作者或知道作者的信息，请通过下面的联系方式联系我。我们愿意支付合理的版权费用以获取使用授权，或者根据作者的意愿进行相应的处理。</p>
+<h3 id="三、版权声明"><a href="#三、版权声明" class="headerlink" title="三、版权声明"></a>三、版权声明</h3><p>本网站遵从 <strong>“知识共享-署名-非商业性使用-相同方式共享 3.0 未本地化版本 (CC BY-NC-SA 3.0)”</strong>（以下简称”3C协议”）。根据此协议，您可以自由地分享、复制、发行、传播本网站的原创文章、图片、音频、视频等媒体资料，但必须遵循以下原则：</p>
+<ul>
+<li><strong>署名</strong>：您必须明确标注原作者及出处（包括本网站的链接），并声明适用 3C 协议。</li>
+<li><strong>非商业性使用</strong>：您不得将本网站的内容用于商业用途。</li>
+<li><strong>相同方式共享</strong>：如果您修改了、转化了或者基于本网站的原创文章、图片、音频、视频等媒体资料创作了新的作品，必须采用同样的 3C 协议发布。</li>
+</ul>
+<p>如果您使用了本网站的原创文章、图片、音频、视频等媒体资料，必须遵守 3C 协议，并标注原作者及出处。我欢迎并感谢您对本网站的支持和关注！</p>
+<h2 id="Contact"><a href="#Contact" class="headerlink" title="Contact"></a>Contact</h2><p>如果您有任何问题或者想与我交流，请随时联系我!</p>
+<ul>
+<li><strong>GitHub</strong>: <a target="_blank" rel="noopener" href="https://github.com/Heureka-L">Heureka-L</a></li>
+<li><strong>邮箱</strong>: [<a href="mailto:&#x68;&#x65;&#117;&#x72;&#x65;&#x6b;&#97;&#x5f;&#108;&#x40;&#x66;&#111;&#x78;&#x6d;&#97;&#x69;&#x6c;&#x2e;&#x63;&#111;&#x6d;">heureka_l@foxmail.com</a>] (示例邮箱，请根据实际修改)</li>
+</ul>
+<p>再次感谢您访问我的博客！</p>
+<hr>
+<p><strong>最后更新时间</strong>: 2026年1月19日</p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://example.com/2026/04/15/about/" data-id="cuiddJd4OJ_h3XMcqny6ikScy" data-title="关于我-Heureka" class="article-share-link"><span class="fa fa-share">Share</span></a>
+      
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+
+  
+    <article id="post-前端开发介绍" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+  <div class="article-meta">
+    <a href="/2026/04/15/%E5%89%8D%E7%AB%AF%E5%BC%80%E5%8F%91%E4%BB%8B%E7%BB%8D/" class="article-date">
+  <time class="dt-published" datetime="2026-04-15T04:00:00.000Z" itemprop="datePublished">2026-04-15</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="p-name article-title" href="/2026/04/15/%E5%89%8D%E7%AB%AF%E5%BC%80%E5%8F%91%E4%BB%8B%E7%BB%8D/">前端开发介绍</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="e-content article-entry" itemprop="articleBody">
+      
+        <h1 id="01-前端开发介绍"><a href="#01-前端开发介绍" class="headerlink" title="01. 前端开发介绍"></a>01. 前端开发介绍</h1><p>前端开发是构建 Web 应用的用户界面和用户体验的技术领域，也是现代互联网应用不可或缺的重要组成部分。</p>
+<h2 id="一、什么是前端开发"><a href="#一、什么是前端开发" class="headerlink" title="一、什么是前端开发"></a>一、什么是前端开发</h2><p>前端开发是指使用 HTML、CSS、JavaScript 等技术，构建用户可以直接看到和交互的界面部分。</p>
+<h3 id="前端的作用"><a href="#前端的作用" class="headerlink" title="前端的作用"></a>前端的作用</h3><ul>
+<li>用户界面构建</li>
+<li>交互逻辑实现</li>
+<li>数据展示与处理</li>
+<li>用户体验优化</li>
+</ul>
+<hr>
+<h2 id="二、前端三剑客"><a href="#二、前端三剑客" class="headerlink" title="二、前端三剑客"></a>二、前端三剑客</h2><h3 id="1-HTML（结构）"><a href="#1-HTML（结构）" class="headerlink" title="1. HTML（结构）"></a>1. HTML（结构）</h3><ul>
+<li><strong>作用</strong>：定义网页的结构和内容</li>
+<li><strong>特点</strong>：标记语言，使用标签来组织内容</li>
+<li><strong>示例</strong>：</li>
+</ul>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&lt;!DOCTYPE <span class="keyword">html</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">html</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">head</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">title</span>&gt;</span>网页标题<span class="tag">&lt;/<span class="name">title</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">head</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">body</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">h1</span>&gt;</span>欢迎使用<span class="tag">&lt;/<span class="name">h1</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">p</span>&gt;</span>这是一段文本<span class="tag">&lt;/<span class="name">p</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">body</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">html</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
+<h3 id="2-CSS（样式）"><a href="#2-CSS（样式）" class="headerlink" title="2. CSS（样式）"></a>2. CSS（样式）</h3><ul>
+<li><strong>作用</strong>：控制网页的外观和布局</li>
+<li><strong>特点</strong>：样式表语言，定义颜色、字体、排版等</li>
+<li><strong>示例</strong>：</li>
+</ul>
+<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-tag">body</span> &#123;</span><br><span class="line">    <span class="attribute">font-family</span>: <span class="string">&quot;Arial&quot;</span>, sans-serif;</span><br><span class="line">    <span class="attribute">background-color</span>: <span class="number">#f0f0f0</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="selector-tag">h1</span> &#123;</span><br><span class="line">    <span class="attribute">color</span>: <span class="number">#333</span>;</span><br><span class="line">    <span class="attribute">text-align</span>: center;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h3 id="3-JavaScript（行为）"><a href="#3-JavaScript（行为）" class="headerlink" title="3. JavaScript（行为）"></a>3. JavaScript（行为）</h3><ul>
+<li><strong>作用</strong>：实现网页的交互和动态效果</li>
+<li><strong>特点</strong>：编程语言，处理逻辑和数据</li>
+<li><strong>示例</strong>：</li>
+</ul>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">function</span> <span class="title function_">showMessage</span>(<span class="params"></span>) &#123;</span><br><span class="line">    <span class="title function_">alert</span>(<span class="string">&quot;Hello, World!&quot;</span>);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<hr>
+<h2 id="三、前端技术体系"><a href="#三、前端技术体系" class="headerlink" title="三、前端技术体系"></a>三、前端技术体系</h2><h3 id="基础技术"><a href="#基础技术" class="headerlink" title="基础技术"></a>基础技术</h3><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">HTML5</span><br><span class="line">  └── 语义化标签、表单、多媒体、Canvas、SVG</span><br><span class="line"></span><br><span class="line">CSS3</span><br><span class="line">  ├── 布局：Flexbox、Grid</span><br><span class="line">  ├── 动画：Transition、Animation</span><br><span class="line">  └── 响应式：Media Query、Viewport</span><br><span class="line"></span><br><span class="line">JavaScript</span><br><span class="line">  ├── ES6+：箭头函数、Promise、模块化</span><br><span class="line">  ├── DOM 操作</span><br><span class="line">  └── 异步编程</span><br></pre></td></tr></table></figure>
+
+<h3 id="主流框架"><a href="#主流框架" class="headerlink" title="主流框架"></a>主流框架</h3><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line">React</span><br><span class="line">  ├── 组件化开发</span><br><span class="line">  ├── Virtual DOM</span><br><span class="line">  └── 状态管理（Redux、Context API）</span><br><span class="line"></span><br><span class="line">Vue</span><br><span class="line">  ├── 响应式数据</span><br><span class="line">  ├── 双向绑定</span><br><span class="line">  └── 指令系统</span><br><span class="line"></span><br><span class="line">Angular</span><br><span class="line">  ├── 完整框架</span><br><span class="line">  ├── 依赖注入</span><br><span class="line">  └── TypeScript</span><br></pre></td></tr></table></figure>
+
+<h3 id="工程化工具"><a href="#工程化工具" class="headerlink" title="工程化工具"></a>工程化工具</h3><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line">构建工具</span><br><span class="line">  ├── Webpack</span><br><span class="line">  ├── Vite</span><br><span class="line">  ├── Parcel</span><br><span class="line">  └── Rollup</span><br><span class="line"></span><br><span class="line">包管理器</span><br><span class="line">  ├── npm</span><br><span class="line">  ├── yarn</span><br><span class="line">  └── pnpm</span><br><span class="line"></span><br><span class="line">CSS 预处理器</span><br><span class="line">  ├── Sass/SCSS</span><br><span class="line">  ├── Less</span><br><span class="line">  ├── Stylus</span><br><span class="line">  └── Tailwind CSS</span><br></pre></td></tr></table></figure>
+
+<hr>
+<h2 id="四、前端开发流程"><a href="#四、前端开发流程" class="headerlink" title="四、前端开发流程"></a>四、前端开发流程</h2><h3 id="1-需求分析"><a href="#1-需求分析" class="headerlink" title="1. 需求分析"></a>1. 需求分析</h3><ul>
+<li>理解产品需求</li>
+<li>分析用户场景</li>
+<li>确定功能边界</li>
+</ul>
+<h3 id="2-设计阶段"><a href="#2-设计阶段" class="headerlink" title="2. 设计阶段"></a>2. 设计阶段</h3><ul>
+<li>UI&#x2F;UX 设计稿</li>
+<li>原型制作</li>
+<li>交互设计</li>
+</ul>
+<h3 id="3-开发阶段"><a href="#3-开发阶段" class="headerlink" title="3. 开发阶段"></a>3. 开发阶段</h3><ul>
+<li>HTML 结构搭建</li>
+<li>CSS 样式编写</li>
+<li>JavaScript 逻辑实现</li>
+</ul>
+<h3 id="4-测试阶段"><a href="#4-测试阶段" class="headerlink" title="4. 测试阶段"></a>4. 测试阶段</h3><ul>
+<li>功能测试</li>
+<li>兼容性测试</li>
+<li>性能测试</li>
+</ul>
+<h3 id="5-部署上线"><a href="#5-部署上线" class="headerlink" title="5. 部署上线"></a>5. 部署上线</h3><ul>
+<li>代码压缩</li>
+<li>资源优化</li>
+<li>服务器部署</li>
+</ul>
+<hr>
+<h2 id="五、前端工程师必备技能"><a href="#五、前端工程师必备技能" class="headerlink" title="五、前端工程师必备技能"></a>五、前端工程师必备技能</h2><h3 id="基础技能"><a href="#基础技能" class="headerlink" title="基础技能"></a>基础技能</h3><ul>
+<li>HTML&#x2F;CSS&#x2F;JavaScript 熟练掌握</li>
+<li>浏览器开发工具使用</li>
+<li>HTTP 协议基础</li>
+<li>版本控制（Git）</li>
+</ul>
+<h3 id="进阶技能"><a href="#进阶技能" class="headerlink" title="进阶技能"></a>进阶技能</h3><ul>
+<li>至少掌握一个主流框架</li>
+<li>工程化工具使用</li>
+<li>性能优化</li>
+<li>跨浏览器兼容</li>
+</ul>
+<h3 id="加分技能"><a href="#加分技能" class="headerlink" title="加分技能"></a>加分技能</h3><ul>
+<li>TypeScript</li>
+<li>Node.js</li>
+<li>WebGL&#x2F;图形编程</li>
+<li>移动端开发</li>
+<li>服务端渲染（SSR）</li>
+</ul>
+<hr>
+<h2 id="六、前端与后端的关系"><a href="#六、前端与后端的关系" class="headerlink" title="六、前端与后端的关系"></a>六、前端与后端的关系</h2><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line">┌─────────────────────────────────────────┐</span><br><span class="line">│              用户浏览器                 │</span><br><span class="line">├─────────────────────────────────────────┤</span><br><span class="line">│           前端（Frontend）              │</span><br><span class="line">│   HTML + CSS + JavaScript               │</span><br><span class="line">│   用户可见、可直接交互的部分             │</span><br><span class="line">└─────────────┬───────────────────────────┘</span><br><span class="line">              │ HTTP 请求</span><br><span class="line">              ↓</span><br><span class="line">┌─────────────┴───────────────────────────┐</span><br><span class="line">│                  服务器                 │</span><br><span class="line">├─────────────────────────────────────────┤</span><br><span class="line">│           后端（Backend）               │</span><br><span class="line">│   Node.js / Java / Python / PHP 等      │</span><br><span class="line">│   数据处理、逻辑运算、安全控制           │</span><br><span class="line">└─────────────┬───────────────────────────┘</span><br><span class="line">              │</span><br><span class="line">              ↓</span><br><span class="line">         数据库</span><br></pre></td></tr></table></figure>
+
+<h3 id="前后端分离架构"><a href="#前后端分离架构" class="headerlink" title="前后端分离架构"></a>前后端分离架构</h3><ul>
+<li><strong>优势</strong>：前后端独立开发、提高开发效率</li>
+<li><strong>通信</strong>：通过 API（RESTful、GraphQL）进行数据交互</li>
+<li><strong>常用格式</strong>：JSON、XML</li>
+</ul>
+<hr>
+<h2 id="七、前端发展趋势"><a href="#七、前端发展趋势" class="headerlink" title="七、前端发展趋势"></a>七、前端发展趋势</h2><h3 id="当前热点"><a href="#当前热点" class="headerlink" title="当前热点"></a>当前热点</h3><ul>
+<li><strong>框架发展</strong>：React、Vue 持续更新，新框架层出不穷</li>
+<li><strong>TypeScript</strong>：类型安全成为标配</li>
+<li><strong>构建工具</strong>：Vite 构建速度提升</li>
+<li><strong>CSS 方案</strong>：Tailwind CSS、CSS-in-JS 流行</li>
+</ul>
+<h3 id="未来方向"><a href="#未来方向" class="headerlink" title="未来方向"></a>未来方向</h3><ul>
+<li><strong>WebAssembly</strong>：高性能应用</li>
+<li><strong>Server Components</strong>：服务端组件</li>
+<li><strong>AI 辅助开发</strong>：智能代码生成</li>
+<li><strong>跨平台开发</strong>：Flutter、React Native</li>
+</ul>
+<hr>
+<h2 id="八、学习建议"><a href="#八、学习建议" class="headerlink" title="八、学习建议"></a>八、学习建议</h2><h3 id="学习路径"><a href="#学习路径" class="headerlink" title="学习路径"></a>学习路径</h3><ol>
+<li><p><strong>基础阶段</strong></p>
+<ul>
+<li>HTML → CSS → JavaScript</li>
+<li>掌握基础知识，完成小项目</li>
+</ul>
+</li>
+<li><p><strong>进阶阶段</strong></p>
+<ul>
+<li>学习一个主流框架（Vue 或 React）</li>
+<li>学习工程化工具</li>
+<li>完成复杂项目</li>
+</ul>
+</li>
+<li><p><strong>深入阶段</strong></p>
+<ul>
+<li>研究框架源码</li>
+<li>学习性能优化</li>
+<li>探索新技术</li>
+</ul>
+</li>
+</ol>
+<h3 id="学习资源"><a href="#学习资源" class="headerlink" title="学习资源"></a>学习资源</h3><ul>
+<li><strong>官方文档</strong>：MDN、W3Schools</li>
+<li><strong>在线课程</strong>：掘金小册、慕课网</li>
+<li><strong>实战项目</strong>：GitHub 开源项目</li>
+<li><strong>社区交流</strong>：SegmentFault、Stack Overflow</li>
+</ul>
+<hr>
+<h2 id="九、前端开发环境搭建"><a href="#九、前端开发环境搭建" class="headerlink" title="九、前端开发环境搭建"></a>九、前端开发环境搭建</h2><h3 id="必备工具"><a href="#必备工具" class="headerlink" title="必备工具"></a>必备工具</h3><ol>
+<li><strong>代码编辑器</strong>：VS Code</li>
+<li><strong>浏览器</strong>：Chrome（或 Firefox）</li>
+<li><strong>版本控制</strong>：Git</li>
+<li><strong>包管理器</strong>：npm 或 yarn</li>
+</ol>
+<h3 id="开发者工具（F12）"><a href="#开发者工具（F12）" class="headerlink" title="开发者工具（F12）"></a>开发者工具（F12）</h3><ul>
+<li>Elements：查看和修改 DOM&#x2F;CSS</li>
+<li>Console：调试 JavaScript</li>
+<li>Network：查看网络请求</li>
+<li>Application：存储、缓存管理</li>
+</ul>
+<hr>
+<h2 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h2><p>前端开发是一个充满活力的领域，技术更新快速。打好基础、持续学习、多实践项目是成为优秀前端工程师的关键。</p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://example.com/2026/04/15/%E5%89%8D%E7%AB%AF%E5%BC%80%E5%8F%91%E4%BB%8B%E7%BB%8D/" data-id="cuid0u895oxlau3Xe8MSt7StV" data-title="前端开发介绍" class="article-share-link"><span class="fa fa-share">Share</span></a>
+      
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+
+  
+
+
+  <nav id="page-nav">
+    
+    <a class="extend prev" rel="prev" href="/page/3/">&laquo; Prev</a><a class="page-number" href="/">1</a><a class="page-number" href="/page/2/">2</a><a class="page-number" href="/page/3/">3</a><span class="page-number current">4</span>
+  </nav>
+
+</section>
+        
+          <aside id="sidebar">
+  
+    
+
+  
+    
+
+  
+    
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Archives</h3>
+    <div class="widget">
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2026/04/">April 2026</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Recent Posts</h3>
+    <div class="widget">
+      <ul>
+        
+          <li>
+            <a href="/2026/04/15/1STM32%E7%AE%80%E4%BB%8B/">1.STM32简介</a>
+          </li>
+        
+          <li>
+            <a href="/2026/04/15/00%E9%A1%B9%E7%9B%AE%E8%83%8C%E6%99%AF/">00.项目背景</a>
+          </li>
+        
+          <li>
+            <a href="/2026/04/15/1Linux%E7%AE%80%E4%BB%8B/">1.Linux简介</a>
+          </li>
+        
+          <li>
+            <a href="/2026/04/15/CSS%E5%9F%BA%E7%A1%80%E4%B8%8E%E9%80%89%E6%8B%A9%E5%99%A8/">CSS基础与选择器</a>
+          </li>
+        
+          <li>
+            <a href="/2026/04/15/1ESP32%E7%AE%80%E4%BB%8B/">1.ESP32简介</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+
+  
+</aside>
+        
+      </div>
+      <footer id="footer">
+  
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      
+      &copy; 2026 John Doe<br>
+      Powered by <a href="https://hexo.io/" target="_blank">Hexo</a>
+    </div>
+  </div>
+</footer>
+
+    </div>
+    <nav id="mobile-nav">
+  
+    <a href="/" class="mobile-nav-link">Home</a>
+  
+    <a href="/archives" class="mobile-nav-link">Archives</a>
+  
+</nav>
+    
+
+
+<script src="/js/jquery-3.6.4.min.js"></script>
+
+
+
+  
+<script src="/fancybox/jquery.fancybox.min.js"></script>
+
+
+
+
+<script src="/js/script.js"></script>
+
+
+
+
+
+  </div>
+</body>
+</html>
