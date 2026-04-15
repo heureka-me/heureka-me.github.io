@@ -1,0 +1,426 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <link rel='stylesheet' href='https://chinese-fonts-cdn.deno.dev/packages/lxgwwenkai/dist/LXGWWenKai-Bold/result.css' />
+  <link rel='stylesheet' href='https://chinese-fonts-cdn.deno.dev/packages/jhlst/dist/%E4%BA%AC%E8%8F%AF%E8%80%81%E5%AE%8B%E4%BD%93v2_002/result.css' />  
+  
+
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>DOM操作 [ Hexo ]</title>
+
+  <link rel="icon" href="/img/favicon.ico">
+
+
+    <meta name="author" content="John Doe">
+
+
+
+
+
+  <link rel="alternate" href="/atom.xml " title="Hexo" type="application/atom+xml">
+
+
+  
+    <link rel="stylesheet" href="/css/main.css">
+  
+
+
+<script defer>
+  document.addEventListener('visibilitychange', function () {
+  if (document.visibilityState == 'hidden') {
+      normal_title = document.title;
+      document.title = '点一下';
+  } else document.title = normal_title;
+});
+
+</script>
+  <body data-theme="light" class="notransition">
+    <script defer>
+      const body = document.body;
+      const data = body.getAttribute("data-theme");
+      const initTheme = (state) => {
+        if (state === "dark") {
+          body.setAttribute("data-theme", "dark");
+        } else if (state === "light") {
+          body.removeAttribute("data-theme");
+        } else {
+          localStorage.setItem("theme", data);
+        }
+      };
+   
+      initTheme(localStorage.getItem("theme"));
+      
+      setTimeout(() => body.classList.remove("notransition"), 75);
+    </script>
+  <div class="navbar" role="navigation">
+    <nav class="menu">
+      <input type="checkbox" id="menu-trigger" class="menu-trigger" />
+      <label for="menu-trigger">
+        <span class="menu-icon">
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            width="24"
+            height="24"
+            viewBox="0 0 512 512"
+          >
+            <path
+              d="M64,384H448V341.33H64Zm0-106.67H448V234.67H64ZM64,128v42.67H448V128Z"
+            />
+          </svg>
+        </span>
+      </label>
+      <a id="mode">
+        <svg
+          class="mode-sunny"
+          xmlns="http://www.w3.org/2000/svg"
+          width="24"
+          height="24"
+          viewBox="0 0 512 512"
+        >
+          <title>LIGHT</title>
+          <line
+            x1="256"
+            y1="48"
+            x2="256"
+            y2="96"
+            style="stroke-linecap:round;stroke-miterlimit:10;stroke-width:32px"
+          />
+          <line
+            x1="256"
+            y1="416"
+            x2="256"
+            y2="464"
+            style="stroke-linecap:round;stroke-miterlimit:10;stroke-width:32px"
+          />
+          <line
+            x1="403.08"
+            y1="108.92"
+            x2="369.14"
+            y2="142.86"
+            style="stroke-linecap:round;stroke-miterlimit:10;stroke-width:32px"
+          />
+          <line
+            x1="142.86"
+            y1="369.14"
+            x2="108.92"
+            y2="403.08"
+            style="stroke-linecap:round;stroke-miterlimit:10;stroke-width:32px"
+          />
+          <line
+            x1="464"
+            y1="256"
+            x2="416"
+            y2="256"
+            style="stroke-linecap:round;stroke-miterlimit:10;stroke-width:32px"
+          />
+          <line
+            x1="96"
+            y1="256"
+            x2="48"
+            y2="256"
+            style="stroke-linecap:round;stroke-miterlimit:10;stroke-width:32px"
+          />
+          <line
+            x1="403.08"
+            y1="403.08"
+            x2="369.14"
+            y2="369.14"
+            style="stroke-linecap:round;stroke-miterlimit:10;stroke-width:32px"
+          />
+          <line
+            x1="142.86"
+            y1="142.86"
+            x2="108.92"
+            y2="108.92"
+            style="stroke-linecap:round;stroke-miterlimit:10;stroke-width:32px"
+          />
+          <circle
+            cx="256"
+            cy="256"
+            r="80"
+            style="stroke-linecap:round;stroke-miterlimit:10;stroke-width:32px"
+          />
+        </svg>
+        <svg
+          class="mode-moon"
+          xmlns="http://www.w3.org/2000/svg"
+          width="24"
+          height="24"
+          viewBox="0 0 512 512"
+        >
+          <title>DARK</title>
+          <line
+            x1="256"
+            y1="48"
+            x2="256"
+            y2="96"
+            style="stroke-linecap:round;stroke-miterlimit:10;stroke-width:32px"
+          />
+          <line
+            x1="256"
+            y1="416"
+            x2="256"
+            y2="464"
+            style="stroke-linecap:round;stroke-miterlimit:10;stroke-width:32px"
+          />
+          <line
+            x1="403.08"
+            y1="108.92"
+            x2="369.14"
+            y2="142.86"
+            style="stroke-linecap:round;stroke-miterlimit:10;stroke-width:32px"
+          />
+          <line
+            x1="142.86"
+            y1="369.14"
+            x2="108.92"
+            y2="403.08"
+            style="stroke-linecap:round;stroke-miterlimit:10;stroke-width:32px"
+          />
+          <line
+            x1="464"
+            y1="256"
+            x2="416"
+            y2="256"
+            style="stroke-linecap:round;stroke-miterlimit:10;stroke-width:32px"
+          />
+          <line
+            x1="96"
+            y1="256"
+            x2="48"
+            y2="256"
+            style="stroke-linecap:round;stroke-miterlimit:10;stroke-width:32px"
+          />
+          <line
+            x1="403.08"
+            y1="403.08"
+            x2="369.14"
+            y2="369.14"
+            style="stroke-linecap:round;stroke-miterlimit:10;stroke-width:32px"
+          />
+          <line
+            x1="142.86"
+            y1="142.86"
+            x2="108.92"
+            y2="108.92"
+            style="stroke-linecap:round;stroke-miterlimit:10;stroke-width:32px"
+          />
+          <circle
+            cx="256"
+            cy="256"
+            r="80"
+            style="stroke-linecap:round;stroke-miterlimit:10;stroke-width:32px"
+          />
+        </svg>
+      </a>
+      <div class="trigger">
+        <div class="trigger-container">
+          
+            
+            
+            
+            
+            
+            
+            <a class="menu-link " href="/"> 主页</a>
+          
+            
+            
+            
+            
+            
+            
+            <a class="menu-link " href="/tags/"> 标签</a>
+          
+            
+            
+            
+            
+            
+            
+            <a class="menu-link " href="/categories/"> 类别</a>
+          
+            
+            
+            
+            
+            
+            
+            <a class="menu-link " href="/archives/"> 档案馆</a>
+          
+            
+            
+            
+            
+            
+            
+            <a class="menu-link " href="/about/"> 关于</a>
+          
+        </div>
+      </div>
+    </nav>
+  </div>
+  <button id="toTopBtn"><i class="fa-solid fa-hand-point-up " ></i></button>
+<button id="toggleButton"><i class="fa-solid fa-chart-bar " ></i></button>
+<div id="overlay" class="overlay">
+  <div class="content">
+    <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#1-4-DOM-%E6%93%8D%E4%BD%9C"><span class="toc-text">1.4 DOM 操作</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%B8%80%E3%80%81DOM-%E6%A6%82%E8%BF%B0"><span class="toc-text">一、DOM 概述</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%BB%80%E4%B9%88%E6%98%AF-DOM"><span class="toc-text">什么是 DOM</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#DOM-%E8%8A%82%E7%82%B9%E7%B1%BB%E5%9E%8B"><span class="toc-text">DOM 节点类型</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%BA%8C%E3%80%81%E8%8E%B7%E5%8F%96%E5%85%83%E7%B4%A0"><span class="toc-text">二、获取元素</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#1-%E6%A0%B9%E6%8D%AE%E9%80%89%E6%8B%A9%E5%99%A8%E8%8E%B7%E5%8F%96%EF%BC%88%E6%8E%A8%E8%8D%90%EF%BC%89"><span class="toc-text">1. 根据选择器获取（推荐）</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-%E6%A0%B9%E6%8D%AEID%E8%8E%B7%E5%8F%96"><span class="toc-text">2. 根据ID获取</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#3-%E6%A0%B9%E6%8D%AE%E7%B1%BB%E5%90%8D%E8%8E%B7%E5%8F%96"><span class="toc-text">3. 根据类名获取</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#4-%E6%A0%B9%E6%8D%AE%E6%A0%87%E7%AD%BE%E5%90%8D%E8%8E%B7%E5%8F%96"><span class="toc-text">4. 根据标签名获取</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#5-%E6%A0%B9%E6%8D%AEname%E5%B1%9E%E6%80%A7%E8%8E%B7%E5%8F%96"><span class="toc-text">5. 根据name属性获取</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%B8%89%E3%80%81%E4%BF%AE%E6%94%B9%E5%85%83%E7%B4%A0%E5%86%85%E5%AE%B9"><span class="toc-text">三、修改元素内容</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#1-%E4%BF%AE%E6%94%B9%E6%96%87%E6%9C%AC%E5%86%85%E5%AE%B9"><span class="toc-text">1. 修改文本内容</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-%E4%BF%AE%E6%94%B9-HTML-%E5%86%85%E5%AE%B9"><span class="toc-text">2. 修改 HTML 内容</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%9B%9B%E3%80%81%E4%BF%AE%E6%94%B9%E5%85%83%E7%B4%A0%E5%B1%9E%E6%80%A7"><span class="toc-text">四、修改元素属性</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#1-%E6%A0%87%E5%87%86%E5%B1%9E%E6%80%A7"><span class="toc-text">1. 标准属性</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-%E8%87%AA%E5%AE%9A%E4%B9%89%E5%B1%9E%E6%80%A7"><span class="toc-text">2. 自定义属性</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#3-style-%E5%B1%9E%E6%80%A7"><span class="toc-text">3. style 属性</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%BA%94%E3%80%81%E5%88%9B%E5%BB%BA%E5%92%8C%E6%8F%92%E5%85%A5%E5%85%83%E7%B4%A0"><span class="toc-text">五、创建和插入元素</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#1-%E5%88%9B%E5%BB%BA%E5%85%83%E7%B4%A0"><span class="toc-text">1. 创建元素</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-%E6%B7%BB%E5%8A%A0%E5%86%85%E5%AE%B9"><span class="toc-text">2. 添加内容</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#3-%E6%B7%BB%E5%8A%A0%E5%88%B0%E9%A1%B5%E9%9D%A2"><span class="toc-text">3. 添加到页面</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#4-%E6%9B%BF%E6%8D%A2%E5%92%8C%E5%88%A0%E9%99%A4"><span class="toc-text">4. 替换和删除</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%85%AD%E3%80%81%E8%8A%82%E7%82%B9%E5%85%B3%E7%B3%BB"><span class="toc-text">六、节点关系</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%B8%83%E3%80%81%E4%BA%8B%E4%BB%B6%E5%A4%84%E7%90%86"><span class="toc-text">七、事件处理</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#1-%E7%9B%91%E5%90%AC%E4%BA%8B%E4%BB%B6"><span class="toc-text">1. 监听事件</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-%E7%A7%BB%E9%99%A4%E4%BA%8B%E4%BB%B6%E7%9B%91%E5%90%AC"><span class="toc-text">2. 移除事件监听</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#3-%E4%BA%8B%E4%BB%B6%E5%86%92%E6%B3%A1%E4%B8%8E%E6%8D%95%E8%8E%B7"><span class="toc-text">3. 事件冒泡与捕获</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#4-%E5%B8%B8%E7%94%A8%E4%BA%8B%E4%BB%B6%E7%B1%BB%E5%9E%8B"><span class="toc-text">4. 常用事件类型</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%85%AB%E3%80%81%E8%A1%A8%E5%8D%95%E6%93%8D%E4%BD%9C"><span class="toc-text">八、表单操作</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#1-%E8%8E%B7%E5%8F%96%E8%A1%A8%E5%8D%95%E5%85%83%E7%B4%A0"><span class="toc-text">1. 获取表单元素</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-%E8%8E%B7%E5%8F%96-%E8%AE%BE%E7%BD%AE%E5%80%BC"><span class="toc-text">2. 获取&#x2F;设置值</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#3-%E8%A1%A8%E5%8D%95%E6%8F%90%E4%BA%A4"><span class="toc-text">3. 表单提交</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%B9%9D%E3%80%81%E5%B8%B8%E7%94%A8%E6%96%B9%E6%B3%95"><span class="toc-text">九、常用方法</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#1-%E7%B1%BB%E5%90%8D%E6%93%8D%E4%BD%9C"><span class="toc-text">1. 类名操作</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-%E6%BB%9A%E5%8A%A8%E6%93%8D%E4%BD%9C"><span class="toc-text">2. 滚动操作</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#3-%E5%B0%BA%E5%AF%B8%E6%93%8D%E4%BD%9C"><span class="toc-text">3. 尺寸操作</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%80%BB%E7%BB%93"><span class="toc-text">总结</span></a></li></ol></li></ol>
+    <button id="closeButton"><i class="fa-solid fa-circle-xmark"></i></button>
+  </div>
+</div>
+<div class="wrapper post">
+  <head>
+    <!-- 引入 Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+  <meta name="generator" content="Hexo 8.1.1"></head>
+
+
+
+  <main class="page-content" aria-label="Content">
+      <header class="header">
+        
+          <div class="tags">
+            <a href="/tags/JavaScript/" class="tag"># JavaScript</a><a href="/tags/DOM/" class="tag"># DOM</a>
+          </div>
+        
+        <h1 class="header-title" itemprop="headline">DOM操作</h1>
+          <div class="post-meta">
+            最后更新: <time>Apr 15, 2026</time>
+            作者: <span itemprop="author">
+              <span itemprop="name">John Doe</span>
+            </span>
+            字数: <span class="post-count">2.1k</span>
+            预计阅读时间: <span class="post-count">10min</span> 
+          </div>       
+        </header>
+          <div class="page-content"><h1 id="1-4-DOM-操作"><a href="#1-4-DOM-操作" class="headerlink" title="1.4 DOM 操作"></a>1.4 DOM 操作</h1><p>DOM（Document Object Model，文档对象模型）是 HTML 文档的编程接口，JavaScript 通过 DOM 与 HTML 页面进行交互。</p>
+<h2 id="一、DOM-概述"><a href="#一、DOM-概述" class="headerlink" title="一、DOM 概述"></a>一、DOM 概述</h2><h3 id="什么是-DOM"><a href="#什么是-DOM" class="headerlink" title="什么是 DOM"></a>什么是 DOM</h3><p>DOM 是 HTML 文档的树状结构表示，JavaScript 可以通过 DOM 访问和修改页面内容。</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">HTML 文档</span><br><span class="line">    └── 文档节点（document）</span><br><span class="line">        └── html 元素</span><br><span class="line">            ├── head 元素</span><br><span class="line">            │   ├── title 元素</span><br><span class="line">            │   └── ...</span><br><span class="line">            └── body 元素</span><br><span class="line">                ├── div 元素</span><br><span class="line">                ├── p 元素</span><br><span class="line">                └── ...</span><br></pre></td></tr></table></figure>
+
+<h3 id="DOM-节点类型"><a href="#DOM-节点类型" class="headerlink" title="DOM 节点类型"></a>DOM 节点类型</h3><ul>
+<li><strong>文档节点</strong>：document（整个文档的根节点）</li>
+<li><strong>元素节点</strong>：HTML 标签（<code>&lt;div&gt;</code>、<code>&lt;p&gt;</code> 等）</li>
+<li><strong>文本节点</strong>：元素内的文本内容</li>
+<li><strong>属性节点</strong>：元素的属性（id、class 等）</li>
+<li><strong>注释节点</strong>：HTML 注释</li>
+</ul>
+<hr>
+<h2 id="二、获取元素"><a href="#二、获取元素" class="headerlink" title="二、获取元素"></a>二、获取元素</h2><h3 id="1-根据选择器获取（推荐）"><a href="#1-根据选择器获取（推荐）" class="headerlink" title="1. 根据选择器获取（推荐）"></a>1. 根据选择器获取（推荐）</h3><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// querySelector：获取匹配的第一个元素</span></span><br><span class="line"><span class="keyword">const</span> element = <span class="variable language_">document</span>.<span class="title function_">querySelector</span>(<span class="string">&quot;#id&quot;</span>);</span><br><span class="line"><span class="keyword">const</span> element = <span class="variable language_">document</span>.<span class="title function_">querySelector</span>(<span class="string">&quot;.class&quot;</span>);</span><br><span class="line"><span class="keyword">const</span> element = <span class="variable language_">document</span>.<span class="title function_">querySelector</span>(<span class="string">&quot;div&quot;</span>);</span><br><span class="line"><span class="keyword">const</span> element = <span class="variable language_">document</span>.<span class="title function_">querySelector</span>(<span class="string">&quot;div.active&quot;</span>);</span><br><span class="line"></span><br><span class="line"><span class="comment">// querySelectorAll：获取匹配的所有元素（NodeList）</span></span><br><span class="line"><span class="keyword">const</span> elements = <span class="variable language_">document</span>.<span class="title function_">querySelectorAll</span>(<span class="string">&quot;.class&quot;</span>);</span><br><span class="line"><span class="keyword">const</span> elements = <span class="variable language_">document</span>.<span class="title function_">querySelectorAll</span>(<span class="string">&quot;ul li&quot;</span>);</span><br></pre></td></tr></table></figure>
+
+<h3 id="2-根据ID获取"><a href="#2-根据ID获取" class="headerlink" title="2. 根据ID获取"></a>2. 根据ID获取</h3><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> element = <span class="variable language_">document</span>.<span class="title function_">getElementById</span>(<span class="string">&quot;id&quot;</span>);</span><br><span class="line"><span class="comment">// 返回单个元素或 null</span></span><br></pre></td></tr></table></figure>
+
+<h3 id="3-根据类名获取"><a href="#3-根据类名获取" class="headerlink" title="3. 根据类名获取"></a>3. 根据类名获取</h3><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> elements = <span class="variable language_">document</span>.<span class="title function_">getElementsByClassName</span>(<span class="string">&quot;class&quot;</span>);</span><br><span class="line"><span class="comment">// 返回 HTMLCollection（动态集合）</span></span><br></pre></td></tr></table></figure>
+
+<h3 id="4-根据标签名获取"><a href="#4-根据标签名获取" class="headerlink" title="4. 根据标签名获取"></a>4. 根据标签名获取</h3><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> elements = <span class="variable language_">document</span>.<span class="title function_">getElementsByTagName</span>(<span class="string">&quot;div&quot;</span>);</span><br><span class="line"><span class="keyword">const</span> elements = <span class="variable language_">document</span>.<span class="title function_">getElementsByTagName</span>(<span class="string">&quot;div&quot;</span>)[<span class="number">0</span>];</span><br><span class="line"><span class="comment">// 返回 HTMLCollection</span></span><br></pre></td></tr></table></figure>
+
+<h3 id="5-根据name属性获取"><a href="#5-根据name属性获取" class="headerlink" title="5. 根据name属性获取"></a>5. 根据name属性获取</h3><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> elements = <span class="variable language_">document</span>.<span class="title function_">getElementsByName</span>(<span class="string">&quot;username&quot;</span>);</span><br><span class="line"><span class="comment">// 常用于表单元素</span></span><br></pre></td></tr></table></figure>
+
+<hr>
+<h2 id="三、修改元素内容"><a href="#三、修改元素内容" class="headerlink" title="三、修改元素内容"></a>三、修改元素内容</h2><h3 id="1-修改文本内容"><a href="#1-修改文本内容" class="headerlink" title="1. 修改文本内容"></a>1. 修改文本内容</h3><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> element = <span class="variable language_">document</span>.<span class="title function_">querySelector</span>(<span class="string">&quot;div&quot;</span>);</span><br><span class="line"></span><br><span class="line"><span class="comment">// innerText（只获取/设置可见文本）</span></span><br><span class="line"><span class="variable language_">console</span>.<span class="title function_">log</span>(element.<span class="property">innerText</span>);</span><br><span class="line">element.<span class="property">innerText</span> = <span class="string">&quot;新的文本&quot;</span>;</span><br><span class="line"></span><br><span class="line"><span class="comment">// textContent（获取/设置所有文本，包括隐藏的）</span></span><br><span class="line"><span class="variable language_">console</span>.<span class="title function_">log</span>(element.<span class="property">textContent</span>);</span><br><span class="line">element.<span class="property">textContent</span> = <span class="string">&quot;新的文本&quot;</span>;</span><br></pre></td></tr></table></figure>
+
+<h3 id="2-修改-HTML-内容"><a href="#2-修改-HTML-内容" class="headerlink" title="2. 修改 HTML 内容"></a>2. 修改 HTML 内容</h3><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> element = <span class="variable language_">document</span>.<span class="title function_">querySelector</span>(<span class="string">&quot;div&quot;</span>);</span><br><span class="line"></span><br><span class="line"><span class="comment">// 获取/设置 HTML</span></span><br><span class="line"><span class="variable language_">console</span>.<span class="title function_">log</span>(element.<span class="property">innerHTML</span>);</span><br><span class="line">element.<span class="property">innerHTML</span> = <span class="string">&quot;&lt;p&gt;新的内容&lt;/p&gt;&quot;</span>;</span><br><span class="line"></span><br><span class="line"><span class="comment">// 设置纯文本（避免 XSS）</span></span><br><span class="line">element.<span class="property">textContent</span> = <span class="string">&quot;&lt;p&gt;转义过的文本&lt;/p&gt;&quot;</span>;</span><br><span class="line"></span><br><span class="line"><span class="comment">// 插入 HTML</span></span><br><span class="line">element.<span class="property">innerHTML</span> += <span class="string">&quot;&lt;span&gt;添加的元素&lt;/span&gt;&quot;</span>;</span><br></pre></td></tr></table></figure>
+
+<hr>
+<h2 id="四、修改元素属性"><a href="#四、修改元素属性" class="headerlink" title="四、修改元素属性"></a>四、修改元素属性</h2><h3 id="1-标准属性"><a href="#1-标准属性" class="headerlink" title="1. 标准属性"></a>1. 标准属性</h3><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> element = <span class="variable language_">document</span>.<span class="title function_">querySelector</span>(<span class="string">&quot;img&quot;</span>);</span><br><span class="line"></span><br><span class="line"><span class="comment">// 获取属性</span></span><br><span class="line"><span class="keyword">const</span> src = element.<span class="property">src</span>;</span><br><span class="line"><span class="keyword">const</span> id = element.<span class="property">id</span>;</span><br><span class="line"><span class="keyword">const</span> className = element.<span class="property">className</span>;</span><br><span class="line"></span><br><span class="line"><span class="comment">// 设置属性</span></span><br><span class="line">element.<span class="property">src</span> = <span class="string">&quot;new-image.jpg&quot;</span>;</span><br><span class="line">element.<span class="property">id</span> = <span class="string">&quot;new-id&quot;</span>;</span><br><span class="line">element.<span class="property">className</span> = <span class="string">&quot;new-class&quot;</span>;</span><br><span class="line"></span><br><span class="line"><span class="comment">// classList（推荐）</span></span><br><span class="line">element.<span class="property">classList</span>.<span class="title function_">add</span>(<span class="string">&quot;active&quot;</span>);</span><br><span class="line">element.<span class="property">classList</span>.<span class="title function_">remove</span>(<span class="string">&quot;active&quot;</span>);</span><br><span class="line">element.<span class="property">classList</span>.<span class="title function_">toggle</span>(<span class="string">&quot;active&quot;</span>);</span><br><span class="line">element.<span class="property">classList</span>.<span class="title function_">contains</span>(<span class="string">&quot;active&quot;</span>);</span><br><span class="line">element.<span class="property">className</span>; <span class="comment">// &quot;active&quot; 或 &quot;&quot;</span></span><br></pre></td></tr></table></figure>
+
+<h3 id="2-自定义属性"><a href="#2-自定义属性" class="headerlink" title="2. 自定义属性"></a>2. 自定义属性</h3><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> element = <span class="variable language_">document</span>.<span class="title function_">querySelector</span>(<span class="string">&quot;div&quot;</span>);</span><br><span class="line"></span><br><span class="line"><span class="comment">// data- 属性</span></span><br><span class="line">element.<span class="title function_">setAttribute</span>(<span class="string">&quot;data-id&quot;</span>, <span class="string">&quot;123&quot;</span>);</span><br><span class="line"><span class="keyword">const</span> dataId = element.<span class="title function_">getAttribute</span>(<span class="string">&quot;data-id&quot;</span>);</span><br><span class="line"></span><br><span class="line"><span class="comment">// dataset（推荐）</span></span><br><span class="line">element.<span class="property">dataset</span>.<span class="property">id</span> = <span class="string">&quot;123&quot;</span>;</span><br><span class="line"><span class="variable language_">console</span>.<span class="title function_">log</span>(element.<span class="property">dataset</span>.<span class="property">id</span>); <span class="comment">// &quot;123&quot;</span></span><br><span class="line">element.<span class="property">dataset</span>.<span class="property">userName</span> = <span class="string">&quot;张三&quot;</span>;</span><br><span class="line"><span class="variable language_">console</span>.<span class="title function_">log</span>(element.<span class="property">dataset</span>.<span class="property">userName</span>); <span class="comment">// &quot;张三&quot;</span></span><br></pre></td></tr></table></figure>
+
+<h3 id="3-style-属性"><a href="#3-style-属性" class="headerlink" title="3. style 属性"></a>3. style 属性</h3><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> element = <span class="variable language_">document</span>.<span class="title function_">querySelector</span>(<span class="string">&quot;div&quot;</span>);</span><br><span class="line"></span><br><span class="line"><span class="comment">// 设置样式</span></span><br><span class="line">element.<span class="property">style</span>.<span class="property">color</span> = <span class="string">&quot;red&quot;</span>;</span><br><span class="line">element.<span class="property">style</span>.<span class="property">fontSize</span> = <span class="string">&quot;20px&quot;</span>;</span><br><span class="line">element.<span class="property">style</span>.<span class="property">backgroundColor</span> = <span class="string">&quot;#f0f0f0&quot;</span>;</span><br><span class="line"></span><br><span class="line"><span class="comment">// 获取样式</span></span><br><span class="line"><span class="variable language_">console</span>.<span class="title function_">log</span>(element.<span class="property">style</span>.<span class="property">color</span>); <span class="comment">// &quot;red&quot;</span></span><br><span class="line"></span><br><span class="line"><span class="comment">// 注意：style 只能获取/设置内联样式</span></span><br><span class="line"><span class="keyword">const</span> computedStyle = <span class="variable language_">window</span>.<span class="title function_">getComputedStyle</span>(element);</span><br><span class="line"><span class="variable language_">console</span>.<span class="title function_">log</span>(computedStyle.<span class="property">color</span>); <span class="comment">// 获取计算后的样式</span></span><br></pre></td></tr></table></figure>
+
+<hr>
+<h2 id="五、创建和插入元素"><a href="#五、创建和插入元素" class="headerlink" title="五、创建和插入元素"></a>五、创建和插入元素</h2><h3 id="1-创建元素"><a href="#1-创建元素" class="headerlink" title="1. 创建元素"></a>1. 创建元素</h3><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 创建元素节点</span></span><br><span class="line"><span class="keyword">const</span> div = <span class="variable language_">document</span>.<span class="title function_">createElement</span>(<span class="string">&quot;div&quot;</span>);</span><br><span class="line"><span class="keyword">const</span> p = <span class="variable language_">document</span>.<span class="title function_">createElement</span>(<span class="string">&quot;p&quot;</span>);</span><br><span class="line"><span class="keyword">const</span> img = <span class="variable language_">document</span>.<span class="title function_">createElement</span>(<span class="string">&quot;img&quot;</span>);</span><br><span class="line"></span><br><span class="line"><span class="comment">// 创建文本节点</span></span><br><span class="line"><span class="keyword">const</span> text = <span class="variable language_">document</span>.<span class="title function_">createTextNode</span>(<span class="string">&quot;这是一段文本&quot;</span>);</span><br><span class="line"></span><br><span class="line"><span class="comment">// 创建文档片段（减少重排）</span></span><br><span class="line"><span class="keyword">const</span> fragment = <span class="variable language_">document</span>.<span class="title function_">createDocumentFragment</span>();</span><br></pre></td></tr></table></figure>
+
+<h3 id="2-添加内容"><a href="#2-添加内容" class="headerlink" title="2. 添加内容"></a>2. 添加内容</h3><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> div = <span class="variable language_">document</span>.<span class="title function_">createElement</span>(<span class="string">&quot;div&quot;</span>);</span><br><span class="line"></span><br><span class="line"><span class="comment">// 设置文本</span></span><br><span class="line">div.<span class="property">textContent</span> = <span class="string">&quot;标题&quot;</span>;</span><br><span class="line"></span><br><span class="line"><span class="comment">// 设置 HTML</span></span><br><span class="line">div.<span class="property">innerHTML</span> = <span class="string">&quot;&lt;span&gt;内容&lt;/span&gt;&quot;</span>;</span><br><span class="line"></span><br><span class="line"><span class="comment">// 添加文本节点</span></span><br><span class="line"><span class="keyword">const</span> text = <span class="variable language_">document</span>.<span class="title function_">createTextNode</span>(<span class="string">&quot;文本&quot;</span>);</span><br><span class="line">div.<span class="title function_">appendChild</span>(text);</span><br></pre></td></tr></table></figure>
+
+<h3 id="3-添加到页面"><a href="#3-添加到页面" class="headerlink" title="3. 添加到页面"></a>3. 添加到页面</h3><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> parent = <span class="variable language_">document</span>.<span class="title function_">querySelector</span>(<span class="string">&quot;container&quot;</span>);</span><br><span class="line"><span class="keyword">const</span> child = <span class="variable language_">document</span>.<span class="title function_">createElement</span>(<span class="string">&quot;div&quot;</span>);</span><br><span class="line">child.<span class="property">textContent</span> = <span class="string">&quot;子元素&quot;</span>;</span><br><span class="line"></span><br><span class="line"><span class="comment">// appendChild（添加到最后）</span></span><br><span class="line">parent.<span class="title function_">appendChild</span>(child);</span><br><span class="line"></span><br><span class="line"><span class="comment">// prepend（添加到最前）</span></span><br><span class="line">parent.<span class="title function_">prepend</span>(child);</span><br><span class="line"></span><br><span class="line"><span class="comment">// insertBefore（指定位置插入）</span></span><br><span class="line"><span class="keyword">const</span> refElement = <span class="variable language_">document</span>.<span class="title function_">querySelector</span>(<span class="string">&quot;.ref&quot;</span>);</span><br><span class="line">parent.<span class="title function_">insertBefore</span>(child, refElement);</span><br><span class="line"></span><br><span class="line"><span class="comment">// insertAdjacentElement（灵活插入）</span></span><br><span class="line"><span class="keyword">const</span> element = <span class="variable language_">document</span>.<span class="title function_">createElement</span>(<span class="string">&quot;div&quot;</span>);</span><br><span class="line">element.<span class="property">textContent</span> = <span class="string">&quot;新元素&quot;</span>;</span><br><span class="line"></span><br><span class="line">parent.<span class="title function_">insertAdjacentElement</span>(<span class="string">&quot;beforebegin&quot;</span>, element);  <span class="comment">// 在父元素之前</span></span><br><span class="line">parent.<span class="title function_">insertAdjacentElement</span>(<span class="string">&quot;afterbegin&quot;</span>, element);   <span class="comment">// 在父元素第一个子元素之前</span></span><br><span class="line">parent.<span class="title function_">insertAdjacentElement</span>(<span class="string">&quot;beforeend&quot;</span>, element);    <span class="comment">// 在父元素之后</span></span><br><span class="line">parent.<span class="title function_">insertAdjacentElement</span>(<span class="string">&quot;afterend&quot;</span>, element);     <span class="comment">// 在父元素最后一个子元素之后</span></span><br></pre></td></tr></table></figure>
+
+<h3 id="4-替换和删除"><a href="#4-替换和删除" class="headerlink" title="4. 替换和删除"></a>4. 替换和删除</h3><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> parent = <span class="variable language_">document</span>.<span class="title function_">querySelector</span>(<span class="string">&quot;container&quot;</span>);</span><br><span class="line"><span class="keyword">const</span> oldElement = <span class="variable language_">document</span>.<span class="title function_">querySelector</span>(<span class="string">&quot;.old&quot;</span>);</span><br><span class="line"><span class="keyword">const</span> newElement = <span class="variable language_">document</span>.<span class="title function_">createElement</span>(<span class="string">&quot;div&quot;</span>);</span><br><span class="line">newElement.<span class="property">textContent</span> = <span class="string">&quot;新元素&quot;</span>;</span><br><span class="line"></span><br><span class="line"><span class="comment">// 替换元素</span></span><br><span class="line">parent.<span class="title function_">replaceChild</span>(newElement, oldElement);</span><br><span class="line"></span><br><span class="line"><span class="comment">// 删除元素</span></span><br><span class="line">oldElement.<span class="title function_">remove</span>(); <span class="comment">// 推荐方式</span></span><br><span class="line"><span class="comment">// parent.removeChild(oldElement); // 旧方式</span></span><br></pre></td></tr></table></figure>
+
+<hr>
+<h2 id="六、节点关系"><a href="#六、节点关系" class="headerlink" title="六、节点关系"></a>六、节点关系</h2><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> element = <span class="variable language_">document</span>.<span class="title function_">querySelector</span>(<span class="string">&quot;div&quot;</span>);</span><br><span class="line"></span><br><span class="line"><span class="comment">// 父节点</span></span><br><span class="line"><span class="variable language_">console</span>.<span class="title function_">log</span>(element.<span class="property">parentNode</span>);</span><br><span class="line"><span class="variable language_">console</span>.<span class="title function_">log</span>(element.<span class="property">parentElement</span>); <span class="comment">// 只返回元素节点</span></span><br><span class="line"></span><br><span class="line"><span class="comment">// 子节点</span></span><br><span class="line"><span class="variable language_">console</span>.<span class="title function_">log</span>(element.<span class="property">childNodes</span>);    <span class="comment">// 所有子节点（包括文本节点）</span></span><br><span class="line"><span class="variable language_">console</span>.<span class="title function_">log</span>(element.<span class="property">children</span>);      <span class="comment">// 只获取元素子节点</span></span><br><span class="line"></span><br><span class="line"><span class="comment">// 首尾子节点</span></span><br><span class="line"><span class="variable language_">console</span>.<span class="title function_">log</span>(element.<span class="property">firstChild</span>);    <span class="comment">// 第一个节点（可能是文本节点）</span></span><br><span class="line"><span class="variable language_">console</span>.<span class="title function_">log</span>(element.<span class="property">firstElementChild</span>); <span class="comment">// 第一个元素节点</span></span><br><span class="line"><span class="variable language_">console</span>.<span class="title function_">log</span>(element.<span class="property">lastChild</span>);     <span class="comment">// 最后一个节点</span></span><br><span class="line"><span class="variable language_">console</span>.<span class="title function_">log</span>(element.<span class="property">lastElementChild</span>); <span class="comment">// 最后一个元素节点</span></span><br><span class="line"></span><br><span class="line"><span class="comment">// 兄弟节点</span></span><br><span class="line"><span class="variable language_">console</span>.<span class="title function_">log</span>(element.<span class="property">previousSibling</span>);     <span class="comment">// 上一个兄弟节点</span></span><br><span class="line"><span class="variable language_">console</span>.<span class="title function_">log</span>(element.<span class="property">previousElementSibling</span>); <span class="comment">// 上一个兄弟元素节点</span></span><br><span class="line"><span class="variable language_">console</span>.<span class="title function_">log</span>(element.<span class="property">nextSibling</span>);         <span class="comment">// 下一个兄弟节点</span></span><br><span class="line"><span class="variable language_">console</span>.<span class="title function_">log</span>(element.<span class="property">nextElementSibling</span>);     <span class="comment">// 下一个兄弟元素节点</span></span><br></pre></td></tr></table></figure>
+
+<hr>
+<h2 id="七、事件处理"><a href="#七、事件处理" class="headerlink" title="七、事件处理"></a>七、事件处理</h2><h3 id="1-监听事件"><a href="#1-监听事件" class="headerlink" title="1. 监听事件"></a>1. 监听事件</h3><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> button = <span class="variable language_">document</span>.<span class="title function_">querySelector</span>(<span class="string">&quot;button&quot;</span>);</span><br><span class="line"></span><br><span class="line"><span class="comment">// addEventListener（推荐，可添加多个监听器）</span></span><br><span class="line">button.<span class="title function_">addEventListener</span>(<span class="string">&quot;click&quot;</span>, <span class="keyword">function</span>(<span class="params"></span>) &#123;</span><br><span class="line">    <span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="string">&quot;点击了按钮&quot;</span>);</span><br><span class="line">&#125;);</span><br><span class="line"></span><br><span class="line"><span class="comment">// 箭头函数</span></span><br><span class="line">button.<span class="title function_">addEventListener</span>(<span class="string">&quot;click&quot;</span>, <span class="function">() =&gt;</span> &#123;</span><br><span class="line">    <span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="string">&quot;箭头函数&quot;</span>);</span><br><span class="line">&#125;);</span><br><span class="line"></span><br><span class="line"><span class="comment">// 命名函数（可移除）</span></span><br><span class="line"><span class="keyword">function</span> <span class="title function_">handleClick</span>(<span class="params"></span>) &#123;</span><br><span class="line">    <span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="string">&quot;命名函数&quot;</span>);</span><br><span class="line">&#125;</span><br><span class="line">button.<span class="title function_">addEventListener</span>(<span class="string">&quot;click&quot;</span>, handleClick);</span><br><span class="line"></span><br><span class="line"><span class="comment">// 事件对象</span></span><br><span class="line">button.<span class="title function_">addEventListener</span>(<span class="string">&quot;click&quot;</span>, <span class="keyword">function</span>(<span class="params">event</span>) &#123;</span><br><span class="line">    <span class="variable language_">console</span>.<span class="title function_">log</span>(event.<span class="property">type</span>);     <span class="comment">// 事件类型</span></span><br><span class="line">    <span class="variable language_">console</span>.<span class="title function_">log</span>(event.<span class="property">target</span>);   <span class="comment">// 触发元素</span></span><br><span class="line">    <span class="variable language_">console</span>.<span class="title function_">log</span>(event.<span class="property">currentTarget</span>); <span class="comment">// 绑定元素</span></span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
+
+<h3 id="2-移除事件监听"><a href="#2-移除事件监听" class="headerlink" title="2. 移除事件监听"></a>2. 移除事件监听</h3><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">button.<span class="title function_">removeEventListener</span>(<span class="string">&quot;click&quot;</span>, handleClick);</span><br></pre></td></tr></table></figure>
+
+<h3 id="3-事件冒泡与捕获"><a href="#3-事件冒泡与捕获" class="headerlink" title="3. 事件冒泡与捕获"></a>3. 事件冒泡与捕获</h3><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 默认：冒泡（从内到外）</span></span><br><span class="line"><span class="comment">// 捕获：从外到内</span></span><br><span class="line"></span><br><span class="line"><span class="comment">// 冒泡阶段处理</span></span><br><span class="line">element.<span class="title function_">addEventListener</span>(<span class="string">&quot;click&quot;</span>, handler, <span class="literal">false</span>);</span><br><span class="line"></span><br><span class="line"><span class="comment">// 捕获阶段处理</span></span><br><span class="line">element.<span class="title function_">addEventListener</span>(<span class="string">&quot;click&quot;</span>, handler, <span class="literal">true</span>);</span><br><span class="line"></span><br><span class="line"><span class="comment">// 阻止冒泡</span></span><br><span class="line">element.<span class="title function_">addEventListener</span>(<span class="string">&quot;click&quot;</span>, <span class="keyword">function</span>(<span class="params">event</span>) &#123;</span><br><span class="line">    event.<span class="title function_">stopPropagation</span>();</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
+
+<h3 id="4-常用事件类型"><a href="#4-常用事件类型" class="headerlink" title="4. 常用事件类型"></a>4. 常用事件类型</h3><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> element = <span class="variable language_">document</span>.<span class="title function_">querySelector</span>(<span class="string">&quot;div&quot;</span>);</span><br><span class="line"></span><br><span class="line"><span class="comment">// 鼠标事件</span></span><br><span class="line">element.<span class="title function_">addEventListener</span>(<span class="string">&quot;click&quot;</span>, <span class="function">() =&gt;</span> &#123;&#125;);       <span class="comment">// 点击</span></span><br><span class="line">element.<span class="title function_">addEventListener</span>(<span class="string">&quot;dblclick&quot;</span>, <span class="function">() =&gt;</span> &#123;&#125;);    <span class="comment">// 双击</span></span><br><span class="line">element.<span class="title function_">addEventListener</span>(<span class="string">&quot;mousedown&quot;</span>, <span class="function">() =&gt;</span> &#123;&#125;);   <span class="comment">// 鼠标按下</span></span><br><span class="line">element.<span class="title function_">addEventListener</span>(<span class="string">&quot;mouseup&quot;</span>, <span class="function">() =&gt;</span> &#123;&#125;);     <span class="comment">// 鼠标松开</span></span><br><span class="line">element.<span class="title function_">addEventListener</span>(<span class="string">&quot;mouseenter&quot;</span>, <span class="function">() =&gt;</span> &#123;&#125;);  <span class="comment">// 鼠标进入</span></span><br><span class="line">element.<span class="title function_">addEventListener</span>(<span class="string">&quot;mouseleave&quot;</span>, <span class="function">() =&gt;</span> &#123;&#125;);  <span class="comment">// 鼠标离开</span></span><br><span class="line">element.<span class="title function_">addEventListener</span>(<span class="string">&quot;mousemove&quot;</span>, <span class="function">() =&gt;</span> &#123;&#125;);   <span class="comment">// 鼠标移动</span></span><br><span class="line"></span><br><span class="line"><span class="comment">// 键盘事件</span></span><br><span class="line"><span class="variable language_">window</span>.<span class="title function_">addEventListener</span>(<span class="string">&quot;keydown&quot;</span>, <span class="function">(<span class="params">e</span>) =&gt;</span> &#123;</span><br><span class="line">    <span class="variable language_">console</span>.<span class="title function_">log</span>(e.<span class="property">key</span>);        <span class="comment">// 按键名称</span></span><br><span class="line">    <span class="variable language_">console</span>.<span class="title function_">log</span>(e.<span class="property">keyCode</span>);    <span class="comment">// 按键代码</span></span><br><span class="line">&#125;);</span><br><span class="line"><span class="variable language_">window</span>.<span class="title function_">addEventListener</span>(<span class="string">&quot;keyup&quot;</span>, <span class="function">() =&gt;</span> &#123;&#125;);</span><br><span class="line"><span class="variable language_">window</span>.<span class="title function_">addEventListener</span>(<span class="string">&quot;keypress&quot;</span>, <span class="function">() =&gt;</span> &#123;&#125;);</span><br><span class="line"></span><br><span class="line"><span class="comment">// 表单事件</span></span><br><span class="line"><span class="keyword">const</span> input = <span class="variable language_">document</span>.<span class="title function_">querySelector</span>(<span class="string">&quot;input&quot;</span>);</span><br><span class="line">input.<span class="title function_">addEventListener</span>(<span class="string">&quot;input&quot;</span>, <span class="function">() =&gt;</span> &#123;&#125;);     <span class="comment">// 输入</span></span><br><span class="line">input.<span class="title function_">addEventListener</span>(<span class="string">&quot;change&quot;</span>, <span class="function">() =&gt;</span> &#123;&#125;);    <span class="comment">// 改变</span></span><br><span class="line">input.<span class="title function_">addEventListener</span>(<span class="string">&quot;focus&quot;</span>, <span class="function">() =&gt;</span> &#123;&#125;);     <span class="comment">// 获得焦点</span></span><br><span class="line">input.<span class="title function_">addEventListener</span>(<span class="string">&quot;blur&quot;</span>, <span class="function">() =&gt;</span> &#123;&#125;);      <span class="comment">// 失去焦点</span></span><br><span class="line"></span><br><span class="line"><span class="comment">// 文档事件</span></span><br><span class="line"><span class="variable language_">window</span>.<span class="title function_">addEventListener</span>(<span class="string">&quot;load&quot;</span>, <span class="function">() =&gt;</span> &#123;&#125;);             <span class="comment">// 页面加载完成</span></span><br><span class="line"><span class="variable language_">window</span>.<span class="title function_">addEventListener</span>(<span class="string">&quot;DOMContentLoaded&quot;</span>, <span class="function">() =&gt;</span> &#123;&#125;); <span class="comment">// DOM 加载完成</span></span><br><span class="line"><span class="variable language_">window</span>.<span class="title function_">addEventListener</span>(<span class="string">&quot;scroll&quot;</span>, <span class="function">() =&gt;</span> &#123;&#125;);           <span class="comment">// 滚动</span></span><br><span class="line"><span class="variable language_">window</span>.<span class="title function_">addEventListener</span>(<span class="string">&quot;resize&quot;</span>, <span class="function">() =&gt;</span> &#123;&#125;);           <span class="comment">// 调整窗口大小</span></span><br></pre></td></tr></table></figure>
+
+<hr>
+<h2 id="八、表单操作"><a href="#八、表单操作" class="headerlink" title="八、表单操作"></a>八、表单操作</h2><h3 id="1-获取表单元素"><a href="#1-获取表单元素" class="headerlink" title="1. 获取表单元素"></a>1. 获取表单元素</h3><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> form = <span class="variable language_">document</span>.<span class="title function_">querySelector</span>(<span class="string">&quot;form&quot;</span>);</span><br><span class="line"><span class="keyword">const</span> input = <span class="variable language_">document</span>.<span class="title function_">querySelector</span>(<span class="string">&quot;input[type=&#x27;text&#x27;]&quot;</span>);</span><br><span class="line"><span class="keyword">const</span> select = <span class="variable language_">document</span>.<span class="title function_">querySelector</span>(<span class="string">&quot;select&quot;</span>);</span><br><span class="line"><span class="keyword">const</span> textarea = <span class="variable language_">document</span>.<span class="title function_">querySelector</span>(<span class="string">&quot;textarea&quot;</span>);</span><br><span class="line"><span class="keyword">const</span> checkbox = <span class="variable language_">document</span>.<span class="title function_">querySelector</span>(<span class="string">&quot;input[type=&#x27;checkbox&#x27;]&quot;</span>);</span><br><span class="line"><span class="keyword">const</span> radio = <span class="variable language_">document</span>.<span class="title function_">querySelector</span>(<span class="string">&quot;input[type=&#x27;radio&#x27;]&quot;</span>);</span><br></pre></td></tr></table></figure>
+
+<h3 id="2-获取-设置值"><a href="#2-获取-设置值" class="headerlink" title="2. 获取&#x2F;设置值"></a>2. 获取&#x2F;设置值</h3><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> input = <span class="variable language_">document</span>.<span class="title function_">querySelector</span>(<span class="string">&quot;input&quot;</span>);</span><br><span class="line"></span><br><span class="line"><span class="comment">// 获取值</span></span><br><span class="line"><span class="variable language_">console</span>.<span class="title function_">log</span>(input.<span class="property">value</span>);</span><br><span class="line"></span><br><span class="line"><span class="comment">// 设置值</span></span><br><span class="line">input.<span class="property">value</span> = <span class="string">&quot;新值&quot;</span>;</span><br><span class="line"></span><br><span class="line"><span class="comment">// 文本域</span></span><br><span class="line"><span class="keyword">const</span> textarea = <span class="variable language_">document</span>.<span class="title function_">querySelector</span>(<span class="string">&quot;textarea&quot;</span>);</span><br><span class="line">textarea.<span class="property">value</span> = <span class="string">&quot;多行文本&quot;</span>;</span><br><span class="line"></span><br><span class="line"><span class="comment">// 下拉选择</span></span><br><span class="line"><span class="keyword">const</span> select = <span class="variable language_">document</span>.<span class="title function_">querySelector</span>(<span class="string">&quot;select&quot;</span>);</span><br><span class="line"><span class="variable language_">console</span>.<span class="title function_">log</span>(select.<span class="property">value</span>);</span><br><span class="line">select.<span class="property">value</span> = <span class="string">&quot;option1&quot;</span>;</span><br><span class="line"></span><br><span class="line"><span class="comment">// 复选框</span></span><br><span class="line"><span class="keyword">const</span> checkbox = <span class="variable language_">document</span>.<span class="title function_">querySelector</span>(<span class="string">&quot;input[type=&#x27;checkbox&#x27;]&quot;</span>);</span><br><span class="line"><span class="variable language_">console</span>.<span class="title function_">log</span>(checkbox.<span class="property">checked</span>); <span class="comment">// true/false</span></span><br><span class="line">checkbox.<span class="property">checked</span> = <span class="literal">true</span>;</span><br><span class="line"></span><br><span class="line"><span class="comment">// 单选框</span></span><br><span class="line"><span class="keyword">const</span> radios = <span class="variable language_">document</span>.<span class="title function_">querySelectorAll</span>(<span class="string">&quot;input[name=&#x27;gender&#x27;]&quot;</span>);</span><br><span class="line">radios.<span class="title function_">forEach</span>(<span class="function"><span class="params">radio</span> =&gt;</span> &#123;</span><br><span class="line">    <span class="keyword">if</span> (radio.<span class="property">checked</span>) &#123;</span><br><span class="line">        <span class="variable language_">console</span>.<span class="title function_">log</span>(radio.<span class="property">value</span>);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
+
+<h3 id="3-表单提交"><a href="#3-表单提交" class="headerlink" title="3. 表单提交"></a>3. 表单提交</h3><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> form = <span class="variable language_">document</span>.<span class="title function_">querySelector</span>(<span class="string">&quot;form&quot;</span>);</span><br><span class="line"></span><br><span class="line">form.<span class="title function_">addEventListener</span>(<span class="string">&quot;submit&quot;</span>, <span class="keyword">function</span>(<span class="params">event</span>) &#123;</span><br><span class="line">    event.<span class="title function_">preventDefault</span>(); <span class="comment">// 阻止默认提交</span></span><br><span class="line"></span><br><span class="line">    <span class="comment">// 获取表单数据</span></span><br><span class="line">    <span class="keyword">const</span> formData = <span class="keyword">new</span> <span class="title class_">FormData</span>(form);</span><br><span class="line">    <span class="keyword">const</span> data = <span class="title class_">Object</span>.<span class="title function_">fromEntries</span>(formData);</span><br><span class="line">    <span class="variable language_">console</span>.<span class="title function_">log</span>(data);</span><br><span class="line"></span><br><span class="line">    <span class="comment">// 手动提交</span></span><br><span class="line">    <span class="comment">// form.submit();</span></span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
+
+<hr>
+<h2 id="九、常用方法"><a href="#九、常用方法" class="headerlink" title="九、常用方法"></a>九、常用方法</h2><h3 id="1-类名操作"><a href="#1-类名操作" class="headerlink" title="1. 类名操作"></a>1. 类名操作</h3><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> element = <span class="variable language_">document</span>.<span class="title function_">querySelector</span>(<span class="string">&quot;div&quot;</span>);</span><br><span class="line"></span><br><span class="line">element.<span class="property">classList</span>.<span class="title function_">add</span>(<span class="string">&quot;active&quot;</span>);</span><br><span class="line">element.<span class="property">classList</span>.<span class="title function_">remove</span>(<span class="string">&quot;active&quot;</span>);</span><br><span class="line">element.<span class="property">classList</span>.<span class="title function_">toggle</span>(<span class="string">&quot;active&quot;</span>);</span><br><span class="line">element.<span class="property">classList</span>.<span class="title function_">contains</span>(<span class="string">&quot;active&quot;</span>);</span><br><span class="line">element.<span class="property">classList</span>.<span class="title function_">replace</span>(<span class="string">&quot;old-class&quot;</span>, <span class="string">&quot;new-class&quot;</span>);</span><br></pre></td></tr></table></figure>
+
+<h3 id="2-滚动操作"><a href="#2-滚动操作" class="headerlink" title="2. 滚动操作"></a>2. 滚动操作</h3><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="variable language_">window</span>.<span class="title function_">scrollTo</span>(<span class="number">0</span>, <span class="number">0</span>); <span class="comment">// 滚动到顶部</span></span><br><span class="line"><span class="variable language_">document</span>.<span class="title function_">querySelector</span>(<span class="string">&quot;#section&quot;</span>).<span class="title function_">scrollIntoView</span>(&#123; <span class="attr">behavior</span>: <span class="string">&quot;smooth&quot;</span> &#125;);</span><br><span class="line"></span><br><span class="line"><span class="comment">// 获取滚动位置</span></span><br><span class="line"><span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="variable language_">window</span>.<span class="property">scrollX</span>);</span><br><span class="line"><span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="variable language_">window</span>.<span class="property">scrollY</span>);</span><br></pre></td></tr></table></figure>
+
+<h3 id="3-尺寸操作"><a href="#3-尺寸操作" class="headerlink" title="3. 尺寸操作"></a>3. 尺寸操作</h3><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> element = <span class="variable language_">document</span>.<span class="title function_">querySelector</span>(<span class="string">&quot;div&quot;</span>);</span><br><span class="line"></span><br><span class="line"><span class="comment">// 元素尺寸</span></span><br><span class="line"><span class="variable language_">console</span>.<span class="title function_">log</span>(element.<span class="property">offsetWidth</span>);  <span class="comment">// 包括 padding、border</span></span><br><span class="line"><span class="variable language_">console</span>.<span class="title function_">log</span>(element.<span class="property">offsetHeight</span>);</span><br><span class="line"><span class="variable language_">console</span>.<span class="title function_">log</span>(element.<span class="property">clientWidth</span>);   <span class="comment">// 包括 padding</span></span><br><span class="line"><span class="variable language_">console</span>.<span class="title function_">log</span>(element.<span class="property">clientHeight</span>);</span><br><span class="line"></span><br><span class="line"><span class="comment">// 位置</span></span><br><span class="line"><span class="variable language_">console</span>.<span class="title function_">log</span>(element.<span class="property">offsetLeft</span>);</span><br><span class="line"><span class="variable language_">console</span>.<span class="title function_">log</span>(element.<span class="property">offsetTop</span>);</span><br></pre></td></tr></table></figure>
+
+<hr>
+<h2 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h2><p>DOM 操作是前端开发的核心，熟练掌握各种方法可以高效地操作页面元素和实现交互效果。</p>
+</div>          
+          <nav class="post-nav">
+    
+    <a class="post-nav-item post-nav-prev" href="/2026/04/15/%E5%89%8D%E7%AB%AF/ES6%E6%96%B0%E7%89%B9%E6%80%A7/">
+      <div class="nav-arrow">&lt;&nbsp;NEWER</div>
+      <span class="post-title">ES6+新特性</span>
+    </a>
+    
+    
+    <a class="post-nav-item post-nav-next" href="/2026/04/15/%E5%89%8D%E7%AB%AF/HTML%E5%B8%B8%E7%94%A8%E6%A0%87%E7%AD%BE/">
+      <div class="nav-arrow">OLDER&nbsp;&gt;</div>
+      <span class="post-title">HTML常用标签</span>
+    </a>
+    
+  </nav>
+
+   </main>
+</div>
+
+  <footer class="footer">
+    <small class="footer_copyright">
+      <div id="bottom-inner">
+        © Site by John Doe<br>
+        <a target="_blank" rel="noopener" href="http://hexo.io">Hexo</a> &
+        <a target="_blank" rel="noopener" href="https://github.com/g0dmao/hexo-theme-Klise-enhanced">Klise-enhanced</a>
+        <br>
+        <a target="_blank" rel="noopener" href="https://chinese-font.netlify.app/zh-cn/fonts/jhlst/%E4%BA%AC%E8%8F%AF%E8%80%81%E5%AE%8B%E4%BD%93v2_002">京華老宋体</a> & <a target="_blank" rel="noopener" href="https://chinese-font.netlify.app/zh-cn/">中文网字支持计划</a>
+        <br>
+        始于2025.
+        
+      </div>
+    </small>
+  </footer>
+  
+  
+
+    
+      <script src="/js/main.js"></script>
+    
+  
+  <script>
+    window.FPConfig = {
+      delay: 0,
+      ignoreKeywords: [],
+      maxRPS: 3,
+      hoverDelay: 50,
+    };
+  </script>
+  <script defer src="https://cdn.jsdelivr.net/gh/gijo-varghese/flying-pages@2.1.2/flying-pages.min.js"></script>
+  <script>
+    document.addEventListener('DOMContentLoaded', function() {
+  document.body.classList.add('loaded');
+});
+
+  </script>
+</body>
+</html>

@@ -1,0 +1,468 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <link rel='stylesheet' href='https://chinese-fonts-cdn.deno.dev/packages/lxgwwenkai/dist/LXGWWenKai-Bold/result.css' />
+  <link rel='stylesheet' href='https://chinese-fonts-cdn.deno.dev/packages/jhlst/dist/%E4%BA%AC%E8%8F%AF%E8%80%81%E5%AE%8B%E4%BD%93v2_002/result.css' />  
+  
+
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Flexbox与Grid布局 [ Hexo ]</title>
+
+  <link rel="icon" href="/img/favicon.ico">
+
+
+    <meta name="author" content="John Doe">
+
+
+
+
+
+  <link rel="alternate" href="/atom.xml " title="Hexo" type="application/atom+xml">
+
+
+  
+    <link rel="stylesheet" href="/css/main.css">
+  
+
+
+<script defer>
+  document.addEventListener('visibilitychange', function () {
+  if (document.visibilityState == 'hidden') {
+      normal_title = document.title;
+      document.title = '点一下';
+  } else document.title = normal_title;
+});
+
+</script>
+  <body data-theme="light" class="notransition">
+    <script defer>
+      const body = document.body;
+      const data = body.getAttribute("data-theme");
+      const initTheme = (state) => {
+        if (state === "dark") {
+          body.setAttribute("data-theme", "dark");
+        } else if (state === "light") {
+          body.removeAttribute("data-theme");
+        } else {
+          localStorage.setItem("theme", data);
+        }
+      };
+   
+      initTheme(localStorage.getItem("theme"));
+      
+      setTimeout(() => body.classList.remove("notransition"), 75);
+    </script>
+  <div class="navbar" role="navigation">
+    <nav class="menu">
+      <input type="checkbox" id="menu-trigger" class="menu-trigger" />
+      <label for="menu-trigger">
+        <span class="menu-icon">
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            width="24"
+            height="24"
+            viewBox="0 0 512 512"
+          >
+            <path
+              d="M64,384H448V341.33H64Zm0-106.67H448V234.67H64ZM64,128v42.67H448V128Z"
+            />
+          </svg>
+        </span>
+      </label>
+      <a id="mode">
+        <svg
+          class="mode-sunny"
+          xmlns="http://www.w3.org/2000/svg"
+          width="24"
+          height="24"
+          viewBox="0 0 512 512"
+        >
+          <title>LIGHT</title>
+          <line
+            x1="256"
+            y1="48"
+            x2="256"
+            y2="96"
+            style="stroke-linecap:round;stroke-miterlimit:10;stroke-width:32px"
+          />
+          <line
+            x1="256"
+            y1="416"
+            x2="256"
+            y2="464"
+            style="stroke-linecap:round;stroke-miterlimit:10;stroke-width:32px"
+          />
+          <line
+            x1="403.08"
+            y1="108.92"
+            x2="369.14"
+            y2="142.86"
+            style="stroke-linecap:round;stroke-miterlimit:10;stroke-width:32px"
+          />
+          <line
+            x1="142.86"
+            y1="369.14"
+            x2="108.92"
+            y2="403.08"
+            style="stroke-linecap:round;stroke-miterlimit:10;stroke-width:32px"
+          />
+          <line
+            x1="464"
+            y1="256"
+            x2="416"
+            y2="256"
+            style="stroke-linecap:round;stroke-miterlimit:10;stroke-width:32px"
+          />
+          <line
+            x1="96"
+            y1="256"
+            x2="48"
+            y2="256"
+            style="stroke-linecap:round;stroke-miterlimit:10;stroke-width:32px"
+          />
+          <line
+            x1="403.08"
+            y1="403.08"
+            x2="369.14"
+            y2="369.14"
+            style="stroke-linecap:round;stroke-miterlimit:10;stroke-width:32px"
+          />
+          <line
+            x1="142.86"
+            y1="142.86"
+            x2="108.92"
+            y2="108.92"
+            style="stroke-linecap:round;stroke-miterlimit:10;stroke-width:32px"
+          />
+          <circle
+            cx="256"
+            cy="256"
+            r="80"
+            style="stroke-linecap:round;stroke-miterlimit:10;stroke-width:32px"
+          />
+        </svg>
+        <svg
+          class="mode-moon"
+          xmlns="http://www.w3.org/2000/svg"
+          width="24"
+          height="24"
+          viewBox="0 0 512 512"
+        >
+          <title>DARK</title>
+          <line
+            x1="256"
+            y1="48"
+            x2="256"
+            y2="96"
+            style="stroke-linecap:round;stroke-miterlimit:10;stroke-width:32px"
+          />
+          <line
+            x1="256"
+            y1="416"
+            x2="256"
+            y2="464"
+            style="stroke-linecap:round;stroke-miterlimit:10;stroke-width:32px"
+          />
+          <line
+            x1="403.08"
+            y1="108.92"
+            x2="369.14"
+            y2="142.86"
+            style="stroke-linecap:round;stroke-miterlimit:10;stroke-width:32px"
+          />
+          <line
+            x1="142.86"
+            y1="369.14"
+            x2="108.92"
+            y2="403.08"
+            style="stroke-linecap:round;stroke-miterlimit:10;stroke-width:32px"
+          />
+          <line
+            x1="464"
+            y1="256"
+            x2="416"
+            y2="256"
+            style="stroke-linecap:round;stroke-miterlimit:10;stroke-width:32px"
+          />
+          <line
+            x1="96"
+            y1="256"
+            x2="48"
+            y2="256"
+            style="stroke-linecap:round;stroke-miterlimit:10;stroke-width:32px"
+          />
+          <line
+            x1="403.08"
+            y1="403.08"
+            x2="369.14"
+            y2="369.14"
+            style="stroke-linecap:round;stroke-miterlimit:10;stroke-width:32px"
+          />
+          <line
+            x1="142.86"
+            y1="142.86"
+            x2="108.92"
+            y2="108.92"
+            style="stroke-linecap:round;stroke-miterlimit:10;stroke-width:32px"
+          />
+          <circle
+            cx="256"
+            cy="256"
+            r="80"
+            style="stroke-linecap:round;stroke-miterlimit:10;stroke-width:32px"
+          />
+        </svg>
+      </a>
+      <div class="trigger">
+        <div class="trigger-container">
+          
+            
+            
+            
+            
+            
+            
+            <a class="menu-link " href="/"> 主页</a>
+          
+            
+            
+            
+            
+            
+            
+            <a class="menu-link " href="/tags/"> 标签</a>
+          
+            
+            
+            
+            
+            
+            
+            <a class="menu-link " href="/categories/"> 类别</a>
+          
+            
+            
+            
+            
+            
+            
+            <a class="menu-link " href="/archives/"> 档案馆</a>
+          
+            
+            
+            
+            
+            
+            
+            <a class="menu-link " href="/about/"> 关于</a>
+          
+        </div>
+      </div>
+    </nav>
+  </div>
+  <button id="toTopBtn"><i class="fa-solid fa-hand-point-up " ></i></button>
+<button id="toggleButton"><i class="fa-solid fa-chart-bar " ></i></button>
+<div id="overlay" class="overlay">
+  <div class="content">
+    <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#06-Flexbox-%E4%B8%8E-Grid-%E5%B8%83%E5%B1%80"><span class="toc-text">06. Flexbox 与 Grid 布局</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%B8%80%E3%80%81Flexbox-%E5%BC%B9%E6%80%A7%E5%B8%83%E5%B1%80"><span class="toc-text">一、Flexbox 弹性布局</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#1-%E5%9F%BA%E7%A1%80%E6%A6%82%E5%BF%B5"><span class="toc-text">1. 基础概念</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-%E5%AE%B9%E5%99%A8%E5%B1%9E%E6%80%A7"><span class="toc-text">2. 容器属性</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#flex-direction%EF%BC%88%E4%B8%BB%E8%BD%B4%E6%96%B9%E5%90%91%EF%BC%89"><span class="toc-text">flex-direction（主轴方向）</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#flex-wrap%EF%BC%88%E6%8D%A2%E8%A1%8C%EF%BC%89"><span class="toc-text">flex-wrap（换行）</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#flex-flow%EF%BC%88%E7%AE%80%E5%86%99%EF%BC%89"><span class="toc-text">flex-flow（简写）</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#justify-content%EF%BC%88%E4%B8%BB%E8%BD%B4%E5%AF%B9%E9%BD%90%EF%BC%89"><span class="toc-text">justify-content（主轴对齐）</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#align-items%EF%BC%88%E4%BA%A4%E5%8F%89%E8%BD%B4%E5%AF%B9%E9%BD%90%EF%BC%89"><span class="toc-text">align-items（交叉轴对齐）</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#align-content%EF%BC%88%E5%A4%9A%E8%A1%8C%E5%AF%B9%E9%BD%90%EF%BC%89"><span class="toc-text">align-content（多行对齐）</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#3-%E9%A1%B9%E7%9B%AE%E5%B1%9E%E6%80%A7"><span class="toc-text">3. 项目属性</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#order%EF%BC%88%E9%A1%BA%E5%BA%8F%EF%BC%89"><span class="toc-text">order（顺序）</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#flex-grow%EF%BC%88%E6%94%BE%E5%A4%A7%E6%AF%94%E4%BE%8B%EF%BC%89"><span class="toc-text">flex-grow（放大比例）</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#flex-shrink%EF%BC%88%E7%BC%A9%E5%B0%8F%E6%AF%94%E4%BE%8B%EF%BC%89"><span class="toc-text">flex-shrink（缩小比例）</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#flex-basis%EF%BC%88%E5%9F%BA%E5%87%86%E5%A4%A7%E5%B0%8F%EF%BC%89"><span class="toc-text">flex-basis（基准大小）</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#flex%EF%BC%88%E7%AE%80%E5%86%99%EF%BC%89"><span class="toc-text">flex（简写）</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#align-self%EF%BC%88%E5%8D%95%E7%8B%AC%E5%AF%B9%E9%BD%90%EF%BC%89"><span class="toc-text">align-self（单独对齐）</span></a></li></ol></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%BA%8C%E3%80%81Grid-%E7%BD%91%E6%A0%BC%E5%B8%83%E5%B1%80"><span class="toc-text">二、Grid 网格布局</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#1-%E5%9F%BA%E7%A1%80%E6%A6%82%E5%BF%B5-1"><span class="toc-text">1. 基础概念</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-%E5%AE%B9%E5%99%A8%E5%B1%9E%E6%80%A7-1"><span class="toc-text">2. 容器属性</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#display%EF%BC%88%E5%90%AF%E7%94%A8-Grid%EF%BC%89"><span class="toc-text">display（启用 Grid）</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#grid-template-columns%EF%BC%88%E5%88%97%E5%AE%9A%E4%B9%89%EF%BC%89"><span class="toc-text">grid-template-columns（列定义）</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#grid-template-rows%EF%BC%88%E8%A1%8C%E5%AE%9A%E4%B9%89%EF%BC%89"><span class="toc-text">grid-template-rows（行定义）</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#grid-template-areas%EF%BC%88%E5%8C%BA%E5%9F%9F%E5%91%BD%E5%90%8D%EF%BC%89"><span class="toc-text">grid-template-areas（区域命名）</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#grid-template%EF%BC%88%E7%AE%80%E5%86%99%EF%BC%89"><span class="toc-text">grid-template（简写）</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#gap%EF%BC%88%E9%97%B4%E8%B7%9D%EF%BC%89"><span class="toc-text">gap（间距）</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#justify-items%EF%BC%88%E6%B0%B4%E5%B9%B3%E5%AF%B9%E9%BD%90%EF%BC%89"><span class="toc-text">justify-items（水平对齐）</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#align-items%EF%BC%88%E5%9E%82%E7%9B%B4%E5%AF%B9%E9%BD%90%EF%BC%89"><span class="toc-text">align-items（垂直对齐）</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#justify-content%EF%BC%88%E6%95%B4%E4%BD%93%E6%B0%B4%E5%B9%B3%E5%AF%B9%E9%BD%90%EF%BC%89"><span class="toc-text">justify-content（整体水平对齐）</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#align-content%EF%BC%88%E6%95%B4%E4%BD%93%E5%9E%82%E7%9B%B4%E5%AF%B9%E9%BD%90%EF%BC%89"><span class="toc-text">align-content（整体垂直对齐）</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#place-items%EF%BC%88%E7%AE%80%E5%86%99%EF%BC%89"><span class="toc-text">place-items（简写）</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#3-%E9%A1%B9%E7%9B%AE%E5%B1%9E%E6%80%A7-1"><span class="toc-text">3. 项目属性</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#grid-column%EF%BC%88%E5%88%97%E4%BD%8D%E7%BD%AE%EF%BC%89"><span class="toc-text">grid-column（列位置）</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#grid-row%EF%BC%88%E8%A1%8C%E4%BD%8D%E7%BD%AE%EF%BC%89"><span class="toc-text">grid-row（行位置）</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#grid-area%EF%BC%88%E5%8C%BA%E5%9F%9F%EF%BC%89"><span class="toc-text">grid-area（区域）</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#justify-self%EF%BC%88%E5%8D%95%E7%8B%AC%E6%B0%B4%E5%B9%B3%E5%AF%B9%E9%BD%90%EF%BC%89"><span class="toc-text">justify-self（单独水平对齐）</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#align-self%EF%BC%88%E5%8D%95%E7%8B%AC%E5%9E%82%E7%9B%B4%E5%AF%B9%E9%BD%90%EF%BC%89"><span class="toc-text">align-self（单独垂直对齐）</span></a></li></ol></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%B8%89%E3%80%81Flexbox-vs-Grid"><span class="toc-text">三、Flexbox vs Grid</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E9%80%89%E6%8B%A9%E5%BB%BA%E8%AE%AE"><span class="toc-text">选择建议</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%9B%9B%E3%80%81%E5%AE%9E%E9%99%85%E6%A1%88%E4%BE%8B"><span class="toc-text">四、实际案例</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#1-%E6%B0%B4%E5%B9%B3%E5%9E%82%E7%9B%B4%E5%B1%85%E4%B8%AD"><span class="toc-text">1. 水平垂直居中</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-%E5%9D%87%E5%88%86%E5%88%97"><span class="toc-text">2. 均分列</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#3-%E5%9C%A3%E6%9D%AF%E5%B8%83%E5%B1%80"><span class="toc-text">3. 圣杯布局</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#4-%E5%93%8D%E5%BA%94%E5%BC%8F%E7%BD%91%E6%A0%BC"><span class="toc-text">4. 响应式网格</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#5-%E5%8D%A1%E7%89%87%E6%82%AC%E5%81%9C%E6%95%88%E6%9E%9C"><span class="toc-text">5. 卡片悬停效果</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%BA%94%E3%80%81%E6%B5%8F%E8%A7%88%E5%99%A8%E5%85%BC%E5%AE%B9%E6%80%A7"><span class="toc-text">五、浏览器兼容性</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%80%BB%E7%BB%93"><span class="toc-text">总结</span></a></li></ol></li></ol>
+    <button id="closeButton"><i class="fa-solid fa-circle-xmark"></i></button>
+  </div>
+</div>
+<div class="wrapper post">
+  <head>
+    <!-- 引入 Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+  <meta name="generator" content="Hexo 8.1.1"></head>
+
+
+
+  <main class="page-content" aria-label="Content">
+      <header class="header">
+        
+          <div class="tags">
+            <a href="/tags/CSS/" class="tag"># CSS</a><a href="/tags/%E5%B8%83%E5%B1%80/" class="tag"># 布局</a><a href="/tags/Flexbox/" class="tag"># Flexbox</a><a href="/tags/Grid/" class="tag"># Grid</a>
+          </div>
+        
+        <h1 class="header-title" itemprop="headline">Flexbox与Grid布局</h1>
+          <div class="post-meta">
+            最后更新: <time>Apr 15, 2026</time>
+            作者: <span itemprop="author">
+              <span itemprop="name">John Doe</span>
+            </span>
+            字数: <span class="post-count">1.5k</span>
+            预计阅读时间: <span class="post-count">7min</span> 
+          </div>       
+        </header>
+          <div class="page-content"><h1 id="06-Flexbox-与-Grid-布局"><a href="#06-Flexbox-与-Grid-布局" class="headerlink" title="06. Flexbox 与 Grid 布局"></a>06. Flexbox 与 Grid 布局</h1><p>Flexbox 和 Grid 是现代 CSS 布局的两大核心，它们让复杂布局变得简单高效。</p>
+<h2 id="一、Flexbox-弹性布局"><a href="#一、Flexbox-弹性布局" class="headerlink" title="一、Flexbox 弹性布局"></a>一、Flexbox 弹性布局</h2><h3 id="1-基础概念"><a href="#1-基础概念" class="headerlink" title="1. 基础概念"></a>1. 基础概念</h3><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">┌─────────────────────────────────────┐</span><br><span class="line">│       Main Axis（主轴）              │</span><br><span class="line">│  ┌──────┐  ┌─────┐  ┌─────┐       │</span><br><span class="line">│  │  1   │  │  2  │  │  3  │  ←───  │</span><br><span class="line">│  │      │  │     │  │     │ Cross  │</span><br><span class="line">│  │      │  │     │  │     │ Axis  │</span><br><span class="line">│  └──────┘  └─────┘  └─────┘  （交叉轴）│</span><br><span class="line">└─────────────────────────────────────┘</span><br><span class="line">        Container（容器）       Items（项目）</span><br></pre></td></tr></table></figure>
+
+<h3 id="2-容器属性"><a href="#2-容器属性" class="headerlink" title="2. 容器属性"></a>2. 容器属性</h3><h4 id="flex-direction（主轴方向）"><a href="#flex-direction（主轴方向）" class="headerlink" title="flex-direction（主轴方向）"></a>flex-direction（主轴方向）</h4><figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-class">.container</span> &#123;</span><br><span class="line">    <span class="attribute">flex-direction</span>: row;            <span class="comment">/* 水平向右（默认） */</span></span><br><span class="line">    <span class="attribute">flex-direction</span>: row-reverse;    <span class="comment">/* 水平向左 */</span></span><br><span class="line">    <span class="attribute">flex-direction</span>: column;         <span class="comment">/* 垂直向下 */</span></span><br><span class="line">    <span class="attribute">flex-direction</span>: column-reverse; <span class="comment">/* 垂直向上 */</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h4 id="flex-wrap（换行）"><a href="#flex-wrap（换行）" class="headerlink" title="flex-wrap（换行）"></a>flex-wrap（换行）</h4><figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-class">.container</span> &#123;</span><br><span class="line">    <span class="attribute">flex-wrap</span>: nowrap;     <span class="comment">/* 不换行（默认） */</span></span><br><span class="line">    <span class="attribute">flex-wrap</span>: wrap;       <span class="comment">/* 换行，第一行在上 */</span></span><br><span class="line">    <span class="attribute">flex-wrap</span>: wrap-reverse; <span class="comment">/* 换行，第一行在下 */</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h4 id="flex-flow（简写）"><a href="#flex-flow（简写）" class="headerlink" title="flex-flow（简写）"></a>flex-flow（简写）</h4><figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-class">.container</span> &#123;</span><br><span class="line">    <span class="comment">/* flex-flow: flex-direction flex-wrap; */</span></span><br><span class="line">    <span class="attribute">flex-flow</span>: row wrap;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h4 id="justify-content（主轴对齐）"><a href="#justify-content（主轴对齐）" class="headerlink" title="justify-content（主轴对齐）"></a>justify-content（主轴对齐）</h4><figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-class">.container</span> &#123;</span><br><span class="line">    <span class="attribute">justify-content</span>: flex-start;    <span class="comment">/* 左对齐（默认） */</span></span><br><span class="line">    <span class="attribute">justify-content</span>: flex-end;      <span class="comment">/* 右对齐 */</span></span><br><span class="line">    <span class="attribute">justify-content</span>: center;        <span class="comment">/* 居中 */</span></span><br><span class="line">    <span class="attribute">justify-content</span>: space-between; <span class="comment">/* 两端对齐，间距相等 */</span></span><br><span class="line">    <span class="attribute">justify-content</span>: space-around;  <span class="comment">/* 两端间距是中间的一半 */</span></span><br><span class="line">    <span class="attribute">justify-content</span>: space-evenly;  <span class="comment">/* 所有间距完全相等 */</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h4 id="align-items（交叉轴对齐）"><a href="#align-items（交叉轴对齐）" class="headerlink" title="align-items（交叉轴对齐）"></a>align-items（交叉轴对齐）</h4><figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-class">.container</span> &#123;</span><br><span class="line">    <span class="attribute">align-items</span>: stretch;       <span class="comment">/* 拉伸（默认） */</span></span><br><span class="line">    <span class="attribute">align-items</span>: flex-start;    <span class="comment">/* 起点对齐 */</span></span><br><span class="line">    <span class="attribute">align-items</span>: flex-end;      <span class="comment">/* 终点对齐 */</span></span><br><span class="line">    <span class="attribute">align-items</span>: center;        <span class="comment">/* 居中 */</span></span><br><span class="line">    <span class="attribute">align-items</span>: baseline;      <span class="comment">/* 基线对齐 */</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h4 id="align-content（多行对齐）"><a href="#align-content（多行对齐）" class="headerlink" title="align-content（多行对齐）"></a>align-content（多行对齐）</h4><figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-class">.container</span> &#123;</span><br><span class="line">    <span class="attribute">align-content</span>: stretch;       <span class="comment">/* 拉伸（默认） */</span></span><br><span class="line">    <span class="attribute">align-content</span>: flex-start;    <span class="comment">/* 起点对齐 */</span></span><br><span class="line">    <span class="attribute">align-content</span>: flex-end;      <span class="comment">/* 终点对齐 */</span></span><br><span class="line">    <span class="attribute">align-content</span>: center;        <span class="comment">/* 居中 */</span></span><br><span class="line">    <span class="attribute">align-content</span>: space-between; <span class="comment">/* 两端对齐 */</span></span><br><span class="line">    <span class="attribute">align-content</span>: space-around;  <span class="comment">/* 均匀分布 */</span></span><br><span class="line">    <span class="attribute">align-content</span>: space-evenly;  <span class="comment">/* 完全均匀 */</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h3 id="3-项目属性"><a href="#3-项目属性" class="headerlink" title="3. 项目属性"></a>3. 项目属性</h3><h4 id="order（顺序）"><a href="#order（顺序）" class="headerlink" title="order（顺序）"></a>order（顺序）</h4><figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-class">.item</span> &#123;</span><br><span class="line">    <span class="attribute">order</span>: <span class="number">0</span>;  <span class="comment">/* 默认 */</span></span><br><span class="line">    <span class="attribute">order</span>: -<span class="number">1</span>; <span class="comment">/* 排到最前 */</span></span><br><span class="line">    <span class="attribute">order</span>: <span class="number">2</span>;  <span class="comment">/* 排到后面 */</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h4 id="flex-grow（放大比例）"><a href="#flex-grow（放大比例）" class="headerlink" title="flex-grow（放大比例）"></a>flex-grow（放大比例）</h4><figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-class">.item</span> &#123;</span><br><span class="line">    <span class="attribute">flex-grow</span>: <span class="number">0</span>;  <span class="comment">/* 不放大（默认） */</span></span><br><span class="line">    <span class="attribute">flex-grow</span>: <span class="number">1</span>;  <span class="comment">/* 有剩余空间，放大 */</span></span><br><span class="line">    <span class="attribute">flex-grow</span>: <span class="number">2</span>;  <span class="comment">/* 放大比例是 1 的 2 倍 */</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h4 id="flex-shrink（缩小比例）"><a href="#flex-shrink（缩小比例）" class="headerlink" title="flex-shrink（缩小比例）"></a>flex-shrink（缩小比例）</h4><figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-class">.item</span> &#123;</span><br><span class="line">    <span class="attribute">flex-shrink</span>: <span class="number">1</span>;  <span class="comment">/* 缩小（默认） */</span></span><br><span class="line">    <span class="attribute">flex-shrink</span>: <span class="number">0</span>;  <span class="comment">/* 不缩小 */</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h4 id="flex-basis（基准大小）"><a href="#flex-basis（基准大小）" class="headerlink" title="flex-basis（基准大小）"></a>flex-basis（基准大小）</h4><figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-class">.item</span> &#123;</span><br><span class="line">    <span class="attribute">flex-basis</span>: auto;  <span class="comment">/* 自动（默认） */</span></span><br><span class="line">    <span class="attribute">flex-basis</span>: <span class="number">200px</span>; <span class="comment">/* 固定基准 */</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h4 id="flex（简写）"><a href="#flex（简写）" class="headerlink" title="flex（简写）"></a>flex（简写）</h4><figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-class">.item</span> &#123;</span><br><span class="line">    <span class="comment">/* flex: flex-grow flex-shrink flex-basis; */</span></span><br><span class="line">    <span class="attribute">flex</span>: <span class="number">1</span>;           <span class="comment">/* flex: 1 1 0% */</span></span><br><span class="line">    <span class="attribute">flex</span>: auto;        <span class="comment">/* flex: 1 1 auto */</span></span><br><span class="line">    <span class="attribute">flex</span>: none;        <span class="comment">/* flex: 0 0 auto */</span></span><br><span class="line">    <span class="attribute">flex</span>: <span class="number">0</span> <span class="number">0</span> <span class="number">200px</span>;   <span class="comment">/* 不放大不缩小，固定 200px */</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h4 id="align-self（单独对齐）"><a href="#align-self（单独对齐）" class="headerlink" title="align-self（单独对齐）"></a>align-self（单独对齐）</h4><figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-class">.item</span> &#123;</span><br><span class="line">    <span class="attribute">align-self</span>: auto;       <span class="comment">/* 继承容器（默认） */</span></span><br><span class="line">    <span class="attribute">align-self</span>: flex-start;</span><br><span class="line">    <span class="attribute">align-self</span>: flex-end;</span><br><span class="line">    <span class="attribute">align-self</span>: center;</span><br><span class="line">    <span class="attribute">align-self</span>: baseline;</span><br><span class="line">    <span class="attribute">align-self</span>: stretch;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<hr>
+<h2 id="二、Grid-网格布局"><a href="#二、Grid-网格布局" class="headerlink" title="二、Grid 网格布局"></a>二、Grid 网格布局</h2><h3 id="1-基础概念-1"><a href="#1-基础概念-1" class="headerlink" title="1. 基础概念"></a>1. 基础概念</h3><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">┌─────────┬─────────┬─────────┬─────────┐</span><br><span class="line">│  Grid   │  Cell   │  Cell   │  Cell   │</span><br><span class="line">│  Row    ├─────────┼─────────┼─────────┤</span><br><span class="line">├─────────┤  Cell   │  Cell   │  Cell   │</span><br><span class="line">│  Grid   ├─────────┼─────────┼─────────┤</span><br><span class="line">│  Row    │  Cell   │  Cell   │  Cell   │</span><br><span class="line">├─────────┼─────────┼─────────┼─────────┤</span><br><span class="line">│  Grid   │  Cell   │  Cell   │  Cell   │</span><br><span class="line">│  Row    └─────────┴─────────┴─────────┘</span><br><span class="line">└───────────────────────────────────────┘</span><br><span class="line">   Grid Lines（网格线）</span><br></pre></td></tr></table></figure>
+
+<h3 id="2-容器属性-1"><a href="#2-容器属性-1" class="headerlink" title="2. 容器属性"></a>2. 容器属性</h3><h4 id="display（启用-Grid）"><a href="#display（启用-Grid）" class="headerlink" title="display（启用 Grid）"></a>display（启用 Grid）</h4><figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-class">.container</span> &#123;</span><br><span class="line">    <span class="attribute">display</span>: grid;</span><br><span class="line">    <span class="attribute">display</span>: inline-grid;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h4 id="grid-template-columns（列定义）"><a href="#grid-template-columns（列定义）" class="headerlink" title="grid-template-columns（列定义）"></a>grid-template-columns（列定义）</h4><figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-class">.container</span> &#123;</span><br><span class="line">    <span class="comment">/* 固定宽度 */</span></span><br><span class="line">    <span class="attribute">grid-template-columns</span>: <span class="number">100px</span> <span class="number">200px</span> <span class="number">100px</span>;</span><br><span class="line"></span><br><span class="line">    <span class="comment">/* 重复 */</span></span><br><span class="line">    <span class="attribute">grid-template-columns</span>: <span class="built_in">repeat</span>(<span class="number">3</span>, <span class="number">100px</span>);</span><br><span class="line"></span><br><span class="line">    <span class="comment">/* 百分比 */</span></span><br><span class="line">    <span class="attribute">grid-template-columns</span>: <span class="number">33.33%</span> <span class="number">33.33%</span> <span class="number">33.33%</span>;</span><br><span class="line"></span><br><span class="line">    <span class="comment">/* fr（fraction，占据剩余空间） */</span></span><br><span class="line">    <span class="attribute">grid-template-columns</span>: <span class="number">1</span>fr <span class="number">1</span>fr <span class="number">1</span>fr;</span><br><span class="line">    <span class="attribute">grid-template-columns</span>: <span class="number">1</span>fr <span class="number">2</span>fr <span class="number">1</span>fr;</span><br><span class="line"></span><br><span class="line">    <span class="comment">/* auto（自适应） */</span></span><br><span class="line">    <span class="attribute">grid-template-columns</span>: <span class="number">1</span>fr auto <span class="number">1</span>fr;</span><br><span class="line"></span><br><span class="line">    <span class="comment">/* minmax（最小最大） */</span></span><br><span class="line">    <span class="attribute">grid-template-columns</span>: <span class="number">1</span>fr <span class="built_in">minmax</span>(<span class="number">100px</span>, <span class="number">1</span>fr) <span class="number">2</span>fr;</span><br><span class="line"></span><br><span class="line">    <span class="comment">/* 自动填充 */</span></span><br><span class="line">    <span class="attribute">grid-template-columns</span>: <span class="built_in">repeat</span>(auto-fill, <span class="built_in">minmax</span>(<span class="number">200px</span>, <span class="number">1</span>fr));</span><br><span class="line"></span><br><span class="line">    <span class="comment">/* 自动填充+合适 */</span></span><br><span class="line">    <span class="attribute">grid-template-columns</span>: <span class="built_in">repeat</span>(auto-fit, <span class="built_in">minmax</span>(<span class="number">200px</span>, <span class="number">1</span>fr));</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h4 id="grid-template-rows（行定义）"><a href="#grid-template-rows（行定义）" class="headerlink" title="grid-template-rows（行定义）"></a>grid-template-rows（行定义）</h4><figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-class">.container</span> &#123;</span><br><span class="line">    <span class="attribute">grid-template-rows</span>: <span class="number">100px</span> <span class="number">200px</span> <span class="number">100px</span>;</span><br><span class="line">    <span class="attribute">grid-template-rows</span>: <span class="built_in">repeat</span>(<span class="number">3</span>, auto);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h4 id="grid-template-areas（区域命名）"><a href="#grid-template-areas（区域命名）" class="headerlink" title="grid-template-areas（区域命名）"></a>grid-template-areas（区域命名）</h4><figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-class">.container</span> &#123;</span><br><span class="line">    <span class="attribute">grid-template-areas</span>:</span><br><span class="line">        <span class="string">&quot;header header header&quot;</span></span><br><span class="line">        <span class="string">&quot;sidebar main main&quot;</span></span><br><span class="line">        <span class="string">&quot;footer footer footer&quot;</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="selector-class">.item</span> &#123;</span><br><span class="line">    <span class="attribute">grid-area</span>: header;</span><br><span class="line">    <span class="attribute">grid-area</span>: sidebar;</span><br><span class="line">    <span class="attribute">grid-area</span>: main;</span><br><span class="line">    <span class="attribute">grid-area</span>: footer;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h4 id="grid-template（简写）"><a href="#grid-template（简写）" class="headerlink" title="grid-template（简写）"></a>grid-template（简写）</h4><figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-class">.container</span> &#123;</span><br><span class="line">    <span class="attribute">grid-template</span>:</span><br><span class="line">        <span class="string">&quot;header header header&quot;</span> <span class="number">80px</span></span><br><span class="line">        <span class="string">&quot;sidebar main    main&quot;</span>   <span class="number">1</span>fr</span><br><span class="line">        <span class="string">&quot;footer footer footer&quot;</span> <span class="number">60px</span> /</span><br><span class="line">        <span class="number">200px</span>    <span class="number">1</span>fr      <span class="number">1</span>fr;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h4 id="gap（间距）"><a href="#gap（间距）" class="headerlink" title="gap（间距）"></a>gap（间距）</h4><figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-class">.container</span> &#123;</span><br><span class="line">    <span class="attribute">gap</span>: <span class="number">10px</span>;              <span class="comment">/* 行列相同 */</span></span><br><span class="line">    <span class="attribute">row-gap</span>: <span class="number">10px</span>;          <span class="comment">/* 行间距 */</span></span><br><span class="line">    <span class="attribute">column-gap</span>: <span class="number">20px</span>;       <span class="comment">/* 列间距 */</span></span><br><span class="line">    <span class="attribute">gap</span>: <span class="number">10px</span> <span class="number">20px</span>;         <span class="comment">/* 行 10px，列 20px */</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h4 id="justify-items（水平对齐）"><a href="#justify-items（水平对齐）" class="headerlink" title="justify-items（水平对齐）"></a>justify-items（水平对齐）</h4><figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-class">.container</span> &#123;</span><br><span class="line">    <span class="attribute">justify-items</span>: stretch;     <span class="comment">/* 拉伸（默认） */</span></span><br><span class="line">    <span class="attribute">justify-items</span>: start;</span><br><span class="line">    <span class="attribute">justify-items</span>: end;</span><br><span class="line">    <span class="attribute">justify-items</span>: center;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h4 id="align-items（垂直对齐）"><a href="#align-items（垂直对齐）" class="headerlink" title="align-items（垂直对齐）"></a>align-items（垂直对齐）</h4><figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-class">.container</span> &#123;</span><br><span class="line">    <span class="attribute">align-items</span>: stretch;       <span class="comment">/* 拉伸（默认） */</span></span><br><span class="line">    <span class="attribute">align-items</span>: start;</span><br><span class="line">    <span class="attribute">align-items</span>: end;</span><br><span class="line">    <span class="attribute">align-items</span>: center;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h4 id="justify-content（整体水平对齐）"><a href="#justify-content（整体水平对齐）" class="headerlink" title="justify-content（整体水平对齐）"></a>justify-content（整体水平对齐）</h4><figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-class">.container</span> &#123;</span><br><span class="line">    <span class="attribute">justify-content</span>: start;</span><br><span class="line">    <span class="attribute">justify-content</span>: end;</span><br><span class="line">    <span class="attribute">justify-content</span>: center;</span><br><span class="line">    <span class="attribute">justify-content</span>: space-between;</span><br><span class="line">    <span class="attribute">justify-content</span>: space-around;</span><br><span class="line">    <span class="attribute">justify-content</span>: space-evenly;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h4 id="align-content（整体垂直对齐）"><a href="#align-content（整体垂直对齐）" class="headerlink" title="align-content（整体垂直对齐）"></a>align-content（整体垂直对齐）</h4><figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-class">.container</span> &#123;</span><br><span class="line">    <span class="attribute">align-content</span>: start;</span><br><span class="line">    <span class="attribute">align-content</span>: end;</span><br><span class="line">    <span class="attribute">align-content</span>: center;</span><br><span class="line">    <span class="attribute">align-content</span>: space-between;</span><br><span class="line">    <span class="attribute">align-content</span>: space-around;</span><br><span class="line">    <span class="attribute">align-content</span>: space-evenly;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h4 id="place-items（简写）"><a href="#place-items（简写）" class="headerlink" title="place-items（简写）"></a>place-items（简写）</h4><figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-class">.container</span> &#123;</span><br><span class="line">    <span class="attribute">place-items</span>: center;    <span class="comment">/* align-items + justify-items */</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h3 id="3-项目属性-1"><a href="#3-项目属性-1" class="headerlink" title="3. 项目属性"></a>3. 项目属性</h3><h4 id="grid-column（列位置）"><a href="#grid-column（列位置）" class="headerlink" title="grid-column（列位置）"></a>grid-column（列位置）</h4><figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-class">.item</span> &#123;</span><br><span class="line">    <span class="comment">/* 从第1条线开始，到第3条线结束 */</span></span><br><span class="line">    <span class="attribute">grid-column</span>: <span class="number">1</span> / <span class="number">3</span>;</span><br><span class="line"></span><br><span class="line">    <span class="comment">/* 从第1条线开始，跨越2列 */</span></span><br><span class="line">    <span class="attribute">grid-column</span>: <span class="number">1</span> / span <span class="number">2</span>;</span><br><span class="line"></span><br><span class="line">    <span class="comment">/* 简写 */</span></span><br><span class="line">    <span class="attribute">grid-column-start</span>: <span class="number">1</span>;</span><br><span class="line">    <span class="attribute">grid-column-end</span>: <span class="number">3</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h4 id="grid-row（行位置）"><a href="#grid-row（行位置）" class="headerlink" title="grid-row（行位置）"></a>grid-row（行位置）</h4><figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-class">.item</span> &#123;</span><br><span class="line">    <span class="attribute">grid-row</span>: <span class="number">1</span> / <span class="number">3</span>;</span><br><span class="line">    <span class="attribute">grid-row</span>: <span class="number">1</span> / span <span class="number">2</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h4 id="grid-area（区域）"><a href="#grid-area（区域）" class="headerlink" title="grid-area（区域）"></a>grid-area（区域）</h4><figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-class">.item</span> &#123;</span><br><span class="line">    <span class="attribute">grid-area</span>: header;</span><br><span class="line"></span><br><span class="line">    <span class="comment">/* 等价于 */</span></span><br><span class="line">    <span class="attribute">grid-row-start</span>: <span class="number">1</span>;</span><br><span class="line">    <span class="attribute">grid-column-start</span>: <span class="number">1</span>;</span><br><span class="line">    <span class="attribute">grid-row-end</span>: <span class="number">2</span>;</span><br><span class="line">    <span class="attribute">grid-column-end</span>: <span class="number">4</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h4 id="justify-self（单独水平对齐）"><a href="#justify-self（单独水平对齐）" class="headerlink" title="justify-self（单独水平对齐）"></a>justify-self（单独水平对齐）</h4><figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-class">.item</span> &#123;</span><br><span class="line">    <span class="attribute">justify-self</span>: start;</span><br><span class="line">    <span class="attribute">justify-self</span>: end;</span><br><span class="line">    <span class="attribute">justify-self</span>: center;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h4 id="align-self（单独垂直对齐）"><a href="#align-self（单独垂直对齐）" class="headerlink" title="align-self（单独垂直对齐）"></a>align-self（单独垂直对齐）</h4><figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-class">.item</span> &#123;</span><br><span class="line">    <span class="attribute">align-self</span>: start;</span><br><span class="line">    <span class="attribute">align-self</span>: end;</span><br><span class="line">    <span class="attribute">align-self</span>: center;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<hr>
+<h2 id="三、Flexbox-vs-Grid"><a href="#三、Flexbox-vs-Grid" class="headerlink" title="三、Flexbox vs Grid"></a>三、Flexbox vs Grid</h2><table>
+<thead>
+<tr>
+<th>特性</th>
+<th>Flexbox</th>
+<th>Grid</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>维度</td>
+<td>一维（行或列）</td>
+<td>二维（行和列）</td>
+</tr>
+<tr>
+<td>适用场景</td>
+<td>导航、对齐、弹性布局</td>
+<td>页面整体布局、网格系统</td>
+</tr>
+<tr>
+<td>溢出处理</td>
+<td>自动换行</td>
+<td>需要显式定义</td>
+</tr>
+<tr>
+<td>浏览器支持</td>
+<td>更好的兼容性</td>
+<td>较新的浏览器</td>
+</tr>
+</tbody></table>
+<h3 id="选择建议"><a href="#选择建议" class="headerlink" title="选择建议"></a>选择建议</h3><ul>
+<li><strong>使用 Flexbox</strong>：导航栏、对齐元素、弹性组件</li>
+<li><strong>使用 Grid</strong>：页面布局、网格系统、卡片布局</li>
+<li><strong>结合使用</strong>：Grid 负责大布局，Flexbox 负责内部对齐</li>
+</ul>
+<hr>
+<h2 id="四、实际案例"><a href="#四、实际案例" class="headerlink" title="四、实际案例"></a>四、实际案例</h2><h3 id="1-水平垂直居中"><a href="#1-水平垂直居中" class="headerlink" title="1. 水平垂直居中"></a>1. 水平垂直居中</h3><figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/* Flexbox */</span></span><br><span class="line"><span class="selector-class">.container</span> &#123;</span><br><span class="line">    <span class="attribute">display</span>: flex;</span><br><span class="line">    <span class="attribute">align-items</span>: center;</span><br><span class="line">    <span class="attribute">justify-content</span>: center;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">/* Grid */</span></span><br><span class="line"><span class="selector-class">.container</span> &#123;</span><br><span class="line">    <span class="attribute">display</span>: grid;</span><br><span class="line">    <span class="attribute">place-items</span>: center;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h3 id="2-均分列"><a href="#2-均分列" class="headerlink" title="2. 均分列"></a>2. 均分列</h3><figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/* Flexbox */</span></span><br><span class="line"><span class="selector-class">.container</span> &#123;</span><br><span class="line">    <span class="attribute">display</span>: flex;</span><br><span class="line">&#125;</span><br><span class="line"><span class="selector-class">.item</span> &#123;</span><br><span class="line">    <span class="attribute">flex</span>: <span class="number">1</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">/* Grid */</span></span><br><span class="line"><span class="selector-class">.container</span> &#123;</span><br><span class="line">    <span class="attribute">display</span>: grid;</span><br><span class="line">    <span class="attribute">grid-template-columns</span>: <span class="built_in">repeat</span>(<span class="number">3</span>, <span class="number">1</span>fr);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h3 id="3-圣杯布局"><a href="#3-圣杯布局" class="headerlink" title="3. 圣杯布局"></a>3. 圣杯布局</h3><figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-class">.container</span> &#123;</span><br><span class="line">    <span class="attribute">display</span>: grid;</span><br><span class="line">    <span class="attribute">grid-template-columns</span>: <span class="number">200px</span> <span class="number">1</span>fr <span class="number">200px</span>;</span><br><span class="line">    <span class="attribute">grid-template-rows</span>: <span class="number">60px</span> <span class="number">1</span>fr <span class="number">60px</span>;</span><br><span class="line">    <span class="attribute">grid-template-areas</span>:</span><br><span class="line">        <span class="string">&quot;header header header&quot;</span></span><br><span class="line">        <span class="string">&quot;sidebar main ads&quot;</span></span><br><span class="line">        <span class="string">&quot;footer footer footer&quot;</span>;</span><br><span class="line">    <span class="attribute">min-height</span>: <span class="number">100vh</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h3 id="4-响应式网格"><a href="#4-响应式网格" class="headerlink" title="4. 响应式网格"></a>4. 响应式网格</h3><figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-class">.container</span> &#123;</span><br><span class="line">    <span class="attribute">display</span>: grid;</span><br><span class="line">    <span class="attribute">grid-template-columns</span>: <span class="built_in">repeat</span>(auto-fit, <span class="built_in">minmax</span>(<span class="number">250px</span>, <span class="number">1</span>fr));</span><br><span class="line">    <span class="attribute">gap</span>: <span class="number">20px</span>;</span><br><span class="line">    <span class="comment">/* 自动适应，不小于250px，平分剩余空间 */</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h3 id="5-卡片悬停效果"><a href="#5-卡片悬停效果" class="headerlink" title="5. 卡片悬停效果"></a>5. 卡片悬停效果</h3><figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-class">.container</span> &#123;</span><br><span class="line">    <span class="attribute">display</span>: grid;</span><br><span class="line">    <span class="attribute">grid-template-columns</span>: <span class="built_in">repeat</span>(auto-fill, <span class="built_in">minmax</span>(<span class="number">300px</span>, <span class="number">1</span>fr));</span><br><span class="line">    <span class="attribute">gap</span>: <span class="number">20px</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="selector-class">.card</span> &#123;</span><br><span class="line">    <span class="attribute">transition</span>: transform <span class="number">0.3s</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="selector-class">.card</span><span class="selector-pseudo">:hover</span> &#123;</span><br><span class="line">    <span class="attribute">transform</span>: <span class="built_in">translateY</span>(-<span class="number">5px</span>);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<hr>
+<h2 id="五、浏览器兼容性"><a href="#五、浏览器兼容性" class="headerlink" title="五、浏览器兼容性"></a>五、浏览器兼容性</h2><figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/* 前缀 */</span></span><br><span class="line"><span class="selector-class">.container</span> &#123;</span><br><span class="line">    <span class="attribute">display</span>: -webkit-flex;</span><br><span class="line">    <span class="attribute">display</span>: -ms-flexbox;</span><br><span class="line">    <span class="attribute">display</span>: flex;</span><br><span class="line">    <span class="attribute">display</span>: -webkit-grid;</span><br><span class="line">    <span class="attribute">display</span>: -ms-grid;</span><br><span class="line">    <span class="attribute">display</span>: grid;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">/* 检测支持 */</span></span><br><span class="line"><span class="keyword">@supports</span> (<span class="attribute">display</span>: <span class="attribute">grid</span>) &#123;</span><br><span class="line">    <span class="comment">/* Grid 支持代码 */</span></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">@supports</span> (<span class="attribute">display</span>: flex) &#123;</span><br><span class="line">    <span class="comment">/* Flexbox 支持代码 */</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<hr>
+<h2 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h2><p>Flexbox 适合一维布局，Grid 适合二维布局。掌握这两种布局方式可以解决大部分布局需求，建议根据实际场景选择最合适的方案。</p>
+</div>          
+          <nav class="post-nav">
+    
+    <a class="post-nav-item post-nav-prev" href="/2026/04/15/%E5%89%8D%E7%AB%AF/JavaScript%E5%9F%BA%E7%A1%80%E8%AF%AD%E6%B3%95/">
+      <div class="nav-arrow">&lt;&nbsp;NEWER</div>
+      <span class="post-title">JavaScript基础语法</span>
+    </a>
+    
+    
+    <a class="post-nav-item post-nav-next" href="/2026/04/15/%E5%89%8D%E7%AB%AF/Markdown%E6%89%A9%E5%B1%95/">
+      <div class="nav-arrow">OLDER&nbsp;&gt;</div>
+      <span class="post-title">Markdown扩展</span>
+    </a>
+    
+  </nav>
+
+   </main>
+</div>
+
+  <footer class="footer">
+    <small class="footer_copyright">
+      <div id="bottom-inner">
+        © Site by John Doe<br>
+        <a target="_blank" rel="noopener" href="http://hexo.io">Hexo</a> &
+        <a target="_blank" rel="noopener" href="https://github.com/g0dmao/hexo-theme-Klise-enhanced">Klise-enhanced</a>
+        <br>
+        <a target="_blank" rel="noopener" href="https://chinese-font.netlify.app/zh-cn/fonts/jhlst/%E4%BA%AC%E8%8F%AF%E8%80%81%E5%AE%8B%E4%BD%93v2_002">京華老宋体</a> & <a target="_blank" rel="noopener" href="https://chinese-font.netlify.app/zh-cn/">中文网字支持计划</a>
+        <br>
+        始于2025.
+        
+      </div>
+    </small>
+  </footer>
+  
+  
+
+    
+      <script src="/js/main.js"></script>
+    
+  
+  <script>
+    window.FPConfig = {
+      delay: 0,
+      ignoreKeywords: [],
+      maxRPS: 3,
+      hoverDelay: 50,
+    };
+  </script>
+  <script defer src="https://cdn.jsdelivr.net/gh/gijo-varghese/flying-pages@2.1.2/flying-pages.min.js"></script>
+  <script>
+    document.addEventListener('DOMContentLoaded', function() {
+  document.body.classList.add('loaded');
+});
+
+  </script>
+</body>
+</html>

@@ -1,0 +1,460 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <link rel='stylesheet' href='https://chinese-fonts-cdn.deno.dev/packages/lxgwwenkai/dist/LXGWWenKai-Bold/result.css' />
+  <link rel='stylesheet' href='https://chinese-fonts-cdn.deno.dev/packages/jhlst/dist/%E4%BA%AC%E8%8F%AF%E8%80%81%E5%AE%8B%E4%BD%93v2_002/result.css' />  
+  
+
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>项目分析 [ Hexo ]</title>
+
+  <link rel="icon" href="/img/favicon.ico">
+
+
+    <meta name="author" content="John Doe">
+
+
+
+
+
+  <link rel="alternate" href="/atom.xml " title="Hexo" type="application/atom+xml">
+
+
+  
+    <link rel="stylesheet" href="/css/main.css">
+  
+
+
+<script defer>
+  document.addEventListener('visibilitychange', function () {
+  if (document.visibilityState == 'hidden') {
+      normal_title = document.title;
+      document.title = '点一下';
+  } else document.title = normal_title;
+});
+
+</script>
+  <body data-theme="light" class="notransition">
+    <script defer>
+      const body = document.body;
+      const data = body.getAttribute("data-theme");
+      const initTheme = (state) => {
+        if (state === "dark") {
+          body.setAttribute("data-theme", "dark");
+        } else if (state === "light") {
+          body.removeAttribute("data-theme");
+        } else {
+          localStorage.setItem("theme", data);
+        }
+      };
+   
+      initTheme(localStorage.getItem("theme"));
+      
+      setTimeout(() => body.classList.remove("notransition"), 75);
+    </script>
+  <div class="navbar" role="navigation">
+    <nav class="menu">
+      <input type="checkbox" id="menu-trigger" class="menu-trigger" />
+      <label for="menu-trigger">
+        <span class="menu-icon">
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            width="24"
+            height="24"
+            viewBox="0 0 512 512"
+          >
+            <path
+              d="M64,384H448V341.33H64Zm0-106.67H448V234.67H64ZM64,128v42.67H448V128Z"
+            />
+          </svg>
+        </span>
+      </label>
+      <a id="mode">
+        <svg
+          class="mode-sunny"
+          xmlns="http://www.w3.org/2000/svg"
+          width="24"
+          height="24"
+          viewBox="0 0 512 512"
+        >
+          <title>LIGHT</title>
+          <line
+            x1="256"
+            y1="48"
+            x2="256"
+            y2="96"
+            style="stroke-linecap:round;stroke-miterlimit:10;stroke-width:32px"
+          />
+          <line
+            x1="256"
+            y1="416"
+            x2="256"
+            y2="464"
+            style="stroke-linecap:round;stroke-miterlimit:10;stroke-width:32px"
+          />
+          <line
+            x1="403.08"
+            y1="108.92"
+            x2="369.14"
+            y2="142.86"
+            style="stroke-linecap:round;stroke-miterlimit:10;stroke-width:32px"
+          />
+          <line
+            x1="142.86"
+            y1="369.14"
+            x2="108.92"
+            y2="403.08"
+            style="stroke-linecap:round;stroke-miterlimit:10;stroke-width:32px"
+          />
+          <line
+            x1="464"
+            y1="256"
+            x2="416"
+            y2="256"
+            style="stroke-linecap:round;stroke-miterlimit:10;stroke-width:32px"
+          />
+          <line
+            x1="96"
+            y1="256"
+            x2="48"
+            y2="256"
+            style="stroke-linecap:round;stroke-miterlimit:10;stroke-width:32px"
+          />
+          <line
+            x1="403.08"
+            y1="403.08"
+            x2="369.14"
+            y2="369.14"
+            style="stroke-linecap:round;stroke-miterlimit:10;stroke-width:32px"
+          />
+          <line
+            x1="142.86"
+            y1="142.86"
+            x2="108.92"
+            y2="108.92"
+            style="stroke-linecap:round;stroke-miterlimit:10;stroke-width:32px"
+          />
+          <circle
+            cx="256"
+            cy="256"
+            r="80"
+            style="stroke-linecap:round;stroke-miterlimit:10;stroke-width:32px"
+          />
+        </svg>
+        <svg
+          class="mode-moon"
+          xmlns="http://www.w3.org/2000/svg"
+          width="24"
+          height="24"
+          viewBox="0 0 512 512"
+        >
+          <title>DARK</title>
+          <line
+            x1="256"
+            y1="48"
+            x2="256"
+            y2="96"
+            style="stroke-linecap:round;stroke-miterlimit:10;stroke-width:32px"
+          />
+          <line
+            x1="256"
+            y1="416"
+            x2="256"
+            y2="464"
+            style="stroke-linecap:round;stroke-miterlimit:10;stroke-width:32px"
+          />
+          <line
+            x1="403.08"
+            y1="108.92"
+            x2="369.14"
+            y2="142.86"
+            style="stroke-linecap:round;stroke-miterlimit:10;stroke-width:32px"
+          />
+          <line
+            x1="142.86"
+            y1="369.14"
+            x2="108.92"
+            y2="403.08"
+            style="stroke-linecap:round;stroke-miterlimit:10;stroke-width:32px"
+          />
+          <line
+            x1="464"
+            y1="256"
+            x2="416"
+            y2="256"
+            style="stroke-linecap:round;stroke-miterlimit:10;stroke-width:32px"
+          />
+          <line
+            x1="96"
+            y1="256"
+            x2="48"
+            y2="256"
+            style="stroke-linecap:round;stroke-miterlimit:10;stroke-width:32px"
+          />
+          <line
+            x1="403.08"
+            y1="403.08"
+            x2="369.14"
+            y2="369.14"
+            style="stroke-linecap:round;stroke-miterlimit:10;stroke-width:32px"
+          />
+          <line
+            x1="142.86"
+            y1="142.86"
+            x2="108.92"
+            y2="108.92"
+            style="stroke-linecap:round;stroke-miterlimit:10;stroke-width:32px"
+          />
+          <circle
+            cx="256"
+            cy="256"
+            r="80"
+            style="stroke-linecap:round;stroke-miterlimit:10;stroke-width:32px"
+          />
+        </svg>
+      </a>
+      <div class="trigger">
+        <div class="trigger-container">
+          
+            
+            
+            
+            
+            
+            
+            <a class="menu-link " href="/"> 主页</a>
+          
+            
+            
+            
+            
+            
+            
+            <a class="menu-link " href="/tags/"> 标签</a>
+          
+            
+            
+            
+            
+            
+            
+            <a class="menu-link " href="/categories/"> 类别</a>
+          
+            
+            
+            
+            
+            
+            
+            <a class="menu-link " href="/archives/"> 档案馆</a>
+          
+            
+            
+            
+            
+            
+            
+            <a class="menu-link " href="/about/"> 关于</a>
+          
+        </div>
+      </div>
+    </nav>
+  </div>
+  <button id="toTopBtn"><i class="fa-solid fa-hand-point-up " ></i></button>
+<button id="toggleButton"><i class="fa-solid fa-chart-bar " ></i></button>
+<div id="overlay" class="overlay">
+  <div class="content">
+    <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#Hexapod-%E9%A1%B9%E7%9B%AE%E5%88%86%E6%9E%90%E6%8A%A5%E5%91%8A"><span class="toc-text">Hexapod 项目分析报告</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#1-%E9%A1%B9%E7%9B%AE%E6%A6%82%E8%BF%B0"><span class="toc-text">1. 项目概述</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#1-1-%E9%A1%B9%E7%9B%AE%E7%89%B9%E7%82%B9"><span class="toc-text">1.1 项目特点</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#1-2-%E6%8A%80%E6%9C%AF%E6%9E%B6%E6%9E%84"><span class="toc-text">1.2 技术架构</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#2-%E6%9C%BA%E6%A2%B0%E9%83%A8%E5%88%86%E5%88%86%E6%9E%90"><span class="toc-text">2. 机械部分分析</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#2-1-%E7%BB%93%E6%9E%84%E8%AE%BE%E8%AE%A1"><span class="toc-text">2.1 结构设计</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-2-%E5%85%B3%E9%94%AE%E9%83%A8%E4%BB%B6"><span class="toc-text">2.2 关键部件</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-3-%E7%BB%84%E8%A3%85%E8%A6%81%E6%B1%82"><span class="toc-text">2.3 组装要求</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#3-%E7%94%B5%E5%AD%90%E9%83%A8%E5%88%86%E5%88%86%E6%9E%90"><span class="toc-text">3. 电子部分分析</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#3-1-%E7%94%B5%E8%B7%AF%E8%AE%BE%E8%AE%A1"><span class="toc-text">3.1 电路设计</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#3-2-%E5%85%B3%E9%94%AE%E7%BB%84%E4%BB%B6"><span class="toc-text">3.2 关键组件</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#3-3-%E8%BF%9E%E6%8E%A5%E6%96%B9%E5%BC%8F"><span class="toc-text">3.3 连接方式</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#4-%E8%BD%AF%E4%BB%B6%E9%83%A8%E5%88%86%E5%88%86%E6%9E%90"><span class="toc-text">4. 软件部分分析</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#4-1-%E8%BD%AF%E4%BB%B6%E6%9E%B6%E6%9E%84"><span class="toc-text">4.1 软件架构</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#4-2-%E6%A0%B8%E5%BF%83%E5%8A%9F%E8%83%BD"><span class="toc-text">4.2 核心功能</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#4-3-%E6%8A%80%E6%9C%AF%E7%89%B9%E7%82%B9"><span class="toc-text">4.3 技术特点</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#5-%E7%B3%BB%E7%BB%9F%E9%9B%86%E6%88%90%E5%88%86%E6%9E%90"><span class="toc-text">5. 系统集成分析</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#5-1-%E6%9C%BA%E6%A2%B0%E4%B8%8E%E7%94%B5%E5%AD%90%E9%9B%86%E6%88%90"><span class="toc-text">5.1 机械与电子集成</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#5-2-%E8%BD%AF%E4%BB%B6%E4%B8%8E%E7%A1%AC%E4%BB%B6%E9%9B%86%E6%88%90"><span class="toc-text">5.2 软件与硬件集成</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#5-3-%E6%8E%A7%E5%88%B6%E7%B3%BB%E7%BB%9F%E5%B7%A5%E4%BD%9C%E6%B5%81%E7%A8%8B"><span class="toc-text">5.3 控制系统工作流程</span></a></li></ol></li></ol></li></ol>
+    <button id="closeButton"><i class="fa-solid fa-circle-xmark"></i></button>
+  </div>
+</div>
+<div class="wrapper post">
+  <head>
+    <!-- 引入 Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+  <meta name="generator" content="Hexo 8.1.1"></head>
+
+
+
+  <main class="page-content" aria-label="Content">
+      <header class="header">
+        
+          <div class="tags">
+            <a href="/tags/%E5%85%AD%E8%B6%B3%E6%9C%BA%E5%99%A8%E4%BA%BA/" class="tag"># 六足机器人</a><a href="/tags/%E9%A1%B9%E7%9B%AE%E5%88%86%E6%9E%90/" class="tag"># 项目分析</a>
+          </div>
+        
+        <h1 class="header-title" itemprop="headline">项目分析</h1>
+          <div class="post-meta">
+            最后更新: <time>Apr 15, 2026</time>
+            作者: <span itemprop="author">
+              <span itemprop="name">John Doe</span>
+            </span>
+            字数: <span class="post-count">893</span>
+            预计阅读时间: <span class="post-count">3min</span> 
+          </div>       
+        </header>
+          <div class="page-content"><h1 id="Hexapod-项目分析报告"><a href="#Hexapod-项目分析报告" class="headerlink" title="Hexapod 项目分析报告"></a>Hexapod 项目分析报告</h1><p><img src="http://47.113.204.202:40027/i/2026/01/18/696c598b73164.png" alt="封面"></p>
+<h2 id="1-项目概述"><a href="#1-项目概述" class="headerlink" title="1. 项目概述"></a>1. 项目概述</h2><p>Hexapod-v2-7697是一个基于Linkit 7697开发板(本次复刻采用树莓派zero2w开发板代替)的六足机器人项目，提供了完整的机械设计、电子电路和软件代码，允许用户通过手机（iOS或Android）通过蓝牙低功耗（BLE）远程控制机器人的运动。</p>
+<h3 id="1-1-项目特点"><a href="#1-1-项目特点" class="headerlink" title="1.1 项目特点"></a>1.1 项目特点</h3><ul>
+<li><strong>无线控制</strong>：通过Linkit 7697的BLE功能实现手机远程控制</li>
+<li><strong>多自由度</strong>：6条腿，每条腿3个关节，共18个舵机（TowerPro MG92B）</li>
+<li><strong>模块化设计</strong>：机械、电子和软件部分分离，便于维护和扩展</li>
+<li><strong>开源共享</strong>：所有设计文件和代码均在GPL许可证下开源</li>
+</ul>
+<h3 id="1-2-技术架构"><a href="#1-2-技术架构" class="headerlink" title="1.2 技术架构"></a>1.2 技术架构</h3><table>
+<thead>
+<tr>
+<th>模块</th>
+<th>主要组件</th>
+<th>功能</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>机械结构</td>
+<td>3D打印PLA部件</td>
+<td>机器人身体和腿部结构</td>
+</tr>
+<tr>
+<td>电子控制</td>
+<td>Linkit 7697、PCA9685×2</td>
+<td>主控制器和舵机控制</td>
+</tr>
+<tr>
+<td>电源系统</td>
+<td>2S Lipo电池、mini360 DC-DC×7</td>
+<td>提供5V和6V电源</td>
+</tr>
+<tr>
+<td>软件系统</td>
+<td>Arduino程序、Python路径工具</td>
+<td>控制逻辑和路径生成</td>
+</tr>
+</tbody></table>
+<h2 id="2-机械部分分析"><a href="#2-机械部分分析" class="headerlink" title="2. 机械部分分析"></a>2. 机械部分分析</h2><h3 id="2-1-结构设计"><a href="#2-1-结构设计" class="headerlink" title="2.1 结构设计"></a>2.1 结构设计</h3><ul>
+<li><strong>身体结构</strong>：模块化设计，分为底部、顶部、前后壁和侧墙</li>
+<li><strong>腿部结构</strong>：每条腿由大腿、小腿和脚部组成，通过关节连接</li>
+<li><strong>材料</strong>：PLA塑料，使用Prusa i3 MK2S 3D打印机打印</li>
+</ul>
+<h3 id="2-2-关键部件"><a href="#2-2-关键部件" class="headerlink" title="2.2 关键部件"></a>2.2 关键部件</h3><ul>
+<li>腿部组件：thigh_top.stl、thigh_bottom.stl、leg_top.stl、leg_bottom.stl、foot_top.stl、foot_bottom.stl等</li>
+<li>关节组件：joint_top.stl、joint_bottom.stl、joint_cross.stl</li>
+<li>身体组件：body_top.stl、body_bottom.stl、body_side_wall.stl等</li>
+</ul>
+<h3 id="2-3-组装要求"><a href="#2-3-组装要求" class="headerlink" title="2.3 组装要求"></a>2.3 组装要求</h3><ul>
+<li>需要6条完全相同的腿</li>
+<li>关节处需要M2螺丝和螺母连接</li>
+<li>舵机需要精确安装以确保运动范围</li>
+</ul>
+<h2 id="3-电子部分分析"><a href="#3-电子部分分析" class="headerlink" title="3. 电子部分分析"></a>3. 电子部分分析</h2><h3 id="3-1-电路设计"><a href="#3-1-电路设计" class="headerlink" title="3.1 电路设计"></a>3.1 电路设计</h3><ul>
+<li><strong>主PCB</strong>：包含Linkit 7697和一个PCA9685舵机控制器</li>
+<li><strong>子PCB</strong>：两个子PCB，每个包含一个PCA9685和相关电路</li>
+<li><strong>电源系统</strong>：7个mini360 DC-DC转换器，1个提供5V给Linkit 7697，6个提供6V给每条腿的舵机</li>
+</ul>
+<h3 id="3-2-关键组件"><a href="#3-2-关键组件" class="headerlink" title="3.2 关键组件"></a>3.2 关键组件</h3><ul>
+<li><strong>Linkit 7697</strong>：主控制器，提供BLE通信功能</li>
+<li><strong>PCA9685</strong>：16通道PWM控制器，用于控制舵机</li>
+<li><strong>mini360 DC-DC</strong>：降压模块，将7.4V转换为5V和6V</li>
+<li><strong>电阻电容</strong>：用于电路保护和滤波</li>
+</ul>
+<h3 id="3-3-连接方式"><a href="#3-3-连接方式" class="headerlink" title="3.3 连接方式"></a>3.3 连接方式</h3><ul>
+<li>舵机通过3针接头连接到子PCB</li>
+<li>主PCB和子PCB通过I2C总线通信</li>
+<li>电源通过2针接头连接到电池</li>
+</ul>
+<h2 id="4-软件部分分析"><a href="#4-软件部分分析" class="headerlink" title="4. 软件部分分析"></a>4. 软件部分分析</h2><h3 id="4-1-软件架构"><a href="#4-1-软件架构" class="headerlink" title="4.1 软件架构"></a>4.1 软件架构</h3><ul>
+<li><strong>hexapod7697</strong>：Arduino程序，运行在Linkit 7697上<ul>
+<li>normal_mode：正常控制模式</li>
+<li>setting_mode：校准模式</li>
+<li>hexapod：核心控制类</li>
+<li>hal：硬件抽象层</li>
+</ul>
+</li>
+<li><strong>pathTool</strong>：Python工具，用于生成运动路径</li>
+</ul>
+<h3 id="4-2-核心功能"><a href="#4-2-核心功能" class="headerlink" title="4.2 核心功能"></a>4.2 核心功能</h3><ul>
+<li><strong>运动控制</strong>：前向、后向、左转、右转、旋转等</li>
+<li><strong>校准功能</strong>：调整舵机的零位和缩放比例</li>
+<li><strong>BLE通信</strong>：与手机应用程序通信</li>
+</ul>
+<h3 id="4-3-技术特点"><a href="#4-3-技术特点" class="headerlink" title="4.3 技术特点"></a>4.3 技术特点</h3><ul>
+<li>使用C++11和STL库</li>
+<li>面向对象设计</li>
+<li>硬件抽象层，便于移植</li>
+</ul>
+<h2 id="5-系统集成分析"><a href="#5-系统集成分析" class="headerlink" title="5. 系统集成分析"></a>5. 系统集成分析</h2><h3 id="5-1-机械与电子集成"><a href="#5-1-机械与电子集成" class="headerlink" title="5.1 机械与电子集成"></a>5.1 机械与电子集成</h3><ul>
+<li>舵机通过螺丝固定在3D打印部件上</li>
+<li>PCB安装在机器人身体内部</li>
+<li>电线通过身体内部的通道连接</li>
+</ul>
+<h3 id="5-2-软件与硬件集成"><a href="#5-2-软件与硬件集成" class="headerlink" title="5.2 软件与硬件集成"></a>5.2 软件与硬件集成</h3><ul>
+<li>Arduino程序通过I2C控制PCA9685</li>
+<li>PCA9685生成PWM信号控制舵机</li>
+<li>Linkit 7697通过BLE接收手机命令</li>
+</ul>
+<h3 id="5-3-控制系统工作流程"><a href="#5-3-控制系统工作流程" class="headerlink" title="5.3 控制系统工作流程"></a>5.3 控制系统工作流程</h3><ol>
+<li>手机发送控制命令通过BLE</li>
+<li>Linkit 7697接收命令并解析</li>
+<li>计算每个舵机的目标角度</li>
+<li>通过PCA9685控制舵机运动</li>
+<li>机器人执行相应的运动</li>
+</ol>
+</div>          
+          <nav class="post-nav">
+    
+    <a class="post-nav-item post-nav-prev" href="/2026/04/15/%E9%A1%B9%E7%9B%AE%E5%A4%8D%E5%88%BB/%E5%A4%8D%E5%88%BB%E6%8C%87%E5%8D%97/">
+      <div class="nav-arrow">&lt;&nbsp;NEWER</div>
+      <span class="post-title">复刻指南</span>
+    </a>
+    
+    
+    <a class="post-nav-item post-nav-next" href="/2026/04/15/%E5%B5%8C%E5%85%A5%E5%BC%8F/Ubuntu%E5%BC%80%E6%9C%BA%E4%BA%AE%E5%BA%A6%E6%97%A0%E6%B3%95%E8%87%AA%E5%8A%A8%E8%B0%83%E8%8A%82/">
+      <div class="nav-arrow">OLDER&nbsp;&gt;</div>
+      <span class="post-title">Ubuntu开机亮度无法自动调节</span>
+    </a>
+    
+  </nav>
+
+   </main>
+</div>
+
+  <footer class="footer">
+    <small class="footer_copyright">
+      <div id="bottom-inner">
+        © Site by John Doe<br>
+        <a target="_blank" rel="noopener" href="http://hexo.io">Hexo</a> &
+        <a target="_blank" rel="noopener" href="https://github.com/g0dmao/hexo-theme-Klise-enhanced">Klise-enhanced</a>
+        <br>
+        <a target="_blank" rel="noopener" href="https://chinese-font.netlify.app/zh-cn/fonts/jhlst/%E4%BA%AC%E8%8F%AF%E8%80%81%E5%AE%8B%E4%BD%93v2_002">京華老宋体</a> & <a target="_blank" rel="noopener" href="https://chinese-font.netlify.app/zh-cn/">中文网字支持计划</a>
+        <br>
+        始于2025.
+        
+      </div>
+    </small>
+  </footer>
+  
+  
+
+    
+      <script src="/js/main.js"></script>
+    
+  
+  <script>
+    window.FPConfig = {
+      delay: 0,
+      ignoreKeywords: [],
+      maxRPS: 3,
+      hoverDelay: 50,
+    };
+  </script>
+  <script defer src="https://cdn.jsdelivr.net/gh/gijo-varghese/flying-pages@2.1.2/flying-pages.min.js"></script>
+  <script>
+    document.addEventListener('DOMContentLoaded', function() {
+  document.body.classList.add('loaded');
+});
+
+  </script>
+</body>
+</html>

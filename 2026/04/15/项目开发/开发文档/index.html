@@ -1,0 +1,682 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <link rel='stylesheet' href='https://chinese-fonts-cdn.deno.dev/packages/lxgwwenkai/dist/LXGWWenKai-Bold/result.css' />
+  <link rel='stylesheet' href='https://chinese-fonts-cdn.deno.dev/packages/jhlst/dist/%E4%BA%AC%E8%8F%AF%E8%80%81%E5%AE%8B%E4%BD%93v2_002/result.css' />  
+  
+
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>开发文档 [ Hexo ]</title>
+
+  <link rel="icon" href="/img/favicon.ico">
+
+
+    <meta name="author" content="John Doe">
+
+
+
+
+
+  <link rel="alternate" href="/atom.xml " title="Hexo" type="application/atom+xml">
+
+
+  
+    <link rel="stylesheet" href="/css/main.css">
+  
+
+
+<script defer>
+  document.addEventListener('visibilitychange', function () {
+  if (document.visibilityState == 'hidden') {
+      normal_title = document.title;
+      document.title = '点一下';
+  } else document.title = normal_title;
+});
+
+</script>
+  <body data-theme="light" class="notransition">
+    <script defer>
+      const body = document.body;
+      const data = body.getAttribute("data-theme");
+      const initTheme = (state) => {
+        if (state === "dark") {
+          body.setAttribute("data-theme", "dark");
+        } else if (state === "light") {
+          body.removeAttribute("data-theme");
+        } else {
+          localStorage.setItem("theme", data);
+        }
+      };
+   
+      initTheme(localStorage.getItem("theme"));
+      
+      setTimeout(() => body.classList.remove("notransition"), 75);
+    </script>
+  <div class="navbar" role="navigation">
+    <nav class="menu">
+      <input type="checkbox" id="menu-trigger" class="menu-trigger" />
+      <label for="menu-trigger">
+        <span class="menu-icon">
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            width="24"
+            height="24"
+            viewBox="0 0 512 512"
+          >
+            <path
+              d="M64,384H448V341.33H64Zm0-106.67H448V234.67H64ZM64,128v42.67H448V128Z"
+            />
+          </svg>
+        </span>
+      </label>
+      <a id="mode">
+        <svg
+          class="mode-sunny"
+          xmlns="http://www.w3.org/2000/svg"
+          width="24"
+          height="24"
+          viewBox="0 0 512 512"
+        >
+          <title>LIGHT</title>
+          <line
+            x1="256"
+            y1="48"
+            x2="256"
+            y2="96"
+            style="stroke-linecap:round;stroke-miterlimit:10;stroke-width:32px"
+          />
+          <line
+            x1="256"
+            y1="416"
+            x2="256"
+            y2="464"
+            style="stroke-linecap:round;stroke-miterlimit:10;stroke-width:32px"
+          />
+          <line
+            x1="403.08"
+            y1="108.92"
+            x2="369.14"
+            y2="142.86"
+            style="stroke-linecap:round;stroke-miterlimit:10;stroke-width:32px"
+          />
+          <line
+            x1="142.86"
+            y1="369.14"
+            x2="108.92"
+            y2="403.08"
+            style="stroke-linecap:round;stroke-miterlimit:10;stroke-width:32px"
+          />
+          <line
+            x1="464"
+            y1="256"
+            x2="416"
+            y2="256"
+            style="stroke-linecap:round;stroke-miterlimit:10;stroke-width:32px"
+          />
+          <line
+            x1="96"
+            y1="256"
+            x2="48"
+            y2="256"
+            style="stroke-linecap:round;stroke-miterlimit:10;stroke-width:32px"
+          />
+          <line
+            x1="403.08"
+            y1="403.08"
+            x2="369.14"
+            y2="369.14"
+            style="stroke-linecap:round;stroke-miterlimit:10;stroke-width:32px"
+          />
+          <line
+            x1="142.86"
+            y1="142.86"
+            x2="108.92"
+            y2="108.92"
+            style="stroke-linecap:round;stroke-miterlimit:10;stroke-width:32px"
+          />
+          <circle
+            cx="256"
+            cy="256"
+            r="80"
+            style="stroke-linecap:round;stroke-miterlimit:10;stroke-width:32px"
+          />
+        </svg>
+        <svg
+          class="mode-moon"
+          xmlns="http://www.w3.org/2000/svg"
+          width="24"
+          height="24"
+          viewBox="0 0 512 512"
+        >
+          <title>DARK</title>
+          <line
+            x1="256"
+            y1="48"
+            x2="256"
+            y2="96"
+            style="stroke-linecap:round;stroke-miterlimit:10;stroke-width:32px"
+          />
+          <line
+            x1="256"
+            y1="416"
+            x2="256"
+            y2="464"
+            style="stroke-linecap:round;stroke-miterlimit:10;stroke-width:32px"
+          />
+          <line
+            x1="403.08"
+            y1="108.92"
+            x2="369.14"
+            y2="142.86"
+            style="stroke-linecap:round;stroke-miterlimit:10;stroke-width:32px"
+          />
+          <line
+            x1="142.86"
+            y1="369.14"
+            x2="108.92"
+            y2="403.08"
+            style="stroke-linecap:round;stroke-miterlimit:10;stroke-width:32px"
+          />
+          <line
+            x1="464"
+            y1="256"
+            x2="416"
+            y2="256"
+            style="stroke-linecap:round;stroke-miterlimit:10;stroke-width:32px"
+          />
+          <line
+            x1="96"
+            y1="256"
+            x2="48"
+            y2="256"
+            style="stroke-linecap:round;stroke-miterlimit:10;stroke-width:32px"
+          />
+          <line
+            x1="403.08"
+            y1="403.08"
+            x2="369.14"
+            y2="369.14"
+            style="stroke-linecap:round;stroke-miterlimit:10;stroke-width:32px"
+          />
+          <line
+            x1="142.86"
+            y1="142.86"
+            x2="108.92"
+            y2="108.92"
+            style="stroke-linecap:round;stroke-miterlimit:10;stroke-width:32px"
+          />
+          <circle
+            cx="256"
+            cy="256"
+            r="80"
+            style="stroke-linecap:round;stroke-miterlimit:10;stroke-width:32px"
+          />
+        </svg>
+      </a>
+      <div class="trigger">
+        <div class="trigger-container">
+          
+            
+            
+            
+            
+            
+            
+            <a class="menu-link " href="/"> 主页</a>
+          
+            
+            
+            
+            
+            
+            
+            <a class="menu-link " href="/tags/"> 标签</a>
+          
+            
+            
+            
+            
+            
+            
+            <a class="menu-link " href="/categories/"> 类别</a>
+          
+            
+            
+            
+            
+            
+            
+            <a class="menu-link " href="/archives/"> 档案馆</a>
+          
+            
+            
+            
+            
+            
+            
+            <a class="menu-link " href="/about/"> 关于</a>
+          
+        </div>
+      </div>
+    </nav>
+  </div>
+  <button id="toTopBtn"><i class="fa-solid fa-hand-point-up " ></i></button>
+<button id="toggleButton"><i class="fa-solid fa-chart-bar " ></i></button>
+<div id="overlay" class="overlay">
+  <div class="content">
+    <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#%E5%BC%80%E5%8F%91%E6%96%87%E6%A1%A3"><span class="toc-text">开发文档</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#1-%E9%A1%B9%E7%9B%AE%E6%A6%82%E8%BF%B0"><span class="toc-text">1. 项目概述</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#2-%E7%A1%AC%E4%BB%B6%E6%B8%85%E5%8D%95"><span class="toc-text">2. 硬件清单</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#3-%E7%A1%AC%E4%BB%B6%E6%8E%A5%E7%BA%BF%E8%AF%B4%E6%98%8E"><span class="toc-text">3. 硬件接线说明</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#4-%E5%BC%80%E5%8F%91%E7%8E%AF%E5%A2%83%E6%90%AD%E5%BB%BA"><span class="toc-text">4. 开发环境搭建</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#4-1-%E5%AE%89%E8%A3%85ESP32%E5%BC%80%E5%8F%91%E6%9D%BF%E6%94%AF%E6%8C%81"><span class="toc-text">4.1 安装ESP32开发板支持</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#4-2-%E5%AE%89%E8%A3%85%E6%89%80%E9%9C%80%E5%BA%93%E6%96%87%E4%BB%B6"><span class="toc-text">4.2 安装所需库文件</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#5-API%E5%AF%86%E9%92%A5%E8%8E%B7%E5%8F%96%E4%B8%8E%E9%85%8D%E7%BD%AE"><span class="toc-text">5. API密钥获取与配置</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#5-1-%E5%92%8C%E9%A3%8E%E5%A4%A9%E6%B0%94-QWeather"><span class="toc-text">5.1 和风天气 (QWeather)</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#5-2-%E8%80%81%E9%BB%84%E5%8E%86-API-%E4%BB%A5%E8%81%9A%E5%90%88%E6%95%B0%E6%8D%AE%E4%B8%BA%E4%BE%8B"><span class="toc-text">5.2 老黄历 API (以聚合数据为例)</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#6-DFPlayer-Mini-%E8%AF%AD%E9%9F%B3%E6%96%87%E4%BB%B6%E5%87%86%E5%A4%87"><span class="toc-text">6. DFPlayer Mini 语音文件准备</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#7-%E6%BA%90%E4%BB%A3%E7%A0%81%E9%85%8D%E7%BD%AE%E4%B8%8E%E7%83%A7%E5%BD%95"><span class="toc-text">7. 源代码配置与烧录</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#8-%E6%A0%B8%E5%BF%83%E5%8A%9F%E8%83%BD%E5%AE%9E%E7%8E%B0%E9%80%BB%E8%BE%91"><span class="toc-text">8. 核心功能实现逻辑</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#8-1-%E5%BC%82%E5%B8%B8%E5%A4%A9%E6%B0%94%E9%A2%84%E8%AD%A6-LED"><span class="toc-text">8.1 异常天气预警 (LED)</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#8-2-%E8%AF%AD%E9%9F%B3%E6%92%AD%E6%8A%A5"><span class="toc-text">8.2 语音播报</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#8-3-OLED%E6%98%BE%E7%A4%BA"><span class="toc-text">8.3 OLED显示</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#8-4-%E5%8F%82%E6%95%B0%E5%8F%AF%E8%AE%BE%E7%BD%AE%E6%80%A7"><span class="toc-text">8.4 参数可设置性</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#9-%E6%80%BB%E7%BB%93"><span class="toc-text">9. 总结</span></a></li></ol></li></ol>
+    <button id="closeButton"><i class="fa-solid fa-circle-xmark"></i></button>
+  </div>
+</div>
+<div class="wrapper post">
+  <head>
+    <!-- 引入 Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+  <meta name="generator" content="Hexo 8.1.1"></head>
+
+
+
+  <main class="page-content" aria-label="Content">
+      <header class="header">
+        
+          <div class="tags">
+            <a href="/tags/%E5%A4%A9%E6%B0%94%E5%B0%8F%E5%8A%A9%E6%89%8B/" class="tag"># 天气小助手</a><a href="/tags/%E5%BC%80%E5%8F%91%E6%96%87%E6%A1%A3/" class="tag"># 开发文档</a>
+          </div>
+        
+        <h1 class="header-title" itemprop="headline">开发文档</h1>
+          <div class="post-meta">
+            最后更新: <time>Apr 15, 2026</time>
+            作者: <span itemprop="author">
+              <span itemprop="name">John Doe</span>
+            </span>
+            字数: <span class="post-count">1.8k</span>
+            预计阅读时间: <span class="post-count">7min</span> 
+          </div>       
+        </header>
+          <div class="page-content"><h1 id="开发文档"><a href="#开发文档" class="headerlink" title="开发文档"></a>开发文档</h1><h2 id="1-项目概述"><a href="#1-项目概述" class="headerlink" title="1. 项目概述"></a>1. 项目概述</h2><p>本项目旨在开发一个基于 <strong>ESP32</strong> 微控制器、<strong>0.96寸OLED显示屏</strong>、<strong>DFPlayer Mini</strong> 语音模块和 <strong>WS2812B RGB LED</strong> 灯带的智能天气预警系统。系统能够实时获取天气数据和老黄历信息，并在特定高峰时段（6:00-9:00, 12:00-15:00, 17:00-19:00）通过多色LED灯进行<strong>物理可见的异常天气预警</strong>，同时提供按键触发的<strong>语音播报</strong>功能。</p>
+<h2 id="2-硬件清单"><a href="#2-硬件清单" class="headerlink" title="2. 硬件清单"></a>2. 硬件清单</h2><p>以下是完成本项目所需的硬件组件：</p>
+<table>
+<thead>
+<tr>
+<th align="left">序号</th>
+<th align="left">组件名称</th>
+<th align="left">规格&#x2F;型号</th>
+<th align="left">数量</th>
+<th align="left">备注</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="left">1</td>
+<td align="left">主控板</td>
+<td align="left">ESP32 DevKitC 或其他ESP32开发板</td>
+<td align="left">1</td>
+<td align="left">带有Wi-Fi功能</td>
+</tr>
+<tr>
+<td align="left">2</td>
+<td align="left">显示屏</td>
+<td align="left">0.96寸OLED显示屏</td>
+<td align="left">1</td>
+<td align="left">I2C接口 (SSD1306芯片)</td>
+</tr>
+<tr>
+<td align="left">3</td>
+<td align="left">语音模块</td>
+<td align="left">DFPlayer Mini</td>
+<td align="left">1</td>
+<td align="left">带有SD卡槽</td>
+</tr>
+<tr>
+<td align="left">4</td>
+<td align="left">扬声器</td>
+<td align="left">8Ω 1W 小喇叭</td>
+<td align="left">1</td>
+<td align="left">配合DFPlayer Mini使用</td>
+</tr>
+<tr>
+<td align="left">5</td>
+<td align="left">LED灯带</td>
+<td align="left">WS2812B RGB LED (NeoPixel)</td>
+<td align="left">9颗以上</td>
+<td align="left">用于多色预警灯</td>
+</tr>
+<tr>
+<td align="left">6</td>
+<td align="left">按键</td>
+<td align="left">轻触开关</td>
+<td align="left">1</td>
+<td align="left">用于语音播报触发</td>
+</tr>
+<tr>
+<td align="left">7</td>
+<td align="left">存储卡</td>
+<td align="left">MicroSD卡</td>
+<td align="left">1</td>
+<td align="left">用于存储语音文件 (MP3格式)</td>
+</tr>
+<tr>
+<td align="left">8</td>
+<td align="left">供电</td>
+<td align="left">5V 2A 电源适配器</td>
+<td align="left">1</td>
+<td align="left">ESP32和WS2812B供电</td>
+</tr>
+<tr>
+<td align="left">9</td>
+<td align="left">附件</td>
+<td align="left">杜邦线、面包板、1000μF电容 (可选，用于WS2812B供电稳定)</td>
+<td align="left">若干</td>
+<td align="left"></td>
+</tr>
+</tbody></table>
+<h2 id="3-硬件接线说明"><a href="#3-硬件接线说明" class="headerlink" title="3. 硬件接线说明"></a>3. 硬件接线说明</h2><p>本项目中，我们使用了ESP32的特定GPIO引脚来连接各个模块。请严格按照下表进行接线。</p>
+<table>
+<thead>
+<tr>
+<th align="left">模块</th>
+<th align="left">模块引脚</th>
+<th align="left">ESP32 GPIO引脚</th>
+<th align="left">备注</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="left"><strong>OLED (I2C)</strong></td>
+<td align="left">VCC</td>
+<td align="left">3.3V&#x2F;5V</td>
+<td align="left">供电</td>
+</tr>
+<tr>
+<td align="left"></td>
+<td align="left">GND</td>
+<td align="left">GND</td>
+<td align="left">接地</td>
+</tr>
+<tr>
+<td align="left"></td>
+<td align="left">SCL</td>
+<td align="left"><strong>GPIO 22</strong></td>
+<td align="left">I2C时钟线</td>
+</tr>
+<tr>
+<td align="left"></td>
+<td align="left">SDA</td>
+<td align="left"><strong>GPIO 21</strong></td>
+<td align="left">I2C数据线</td>
+</tr>
+<tr>
+<td align="left"><strong>DFPlayer Mini</strong></td>
+<td align="left">VCC</td>
+<td align="left">5V</td>
+<td align="left">供电</td>
+</tr>
+<tr>
+<td align="left"></td>
+<td align="left">GND</td>
+<td align="left">GND</td>
+<td align="left">接地</td>
+</tr>
+<tr>
+<td align="left"></td>
+<td align="left">RX</td>
+<td align="left"><strong>GPIO 17</strong> (ESP32的RX2)</td>
+<td align="left">DFPlayer的RX接ESP32的TX2</td>
+</tr>
+<tr>
+<td align="left"></td>
+<td align="left">TX</td>
+<td align="left"><strong>GPIO 16</strong> (ESP32的TX2)</td>
+<td align="left">DFPlayer的TX接ESP32的RX2</td>
+</tr>
+<tr>
+<td align="left"></td>
+<td align="left">SPK_1&#x2F;SPK_2</td>
+<td align="left">扬声器</td>
+<td align="left">直接连接8Ω 1W扬声器</td>
+</tr>
+<tr>
+<td align="left"><strong>WS2812B LED</strong></td>
+<td align="left">VCC</td>
+<td align="left">5V</td>
+<td align="left"><strong>注意：需独立供电，ESP32的5V引脚电流不足</strong></td>
+</tr>
+<tr>
+<td align="left"></td>
+<td align="left">GND</td>
+<td align="left">GND</td>
+<td align="left">接地</td>
+</tr>
+<tr>
+<td align="left"></td>
+<td align="left">DIN</td>
+<td align="left"><strong>GPIO 13</strong></td>
+<td align="left">数据输入</td>
+</tr>
+<tr>
+<td align="left"><strong>语音按键</strong></td>
+<td align="left">一端</td>
+<td align="left"><strong>GPIO 34</strong></td>
+<td align="left">内部上拉，接GND触发</td>
+</tr>
+<tr>
+<td align="left"></td>
+<td align="left">另一端</td>
+<td align="left">GND</td>
+<td align="left">接地</td>
+</tr>
+</tbody></table>
+<blockquote>
+<p><strong>重要提示：</strong></p>
+<ol>
+<li><strong>WS2812B供电：</strong> 9颗WS2812B全亮时电流较大，<strong>强烈建议</strong>为WS2812B灯带单独提供5V电源，并确保其GND与ESP32的GND共地。</li>
+<li><strong>DFPlayer Mini：</strong> DFPlayer Mini的RX&#x2F;TX引脚直接连接ESP32的硬件串口2 (GPIO16&#x2F;17) 以确保通信稳定。</li>
+</ol>
+</blockquote>
+<h2 id="4-开发环境搭建"><a href="#4-开发环境搭建" class="headerlink" title="4. 开发环境搭建"></a>4. 开发环境搭建</h2><p>本项目基于Arduino IDE或VS Code + PlatformIO进行开发。</p>
+<h3 id="4-1-安装ESP32开发板支持"><a href="#4-1-安装ESP32开发板支持" class="headerlink" title="4.1 安装ESP32开发板支持"></a>4.1 安装ESP32开发板支持</h3><ol>
+<li>打开Arduino IDE，进入 <strong>文件 -&gt; 首选项</strong>。</li>
+<li>在“附加开发板管理器网址”中添加以下链接：<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">https://raw.githubusercontent.com/espressif/arduino-esp32/gh-pages/package_esp32_index.json</span><br></pre></td></tr></table></figure></li>
+<li>进入 <strong>工具 -&gt; 开发板 -&gt; 开发板管理器</strong>，搜索 <code>esp32</code> 并安装最新版本。</li>
+<li>在 <strong>工具 -&gt; 开发板</strong> 中选择ESP32型号（如 <code>ESP32 Dev Module</code>）。</li>
+</ol>
+<h3 id="4-2-安装所需库文件"><a href="#4-2-安装所需库文件" class="headerlink" title="4.2 安装所需库文件"></a>4.2 安装所需库文件</h3><p>本项目需要以下库文件。在Arduino IDE中，进入 <strong>工具 -&gt; 管理库</strong>，搜索并安装：</p>
+<table>
+<thead>
+<tr>
+<th align="left">库名称</th>
+<th align="left">作用</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="left"><code>U8g2</code></td>
+<td align="left">驱动OLED显示屏</td>
+</tr>
+<tr>
+<td align="left"><code>DFRobotDFPlayerMini</code></td>
+<td align="left">驱动DFPlayer Mini语音模块</td>
+</tr>
+<tr>
+<td align="left"><code>Adafruit NeoPixel</code></td>
+<td align="left">驱动WS2812B RGB LED灯带</td>
+</tr>
+<tr>
+<td align="left"><code>ArduinoJson</code></td>
+<td align="left">解析API返回的JSON数据</td>
+</tr>
+<tr>
+<td align="left"><code>HTTPClient</code></td>
+<td align="left">用于发起HTTP请求获取天气和老黄历数据</td>
+</tr>
+<tr>
+<td align="left"><code>NTPClient</code></td>
+<td align="left">用于网络时间同步</td>
+</tr>
+</tbody></table>
+<h2 id="5-API密钥获取与配置"><a href="#5-API密钥获取与配置" class="headerlink" title="5. API密钥获取与配置"></a>5. API密钥获取与配置</h2><p>本项目需要两个外部API服务：</p>
+<h3 id="5-1-和风天气-QWeather"><a href="#5-1-和风天气-QWeather" class="headerlink" title="5.1 和风天气 (QWeather)"></a>5.1 和风天气 (QWeather)</h3><p>用于获取实时和逐小时天气预报（包括温度和降水概率）。</p>
+<ol>
+<li>访问 <a target="_blank" rel="noopener" href="https://dev.qweather.com/">和风天气开发服务官网</a> 注册账号。</li>
+<li>在控制台创建项目，获取 <strong>Public ID</strong> 和 <strong>Key</strong>。</li>
+<li>使用 GeoAPI 或在控制台查询所在城市的 <strong>Location ID</strong>。</li>
+<li>将获取到的信息替换源代码 (<code>weather_alert_system.ino</code>) 中的占位符：<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="type">const</span> <span class="type">char</span>* QWEATHER_KEY = <span class="string">&quot;YOUR_QWEATHER_KEY&quot;</span>;</span><br><span class="line"><span class="type">const</span> <span class="type">char</span>* QWEATHER_LOCATION = <span class="string">&quot;YOUR_CITY_LOCATION_ID&quot;</span>; </span><br></pre></td></tr></table></figure></li>
+</ol>
+<h3 id="5-2-老黄历-API-以聚合数据为例"><a href="#5-2-老黄历-API-以聚合数据为例" class="headerlink" title="5.2 老黄历 API (以聚合数据为例)"></a>5.2 老黄历 API (以聚合数据为例)</h3><p>用于获取每日宜忌信息。</p>
+<ol>
+<li>访问 <a target="_blank" rel="noopener" href="https://www.juhe.cn/">聚合数据官网</a> 或 <a target="_blank" rel="noopener" href="https://www.free-api.com/doc/83">Free-API</a> 注册账号。</li>
+<li>申请老黄历API服务，获取 <strong>AppKey</strong>。</li>
+<li>将获取到的信息替换源代码中的占位符：<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="type">const</span> <span class="type">char</span>* ALMANAC_KEY = <span class="string">&quot;YOUR_ALMANAC_KEY&quot;</span>;</span><br></pre></td></tr></table></figure></li>
+</ol>
+<h2 id="6-DFPlayer-Mini-语音文件准备"><a href="#6-DFPlayer-Mini-语音文件准备" class="headerlink" title="6. DFPlayer Mini 语音文件准备"></a>6. DFPlayer Mini 语音文件准备</h2><p>DFPlayer Mini 通过播放SD卡中特定路径和名称的MP3文件来实现语音播报。</p>
+<ol>
+<li>准备一张MicroSD卡，格式化为FAT32格式。</li>
+<li>在SD卡根目录下创建名为 <code>mp3</code> 的文件夹。</li>
+<li>将语音文件命名为 <code>0001.mp3</code>, <code>0002.mp3</code>, <code>0003.mp3</code> 等，并存入 <code>mp3</code> 文件夹。</li>
+</ol>
+<p>本项目中，我们预设了以下语音文件内容：</p>
+<table>
+<thead>
+<tr>
+<th align="left">文件名</th>
+<th align="left">对应预警级别</th>
+<th align="left">建议播报内容</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="left"><code>0001.mp3</code></td>
+<td align="left">低温预警 (Level 1)</td>
+<td align="left">“请注意，有低温预警，请多穿衣物。”</td>
+</tr>
+<tr>
+<td align="left"><code>0002.mp3</code></td>
+<td align="left">降雨预警 (Level 2)</td>
+<td align="left">“请注意，有降雨预警，请携带雨具。”</td>
+</tr>
+<tr>
+<td align="left"><code>0003.mp3</code></td>
+<td align="left">双重预警 (Level 3)</td>
+<td align="left">“请注意，有低温和降雨双重预警，请做好防范。”</td>
+</tr>
+<tr>
+<td align="left"><code>0004.mp3</code></td>
+<td align="left">无预警&#x2F;老黄历播报</td>
+<td align="left">“当前无异常天气预警。”</td>
+</tr>
+<tr>
+<td align="left"><code>0005.mp3</code></td>
+<td align="left">闹钟铃声</td>
+<td align="left">(自定义闹钟铃声)</td>
+</tr>
+</tbody></table>
+<h2 id="7-源代码配置与烧录"><a href="#7-源代码配置与烧录" class="headerlink" title="7. 源代码配置与烧录"></a>7. 源代码配置与烧录</h2><ol>
+<li>打开 <code>weather_alert_system.ino</code> 源代码文件。</li>
+<li>修改 Wi-Fi 配置：<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="type">const</span> <span class="type">char</span>* ssid = <span class="string">&quot;Wi-Fi名称&quot;</span>;</span><br><span class="line"><span class="type">const</span> <span class="type">char</span>* password = <span class="string">&quot;Wi-Fi密码&quot;</span>;</span><br></pre></td></tr></table></figure></li>
+<li>修改 API 密钥和 Location ID (参考 5. API密钥获取与配置)。</li>
+<li>将ESP32开发板连接到电脑。</li>
+<li>在Arduino IDE中，点击 <strong>上传</strong> 按钮，将代码烧录到ESP32中。</li>
+</ol>
+<h2 id="8-核心功能实现逻辑"><a href="#8-核心功能实现逻辑" class="headerlink" title="8. 核心功能实现逻辑"></a>8. 核心功能实现逻辑</h2><h3 id="8-1-异常天气预警-LED"><a href="#8-1-异常天气预警-LED" class="headerlink" title="8.1 异常天气预警 (LED)"></a>8.1 异常天气预警 (LED)</h3><p>系统通过 <strong>WS2812B LED</strong> 实现物理可见的预警，共使用9颗LED，分为3组，每组3颗，对应3个高峰时段：</p>
+<table>
+<thead>
+<tr>
+<th align="left">时段编号</th>
+<th align="left">时间范围</th>
+<th align="left">LED位置 (索引)</th>
+<th align="left">预警颜色定义</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="left"><strong>1</strong></td>
+<td align="left">6:00 - 9:00</td>
+<td align="left">0, 1, 2</td>
+<td align="left"><strong>蓝色 (低温)</strong>, <strong>黄色 (降雨)</strong>, <strong>红色 (双重)</strong></td>
+</tr>
+<tr>
+<td align="left"><strong>2</strong></td>
+<td align="left">12:00 - 15:00</td>
+<td align="left">3, 4, 5</td>
+<td align="left"><strong>蓝色 (低温)</strong>, <strong>黄色 (降雨)</strong>, <strong>红色 (双重)</strong></td>
+</tr>
+<tr>
+<td align="left"><strong>3</strong></td>
+<td align="left">17:00 - 19:00</td>
+<td align="left">6, 7, 8</td>
+<td align="left"><strong>蓝色 (低温)</strong>, <strong>黄色 (降雨)</strong>, <strong>红色 (双重)</strong></td>
+</tr>
+</tbody></table>
+<p><strong>预警逻辑：</strong></p>
+<ul>
+<li><strong>低温预警：</strong> 当预报温度低于 <code>TEMP_LOW_THRESHOLD</code> (默认为5°C) 时触发。</li>
+<li><strong>降雨预警：</strong> 当预报降水概率 (<code>pop</code>) 高于 <code>RAIN_PROB_THRESHOLD</code> (默认为50%) 时触发。</li>
+<li>在当前时段内，如果触发预警，对应的3颗LED将亮起相应的颜色。</li>
+</ul>
+<h3 id="8-2-语音播报"><a href="#8-2-语音播报" class="headerlink" title="8.2 语音播报"></a>8.2 语音播报</h3><p>用户按下 <strong>GPIO 34</strong> 连接的按键后，系统将根据当前时间点的天气预警级别，播放对应的语音文件（<code>0001.mp3</code> - <code>0003.mp3</code>）。如果当前无预警，则播放无预警提示（<code>0004.mp3</code>）。</p>
+<h3 id="8-3-OLED显示"><a href="#8-3-OLED显示" class="headerlink" title="8.3 OLED显示"></a>8.3 OLED显示</h3><p>OLED显示屏用于展示核心信息：</p>
+<ul>
+<li><strong>顶部：</strong> 实时时间 (NTP同步)。</li>
+<li><strong>左侧：</strong> 当前天气（温度、降水概率、天气描述）。</li>
+<li><strong>右侧：</strong> 老黄历信息（今日宜、忌）。</li>
+<li><strong>底部：</strong> 当前是否处于预警时段的提示。</li>
+</ul>
+<h3 id="8-4-参数可设置性"><a href="#8-4-参数可设置性" class="headerlink" title="8.4 参数可设置性"></a>8.4 参数可设置性</h3><p>在源代码中，可以轻松修改以下参数以自定义预警逻辑：</p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 预警阈值设置</span></span><br><span class="line"><span class="type">const</span> <span class="type">int</span> TEMP_LOW_THRESHOLD = <span class="number">5</span>; <span class="comment">// 低温预警阈值 (°C)</span></span><br><span class="line"><span class="type">const</span> <span class="type">int</span> RAIN_PROB_THRESHOLD = <span class="number">50</span>; <span class="comment">// 降雨概率预警阈值 (%)</span></span><br><span class="line"></span><br><span class="line"><span class="comment">// 闹钟设置 (在 checkAlarm() 函数中)</span></span><br><span class="line"><span class="type">const</span> <span class="type">int</span> ALARM_HOUR = <span class="number">7</span>;</span><br><span class="line"><span class="type">const</span> <span class="type">int</span> ALARM_MINUTE = <span class="number">0</span>;</span><br></pre></td></tr></table></figure>
+
+<h2 id="9-总结"><a href="#9-总结" class="headerlink" title="9. 总结"></a>9. 总结</h2><p>本系统结合了物联网、嵌入式编程和多媒体交互技术，实现了对异常天气的智能监控和多感官预警。通过模块化的设计，可以根据需求进一步扩展功能，例如增加贪睡按键、通过Web界面设置闹钟和预警阈值等。</p>
+</div>          
+          <nav class="post-nav">
+    
+    <a class="post-nav-item post-nav-prev" href="/2026/04/15/%E5%89%8D%E7%AB%AF/%E5%AF%B9%E8%B1%A1%E4%B8%8E%E6%95%B0%E7%BB%84/">
+      <div class="nav-arrow">&lt;&nbsp;NEWER</div>
+      <span class="post-title">对象与数组</span>
+    </a>
+    
+    
+    <a class="post-nav-item post-nav-next" href="/2026/04/15/%E5%89%8D%E7%AB%AF/%E5%BE%AE%E4%BF%A1%E5%B0%8F%E7%A8%8B%E5%BA%8F%E7%9A%84%E4%BB%8B%E7%BB%8D/">
+      <div class="nav-arrow">OLDER&nbsp;&gt;</div>
+      <span class="post-title">微信小程序的介绍</span>
+    </a>
+    
+  </nav>
+
+   </main>
+</div>
+
+  <footer class="footer">
+    <small class="footer_copyright">
+      <div id="bottom-inner">
+        © Site by John Doe<br>
+        <a target="_blank" rel="noopener" href="http://hexo.io">Hexo</a> &
+        <a target="_blank" rel="noopener" href="https://github.com/g0dmao/hexo-theme-Klise-enhanced">Klise-enhanced</a>
+        <br>
+        <a target="_blank" rel="noopener" href="https://chinese-font.netlify.app/zh-cn/fonts/jhlst/%E4%BA%AC%E8%8F%AF%E8%80%81%E5%AE%8B%E4%BD%93v2_002">京華老宋体</a> & <a target="_blank" rel="noopener" href="https://chinese-font.netlify.app/zh-cn/">中文网字支持计划</a>
+        <br>
+        始于2025.
+        
+      </div>
+    </small>
+  </footer>
+  
+  
+
+    
+      <script src="/js/main.js"></script>
+    
+  
+  <script>
+    window.FPConfig = {
+      delay: 0,
+      ignoreKeywords: [],
+      maxRPS: 3,
+      hoverDelay: 50,
+    };
+  </script>
+  <script defer src="https://cdn.jsdelivr.net/gh/gijo-varghese/flying-pages@2.1.2/flying-pages.min.js"></script>
+  <script>
+    document.addEventListener('DOMContentLoaded', function() {
+  document.body.classList.add('loaded');
+});
+
+  </script>
+</body>
+</html>
