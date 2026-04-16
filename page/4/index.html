@@ -265,10 +265,10 @@
               <a href="/2026/04/15/%E5%89%8D%E7%AB%AF/CSS%E5%9F%BA%E7%A1%80%E4%B8%8E%E9%80%89%E6%8B%A9%E5%99%A8/" title="CSS基础与选择器">CSS基础与选择器</a>
             </li>
             <li>
-              <a href="/2026/04/15/%E5%89%8D%E7%AB%AF/DOM%E6%93%8D%E4%BD%9C/" title="DOM操作">DOM操作</a>
+              <a href="/2026/04/15/%E5%89%8D%E7%AB%AF/ES6%E6%96%B0%E7%89%B9%E6%80%A7/" title="ES6+新特性">ES6+新特性</a>
             </li>
             <li>
-              <a href="/2026/04/15/%E5%89%8D%E7%AB%AF/ES6%E6%96%B0%E7%89%B9%E6%80%A7/" title="ES6+新特性">ES6+新特性</a>
+              <a href="/2026/04/15/%E5%89%8D%E7%AB%AF/DOM%E6%93%8D%E4%BD%9C/" title="DOM操作">DOM操作</a>
             </li>
             <li>
               <a href="/2026/04/15/%E5%89%8D%E7%AB%AF/Flexbox%E4%B8%8EGrid%E5%B8%83%E5%B1%80/" title="Flexbox与Grid布局">Flexbox与Grid布局</a>
@@ -289,7 +289,7 @@
         <div class="post-categories-wrap">
           <a class="post-link" href="/categories/%E9%A1%B9%E7%9B%AE%E5%BC%80%E5%8F%91" aria-label="项目开发" title="项目开发"></a>
           <div class="post-categories-cover">
-                <img data-src="/covers/2.png" data-sizes="auto" alt="项目开发" class="lazyload">
+                <img data-src="/covers/3.png" data-sizes="auto" alt="项目开发" class="lazyload">
             <h2>项目开发</h2>
             <h3>3 篇文章</h3>
           </div>
@@ -297,7 +297,7 @@
         <div class="post-categories-wrap">
           <a class="post-link" href="/categories/%E9%A1%B9%E7%9B%AE%E5%A4%8D%E5%88%BB" aria-label="项目复刻" title="项目复刻"></a>
           <div class="post-categories-cover">
-                <img data-src="/covers/3.png" data-sizes="auto" alt="项目复刻" class="lazyload">
+                <img data-src="/covers/2.png" data-sizes="auto" alt="项目复刻" class="lazyload">
             <h2>项目复刻</h2>
             <h3>2 篇文章</h3>
           </div>
@@ -305,57 +305,131 @@
     </div>
       <div class="post-wrapper">
   <div class="post-wrap left" data-aos="fade-up">
-      <a class="post-link" href="/2026/04/15/%E9%A1%B9%E7%9B%AE%E5%BC%80%E5%8F%91/00%E9%A1%B9%E7%9B%AE%E8%83%8C%E6%99%AF/" aria-label="00.项目背景" title="00.项目背景"></a>
+      <a class="post-link" href="/2026/04/15/%E9%A1%B9%E7%9B%AE%E5%A4%8D%E5%88%BB/%E9%A1%B9%E7%9B%AE%E5%88%86%E6%9E%90/" aria-label="项目分析" title="项目分析"></a>
     <div class="post-cover left">
-          <img data-src="/covers/3.png" data-sizes="auto" alt="00.项目背景" class="lazyload">
+          <img data-src="/covers/1.png" data-sizes="auto" alt="项目分析" class="lazyload">
     </div>
     <div class="post-info">
       <div class="post-meta">
         <span><span class="icon-calendar"></span>2026-04-15</span>
-        <span><span class="icon-pencil"></span>614 字</span>
-        <span><span class="icon-clock"></span>3 分钟</span>
+        <span><span class="icon-pencil"></span>912 字</span>
+        <span><span class="icon-clock"></span>4 分钟</span>
       </div>
-      <h2 class="post-title">00.项目背景</h2>
+      <h2 class="post-title">项目分析</h2>
       <article class="post-article">
-          项目背景一、动机市面上的天气显示产品几乎没有自主预警功能，而自主预警可以让繁忙的群体无须花时间去了解天气是否达到预警情况。
-二、需求场景
-接送与上班：早中晚上班或接送小孩的人很忙，通常不会去花时间看天气预报。这个群体以骑电动车的居多，未准备充分的话，会遭受雨淋、降温等影响。
+           Hexapod 项目分析报告
 
-降温提醒：大幅度降温往往会引发感冒等。年老的长辈及小孩通常抵抗力弱，出门未花时间看天气预报。
+ 1. 项目概述
+Hexapod-v2-7697是一个基于Linkit 7697开发板(本次复刻采用树莓派zero2w开发板代替)的六足机器人项目，提供了完整的机械设计、电子电路和软件代码，允许用户通过手机（iOS或Android）通过蓝牙低功耗（BLE）远程控制机器人的运动。
+ 1.1 项目特点
 
-骑行：骑行游玩的人群做攻略时往往关注目的地，对旅行途中的天气关注不够细致。长途骑行往往需要跨地区，所在地的天气预警对其游玩往往有较大影响。
+无线控制：通过Linkit 7697的BLE功能实现手机远程控制
+多自由度：6条腿，每条腿3个关节，共18个舵机（TowerPro MG92B）
+模块化设计：机械、电子和软件部分分离，便于维护和扩展
+开源共享：所有设计文件和代码均在GPL许可证下开源
 
-
-三、核心功能需求1. 核心功能异常天气（有雨、低温）的自动预警，以物理可见的方式进
+ 1.2 
       </article>
     </div>
   </div>
 </div>
       <div class="post-wrapper">
   <div class="post-wrap right" data-aos="fade-up">
-      <a class="post-link" href="/2026/04/15/%E5%B5%8C%E5%85%A5%E5%BC%8F/1STM32%E7%AE%80%E4%BB%8B/" aria-label="1.STM32简介" title="1.STM32简介"></a>
+      <a class="post-link" href="/2026/04/15/%E5%B5%8C%E5%85%A5%E5%BC%8F/SDCC%E4%BD%BF%E7%94%A8%E6%8C%87%E5%8D%97/" aria-label="SDCC使用指南" title="SDCC使用指南"></a>
     <div class="post-cover right">
-          <img data-src="/covers/1.png" data-sizes="auto" alt="1.STM32简介" class="lazyload">
+          <img data-src="/covers/2.png" data-sizes="auto" alt="SDCC使用指南" class="lazyload">
     </div>
     <div class="post-info">
       <div class="post-meta">
         <span><span class="icon-calendar"></span>2026-04-15</span>
-        <span><span class="icon-pencil"></span>9 字</span>
-        <span><span class="icon-clock"></span>1 分钟</span>
+        <span><span class="icon-pencil"></span>5.9k 字</span>
+        <span><span class="icon-clock"></span>28 分钟</span>
       </div>
-      <h2 class="post-title">1.STM32简介</h2>
+      <h2 class="post-title">SDCC使用指南</h2>
       <article class="post-article">
-          1.STM32简介STM32 简介内容…
+           SDCC使用指南
 
+开源8051单片机开发利器
+
+
+目标： 掌握SDCC编译器的安装配置与8051单片机程序开发，实现从源码到HEX文件的完整流程。
+
+
+ 一、SDCC简介与适用场景
+ 什么是SDCC？
+SDCC（Small Device C Compiler）是一个开源的、可重定向的C语言编译器套件，专为8位微控制器设计。
+
+
+
+特性
+说明
+
+
+
+
+开源免费
+GPL许可证，完全免费使用
+
+
+跨平台
+支持Windows、Linux、macOS
+
+
+多架构
+支持8051、STM8、PIC16/18、Z80、HC08等
+
+
+标准兼容
+支持ANSI C89和部分C99特性
+
+
+优化能力
+针对嵌入式
       </article>
     </div>
   </div>
 </div>
       <div class="post-wrapper">
   <div class="post-wrap left" data-aos="fade-up">
-      <a class="post-link" href="/2026/04/15/%E9%A1%B9%E7%9B%AE%E5%BC%80%E5%8F%91/%E5%BC%80%E5%8F%91%E6%96%87%E6%A1%A3/" aria-label="开发文档" title="开发文档"></a>
+      <a class="post-link" href="/2026/04/15/%E9%A1%B9%E7%9B%AE%E5%A4%8D%E5%88%BB/%E5%A4%8D%E5%88%BB%E6%8C%87%E5%8D%97/" aria-label="复刻指南" title="复刻指南"></a>
     <div class="post-cover left">
-          <img data-src="/covers/2.png" data-sizes="auto" alt="开发文档" class="lazyload">
+          <img data-src="/covers/3.png" data-sizes="auto" alt="复刻指南" class="lazyload">
+    </div>
+    <div class="post-info">
+      <div class="post-meta">
+        <span><span class="icon-calendar"></span>2026-04-15</span>
+        <span><span class="icon-pencil"></span>1.4k 字</span>
+        <span><span class="icon-clock"></span>6 分钟</span>
+      </div>
+      <h2 class="post-title">复刻指南</h2>
+      <article class="post-article">
+           Hexapod 项目复刻指南
+
+ 1. 项目概述
+Hexapod-v2-7697是一个基于Linkit 7697开发板(本次复刻采用树莓派zero2w开发板代替)的六足机器人项目，通过手机蓝牙远程控制。本指南将详细介绍如何复刻这个项目，包括机械制作、电子组装和软件开发。
+ 2. 所需材料
+ 2.1 机械部分
+
+PLA filament（推荐白色或黑色）
+M2螺丝（6mm、10mm、30mm）
+M2螺母
+M4销钉（6mm）
+
+ 2.2 电子部分
+
+Linkit 7697开发板 × 1
+PCA9685芯片（TSSOP28封装） × 2
+mini360 DC-DC转换器 × 7
+2S Lipo电池
+      </article>
+    </div>
+  </div>
+</div>
+      <div class="post-wrapper">
+  <div class="post-wrap right" data-aos="fade-up">
+      <a class="post-link" href="/2026/04/15/%E9%A1%B9%E7%9B%AE%E5%BC%80%E5%8F%91/%E5%BC%80%E5%8F%91%E6%96%87%E6%A1%A3/" aria-label="开发文档" title="开发文档"></a>
+    <div class="post-cover right">
+          <img data-src="/covers/3.png" data-sizes="auto" alt="开发文档" class="lazyload">
     </div>
     <div class="post-info">
       <div class="post-meta">
@@ -365,16 +439,20 @@
       </div>
       <h2 class="post-title">开发文档</h2>
       <article class="post-article">
-          开发文档1. 项目概述本项目旨在开发一个基于 ESP32 微控制器、0.96寸OLED显示屏、DFPlayer Mini 语音模块和 WS2812B RGB LED 灯带的智能天气预警系统。系统能够实时获取天气数据和老黄历信息，并在特定高峰时段（6:00-9:00, 12:00-15:00, 17:00-19:00）通过多色LED灯进行物理可见的异常天气预警，同时提供按键触发的语音播报功能。
-2. 硬件清单以下是完成本项目所需的硬件组件：
+           开发文档
+ 1. 项目概述
+本项目旨在开发一个基于 ESP32 微控制器、0.96寸OLED显示屏、DFPlayer Mini 语音模块和 WS2812B RGB LED 灯带的智能天气预警系统。系统能够实时获取天气数据和老黄历信息，并在特定高峰时段（6:00-9:00, 12:00-15:00, 17:00-19:00）通过多色LED灯进行物理可见的异常天气预警，同时提供按键触发的语音播报功能。
+ 2. 硬件清单
+以下是完成本项目所需的硬件组件：
 
 
 
 序号
 组件名称
-规格&amp;#x2F;型号
+规格/型号
 数量
 备注
+
 
 
 
@@ -385,35 +463,6 @@ ESP32 DevKitC 或其他ESP32开发板
 带有Wi-Fi功能
 
 
-2
-      </article>
-    </div>
-  </div>
-</div>
-      <div class="post-wrapper">
-  <div class="post-wrap right" data-aos="fade-up">
-      <a class="post-link" href="/2026/04/15/%E9%A1%B9%E7%9B%AE%E5%BC%80%E5%8F%91/%E5%B7%A5%E7%A8%8B%E8%A7%A3%E6%9E%90/" aria-label="工程解析" title="工程解析"></a>
-    <div class="post-cover right">
-          <img data-src="/covers/1.png" data-sizes="auto" alt="工程解析" class="lazyload">
-    </div>
-    <div class="post-info">
-      <div class="post-meta">
-        <span><span class="icon-calendar"></span>2026-04-15</span>
-        <span><span class="icon-pencil"></span>2.2k 字</span>
-        <span><span class="icon-clock"></span>9 分钟</span>
-      </div>
-      <h2 class="post-title">工程解析</h2>
-      <article class="post-article">
-          工程解析项目文件：weather_alert_system.ino
-1. 工程目标与功能概览这是一个基于 ESP32 的嵌入式天气预警终端，核心思路是：
-
-通过 Wi-Fi 联网，周期性拉取天气预报与老黄历信息
-通过 NTP 同步当前时间，用于显示与预警时段判断
-通过 OLED 实时展示时间、当前小时天气、老黄历（宜&amp;#x2F;忌）
-在特定时段（早&amp;#x2F;中&amp;#x2F;晚）根据“低温&amp;#x2F;降雨概率”点亮 WS2812B 指示灯
-通过 DFPlayer Mini 播放对应的语音提示（按键触发播报）
-
-2. 工程结构（架构视图）当前工程只有一个 Arduino 草图文件，整体架构可以按“
       </article>
     </div>
   </div>
@@ -422,21 +471,23 @@ ESP32 DevKitC 或其他ESP32开发板
   <div class="post-wrap left" data-aos="fade-up">
       <a class="post-link" href="/2026/04/15/hello-world/" aria-label="Hello World" title="Hello World"></a>
     <div class="post-cover left">
-          <img data-src="/covers/3.png" data-sizes="auto" alt="Hello World" class="lazyload">
+          <img data-src="/covers/1.png" data-sizes="auto" alt="Hello World" class="lazyload">
     </div>
     <div class="post-info">
       <div class="post-meta">
         <span><span class="icon-calendar"></span>2026-04-15</span>
-        <span><span class="icon-pencil"></span>75 字</span>
+        <span><span class="icon-pencil"></span>80 字</span>
         <span><span class="icon-clock"></span>1 分钟</span>
       </div>
       <h2 class="post-title">Hello World</h2>
       <article class="post-article">
           Welcome to Hexo! This is your very first post. Check documentation for more info. If you get any problems when using Hexo, you can find the answer in troubleshooting or you can ask me on GitHub.
-Quick StartCreate a new post1$ hexo new &amp;quot;My New Post&amp;quot;
-
+ Quick Start
+ Create a new post
+1$ hexo new &amp;quot;My New Post&amp;quot;
 More info: Writing
-Run server1$ hexo ser
+ Run server
+1$ hex
       </article>
     </div>
   </div>
@@ -455,21 +506,26 @@ Run server1$ hexo ser
       </div>
       <h2 class="post-title">前端开发介绍</h2>
       <article class="post-article">
-          01. 前端开发介绍前端开发是构建 Web 应用的用户界面和用户体验的技术领域，也是现代互联网应用不可或缺的重要组成部分。
-一、什么是前端开发前端开发是指使用 HTML、CSS、JavaScript 等技术，构建用户可以直接看到和交互的界面部分。
-前端的作用
+           01. 前端开发介绍
+前端开发是构建 Web 应用的用户界面和用户体验的技术领域，也是现代互联网应用不可或缺的重要组成部分。
+ 一、什么是前端开发
+前端开发是指使用 HTML、CSS、JavaScript 等技术，构建用户可以直接看到和交互的界面部分。
+ 前端的作用
+
 用户界面构建
 交互逻辑实现
 数据展示与处理
 用户体验优化
 
 
-二、前端三剑客1. HTML（结构）
+ 二、前端三剑客
+ 1. HTML（结构）
+
 作用：定义网页的结构和内容
 特点：标记语言，使用标签来组织内容
 示例：
 
-12345678910&amp;lt;!DOCTYPE html&amp;gt;&amp;lt;html&amp;gt;&amp;lt;head&amp;gt;    &amp;lt;title&amp;gt;网页标题&amp;lt;/t
+12345678910&amp;lt;!DOCTYPE html&amp;gt;&amp;lt;html&amp;gt;&amp;lt;head&amp;gt;    &amp;lt;title&amp;gt;
       </article>
     </div>
   </div>
@@ -497,7 +553,7 @@ Run server1$ hexo ser
       </div>
       <div>
         <span class="icon-brush"></span>
-        39.4k
+        39.3k
         &nbsp;|&nbsp;
         <span class="icon-coffee"></span>
         03:22
@@ -721,6 +777,7 @@ Run server1$ hexo ser
           }
         }
       };
+        var meting_api = "https://api.i-meto.com/meting/api?";
     </script>
   
 <script src="https://npm.webcache.cn/aplayer@1.10.1/dist/APlayer.min.js" integrity="sha384-gdGYZwHnfJM54evoZhpO0s6ZF5BQiybkiyW7VXr+h5UfruuRL&#x2F;aORyw+5+HZoU6e" crossorigin="anonymous" defer onload="setupAPlayer()"></script>
