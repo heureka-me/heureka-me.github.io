@@ -7,7 +7,7 @@
   
   
   
-  <script>window.REIMU_CONFIG = {};window.REIMU_CONFIG.icon_font = '4552607_a0oqhord1y';window.REIMU_CONFIG.clipboard_tips = {"success":{"zh-CN":"复制成功 (*^▽^*)"},"fail":{"zh-CN":"复制失败 (ﾟ⊿ﾟ)ﾂ"},"copyright":{"enable":false,"count":50,"license_type":"by-nc-sa"}};window.REIMU_CONFIG.clipboard_tips.copyright.content = '本博客所有文章除特别声明外，均采用 BY-NC-SA 许可协议。转载请注明出处！';window.REIMU_CONFIG.code_block = {"expand":true};window.REIMU_CONFIG.base = 'https://heureka-me.github.io';</script>
+  <script>window.REIMU_CONFIG = {};window.REIMU_CONFIG.icon_font = '4552607_a0oqhord1y';window.REIMU_CONFIG.clipboard_tips = {"success":{"zh-CN":"复制成功 (*^▽^*)"},"fail":{"zh-CN":"复制失败 (ﾟ⊿ﾟ)ﾂ"},"copyright":{"enable":false,"count":50,"license_type":"by-nc-sa"}};window.REIMU_CONFIG.clipboard_tips.copyright.content = '本博客所有文章除特别声明外，均采用 BY-NC-SA 许可协议。转载请注明出处！';window.REIMU_CONFIG.code_block = {"expand":true};window.REIMU_CONFIG.base = 'https://heureka-me.github.io';window.REIMU_CONFIG.relative = '/';</script>
   <title>
     标签: WXML | Heureka&#39;s Blog
   </title>
@@ -17,12 +17,12 @@
     
 <link rel="stylesheet" href="/css/loader.css">
 
-    <meta name="description" content="记录学习笔记、分享技术心得、展示个人实践项目">
+    <meta name="description" content="学习笔记、技术心得、实践项目">
 <meta property="og:type" content="website">
 <meta property="og:title" content="Heureka&#39;s Blog">
 <meta property="og:url" content="https://heureka-me.github.io/tags/WXML/index.html">
 <meta property="og:site_name" content="Heureka&#39;s Blog">
-<meta property="og:description" content="记录学习笔记、分享技术心得、展示个人实践项目">
+<meta property="og:description" content="学习笔记、技术心得、实践项目">
 <meta property="og:locale" content="zh_CN">
 <meta property="og:image" content="https://heureka-me.github.io/images/banner.webp">
 <meta property="article:author" content="Heureka">
@@ -36,12 +36,14 @@
 <link rel="stylesheet" href="/css/style.css">
 
   <link rel="preload" as="style" onload="this.onload=null;this.rel='stylesheet'" href="https://npm.webcache.cn/photoswipe@5.4.4/dist/photoswipe.css" integrity="sha384-IfxC36XL/toUyJ939C73PcgMuRzAZuIzZxE38drsmO5p6jD7ei+Zx/1oA/0l8ysE" crossorigin="anonymous">
+      <link rel="preload" as="style" onload="this.onload=null;this.rel='stylesheet'" href="https://npm.webcache.cn/katex@0.16.24/dist/katex.min.css" integrity="sha384-tTgKLjMYmJr94v8qu2PE5MUGSMbyN2xiH266JUB3gpm8vnnJywd1dWSOEfrFz+YI" crossorigin="anonymous">
     
 <script src="https://npm.webcache.cn/pace-js@1.2.4/pace.min.js" integrity="sha384-k6YtvFUEIuEFBdrLKJ3YAUbBki333tj1CSUisai5Cswsg9wcLNaPzsTHDswp4Az8" crossorigin="anonymous"></script>
 
     
 <link rel="stylesheet" href="https://npm.webcache.cn/@reimujs/aos@0.1.2/dist/aos.css" integrity="sha384-GMRP93c6Hkz9JVKGAuRR3nTS7M07RwPgTFenXiosjq2VbVgvdDNcz1g6Mkj8AONa" crossorigin="anonymous">
 
+    <link rel="preload" as="style" onload="this.onload=null;this.rel='stylesheet'" href="https://npm.webcache.cn/aplayer@1.10.1/dist/APlayer.min.css" integrity="sha384-tLMkTWh2pfXNWGFlUS0w1TFtRG5xZ9lPWFOooj+vDDLIL+xBGQU/voDBY5XE2lVh" crossorigin="anonymous">
 <meta name="generator" content="Hexo 8.1.1"></head>
 
   <body>
@@ -123,6 +125,7 @@
   </nav>
   <nav id="sub-nav" aria-label="Secondary navigation">
       <a id="nav-rss-link" class="nav-icon" href="/atom.xml" title="RSS 订阅" aria-label="RSS 订阅" target="_blank"></a>
+      <a id="nav-search-btn" class="nav-icon popup-trigger" title="搜索" aria-label="搜索"></a>
   </nav>
 </div>
 <header id="header" aria-label="Site header">
@@ -141,15 +144,31 @@
   </div>
 </header>
 
-        <div id="content" aria-label="Page content"  class="sidebar-right" >
+        <div id="content" aria-label="Page content" class="sidebar-left"  >
           <aside id="sidebar" aria-label="Sidebar">
   <div class="sidebar-wrapper-container ">
+      <meting-js
+        theme="var(--color-link)"
+        id="2237805875"
+        server="netease"
+        type="playlist"
+        
+        fixed="false"
+        autoplay="false"
+        loop="all"
+        order="random"
+        preload="auto"
+        volume="0.7"
+        mutex="true"
+        list-folded="false"
+        lrc-type="0"
+      ></meting-js>
   <div class="sidebar-wrapper">
     <div class="sidebar-wrap" data-aos="fade-up">
         <div class="sidebar-author">
   <img data-src="/avatar/avatar.webp" data-sizes="auto" alt="Heureka" class="lazyload">
   <div class="sidebar-author-name">Heureka</div>
-  <div class="sidebar-description">记录学习笔记、分享技术心得、展示个人实践项目</div>
+  <div class="sidebar-description">学习笔记、技术心得、实践项目</div>
 </div>
 <div class="sidebar-state">
   <div class="sidebar-state-article">
@@ -166,6 +185,15 @@
   </div>
 </div>
 <div class="sidebar-social" >
+    <div class="icon-email sidebar-social-icon">
+      <a href=heureka-l@qq.com itemprop="url" target="_blank" aria-label="email" rel="noopener nofollow noreferrer"></a>
+    </div>
+    <div class="icon-github sidebar-social-icon">
+      <a href=https://github.com/heureka-me itemprop="url" target="_blank" aria-label="github" rel="noopener nofollow noreferrer"></a>
+    </div>
+    <div class="icon-qq sidebar-social-icon">
+      <a href=3455545938 itemprop="url" target="_blank" aria-label="qq" rel="noopener nofollow noreferrer"></a>
+    </div>
 </div>
 <div class="sidebar-menu">
       <div class="sidebar-menu-link-wrap">
@@ -201,6 +229,58 @@
     </div>
   </div>
   <div class="sidebar-widget">
+        <div class="widget-wrapper">
+    <div class="widget-wrap" data-aos="fade-up">
+      <h3 class="widget-title">分类</h3>
+      <div class="widget">
+        <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/%E5%89%8D%E7%AB%AF/" title="前端">前端</a><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/%E5%89%8D%E7%AB%AF/HTML-CSS/" title="HTML&CSS">HTML&CSS</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E5%89%8D%E7%AB%AF/JavaScript/" title="JavaScript">JavaScript</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E5%89%8D%E7%AB%AF/Vitepress/" title="Vitepress">Vitepress</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E5%89%8D%E7%AB%AF/%E5%BE%AE%E4%BF%A1%E5%B0%8F%E7%A8%8B%E5%BA%8F/" title="微信小程序">微信小程序</a></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E5%8F%82%E8%B5%9B%E7%AC%94%E8%AE%B0/" title="参赛笔记">参赛笔记</a><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/%E5%8F%82%E8%B5%9B%E7%AC%94%E8%AE%B0/%E8%93%9D%E6%A1%A5%E6%9D%AF/" title="蓝桥杯">蓝桥杯</a></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E5%B5%8C%E5%85%A5%E5%BC%8F/" title="嵌入式">嵌入式</a><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/%E5%B5%8C%E5%85%A5%E5%BC%8F/ESP32/" title="ESP32">ESP32</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E5%B5%8C%E5%85%A5%E5%BC%8F/Linux/" title="Linux">Linux</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E5%B5%8C%E5%85%A5%E5%BC%8F/STM32/" title="STM32">STM32</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E5%B5%8C%E5%85%A5%E5%BC%8F/%E5%B7%A5%E5%85%B7/" title="工具">工具</a></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E9%A1%B9%E7%9B%AE%E5%A4%8D%E5%88%BB/" title="项目复刻">项目复刻</a><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/%E9%A1%B9%E7%9B%AE%E5%A4%8D%E5%88%BB/%E5%85%AD%E8%B6%B3%E6%9C%BA%E5%99%A8%E4%BA%BA/" title="六足机器人">六足机器人</a></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E9%A1%B9%E7%9B%AE%E5%BC%80%E5%8F%91/" title="项目开发">项目开发</a><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/%E9%A1%B9%E7%9B%AE%E5%BC%80%E5%8F%91/%E5%A4%A9%E6%B0%94%E5%B0%8F%E5%8A%A9%E6%89%8B/" title="天气小助手">天气小助手</a></li></ul></li></ul>
+      </div>
+    </div>
+  </div>
+
+        <div class="widget-wrapper">
+    <div class="widget-wrap" data-aos="fade-up">
+      <h3 class="widget-title">标签云</h3>
+      <div class="widget tagcloud">
+        <a href="/tags/CSS/" style="font-size: 14px;">CSS</a> <a href="/tags/DOM/" style="font-size: 10px;">DOM</a> <a href="/tags/ES6/" style="font-size: 10px;">ES6</a> <a href="/tags/ESP32/" style="font-size: 10px;">ESP32</a> <a href="/tags/Flexbox/" style="font-size: 10px;">Flexbox</a> <a href="/tags/Grid/" style="font-size: 10px;">Grid</a> <a href="/tags/HTML/" style="font-size: 12px;">HTML</a> <a href="/tags/JavaScript/" style="font-size: 20px;">JavaScript</a> <a href="/tags/Linux/" style="font-size: 12px;">Linux</a> <a href="/tags/Markdown/" style="font-size: 10px;">Markdown</a> <a href="/tags/Promise/" style="font-size: 10px;">Promise</a> <a href="/tags/SDCC/" style="font-size: 10px;">SDCC</a> <a href="/tags/STM32/" style="font-size: 10px;">STM32</a> <a href="/tags/Ubuntu/" style="font-size: 10px;">Ubuntu</a> <a href="/tags/Vitepress/" style="font-size: 16px;">Vitepress</a> <a href="/tags/WXML/" style="font-size: 10px;">WXML</a> <a href="/tags/WXSS/" style="font-size: 10px;">WXSS</a> <a href="/tags/%E4%B8%BB%E9%A2%98/" style="font-size: 10px;">主题</a> <a href="/tags/%E4%BD%9C%E7%94%A8%E5%9F%9F/" style="font-size: 10px;">作用域</a> <a href="/tags/%E5%85%A5%E9%97%A8/" style="font-size: 14px;">入门</a> <a href="/tags/%E5%85%AD%E8%B6%B3%E6%9C%BA%E5%99%A8%E4%BA%BA/" style="font-size: 12px;">六足机器人</a> <a href="/tags/%E5%87%BD%E6%95%B0/" style="font-size: 10px;">函数</a> <a href="/tags/%E5%89%8D%E7%AB%AF/" style="font-size: 12px;">前端</a> <a href="/tags/%E5%89%8D%E7%AB%AF%E5%9F%BA%E7%A1%80/" style="font-size: 16px;">前端基础</a> <a href="/tags/%E5%8D%95%E7%89%87%E6%9C%BA/" style="font-size: 10px;">单片机</a> <a href="/tags/%E5%A4%8D%E5%88%BB/" style="font-size: 10px;">复刻</a> <a href="/tags/%E5%A4%A9%E6%B0%94%E5%B0%8F%E5%8A%A9%E6%89%8B/" style="font-size: 14px;">天气小助手</a> <a href="/tags/%E5%AF%B9%E8%B1%A1/" style="font-size: 10px;">对象</a> <a href="/tags/%E5%B5%8C%E5%85%A5%E5%BC%8F/" style="font-size: 16px;">嵌入式</a> <a href="/tags/%E5%B7%A5%E5%85%B7/" style="font-size: 10px;">工具</a> <a href="/tags/%E5%B7%A5%E7%A8%8B%E5%8C%96/" style="font-size: 10px;">工程化</a> <a href="/tags/%E5%B7%A5%E7%A8%8B%E8%A7%A3%E6%9E%90/" style="font-size: 10px;">工程解析</a> <a href="/tags/%E5%B8%83%E5%B1%80/" style="font-size: 12px;">布局</a> <a href="/tags/%E5%BC%80%E5%8F%91%E6%96%87%E6%A1%A3/" style="font-size: 10px;">开发文档</a> <a href="/tags/%E5%BC%82%E6%AD%A5/" style="font-size: 10px;">异步</a> <a href="/tags/%E5%BE%AE%E4%BF%A1%E5%B0%8F%E7%A8%8B%E5%BA%8F/" style="font-size: 18px;">微信小程序</a> <a href="/tags/%E6%95%B0%E7%BB%84/" style="font-size: 10px;">数组</a> <a href="/tags/%E6%96%B0%E7%89%B9%E6%80%A7/" style="font-size: 10px;">新特性</a> <a href="/tags/%E6%A8%A1%E5%9D%97%E5%8C%96/" style="font-size: 10px;">模块化</a> <a href="/tags/%E7%9B%AE%E5%BD%95%E7%BB%93%E6%9E%84/" style="font-size: 10px;">目录结构</a> <a href="/tags/%E7%BB%84%E4%BB%B6%E5%8C%96/" style="font-size: 10px;">组件化</a> <a href="/tags/%E8%81%8C%E4%B8%9A%E8%A7%84%E5%88%92/" style="font-size: 12px;">职业规划</a> <a href="/tags/%E8%93%9D%E6%A1%A5%E6%9D%AF/" style="font-size: 10px;">蓝桥杯</a> <a href="/tags/%E8%AF%AD%E6%B3%95/" style="font-size: 10px;">语法</a> <a href="/tags/%E9%83%A8%E7%BD%B2/" style="font-size: 10px;">部署</a> <a href="/tags/%E9%85%8D%E7%BD%AE/" style="font-size: 10px;">配置</a> <a href="/tags/%E9%97%AE%E9%A2%98%E8%A7%A3%E5%86%B3/" style="font-size: 10px;">问题解决</a> <a href="/tags/%E9%9D%99%E6%80%81%E7%BD%91%E7%AB%99/" style="font-size: 10px;">静态网站</a> <a href="/tags/%E9%A1%B9%E7%9B%AE%E5%88%86%E6%9E%90/" style="font-size: 10px;">项目分析</a> <a href="/tags/%E9%A1%B9%E7%9B%AE%E8%83%8C%E6%99%AF/" style="font-size: 10px;">项目背景</a>
+      </div>
+    </div>
+  </div>
+
+        <div class="widget-wrapper">
+    <div class="widget-wrap" data-aos="fade-up">
+      <h3 class="widget-title">归档</h3>
+      <div class="widget">
+        <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2026/04/">四月 2026</a></li></ul>
+      </div>
+    </div>
+  </div>
+
+        <div class="widget-wrapper">
+    <div class="widget-wrap" data-aos="fade-up">
+      <h3 class="widget-title">最新文章</h3>
+      <div class="widget">
+        <ul>
+            <li>
+              <a href="/2026/04/15/%E5%89%8D%E7%AB%AF/CSS%E5%9F%BA%E7%A1%80%E4%B8%8E%E9%80%89%E6%8B%A9%E5%99%A8/" title="CSS基础与选择器">CSS基础与选择器</a>
+            </li>
+            <li>
+              <a href="/2026/04/15/%E5%89%8D%E7%AB%AF/DOM%E6%93%8D%E4%BD%9C/" title="DOM操作">DOM操作</a>
+            </li>
+            <li>
+              <a href="/2026/04/15/%E5%89%8D%E7%AB%AF/ES6%E6%96%B0%E7%89%B9%E6%80%A7/" title="ES6+新特性">ES6+新特性</a>
+            </li>
+            <li>
+              <a href="/2026/04/15/%E5%89%8D%E7%AB%AF/Flexbox%E4%B8%8EGrid%E5%B8%83%E5%B1%80/" title="Flexbox与Grid布局">Flexbox与Grid布局</a>
+            </li>
+            <li>
+              <a href="/2026/04/15/%E5%89%8D%E7%AB%AF/HTML%E5%9F%BA%E7%A1%80/" title="HTML基础">HTML基础</a>
+            </li>
+        </ul>
+      </div>
+    </div>
+  </div>
+
   </div>
   </div>
 </aside>
@@ -217,16 +297,13 @@
       <a class="archives-tag-list-link" href="/tags/JavaScript/">JavaScript</a>
     </div>
     <div class="archives-tag-list-item" data-aos="zoom-in">
+      <a class="archives-tag-list-link" href="/tags/DOM/">DOM</a>
+    </div>
+    <div class="archives-tag-list-item" data-aos="zoom-in">
       <a class="archives-tag-list-link" href="/tags/ES6/">ES6</a>
     </div>
     <div class="archives-tag-list-item" data-aos="zoom-in">
       <a class="archives-tag-list-link" href="/tags/%E6%96%B0%E7%89%B9%E6%80%A7/">新特性</a>
-    </div>
-    <div class="archives-tag-list-item" data-aos="zoom-in">
-      <a class="archives-tag-list-link" href="/tags/HTML/">HTML</a>
-    </div>
-    <div class="archives-tag-list-item" data-aos="zoom-in">
-      <a class="archives-tag-list-link" href="/tags/DOM/">DOM</a>
     </div>
     <div class="archives-tag-list-item" data-aos="zoom-in">
       <a class="archives-tag-list-link" href="/tags/%E5%B8%83%E5%B1%80/">布局</a>
@@ -236,6 +313,9 @@
     </div>
     <div class="archives-tag-list-item" data-aos="zoom-in">
       <a class="archives-tag-list-link" href="/tags/Grid/">Grid</a>
+    </div>
+    <div class="archives-tag-list-item" data-aos="zoom-in">
+      <a class="archives-tag-list-link" href="/tags/HTML/">HTML</a>
     </div>
     <div class="archives-tag-list-item" data-aos="zoom-in">
       <a class="archives-tag-list-link" href="/tags/%E8%AF%AD%E6%B3%95/">语法</a>
@@ -257,6 +337,12 @@
     </div>
     <div class="archives-tag-list-item" data-aos="zoom-in">
       <a class="archives-tag-list-link" href="/tags/%E8%81%8C%E4%B8%9A%E8%A7%84%E5%88%92/">职业规划</a>
+    </div>
+    <div class="archives-tag-list-item" data-aos="zoom-in">
+      <a class="archives-tag-list-link" href="/tags/%E5%87%BD%E6%95%B0/">函数</a>
+    </div>
+    <div class="archives-tag-list-item" data-aos="zoom-in">
+      <a class="archives-tag-list-link" href="/tags/%E4%BD%9C%E7%94%A8%E5%9F%9F/">作用域</a>
     </div>
     <div class="archives-tag-list-item" data-aos="zoom-in">
       <a class="archives-tag-list-link" href="/tags/Vitepress/">Vitepress</a>
@@ -286,25 +372,10 @@
       <a class="archives-tag-list-link" href="/tags/%E5%B7%A5%E7%A8%8B%E5%8C%96/">工程化</a>
     </div>
     <div class="archives-tag-list-item" data-aos="zoom-in">
+      <a class="archives-tag-list-link" href="/tags/%E9%9D%99%E6%80%81%E7%BD%91%E7%AB%99/">静态网站</a>
+    </div>
+    <div class="archives-tag-list-item" data-aos="zoom-in">
       <a class="archives-tag-list-link" href="/tags/%E7%BB%84%E4%BB%B6%E5%8C%96/">组件化</a>
-    </div>
-    <div class="archives-tag-list-item" data-aos="zoom-in">
-      <a class="archives-tag-list-link" href="/tags/%E9%85%8D%E7%BD%AE/">配置</a>
-    </div>
-    <div class="archives-tag-list-item" data-aos="zoom-in">
-      <a class="archives-tag-list-link" href="/tags/%E4%B8%BB%E9%A2%98/">主题</a>
-    </div>
-    <div class="archives-tag-list-item" data-aos="zoom-in">
-      <a class="archives-tag-list-link" href="/tags/%E5%87%BD%E6%95%B0/">函数</a>
-    </div>
-    <div class="archives-tag-list-item" data-aos="zoom-in">
-      <a class="archives-tag-list-link" href="/tags/%E4%BD%9C%E7%94%A8%E5%9F%9F/">作用域</a>
-    </div>
-    <div class="archives-tag-list-item" data-aos="zoom-in">
-      <a class="archives-tag-list-link" href="/tags/%E8%93%9D%E6%A1%A5%E6%9D%AF/">蓝桥杯</a>
-    </div>
-    <div class="archives-tag-list-item" data-aos="zoom-in">
-      <a class="archives-tag-list-link" href="/tags/%E5%8D%95%E7%89%87%E6%9C%BA/">单片机</a>
     </div>
     <div class="archives-tag-list-item" data-aos="zoom-in">
       <a class="archives-tag-list-link" href="/tags/ESP32/">ESP32</a>
@@ -316,34 +387,10 @@
       <a class="archives-tag-list-link" href="/tags/Linux/">Linux</a>
     </div>
     <div class="archives-tag-list-item" data-aos="zoom-in">
-      <a class="archives-tag-list-link" href="/tags/STM32/">STM32</a>
+      <a class="archives-tag-list-link" href="/tags/%E9%85%8D%E7%BD%AE/">配置</a>
     </div>
     <div class="archives-tag-list-item" data-aos="zoom-in">
-      <a class="archives-tag-list-link" href="/tags/%E9%9D%99%E6%80%81%E7%BD%91%E7%AB%99/">静态网站</a>
-    </div>
-    <div class="archives-tag-list-item" data-aos="zoom-in">
-      <a class="archives-tag-list-link" href="/tags/%E5%A4%A9%E6%B0%94%E5%B0%8F%E5%8A%A9%E6%89%8B/">天气小助手</a>
-    </div>
-    <div class="archives-tag-list-item" data-aos="zoom-in">
-      <a class="archives-tag-list-link" href="/tags/%E9%A1%B9%E7%9B%AE%E8%83%8C%E6%99%AF/">项目背景</a>
-    </div>
-    <div class="archives-tag-list-item" data-aos="zoom-in">
-      <a class="archives-tag-list-link" href="/tags/SDCC/">SDCC</a>
-    </div>
-    <div class="archives-tag-list-item" data-aos="zoom-in">
-      <a class="archives-tag-list-link" href="/tags/%E5%B7%A5%E5%85%B7/">工具</a>
-    </div>
-    <div class="archives-tag-list-item" data-aos="zoom-in">
-      <a class="archives-tag-list-link" href="/tags/%E5%B7%A5%E7%A8%8B%E8%A7%A3%E6%9E%90/">工程解析</a>
-    </div>
-    <div class="archives-tag-list-item" data-aos="zoom-in">
-      <a class="archives-tag-list-link" href="/tags/%E5%BC%80%E5%8F%91%E6%96%87%E6%A1%A3/">开发文档</a>
-    </div>
-    <div class="archives-tag-list-item" data-aos="zoom-in">
-      <a class="archives-tag-list-link" href="/tags/%E5%85%AD%E8%B6%B3%E6%9C%BA%E5%99%A8%E4%BA%BA/">六足机器人</a>
-    </div>
-    <div class="archives-tag-list-item" data-aos="zoom-in">
-      <a class="archives-tag-list-link" href="/tags/%E5%A4%8D%E5%88%BB/">复刻</a>
+      <a class="archives-tag-list-link" href="/tags/%E4%B8%BB%E9%A2%98/">主题</a>
     </div>
     <div class="archives-tag-list-item" data-aos="zoom-in">
       <a class="archives-tag-list-link" href="/tags/Ubuntu/">Ubuntu</a>
@@ -352,10 +399,43 @@
       <a class="archives-tag-list-link" href="/tags/%E9%97%AE%E9%A2%98%E8%A7%A3%E5%86%B3/">问题解决</a>
     </div>
     <div class="archives-tag-list-item" data-aos="zoom-in">
-      <a class="archives-tag-list-link" href="/tags/%E9%A1%B9%E7%9B%AE%E5%88%86%E6%9E%90/">项目分析</a>
+      <a class="archives-tag-list-link" href="/tags/%E8%93%9D%E6%A1%A5%E6%9D%AF/">蓝桥杯</a>
+    </div>
+    <div class="archives-tag-list-item" data-aos="zoom-in">
+      <a class="archives-tag-list-link" href="/tags/%E5%8D%95%E7%89%87%E6%9C%BA/">单片机</a>
+    </div>
+    <div class="archives-tag-list-item" data-aos="zoom-in">
+      <a class="archives-tag-list-link" href="/tags/SDCC/">SDCC</a>
+    </div>
+    <div class="archives-tag-list-item" data-aos="zoom-in">
+      <a class="archives-tag-list-link" href="/tags/%E5%B7%A5%E5%85%B7/">工具</a>
     </div>
     <div class="archives-tag-list-item" data-aos="zoom-in">
       <a class="archives-tag-list-link" href="/tags/%E9%83%A8%E7%BD%B2/">部署</a>
+    </div>
+    <div class="archives-tag-list-item" data-aos="zoom-in">
+      <a class="archives-tag-list-link" href="/tags/%E5%85%AD%E8%B6%B3%E6%9C%BA%E5%99%A8%E4%BA%BA/">六足机器人</a>
+    </div>
+    <div class="archives-tag-list-item" data-aos="zoom-in">
+      <a class="archives-tag-list-link" href="/tags/%E5%A4%8D%E5%88%BB/">复刻</a>
+    </div>
+    <div class="archives-tag-list-item" data-aos="zoom-in">
+      <a class="archives-tag-list-link" href="/tags/%E9%A1%B9%E7%9B%AE%E5%88%86%E6%9E%90/">项目分析</a>
+    </div>
+    <div class="archives-tag-list-item" data-aos="zoom-in">
+      <a class="archives-tag-list-link" href="/tags/%E5%A4%A9%E6%B0%94%E5%B0%8F%E5%8A%A9%E6%89%8B/">天气小助手</a>
+    </div>
+    <div class="archives-tag-list-item" data-aos="zoom-in">
+      <a class="archives-tag-list-link" href="/tags/%E9%A1%B9%E7%9B%AE%E8%83%8C%E6%99%AF/">项目背景</a>
+    </div>
+    <div class="archives-tag-list-item" data-aos="zoom-in">
+      <a class="archives-tag-list-link" href="/tags/STM32/">STM32</a>
+    </div>
+    <div class="archives-tag-list-item" data-aos="zoom-in">
+      <a class="archives-tag-list-link" href="/tags/%E5%BC%80%E5%8F%91%E6%96%87%E6%A1%A3/">开发文档</a>
+    </div>
+    <div class="archives-tag-list-item" data-aos="zoom-in">
+      <a class="archives-tag-list-link" href="/tags/%E5%B7%A5%E7%A8%8B%E8%A7%A3%E6%9E%90/">工程解析</a>
     </div>
 </div>
 <div class="category-wrap">
@@ -375,19 +455,16 @@
       <a class="archives-category-list-link" href="/categories/%E5%89%8D%E7%AB%AF/Vitepress/">Vitepress</a>
     </div>
     <div class="archives-category-list-item" data-aos="zoom-in">
-      <a class="archives-category-list-link" href="/categories/%E5%8F%82%E8%B5%9B%E7%AC%94%E8%AE%B0/">参赛笔记</a>
-    </div>
-    <div class="archives-category-list-item" data-aos="zoom-in">
       <a class="archives-category-list-link" href="/categories/%E5%B5%8C%E5%85%A5%E5%BC%8F/">嵌入式</a>
     </div>
     <div class="archives-category-list-item" data-aos="zoom-in">
-      <a class="archives-category-list-link" href="/categories/%E9%A1%B9%E7%9B%AE%E5%BC%80%E5%8F%91/">项目开发</a>
+      <a class="archives-category-list-link" href="/categories/%E5%8F%82%E8%B5%9B%E7%AC%94%E8%AE%B0/">参赛笔记</a>
     </div>
     <div class="archives-category-list-item" data-aos="zoom-in">
       <a class="archives-category-list-link" href="/categories/%E9%A1%B9%E7%9B%AE%E5%A4%8D%E5%88%BB/">项目复刻</a>
     </div>
     <div class="archives-category-list-item" data-aos="zoom-in">
-      <a class="archives-category-list-link" href="/categories/%E5%8F%82%E8%B5%9B%E7%AC%94%E8%AE%B0/%E8%93%9D%E6%A1%A5%E6%9D%AF/">蓝桥杯</a>
+      <a class="archives-category-list-link" href="/categories/%E9%A1%B9%E7%9B%AE%E5%BC%80%E5%8F%91/">项目开发</a>
     </div>
     <div class="archives-category-list-item" data-aos="zoom-in">
       <a class="archives-category-list-link" href="/categories/%E5%B5%8C%E5%85%A5%E5%BC%8F/ESP32/">ESP32</a>
@@ -396,16 +473,19 @@
       <a class="archives-category-list-link" href="/categories/%E5%B5%8C%E5%85%A5%E5%BC%8F/Linux/">Linux</a>
     </div>
     <div class="archives-category-list-item" data-aos="zoom-in">
-      <a class="archives-category-list-link" href="/categories/%E5%B5%8C%E5%85%A5%E5%BC%8F/STM32/">STM32</a>
-    </div>
-    <div class="archives-category-list-item" data-aos="zoom-in">
-      <a class="archives-category-list-link" href="/categories/%E9%A1%B9%E7%9B%AE%E5%BC%80%E5%8F%91/%E5%A4%A9%E6%B0%94%E5%B0%8F%E5%8A%A9%E6%89%8B/">天气小助手</a>
+      <a class="archives-category-list-link" href="/categories/%E5%8F%82%E8%B5%9B%E7%AC%94%E8%AE%B0/%E8%93%9D%E6%A1%A5%E6%9D%AF/">蓝桥杯</a>
     </div>
     <div class="archives-category-list-item" data-aos="zoom-in">
       <a class="archives-category-list-link" href="/categories/%E5%B5%8C%E5%85%A5%E5%BC%8F/%E5%B7%A5%E5%85%B7/">工具</a>
     </div>
     <div class="archives-category-list-item" data-aos="zoom-in">
       <a class="archives-category-list-link" href="/categories/%E9%A1%B9%E7%9B%AE%E5%A4%8D%E5%88%BB/%E5%85%AD%E8%B6%B3%E6%9C%BA%E5%99%A8%E4%BA%BA/">六足机器人</a>
+    </div>
+    <div class="archives-category-list-item" data-aos="zoom-in">
+      <a class="archives-category-list-link" href="/categories/%E9%A1%B9%E7%9B%AE%E5%BC%80%E5%8F%91/%E5%A4%A9%E6%B0%94%E5%B0%8F%E5%8A%A9%E6%89%8B/">天气小助手</a>
+    </div>
+    <div class="archives-category-list-item" data-aos="zoom-in">
+      <a class="archives-category-list-link" href="/categories/%E5%B5%8C%E5%85%A5%E5%BC%8F/STM32/">STM32</a>
     </div>
 </div>
         <section class="archives-wrap" data-aos="fade-up">
@@ -435,7 +515,7 @@
   <div id="footer-info">
     <div>
       <span class="icon-copyright"></span>
-        2020-2026
+        2025-2026
         <span class="footer-info-sep rotate"></span>
       Heureka
     </div>
@@ -471,7 +551,7 @@
       <div class="sidebar-author">
   <img data-src="/avatar/avatar.webp" data-sizes="auto" alt="Heureka" class="lazyload">
   <div class="sidebar-author-name">Heureka</div>
-  <div class="sidebar-description">记录学习笔记、分享技术心得、展示个人实践项目</div>
+  <div class="sidebar-description">学习笔记、技术心得、实践项目</div>
 </div>
 <div class="sidebar-state">
   <div class="sidebar-state-article">
@@ -488,6 +568,15 @@
   </div>
 </div>
 <div class="sidebar-social" >
+    <div class="icon-email sidebar-social-icon">
+      <a href=heureka-l@qq.com itemprop="url" target="_blank" aria-label="email" rel="noopener nofollow noreferrer"></a>
+    </div>
+    <div class="icon-github sidebar-social-icon">
+      <a href=https://github.com/heureka-me itemprop="url" target="_blank" aria-label="github" rel="noopener nofollow noreferrer"></a>
+    </div>
+    <div class="icon-qq sidebar-social-icon">
+      <a href=3455545938 itemprop="url" target="_blank" aria-label="qq" rel="noopener nofollow noreferrer"></a>
+    </div>
 </div>
 <div class="sidebar-menu">
       <div class="sidebar-menu-link-wrap">
@@ -524,6 +613,21 @@
 </nav>
 
     </div>
+      <div class="site-search">
+        <div class="reimu-popup popup">
+          <div class="reimu-search">
+            <div class="reimu-search-input-icon"></div>
+            <div id="reimu-search-input"></div>
+            <div class="popup-btn-close"></div>
+          </div>
+          <div class="reimu-results">
+            <div id="reimu-stats"></div>
+            <div id="reimu-hits"></div>
+            <div id="reimu-pagination" class="reimu-pagination"></div>
+          </div>
+          <img class="reimu-bg" src="/images/reimu.png" loading="lazy" decoding="async" fetchpriority="low"/>
+        </div>
+      </div>
     
 <script src="https://npm.webcache.cn/lazysizes@5.3.2/lazysizes.min.js" integrity="sha384-3gT&#x2F;vsepWkfz&#x2F;ff7PpWNUeMzeWoH3cDhm&#x2F;A8jM7ouoAK0&#x2F;fP&#x2F;9bcHHR5kHq2nf+e" crossorigin="anonymous"></script>
 
@@ -559,6 +663,9 @@
 <script src="/js/pjax_script.js" data-pjax></script>
 
 
+  
+<script src="/js/generator_search.js" defer></script>
+
 
 
   <script>
@@ -572,7 +679,16 @@
 <script src="https://npm.webcache.cn/mouse-firework@0.2.0/dist/index.umd.js" integrity="sha384-qi9WggRt19tv8Vc7pCHW3ulMNLwrn515zaLEWZjl1px07vz8+pUoWX8n1rgq282T" crossorigin="anonymous" onload="setupFirework()" defer></script>
 
 
+  
+<script src="https://npm.webcache.cn/theme-shokax-pjax@0.0.3/dist/index.umd.js" integrity="sha384-xneY1WY8hOfUzswrE4CrYq35N4BdVcxqxwHPr9zawE&#x2F;jMSCxD+jAPU55x&#x2F;jj3wlf" crossorigin="anonymous"></script>
 
+  
+<script src="/js/pjax.js"></script>
+
+
+
+  
+<script src="https://npm.webcache.cn/live2d-widgets@0.9.0/autoload.js" integrity="sha384-poTN7wN&#x2F;SqNhQqo3jdFeX20ikddWeFGkUkDEzsKjgH&#x2F;ez8aQLn81oI0Cw6q5xNyB" crossorigin="anonymous"></script>
 
 
 
@@ -610,6 +726,35 @@
   }
 </script>
 
+    
+<script src="https://npm.webcache.cn/katex@0.16.24/dist/katex.min.js" integrity="sha384-MWNUH0WmtsYGhn2cbH6ELRCbf9LG3QDqCC+gqPB3IBNO35xjZK3Ejb6oONRpDbPg" crossorigin="anonymous" defer data-pjax></script>
+
+    
+<script src="https://npm.webcache.cn/katex@0.16.24/dist/contrib/auto-render.min.js" integrity="sha384-hCXGrW6PitJEwbkoStFjeJxv+fSOOQKOPbJxSfM6G5sWZjAyWhXiTIIAmQqnlLlh" crossorigin="anonymous" defer onload="renderMathInElement(_$(&#39;article&#39;), {delimiters: [{left: &#39;$$&#39;, right: &#39;$$&#39;, display: true},{left: &#39;$&#39;, right: &#39;$&#39;, display: false}]});" data-pjax></script>
+
+  
+    <script>
+      var setupAPlayer = () => {
+        if (!false || !window.matchMedia('(max-width: 768px)').matches) {
+          if (window.matchMedia('(max-width: 959px)').matches) {
+            const meting = _$('meting-js');
+            if (meting) {
+              meting.setAttribute('fixed', 'true');
+              const aside = meting.parentNode?.parentNode;
+              if (aside?.tagName === 'ASIDE') {
+                meting.parentNode.removeChild(meting);
+                document.body.appendChild(meting);
+              }
+            }
+          }
+        }
+      };
+    </script>
+  
+<script src="https://npm.webcache.cn/aplayer@1.10.1/dist/APlayer.min.js" integrity="sha384-gdGYZwHnfJM54evoZhpO0s6ZF5BQiybkiyW7VXr+h5UfruuRL&#x2F;aORyw+5+HZoU6e" crossorigin="anonymous" defer onload="setupAPlayer()"></script>
+
+    
+<script src="https://npm.webcache.cn/meting@2.0.1/dist/Meting.min.js" integrity="sha384-ASVlpKF80A22OXTK3tfEjZm1EL6uFMKIC4p8+0maanw1S&#x2F;IyB+Y4JG+ZDU7GpKE8" crossorigin="anonymous" defer></script>
 
 
 
