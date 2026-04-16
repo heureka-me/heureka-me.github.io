@@ -1,0 +1,497 @@
+  <!DOCTYPE html>
+  <html lang="zh-CN"  
+      data-theme-mode="auto"
+  >
+  <head>
+  <meta charset="utf-8">
+  
+  
+  
+  <script>window.REIMU_CONFIG = {};window.REIMU_CONFIG.icon_font = '4552607_a0oqhord1y';window.REIMU_CONFIG.clipboard_tips = {"success":{"zh-CN":"复制成功 (*^▽^*)"},"fail":{"zh-CN":"复制失败 (ﾟ⊿ﾟ)ﾂ"},"copyright":{"enable":false,"count":50,"license_type":"by-nc-sa"}};window.REIMU_CONFIG.clipboard_tips.copyright.content = '本博客所有文章除特别声明外，均采用 BY-NC-SA 许可协议。转载请注明出处！';window.REIMU_CONFIG.code_block = {"expand":true};window.REIMU_CONFIG.base = 'https://heureka-me.github.io';</script>
+  <title>
+    Heureka&#39;s Blog
+  </title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link rel="preload" as="style" href="https://fonts.googleapis.com/css?family=Mulish:400,400italic,700,700italic|Noto Serif SC:400,400italic,700,700italic&display=swap"><link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Mulish:400,400italic,700,700italic|Noto Serif SC:400,400italic,700,700italic&display=swap" media="print" onload="this.media='all'">
+    <link rel="preload" href="//at.alicdn.com/t/c/font_4552607_a0oqhord1y.woff2" as="font" type="font/woff2" crossorigin="anonymous">
+    
+<link rel="stylesheet" href="/css/loader.css">
+
+    <meta name="description" content="关于我-HeurekaMotto 代码如诗，远方如谜，唯上下求索。  Introduction这里是 Heureka，一个物联网专业的编程爱好者。目前主要研究 物联网 (IoT)、嵌入式系统 以及 前端开发 等技术。 这里主要用于记录我的学习笔记、分享技术心得以及展示个人实践项目。 Projects可自主预警的天气小助手这是一个结合了嵌入式硬件与实时数据处理的项目。通过获取天气 API 数据，实现">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Heureka&#39;s Blog">
+<meta property="og:url" content="https://heureka-me.github.io/about/index.html">
+<meta property="og:site_name" content="Heureka&#39;s Blog">
+<meta property="og:description" content="关于我-HeurekaMotto 代码如诗，远方如谜，唯上下求索。  Introduction这里是 Heureka，一个物联网专业的编程爱好者。目前主要研究 物联网 (IoT)、嵌入式系统 以及 前端开发 等技术。 这里主要用于记录我的学习笔记、分享技术心得以及展示个人实践项目。 Projects可自主预警的天气小助手这是一个结合了嵌入式硬件与实时数据处理的项目。通过获取天气 API 数据，实现">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://heureka-me.github.io/images/banner.webp">
+<meta property="article:published_time" content="2026-04-16T11:07:20.723Z">
+<meta property="article:modified_time" content="2026-04-16T11:07:20.723Z">
+<meta property="article:author" content="Heureka">
+<meta property="article:tag" content="物联网, 嵌入式, 前端开发">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://heureka-me.github.io/images/banner.webp">
+      <meta name="keywords" content="物联网, 嵌入式, 前端开发">
+    <link rel="alternate" href="/atom.xml" title="Heureka's Blog" type="application/atom+xml">
+    <link rel="shortcut icon" href="/images/favicon.ico">
+  
+<link rel="stylesheet" href="/css/style.css">
+
+  <link rel="preload" as="style" onload="this.onload=null;this.rel='stylesheet'" href="https://npm.webcache.cn/photoswipe@5.4.4/dist/photoswipe.css" integrity="sha384-IfxC36XL/toUyJ939C73PcgMuRzAZuIzZxE38drsmO5p6jD7ei+Zx/1oA/0l8ysE" crossorigin="anonymous">
+    
+<script src="https://npm.webcache.cn/pace-js@1.2.4/pace.min.js" integrity="sha384-k6YtvFUEIuEFBdrLKJ3YAUbBki333tj1CSUisai5Cswsg9wcLNaPzsTHDswp4Az8" crossorigin="anonymous"></script>
+
+    
+<link rel="stylesheet" href="https://npm.webcache.cn/@reimujs/aos@0.1.2/dist/aos.css" integrity="sha384-GMRP93c6Hkz9JVKGAuRR3nTS7M07RwPgTFenXiosjq2VbVgvdDNcz1g6Mkj8AONa" crossorigin="anonymous">
+
+<meta name="generator" content="Hexo 8.1.1"></head>
+
+  <body>
+      <div id='loader'>
+    <div class="loading-left-bg loading-bg"></div>
+    <div class="loading-right-bg loading-bg"></div>
+    <div class="spinner-box">
+      <div class="loading-taichi rotate">
+          <svg width="150" height="150" viewBox="0 0 1024 1024" class="icon" version="1.1" xmlns="https://www.w3.org/2000/svg" shape-rendering="geometricPrecision">
+            <path d="M303.5 432A80 80 0 0 1 291.5 592A80 80 0 0 1 303.5 432z" fill="var(--red-1, #ff5252)" />
+            <path d="M512 65A447 447 0 0 1 512 959L512 929A417 417 0 0 0 512 95A417 417 0 0 0 512 929L512 959A447 447 0 0 1 512 65z 
+           M512 95A417 417 0 0 1 929 512A208.5 208.5 0 0 1 720.5 720.5L720.5 592A80 80 0 0 0 720.5 432A80 80 0 0 0 720.5 592L720.5 720.5A208.5 208.5 0 0 1 512 512A208.5 208.5 0 0 0 303.5 303.5A208.5 208.5 0 0 0 95 512A417 417 0 0 1 512 95z" fill="var(--red-1, #ff5252)" />
+          </svg>
+      </div>
+      <div class="loading-word">少女祈祷中...</div>
+    </div>
+  </div>
+  <script>
+    var time = null;
+    var loaderEl = document.getElementById('loader');
+    var startLoading = () => {
+      time = Date.now();
+      loaderEl.classList.remove("loading");
+    }
+    var hideLoader = () => {
+      document.body.style.overflow = 'auto';
+      loader.classList.add('loading');
+    };
+
+    var endLoading = () => {
+      if (!time) {
+        hideLoader();
+      } else {
+        if (Date.now() - time > 500) {
+          time = null;
+          hideLoader();
+        } else {
+          setTimeout(endLoading, 500 - (Date.now() - time));
+          time = null;
+        }
+      }
+    }
+    window.addEventListener('DOMContentLoaded', endLoading);
+    loaderEl.addEventListener('click', endLoading);
+  </script>
+<div id="copy-tooltip"></div>
+<div id="heatmap-tooltip"></div>
+
+
+    <div id="container">
+      <div id="wrap">
+        <div id="header-nav">
+  <nav id="main-nav" aria-label="Primary navigation">
+        <a class="main-nav-link-wrap" href="/">
+            <div class="main-nav-icon icon rotate">
+                &#xe62b;
+            </div>
+          <span class="main-nav-link">首页</span>
+        </a>
+        <a class="main-nav-link-wrap" href="/archives">
+            <div class="main-nav-icon icon rotate">
+                &#xe62b;
+            </div>
+          <span class="main-nav-link">归档</span>
+        </a>
+        <a class="main-nav-link-wrap" href="/about">
+            <div class="main-nav-icon icon rotate">
+                &#xe62b;
+            </div>
+          <span class="main-nav-link">关于</span>
+        </a>
+        <a class="main-nav-link-wrap" href="/friend">
+            <div class="main-nav-icon icon rotate">
+                &#xe62b;
+            </div>
+          <span class="main-nav-link">友链</span>
+        </a>
+    <a id="main-nav-toggle" class="nav-icon" aria-label="Toggle navigation" role="button"></a>
+  </nav>
+  <nav id="sub-nav" aria-label="Secondary navigation">
+      <a id="nav-rss-link" class="nav-icon" href="/atom.xml" title="RSS 订阅" aria-label="RSS 订阅" target="_blank"></a>
+  </nav>
+</div>
+<header id="header" aria-label="Site header">
+      <picture>
+      </picture>
+        <img  fetchpriority="high" src="/images/banner.webp" alt="">
+  <div id="header-outer">
+    <div id="header-title">
+          <span id="logo">
+            <h1 data-aos="slide-up">Heureka&#39;s Blog</h1>
+          </span>
+        <h2 id="subtitle-wrap" data-aos="slide-down">
+              <span id="subtitle">一个物联网专业的编程爱好者</span>
+        </h2>
+    </div>
+  </div>
+</header>
+
+        <div id="content" aria-label="Page content"  class="sidebar-right" >
+          <aside id="sidebar" aria-label="Sidebar">
+  <div class="sidebar-wrapper-container ">
+  <div class="sidebar-wrapper">
+    <div class="sidebar-wrap" data-aos="fade-up">
+        <div class="sidebar-author">
+  <img data-src="/avatar/avatar.webp" data-sizes="auto" alt="Heureka" class="lazyload">
+  <div class="sidebar-author-name">Heureka</div>
+  <div class="sidebar-description">记录学习笔记、分享技术心得、展示个人实践项目</div>
+</div>
+<div class="sidebar-state">
+  <div class="sidebar-state-article">
+    <div>文章</div>
+    <div class="sidebar-state-number">36</div>
+  </div>
+  <div class="sidebar-state-category">
+    <div>分类</div>
+    <div class="sidebar-state-number">16</div>
+  </div>
+  <div class="sidebar-state-tag">
+    <div>标签</div>
+    <div class="sidebar-state-number">50</div>
+  </div>
+</div>
+<div class="sidebar-social" >
+</div>
+<div class="sidebar-menu">
+      <div class="sidebar-menu-link-wrap">
+        <a class="sidebar-menu-link-dummy" href="/" aria-label="首页"></a>
+          <div class="sidebar-menu-icon icon rotate">
+              &#xe62b;
+          </div>
+        <div class="sidebar-menu-link">首页</div>
+      </div>
+      <div class="sidebar-menu-link-wrap">
+        <a class="sidebar-menu-link-dummy" href="/archives" aria-label="归档"></a>
+          <div class="sidebar-menu-icon icon rotate">
+              &#xe62b;
+          </div>
+        <div class="sidebar-menu-link">归档</div>
+      </div>
+      <div class="sidebar-menu-link-wrap">
+        <a class="sidebar-menu-link-dummy" href="/about" aria-label="关于"></a>
+          <div class="sidebar-menu-icon icon rotate">
+              &#xe62b;
+          </div>
+        <div class="sidebar-menu-link">关于</div>
+      </div>
+      <div class="sidebar-menu-link-wrap">
+        <a class="sidebar-menu-link-dummy" href="/friend" aria-label="友链"></a>
+          <div class="sidebar-menu-icon icon rotate">
+              &#xe62b;
+          </div>
+        <div class="sidebar-menu-link">友链</div>
+      </div>
+</div>
+
+    </div>
+  </div>
+  <div class="sidebar-widget">
+  </div>
+  </div>
+</aside>
+
+          <section id="main" aria-label="Main content"><article id="page-" class="h-entry article" itemscope itemtype="https://schema.org/BlogPosting">
+  <div class="article-inner" data-aos="fade-up">
+    <div class="article-meta">
+      <div class="article-date">
+  <span class="article-date-link icon-calendar" data-aos="zoom-in">
+    <time datetime="2026-04-16T11:07:20.723Z" itemprop="datePublished">2026-04-16</time>
+    <time style="display: none;" id="post-update-time">2026-04-16</time>
+  </span>
+</div>
+
+    </div>
+    
+    <div class="hr-line"></div>
+    
+    <div class="e-content article-entry" itemprop="articleBody">
+        <h1 id="关于我-Heureka"><a href="#关于我-Heureka" class="headerlink" title="关于我-Heureka"></a>关于我-Heureka</h1><h2 id="Motto"><a href="#Motto" class="headerlink" title="Motto"></a>Motto</h2><blockquote>
+<p>代码如诗，远方如谜，唯上下求索。</p>
+</blockquote>
+<h2 id="Introduction"><a href="#Introduction" class="headerlink" title="Introduction"></a>Introduction</h2><p>这里是 <strong>Heureka</strong>，一个物联网专业的编程爱好者。目前主要研究 <strong>物联网 (IoT)</strong>、<strong>嵌入式系统</strong> 以及 <strong>前端开发</strong> 等技术。</p>
+<p>这里主要用于记录我的学习笔记、分享技术心得以及展示个人实践项目。</p>
+<h2 id="Projects"><a href="#Projects" class="headerlink" title="Projects"></a>Projects</h2><h3 id="可自主预警的天气小助手"><a href="#可自主预警的天气小助手" class="headerlink" title="可自主预警的天气小助手"></a>可自主预警的天气小助手</h3><p>这是一个结合了嵌入式硬件与实时数据处理的项目。通过获取天气 API 数据，实现对极端天气的自动识别与预警提示，旨在为日常生活提供智能化的便利。</p>
+<ul>
+<li><strong>核心技术</strong>：ESP32&#x2F;STM32, 物联网协议, 前端展示界面。</li>
+<li><strong>详情查看</strong>：<a href="/docs/%E9%A1%B9%E7%9B%AE%E5%BC%80%E5%8F%91/%E5%8F%AF%E8%87%AA%E4%B8%BB%E9%A2%84%E8%AD%A6%E7%9A%84%E5%A4%A9%E6%B0%94%E5%B0%8F%E5%8A%A9%E6%89%8B/01.%E5%BC%80%E5%8F%91%E6%96%87%E6%A1%A3">工程解析</a></li>
+</ul>
+<h3 id="六足机器人复刻"><a href="#六足机器人复刻" class="headerlink" title="六足机器人复刻"></a>六足机器人复刻</h3><p>该项目是对经典开源六足机器人架构的复刻与优化。记录了从硬件组装、电路调试到运动算法编写的全过程。</p>
+<ul>
+<li><strong>核心技术</strong>：舵机控制算法, 运动学逆解, 嵌入式开发。</li>
+<li><strong>详情查看</strong>：<a href="/docs/%E9%A1%B9%E7%9B%AE%E5%A4%8D%E5%88%BB/%E5%85%AD%E8%B6%B3%E6%9C%BA%E5%99%A8%E4%BA%BA/01.%E9%A1%B9%E7%9B%AE%E5%88%86%E6%9E%90">项目分析</a></li>
+</ul>
+<h2 id="Copyright"><a href="#Copyright" class="headerlink" title="Copyright"></a>Copyright</h2><h3 id="一、如有侵权"><a href="#一、如有侵权" class="headerlink" title="一、如有侵权"></a>一、如有侵权</h3><p>本博客中的某些图片来源于互联网，仅供学术交流和非商业用途。我认为这些图片的使用符合公平使用原则。如果您是图片的版权拥有者，且不希望这些图片在本博客中出现，请通过下面的联系方式联系我，我将及时删除。</p>
+<h3 id="二、标志版权"><a href="#二、标志版权" class="headerlink" title="二、标志版权"></a>二、标志版权</h3><p>本博客的标志图来源于互联网，作者不详。我们非常感谢原作者创作如此精美的图片，如果您是标志图的作者或知道作者的信息，请通过下面的联系方式联系我。我们愿意支付合理的版权费用以获取使用授权，或者根据作者的意愿进行相应的处理。</p>
+<h3 id="三、版权声明"><a href="#三、版权声明" class="headerlink" title="三、版权声明"></a>三、版权声明</h3><p>本网站遵从 <strong>“知识共享-署名-非商业性使用-相同方式共享 3.0 未本地化版本 (CC BY-NC-SA 3.0)”</strong>（以下简称”3C协议”）。根据此协议，您可以自由地分享、复制、发行、传播本网站的原创文章、图片、音频、视频等媒体资料，但必须遵循以下原则：</p>
+<ul>
+<li><strong>署名</strong>：您必须明确标注原作者及出处（包括本网站的链接），并声明适用 3C 协议。</li>
+<li><strong>非商业性使用</strong>：您不得将本网站的内容用于商业用途。</li>
+<li><strong>相同方式共享</strong>：如果您修改了、转化了或者基于本网站的原创文章、图片、音频、视频等媒体资料创作了新的作品，必须采用同样的 3C 协议发布。</li>
+</ul>
+<p>如果您使用了本网站的原创文章、图片、音频、视频等媒体资料，必须遵守 3C 协议，并标注原作者及出处。我欢迎并感谢您对本网站的支持和关注！</p>
+<h2 id="Contact"><a href="#Contact" class="headerlink" title="Contact"></a>Contact</h2><p>如果您有任何问题或者想与我交流，请随时联系我!</p>
+<ul>
+<li><strong>GitHub</strong>: <a target="_blank" rel="noopener" href="https://github.com/Heureka-L">Heureka-L</a></li>
+<li><strong>邮箱</strong>: [<a href="mailto:&#x68;&#x65;&#117;&#x72;&#101;&#x6b;&#x61;&#95;&#x6c;&#x40;&#102;&#x6f;&#120;&#x6d;&#x61;&#x69;&#x6c;&#x2e;&#x63;&#111;&#109;">heureka_l@foxmail.com</a>] (示例邮箱，请根据实际修改)</li>
+</ul>
+<p>再次感谢您访问我的博客！</p>
+
+    </div>
+    <footer class="article-footer">
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+</section>
+        </div>
+        <footer id="footer" aria-label="Site footer">
+  <div style="width: 100%; overflow: hidden">
+    <div class="footer-line"></div>
+  </div>
+  <div id="footer-info">
+    <div>
+      <span class="icon-copyright"></span>
+        2020-2026
+        <span class="footer-info-sep rotate"></span>
+      Heureka
+    </div>
+      <div>
+        基于&nbsp;<a href="https://hexo.io/" rel="noopener nofollow noreferrer" target="_blank">Hexo</a>&nbsp;
+        Theme.<a href="https://github.com/D-Sketon/hexo-theme-reimu" rel="noopener nofollow noreferrer" target="_blank">Reimu</a>
+      </div>
+      <div>
+        <span class="icon-brush"></span>
+        39.4k
+        &nbsp;|&nbsp;
+        <span class="icon-coffee"></span>
+        03:22
+      </div>
+      <div>
+        <span class="icon-eye"></span>
+        <span id="busuanzi_container_site_pv">总访问量&nbsp;<span id="busuanzi_value_site_pv"></span></span>
+        &nbsp;|&nbsp;
+        <span class="icon-user"></span>
+        <span id="busuanzi_container_site_uv">总访客量&nbsp;<span id="busuanzi_value_site_uv"></span></span>
+      </div>
+  </div>
+</footer>
+
+          <div class="sidebar-top">
+            <div class="sidebar-top-taichi rotate"></div>
+            <div class="arrow-up"></div>
+          </div>
+        <div id="mask" class="hide"></div>
+      </div>
+      <nav id="mobile-nav" aria-label="Mobile navigation">
+  <div class="sidebar-wrap">
+      <div class="sidebar-author">
+  <img data-src="/avatar/avatar.webp" data-sizes="auto" alt="Heureka" class="lazyload">
+  <div class="sidebar-author-name">Heureka</div>
+  <div class="sidebar-description">记录学习笔记、分享技术心得、展示个人实践项目</div>
+</div>
+<div class="sidebar-state">
+  <div class="sidebar-state-article">
+    <div>文章</div>
+    <div class="sidebar-state-number">36</div>
+  </div>
+  <div class="sidebar-state-category">
+    <div>分类</div>
+    <div class="sidebar-state-number">16</div>
+  </div>
+  <div class="sidebar-state-tag">
+    <div>标签</div>
+    <div class="sidebar-state-number">50</div>
+  </div>
+</div>
+<div class="sidebar-social" >
+</div>
+<div class="sidebar-menu">
+      <div class="sidebar-menu-link-wrap">
+        <a class="sidebar-menu-link-dummy" href="/" aria-label="首页"></a>
+          <div class="sidebar-menu-icon icon rotate">
+              &#xe62b;
+          </div>
+        <div class="sidebar-menu-link">首页</div>
+      </div>
+      <div class="sidebar-menu-link-wrap">
+        <a class="sidebar-menu-link-dummy" href="/archives" aria-label="归档"></a>
+          <div class="sidebar-menu-icon icon rotate">
+              &#xe62b;
+          </div>
+        <div class="sidebar-menu-link">归档</div>
+      </div>
+      <div class="sidebar-menu-link-wrap">
+        <a class="sidebar-menu-link-dummy" href="/about" aria-label="关于"></a>
+          <div class="sidebar-menu-icon icon rotate">
+              &#xe62b;
+          </div>
+        <div class="sidebar-menu-link">关于</div>
+      </div>
+      <div class="sidebar-menu-link-wrap">
+        <a class="sidebar-menu-link-dummy" href="/friend" aria-label="友链"></a>
+          <div class="sidebar-menu-icon icon rotate">
+              &#xe62b;
+          </div>
+        <div class="sidebar-menu-link">友链</div>
+      </div>
+</div>
+
+  </div>
+</nav>
+
+    </div>
+    
+<script src="https://npm.webcache.cn/lazysizes@5.3.2/lazysizes.min.js" integrity="sha384-3gT&#x2F;vsepWkfz&#x2F;ff7PpWNUeMzeWoH3cDhm&#x2F;A8jM7ouoAK0&#x2F;fP&#x2F;9bcHHR5kHq2nf+e" crossorigin="anonymous"></script>
+
+
+<script src="https://npm.webcache.cn/clipboard@2.0.11/dist/clipboard.min.js" integrity="sha384-J08i8An&#x2F;QeARD9ExYpvphB8BsyOj3Gh2TSh1aLINKO3L0cMSH2dN3E22zFoXEi0Q" crossorigin="anonymous"></script>
+
+
+
+
+<script src="/js/script.js"></script>
+
+
+  
+<script src="/js/aos.js"></script>
+
+  <script>
+    var aosInit = () => {
+      AOS.init({
+        duration: 1000,
+        easing: "ease",
+        once: true,
+        offset: 50,
+      });
+    };
+    if (document.readyState === 'loading') {
+      document.addEventListener('DOMContentLoaded', aosInit);
+    } else {
+      aosInit();
+    }
+  </script>
+
+
+<script src="/js/pjax_script.js" data-pjax></script>
+
+
+
+
+  <script>
+    var setupFirework = () => {
+      if (!false || !window.matchMedia('(max-width: 768px)').matches) {
+        window.firework && window.firework(JSON.parse('{"excludeElements":["a","button"],"particles":[{"shape":"circle","move":["emit"],"easing":"easeOutExpo","colors":["var(--red-1)","var(--red-2)","var(--red-3)","var(--red-4)"],"number":20,"duration":[1200,1800],"shapeOptions":{"radius":[16,32],"alpha":[0.3,0.5]}},{"shape":"circle","move":["diffuse"],"easing":"easeOutExpo","colors":["var(--red-0)"],"number":1,"duration":[1200,1800],"shapeOptions":{"radius":20,"alpha":[0.2,0.5],"lineWidth":6}}]}'));
+      }
+    }
+  </script>
+  
+<script src="https://npm.webcache.cn/mouse-firework@0.2.0/dist/index.umd.js" integrity="sha384-qi9WggRt19tv8Vc7pCHW3ulMNLwrn515zaLEWZjl1px07vz8+pUoWX8n1rgq282T" crossorigin="anonymous" onload="setupFirework()" defer></script>
+
+
+
+
+
+
+<div id="lazy-script">
+  <div>
+      
+      
+      <script data-pjax>
+        window.REIMU_POST = {
+          author: "Heureka",
+          title: "",
+          url: "https://heureka-me.github.io/about/index.html",
+          excerpt: "",
+          description: "",
+          stripContent: "关于我-HeurekaMotto 代码如诗，远方如谜，唯上下求索。  Introduction这里是 Heureka，一个物联网专业的编程爱好者。目前主要研究 物联网 (IoT)、嵌入式系统 以及 前端开发 等技术。 这里主要用于记录我的学习笔记、分享技术心得以及展示个人实践项目。 Projects可自主预警的天气小助手这是一个结合了嵌入式硬件与实时数据处理的项目。通过获取天气 API 数据，实现对极端天气的自动识别与预警提示，旨在为日常生活提供智能化的便利。  核心技术：ESP32&amp;#x2F;",
+          date: "Thu Apr 16 2026 19:07:20 GMT+0800",
+          updated: "Thu Apr 16 2026 19:07:20 GMT+0800",
+          cover: "/images/banner.webp",
+        };
+      </script>
+        
+<script src="/js/insert_highlight.js" data-pjax></script>
+
+      
+<script src="/js/tabs.js" data-pjax defer></script>
+
+      <script type="module" data-pjax>
+        (async () => {
+          const PhotoSwipeLightbox = (await safeImport("https://npm.webcache.cn/photoswipe@5.4.4/dist/photoswipe-lightbox.esm.min.js", "sha384-DiL6M/gG+wmTxmCRZyD1zee6lIhawn5TGvED0FOh7fXcN9B0aZ9dexSF/N6lrZi/")).default;
+          const initPswp = (gallery, children) => {
+            if (_$$(`${gallery} ${children}`).length > 0) {
+              new PhotoSwipeLightbox({
+                gallery,
+                children,
+                pswpModule: () => safeImport("https://npm.webcache.cn/photoswipe@5.4.4/dist/photoswipe.esm.min.js", "sha384-WkkO3GCmgkC3VQWpaV8DqhKJqpzpF9JoByxDmnV8+oTJ7m3DfYEWX1fu1scuS4+s")
+              }).init();
+            }
+          }
+          const pswp = () => {
+            initPswp('.article-entry', 'a.article-gallery-item');
+            initPswp('.article-gallery', 'a.article-gallery-item');
+          }
+          pswp();
+        })();
+      </script>
+        
+
+
+  </div>
+</div>
+
+
+  <script>
+    console.log(String.raw`%c 
+ ______     ______     __     __    __     __  __    
+/\  == \   /\  ___\   /\ \   /\ "-./  \   /\ \/\ \   
+\ \  __<   \ \  __\   \ \ \  \ \ \-./\ \  \ \ \_\ \  
+ \ \_\ \_\  \ \_____\  \ \_\  \ \_\ \ \_\  \ \_____\ 
+  \/_/ /_/   \/_____/   \/_/   \/_/  \/_/   \/_____/ 
+                                                  
+`,'color: #ff5252;')
+    console.log('%c Theme.Reimu v' + '1.12.3' + ' %c https://github.com/D-Sketon/hexo-theme-reimu ', 'color: white; background: #ff5252; padding:5px 0;', 'padding:4px;border:1px solid #ff5252;')
+  </script>
+  
+
+
+  
+<script src="https://npm.webcache.cn/busuanzi@2.3.0/bsz.pure.mini.js" integrity="sha384-0M75wtSkhjIInv4coYlaJU83+OypaRCIq2SukQVQX04eGTCBXJDuWAbJet56id+S" crossorigin="anonymous" async></script>
+
+
+<script>
+  if ('serviceWorker' in navigator) {
+    navigator.serviceWorker.getRegistrations().then((registrations) => {
+      for (let registration of registrations) {
+        registration.unregister();
+      }
+    });
+  }
+</script>
+
+
+
+
+  </body>
+  </html>
