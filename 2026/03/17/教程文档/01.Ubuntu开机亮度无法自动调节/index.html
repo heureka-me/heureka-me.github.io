@@ -1,0 +1,885 @@
+  <!DOCTYPE html>
+  <html lang="zh-CN"  
+      data-theme-mode="auto"
+  >
+  <head>
+  <meta charset="utf-8">
+  
+  
+  
+  <script>window.REIMU_CONFIG = {};window.REIMU_CONFIG.icon_font = '4552607_a0oqhord1y';window.REIMU_CONFIG.clipboard_tips = {"success":{"zh-CN":"复制成功 (*^▽^*)"},"fail":{"zh-CN":"复制失败 (ﾟ⊿ﾟ)ﾂ"},"copyright":{"enable":false,"count":50,"license_type":"by-nc-sa"}};window.REIMU_CONFIG.clipboard_tips.copyright.content = '本博客所有文章除特别声明外，均采用 BY-NC-SA 许可协议。转载请注明出处！';window.REIMU_CONFIG.code_block = {"expand":true};window.REIMU_CONFIG.base = 'https://heureka.space';window.REIMU_CONFIG.relative = '/';</script>
+  <title>
+    Ubuntu开机亮度无法自动调节解决办法 | Heureka&#39;s Blog
+  </title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link rel="preload" as="style" href="https://fonts.googleapis.com/css?family=Mulish:400,400italic,700,700italic|Noto Serif SC:400,400italic,700,700italic&display=swap"><link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Mulish:400,400italic,700,700italic|Noto Serif SC:400,400italic,700,700italic&display=swap" media="print" onload="this.media='all'">
+    <link rel="preload" href="//at.alicdn.com/t/c/font_4552607_a0oqhord1y.woff2" as="font" type="font/woff2" crossorigin="anonymous">
+    
+<link rel="stylesheet" href="/css/loader.css">
+
+    <meta name="description" content="Ubuntu设置开机自动恢复亮度 适用于 NVIDIA 显卡，如 RTX 4060 Max-Q  🎯 目标： 每次关机或重启后，屏幕亮度自动恢复为上次手动调整的亮度，而不是默认最大亮度。   🧩 一、适用场景与背景  系统： Ubuntu（你使用的是 24.04 Noble，或其他版本也可参考） 显卡： NVIDIA（你使用的是 RTX 4060 Max-Q &#x2F; Mobile，对应的 bac">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Ubuntu开机亮度无法自动调节解决办法">
+<meta property="og:url" content="https://heureka.space/2026/03/17/%E6%95%99%E7%A8%8B%E6%96%87%E6%A1%A3/01.Ubuntu%E5%BC%80%E6%9C%BA%E4%BA%AE%E5%BA%A6%E6%97%A0%E6%B3%95%E8%87%AA%E5%8A%A8%E8%B0%83%E8%8A%82/index.html">
+<meta property="og:site_name" content="Heureka&#39;s Blog">
+<meta property="og:description" content="Ubuntu设置开机自动恢复亮度 适用于 NVIDIA 显卡，如 RTX 4060 Max-Q  🎯 目标： 每次关机或重启后，屏幕亮度自动恢复为上次手动调整的亮度，而不是默认最大亮度。   🧩 一、适用场景与背景  系统： Ubuntu（你使用的是 24.04 Noble，或其他版本也可参考） 显卡： NVIDIA（你使用的是 RTX 4060 Max-Q &#x2F; Mobile，对应的 bac">
+<meta property="og:locale" content="zh_CN">
+<meta property="article:published_time" content="2026-03-17T10:19:02.000Z">
+<meta property="article:modified_time" content="2026-04-17T11:47:40.101Z">
+<meta property="article:author" content="Heureka">
+<meta property="article:tag" content="Linux">
+<meta property="article:tag" content="Ubuntu">
+<meta name="twitter:card" content="summary">
+      <meta name="keywords" content="物联网, 嵌入式, 前端开发">
+    <link rel="alternate" href="/atom.xml" title="Heureka's Blog" type="application/atom+xml">
+    <link rel="shortcut icon" href="/images/favicon.ico">
+  
+<link rel="stylesheet" href="/css/style.css">
+
+  <link rel="preload" as="style" onload="this.onload=null;this.rel='stylesheet'" href="https://npm.webcache.cn/photoswipe@5.4.4/dist/photoswipe.css" integrity="sha384-IfxC36XL/toUyJ939C73PcgMuRzAZuIzZxE38drsmO5p6jD7ei+Zx/1oA/0l8ysE" crossorigin="anonymous">
+      <link rel="preload" as="style" onload="this.onload=null;this.rel='stylesheet'" href="https://npm.webcache.cn/katex@0.16.24/dist/katex.min.css" integrity="sha384-tTgKLjMYmJr94v8qu2PE5MUGSMbyN2xiH266JUB3gpm8vnnJywd1dWSOEfrFz+YI" crossorigin="anonymous">
+    
+<script src="https://npm.webcache.cn/pace-js@1.2.4/pace.min.js" integrity="sha384-k6YtvFUEIuEFBdrLKJ3YAUbBki333tj1CSUisai5Cswsg9wcLNaPzsTHDswp4Az8" crossorigin="anonymous"></script>
+
+    
+<link rel="stylesheet" href="https://npm.webcache.cn/@reimujs/aos@0.1.2/dist/aos.css" integrity="sha384-GMRP93c6Hkz9JVKGAuRR3nTS7M07RwPgTFenXiosjq2VbVgvdDNcz1g6Mkj8AONa" crossorigin="anonymous">
+
+    <link rel="preload" as="style" onload="this.onload=null;this.rel='stylesheet'" href="https://npm.webcache.cn/aplayer@1.10.1/dist/APlayer.min.css" integrity="sha384-tLMkTWh2pfXNWGFlUS0w1TFtRG5xZ9lPWFOooj+vDDLIL+xBGQU/voDBY5XE2lVh" crossorigin="anonymous">
+<meta name="generator" content="Hexo 8.1.1"></head>
+
+  <body>
+      <div id='loader'>
+    <div class="loading-left-bg loading-bg"></div>
+    <div class="loading-right-bg loading-bg"></div>
+    <div class="spinner-box">
+      <div class="loading-taichi rotate">
+          <svg width="150" height="150" viewBox="0 0 1024 1024" class="icon" version="1.1" xmlns="https://www.w3.org/2000/svg" shape-rendering="geometricPrecision">
+            <path d="M303.5 432A80 80 0 0 1 291.5 592A80 80 0 0 1 303.5 432z" fill="var(--red-1, #ff5252)" />
+            <path d="M512 65A447 447 0 0 1 512 959L512 929A417 417 0 0 0 512 95A417 417 0 0 0 512 929L512 959A447 447 0 0 1 512 65z 
+           M512 95A417 417 0 0 1 929 512A208.5 208.5 0 0 1 720.5 720.5L720.5 592A80 80 0 0 0 720.5 432A80 80 0 0 0 720.5 592L720.5 720.5A208.5 208.5 0 0 1 512 512A208.5 208.5 0 0 0 303.5 303.5A208.5 208.5 0 0 0 95 512A417 417 0 0 1 512 95z" fill="var(--red-1, #ff5252)" />
+          </svg>
+      </div>
+      <div class="loading-word">天地初开...</div>
+    </div>
+  </div>
+  <script>
+    var time = null;
+    var loaderEl = document.getElementById('loader');
+    var startLoading = () => {
+      time = Date.now();
+      loaderEl.classList.remove("loading");
+    }
+    var hideLoader = () => {
+      document.body.style.overflow = 'auto';
+      loader.classList.add('loading');
+    };
+
+    var endLoading = () => {
+      if (!time) {
+        hideLoader();
+      } else {
+        if (Date.now() - time > 500) {
+          time = null;
+          hideLoader();
+        } else {
+          setTimeout(endLoading, 500 - (Date.now() - time));
+          time = null;
+        }
+      }
+    }
+    window.addEventListener('DOMContentLoaded', endLoading);
+    loaderEl.addEventListener('click', endLoading);
+  </script>
+<div id="copy-tooltip"></div>
+<div id="heatmap-tooltip"></div>
+
+
+    <div id="container">
+      <div id="wrap">
+        <div id="header-nav">
+  <nav id="main-nav" aria-label="Primary navigation">
+        <a class="main-nav-link-wrap" href="/">
+            <div class="main-nav-icon icon rotate">
+                &#xe62b;
+            </div>
+          <span class="main-nav-link">首页</span>
+        </a>
+        <a class="main-nav-link-wrap" href="/archives">
+            <div class="main-nav-icon icon rotate">
+                &#xe62b;
+            </div>
+          <span class="main-nav-link">归档</span>
+        </a>
+        <a class="main-nav-link-wrap" href="/about">
+            <div class="main-nav-icon icon rotate">
+                &#xe62b;
+            </div>
+          <span class="main-nav-link">关于</span>
+        </a>
+        <a class="main-nav-link-wrap" href="/friend">
+            <div class="main-nav-icon icon rotate">
+                &#xe62b;
+            </div>
+          <span class="main-nav-link">友链</span>
+        </a>
+    <a id="main-nav-toggle" class="nav-icon" aria-label="Toggle navigation" role="button"></a>
+  </nav>
+  <nav id="sub-nav" aria-label="Secondary navigation">
+      <a id="nav-rss-link" class="nav-icon" href="/atom.xml" title="RSS 订阅" aria-label="RSS 订阅" target="_blank"></a>
+      <a id="nav-search-btn" class="nav-icon popup-trigger" title="搜索" aria-label="搜索"></a>
+  </nav>
+</div>
+<header id="header" aria-label="Site header">
+        <picture>
+        </picture>
+          <img  fetchpriority="high" src="/images/banner.webp" alt="Ubuntu开机亮度无法自动调节解决办法">
+  <div id="header-outer">
+    <div id="header-title">
+          <span id="logo">
+            <h1 data-aos="slide-up">Ubuntu开机亮度无法自动调节解决办法</h1>
+          </span>
+        <h2 id="subtitle-wrap" data-aos="slide-down">
+        </h2>
+    </div>
+  </div>
+</header>
+
+        <div id="content" aria-label="Page content" class="sidebar-left"  >
+          <aside id="sidebar" aria-label="Sidebar">
+  <div class="sidebar-wrapper-container sticky">
+      <div id="aplayer" theme="var(--color-link)" data-aos="fade-up"></div>
+  <div class="sidebar-wrapper">
+    <div class="sidebar-wrap" data-aos="fade-up">
+          <div class="sidebar-toc-sidebar"><h3 class="toc-title">文章目录</h3>
+<div class="sidebar-toc-wrapper toc-div-class" >
+    <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#ubuntu%E8%AE%BE%E7%BD%AE%E5%BC%80%E6%9C%BA%E8%87%AA%E5%8A%A8%E6%81%A2%E5%A4%8D%E4%BA%AE%E5%BA%A6"><span class="toc-number">1.</span> <span class="toc-text"> Ubuntu设置开机自动恢复亮度</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%B8%80-%E9%80%82%E7%94%A8%E5%9C%BA%E6%99%AF%E4%B8%8E%E8%83%8C%E6%99%AF"><span class="toc-number">1.1.</span> <span class="toc-text"> 🧩 一、适用场景与背景</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%BA%8C-%E6%A0%B8%E5%BF%83%E6%80%9D%E8%B7%AF"><span class="toc-number">1.2.</span> <span class="toc-text"> 二、核心思路</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%B8%89-%E6%96%87%E4%BB%B6%E4%B8%8E%E8%84%9A%E6%9C%AC%E8%A7%84%E5%88%92"><span class="toc-number">1.3.</span> <span class="toc-text"> 🗂 三、文件与脚本规划</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%9B%9B-%E8%AF%A6%E7%BB%86%E6%93%8D%E4%BD%9C%E6%AD%A5%E9%AA%A4"><span class="toc-number">1.4.</span> <span class="toc-text"> 🛠 四、详细操作步骤</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%AD%A5%E9%AA%A4-1%E5%88%9B%E5%BB%BA%E4%BF%9D%E5%AD%98%E4%BA%AE%E5%BA%A6%E5%80%BC%E7%9A%84%E7%9B%AE%E5%BD%95%E5%92%8C%E6%96%87%E4%BB%B6"><span class="toc-number">1.4.1.</span> <span class="toc-text"> 步骤 1：创建保存亮度值的目录和文件</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%AD%A5%E9%AA%A4-2%E5%88%9B%E5%BB%BA-%E4%BF%9D%E5%AD%98%E5%BD%93%E5%89%8D%E4%BA%AE%E5%BA%A6-%E7%9A%84%E8%84%9A%E6%9C%AC"><span class="toc-number">1.4.2.</span> <span class="toc-text"> 步骤 2：创建 “保存当前亮度” 的脚本</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%AD%A5%E9%AA%A4-3%E5%88%9B%E5%BB%BA-%E5%BC%80%E6%9C%BA%E6%81%A2%E5%A4%8D%E4%BA%AE%E5%BA%A6-%E7%9A%84%E8%84%9A%E6%9C%AC"><span class="toc-number">1.4.3.</span> <span class="toc-text"> 步骤 3：创建 “开机恢复亮度” 的脚本</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%AD%A5%E9%AA%A4-4%E5%88%9B%E5%BB%BA-%E5%AE%9A%E6%97%B6%E4%BF%9D%E5%AD%98%E4%BA%AE%E5%BA%A6-%E7%9A%84-systemd-%E6%9C%8D%E5%8A%A1"><span class="toc-number">1.4.4.</span> <span class="toc-text"> 步骤 4：创建 “定时保存亮度” 的 systemd 服务</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%AD%A5%E9%AA%A4-5%E5%88%9B%E5%BB%BA-%E5%AE%9A%E6%97%B6%E4%BF%9D%E5%AD%98%E4%BA%AE%E5%BA%A6-%E7%9A%84-systemd-%E5%AE%9A%E6%97%B6%E5%99%A8"><span class="toc-number">1.4.5.</span> <span class="toc-text"> 步骤 5：创建 “定时保存亮度” 的 systemd 定时器</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%AD%A5%E9%AA%A4-6%E5%88%9B%E5%BB%BA-%E5%BC%80%E6%9C%BA%E6%81%A2%E5%A4%8D%E4%BA%AE%E5%BA%A6-%E7%9A%84-systemd-%E6%9C%8D%E5%8A%A1%E5%85%B3%E9%94%AE"><span class="toc-number">1.4.6.</span> <span class="toc-text"> 步骤 6：创建 “开机恢复亮度” 的 systemd 服务（关键！）</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%AD%A5%E9%AA%A4-7%E9%87%8D%E5%90%AF%E7%B3%BB%E7%BB%9F%E6%B5%8B%E8%AF%95%E5%8A%9F%E8%83%BD"><span class="toc-number">1.4.7.</span> <span class="toc-text"> 步骤 7：重启系统，测试功能</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%BA%94-%E6%B5%8B%E8%AF%95%E4%B8%8E%E9%AA%8C%E8%AF%81"><span class="toc-number">1.5.</span> <span class="toc-text"> 🧪 五、测试与验证</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%B5%8B%E8%AF%95-1%E6%9F%A5%E7%9C%8B%E4%BF%9D%E5%AD%98%E7%9A%84%E4%BA%AE%E5%BA%A6%E5%80%BC"><span class="toc-number">1.5.1.</span> <span class="toc-text"> 测试 1：查看保存的亮度值</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%B5%8B%E8%AF%95-2%E6%9F%A5%E7%9C%8B%E5%BD%93%E5%89%8D%E4%BA%AE%E5%BA%A6"><span class="toc-number">1.5.2.</span> <span class="toc-text"> 测试 2：查看当前亮度</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%B5%8B%E8%AF%95-3%E6%9F%A5%E7%9C%8B%E6%9C%8D%E5%8A%A1%E6%97%A5%E5%BF%97%E5%8F%AF%E9%80%89"><span class="toc-number">1.5.3.</span> <span class="toc-text"> 测试 3：查看服务日志（可选）</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%85%AD-%E6%96%87%E4%BB%B6%E7%BB%93%E6%9E%84%E6%80%BB%E7%BB%93"><span class="toc-number">1.6.</span> <span class="toc-text"> 📁 六、文件结构总结</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%B8%83-%E8%A1%A5%E5%85%85%E8%AF%B4%E6%98%8E"><span class="toc-number">1.7.</span> <span class="toc-text"> 七、补充说明</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%85%AB-%E6%9C%80%E7%BB%88%E6%95%88%E6%9E%9C"><span class="toc-number">1.8.</span> <span class="toc-text"> 八、最终效果</span></a></li></ol></li></ol>
+</div>
+</div>
+          <div class="sidebar-common-sidebar hidden"><div class="sidebar-author">
+  <img data-src="/avatar/avatar.webp" data-sizes="auto" alt="Heureka" class="lazyload">
+  <div class="sidebar-author-name">Heureka</div>
+  <div class="sidebar-description">学习笔记、技术心得、实践项目</div>
+</div>
+<div class="sidebar-state">
+  <div class="sidebar-state-article">
+    <div>文章</div>
+    <div class="sidebar-state-number">10</div>
+  </div>
+  <div class="sidebar-state-category">
+    <div>分类</div>
+    <div class="sidebar-state-number">14</div>
+  </div>
+  <div class="sidebar-state-tag">
+    <div>标签</div>
+    <div class="sidebar-state-number">12</div>
+  </div>
+</div>
+<div class="sidebar-social" >
+    <div class="icon-email sidebar-social-icon">
+      <a href=/about/email itemprop="url" target="_blank" aria-label="email" rel="noopener nofollow noreferrer"></a>
+    </div>
+    <div class="icon-bilibili sidebar-social-icon">
+      <a href=https://space.bilibili.com/492369743 itemprop="url" target="_blank" aria-label="bilibili" rel="noopener nofollow noreferrer"></a>
+    </div>
+    <div class="icon-github sidebar-social-icon">
+      <a href=https://github.com/heureka-me itemprop="url" target="_blank" aria-label="github" rel="noopener nofollow noreferrer"></a>
+    </div>
+    <div class="icon-qq sidebar-social-icon">
+      <a href=3455545938 itemprop="url" target="_blank" aria-label="qq" rel="noopener nofollow noreferrer"></a>
+    </div>
+</div>
+<div class="sidebar-menu">
+      <div class="sidebar-menu-link-wrap">
+        <a class="sidebar-menu-link-dummy" href="/" aria-label="首页"></a>
+          <div class="sidebar-menu-icon icon rotate">
+              &#xe62b;
+          </div>
+        <div class="sidebar-menu-link">首页</div>
+      </div>
+      <div class="sidebar-menu-link-wrap">
+        <a class="sidebar-menu-link-dummy" href="/archives" aria-label="归档"></a>
+          <div class="sidebar-menu-icon icon rotate">
+              &#xe62b;
+          </div>
+        <div class="sidebar-menu-link">归档</div>
+      </div>
+      <div class="sidebar-menu-link-wrap">
+        <a class="sidebar-menu-link-dummy" href="/about" aria-label="关于"></a>
+          <div class="sidebar-menu-icon icon rotate">
+              &#xe62b;
+          </div>
+        <div class="sidebar-menu-link">关于</div>
+      </div>
+      <div class="sidebar-menu-link-wrap">
+        <a class="sidebar-menu-link-dummy" href="/friend" aria-label="友链"></a>
+          <div class="sidebar-menu-icon icon rotate">
+              &#xe62b;
+          </div>
+        <div class="sidebar-menu-link">友链</div>
+      </div>
+</div>
+</div>
+          <div class="sidebar-btn-wrapper" style="position:static">
+            <div class="sidebar-toc-btn current"></div>
+            <div class="sidebar-common-btn"></div>
+          </div>
+    </div>
+  </div>
+  <div class="sidebar-widget">
+  </div>
+  </div>
+</aside>
+
+          <section id="main" aria-label="Main content"><article id="post-教程文档/01.Ubuntu开机亮度无法自动调节" class="h-entry article" itemscope itemtype="https://schema.org/BlogPosting">
+  <div class="article-inner" data-aos="fade-up">
+    <div class="article-meta">
+      <div class="article-date">
+  <span class="article-date-link icon-calendar" data-aos="zoom-in">
+    <time datetime="2026-03-17T10:19:02.000Z" itemprop="datePublished">2026-03-17</time>
+    <time style="display: none;" id="post-update-time">2026-04-17</time>
+  </span>
+</div>
+
+    </div>
+    
+    <div class="hr-line"></div>
+    
+    <div class="e-content article-entry" itemprop="articleBody">
+        <h1 id="ubuntu设置开机自动恢复亮度"><a class="markdownIt-Anchor" href="#ubuntu设置开机自动恢复亮度"></a> <strong>Ubuntu设置开机自动恢复亮度</strong></h1>
+<p>适用于 NVIDIA 显卡，如 RTX 4060 Max-Q</p>
+<blockquote>
+<p>🎯 <strong>目标：</strong> 每次关机或重启后，屏幕亮度自动恢复为上次手动调整的亮度，而不是默认最大亮度。</p>
+</blockquote>
+<h2 id="一-适用场景与背景"><a class="markdownIt-Anchor" href="#一-适用场景与背景"></a> 🧩 一、适用场景与背景</h2>
+<ul>
+<li><strong>系统：</strong> Ubuntu（你使用的是 24.04 Noble，或其他版本也可参考）</li>
+<li><strong>显卡：</strong> NVIDIA（你使用的是 <strong>RTX 4060 Max-Q / Mobile</strong>，对应的 backlight 接口是 <code>nvidia_0</code>）</li>
+<li><strong>问题：</strong> 每次重启后，屏幕亮度总是恢复为最大（比如 1000），而不是你调整后的舒适亮度（比如 500 或 62）。</li>
+<li><strong>需求：</strong> 实现 <strong>“系统自动保存你调整后的亮度，并在下次开机时自动恢复”</strong>。</li>
+</ul>
+<hr />
+<h2 id="二-核心思路"><a class="markdownIt-Anchor" href="#二-核心思路"></a> 二、核心思路</h2>
+<p>为了实现这个功能，我们需要做两件事：</p>
+<ol>
+<li><strong>定时（比如每分钟）获取当前亮度并保存到文件</strong></li>
+<li><strong>在每次开机时，从该文件中读取上一次保存的亮度值，并重新设置屏幕亮度</strong></li>
+</ol>
+<hr />
+<h2 id="三-文件与脚本规划"><a class="markdownIt-Anchor" href="#三-文件与脚本规划"></a> 🗂 三、文件与脚本规划</h2>
+<table>
+<thead>
+<tr>
+<th>文件 / 脚本</th>
+<th>作用</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>/var/lib/brightness/last_brightness</code></td>
+<td>用于存储你上一次设置的亮度值（比如 500）</td>
+</tr>
+<tr>
+<td><code>/usr/local/bin/save_current_brightness.sh</code></td>
+<td>脚本：获取当前亮度并保存到 <code>last_brightness</code></td>
+</tr>
+<tr>
+<td><code>/usr/local/bin/restore_brightness_on_boot.sh</code></td>
+<td>脚本：从 <code>last_brightness</code> 读取并设置亮度</td>
+</tr>
+<tr>
+<td><code>/etc/systemd/system/save-brightness.service</code></td>
+<td>systemd 服务：运行保存亮度的脚本</td>
+</tr>
+<tr>
+<td><code>/etc/systemd/system/save-brightness.timer</code></td>
+<td>systemd 定时器：每分钟触发一次保存</td>
+</tr>
+<tr>
+<td><code>/etc/systemd/system/restore-brightness.service</code></td>
+<td>systemd 服务：在开机时（显示管理器之后）运行恢复脚本</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2 id="四-详细操作步骤"><a class="markdownIt-Anchor" href="#四-详细操作步骤"></a> 🛠 四、详细操作步骤</h2>
+<h3 id="步骤-1创建保存亮度值的目录和文件"><a class="markdownIt-Anchor" href="#步骤-1创建保存亮度值的目录和文件"></a> 步骤 1：创建保存亮度值的目录和文件</h3>
+<p>打开终端，运行以下命令：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">sudo</span> <span class="built_in">mkdir</span> -p /var/lib/brightness</span><br><span class="line"><span class="built_in">sudo</span> <span class="built_in">touch</span> /var/lib/brightness/last_brightness</span><br><span class="line"><span class="built_in">sudo</span> <span class="built_in">chmod</span> 666 /var/lib/brightness/last_brightness</span><br></pre></td></tr></table></figure>
+<blockquote>
+<p>这个文件将用于存储你上一次设置的亮度值（如 500 或 62）。</p>
+</blockquote>
+<hr />
+<h3 id="步骤-2创建-保存当前亮度-的脚本"><a class="markdownIt-Anchor" href="#步骤-2创建-保存当前亮度-的脚本"></a> 步骤 2：创建 “保存当前亮度” 的脚本</h3>
+<p>创建脚本文件：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">sudo</span> nano /usr/local/bin/save_current_brightness.sh</span><br></pre></td></tr></table></figure>
+<p>粘贴以下内容：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#!/bin/bash</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># NVIDIA backlight 接口路径</span></span><br><span class="line">BACKLIGHT_DIR=<span class="string">&quot;/sys/class/backlight/nvidia_0&quot;</span></span><br><span class="line">BRIGHTNESS_FILE=<span class="string">&quot;<span class="variable">$BACKLIGHT_DIR</span>/brightness&quot;</span></span><br><span class="line">SAVE_FILE=<span class="string">&quot;/var/lib/brightness/last_brightness&quot;</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 检查 backlight 接口是否存在</span></span><br><span class="line"><span class="keyword">if</span> [ ! -f <span class="string">&quot;<span class="variable">$BRIGHTNESS_FILE</span>&quot;</span> ]; <span class="keyword">then</span></span><br><span class="line">    <span class="built_in">echo</span> <span class="string">&quot;错误：未找到 NVIDIA backlight 接口：<span class="variable">$BRIGHTNESS_FILE</span>&quot;</span></span><br><span class="line">    <span class="built_in">exit</span> 1</span><br><span class="line"><span class="keyword">fi</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 读取当前亮度值</span></span><br><span class="line">CURRENT_BRIGHTNESS=$(<span class="built_in">cat</span> <span class="string">&quot;<span class="variable">$BRIGHTNESS_FILE</span>&quot;</span>)</span><br><span class="line"></span><br><span class="line"><span class="comment"># 检查是否为数字</span></span><br><span class="line"><span class="keyword">if</span> ! [[ <span class="string">&quot;<span class="variable">$CURRENT_BRIGHTNESS</span>&quot;</span> =~ ^[0-9]+$ ]]; <span class="keyword">then</span></span><br><span class="line">    <span class="built_in">echo</span> <span class="string">&quot;错误：无法读取有效的亮度值：<span class="variable">$CURRENT_BRIGHTNESS</span>&quot;</span></span><br><span class="line">    <span class="built_in">exit</span> 1</span><br><span class="line"><span class="keyword">fi</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 保存亮度值</span></span><br><span class="line"><span class="built_in">echo</span> <span class="string">&quot;<span class="variable">$CURRENT_BRIGHTNESS</span>&quot;</span> | <span class="built_in">sudo</span> <span class="built_in">tee</span> <span class="string">&quot;<span class="variable">$SAVE_FILE</span>&quot;</span> &gt; /dev/null</span><br><span class="line"></span><br><span class="line"><span class="built_in">echo</span> <span class="string">&quot;[<span class="subst">$(date)</span>] 已保存亮度: <span class="variable">$CURRENT_BRIGHTNESS</span>&quot;</span></span><br></pre></td></tr></table></figure>
+<p>保存并退出：<code>Ctrl + O</code> → 回车 → <code>Ctrl + X</code></p>
+<p>赋予执行权限：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">sudo</span> <span class="built_in">chmod</span> +x /usr/local/bin/save_current_brightness.sh</span><br></pre></td></tr></table></figure>
+<hr />
+<h3 id="步骤-3创建-开机恢复亮度-的脚本"><a class="markdownIt-Anchor" href="#步骤-3创建-开机恢复亮度-的脚本"></a> 步骤 3：创建 “开机恢复亮度” 的脚本</h3>
+<p>创建脚本文件：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">sudo</span> nano /usr/local/bin/restore_brightness_on_boot.sh</span><br></pre></td></tr></table></figure>
+<p>粘贴以下内容：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#!/bin/bash</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># NVIDIA backlight 接口路径</span></span><br><span class="line">BACKLIGHT_DIR=<span class="string">&quot;/sys/class/backlight/nvidia_0&quot;</span></span><br><span class="line">BRIGHTNESS_FILE=<span class="string">&quot;<span class="variable">$BACKLIGHT_DIR</span>/brightness&quot;</span></span><br><span class="line">SAVE_FILE=<span class="string">&quot;/var/lib/brightness/last_brightness&quot;</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 检查 backlight 接口是否存在</span></span><br><span class="line"><span class="keyword">if</span> [ ! -f <span class="string">&quot;<span class="variable">$BRIGHTNESS_FILE</span>&quot;</span> ]; <span class="keyword">then</span></span><br><span class="line">    <span class="built_in">echo</span> <span class="string">&quot;错误：未找到 NVIDIA backlight 接口：<span class="variable">$BRIGHTNESS_FILE</span>&quot;</span></span><br><span class="line">    <span class="built_in">exit</span> 1</span><br><span class="line"><span class="keyword">fi</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 检查保存的亮度文件是否存在</span></span><br><span class="line"><span class="keyword">if</span> [ ! -f <span class="string">&quot;<span class="variable">$SAVE_FILE</span>&quot;</span> ]; <span class="keyword">then</span></span><br><span class="line">    <span class="built_in">echo</span> <span class="string">&quot;警告：未找到保存的亮度文件：<span class="variable">$SAVE_FILE</span>，将不修改亮度&quot;</span></span><br><span class="line">    <span class="built_in">exit</span> 0</span><br><span class="line"><span class="keyword">fi</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 读取保存的亮度值</span></span><br><span class="line">SAVED_BRIGHTNESS=$(<span class="built_in">cat</span> <span class="string">&quot;<span class="variable">$SAVE_FILE</span>&quot;</span>)</span><br><span class="line"></span><br><span class="line"><span class="comment"># 检查是否为数字</span></span><br><span class="line"><span class="keyword">if</span> ! [[ <span class="string">&quot;<span class="variable">$SAVED_BRIGHTNESS</span>&quot;</span> =~ ^[0-9]+$ ]]; <span class="keyword">then</span></span><br><span class="line">    <span class="built_in">echo</span> <span class="string">&quot;错误：保存的亮度值不是有效数字：<span class="variable">$SAVED_BRIGHTNESS</span>&quot;</span></span><br><span class="line">    <span class="built_in">exit</span> 1</span><br><span class="line"><span class="keyword">fi</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 获取最大亮度</span></span><br><span class="line">MAX_BRIGHTNESS=$(<span class="built_in">cat</span> <span class="string">&quot;<span class="variable">$BACKLIGHT_DIR</span>/max_brightness&quot;</span>)</span><br><span class="line"></span><br><span class="line"><span class="comment"># 限制亮度不超过最大值</span></span><br><span class="line"><span class="keyword">if</span> [ <span class="string">&quot;<span class="variable">$SAVED_BRIGHTNESS</span>&quot;</span> -gt <span class="string">&quot;<span class="variable">$MAX_BRIGHTNESS</span>&quot;</span> ]; <span class="keyword">then</span></span><br><span class="line">    SAVED_BRIGHTNESS=<span class="variable">$MAX_BRIGHTNESS</span></span><br><span class="line"><span class="keyword">fi</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 设置亮度</span></span><br><span class="line"><span class="built_in">echo</span> <span class="string">&quot;<span class="variable">$SAVED_BRIGHTNESS</span>&quot;</span> | <span class="built_in">sudo</span> <span class="built_in">tee</span> <span class="string">&quot;<span class="variable">$BRIGHTNESS_FILE</span>&quot;</span> &gt; /dev/null</span><br><span class="line"></span><br><span class="line"><span class="built_in">echo</span> <span class="string">&quot;[<span class="subst">$(date)</span>] 已恢复亮度: <span class="variable">$SAVED_BRIGHTNESS</span> (最大: <span class="variable">$MAX_BRIGHTNESS</span>)&quot;</span></span><br></pre></td></tr></table></figure>
+<p>保存并退出，然后赋予执行权限：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">sudo</span> <span class="built_in">chmod</span> +x /usr/local/bin/restore_brightness_on_boot.sh</span><br></pre></td></tr></table></figure>
+<hr />
+<h3 id="步骤-4创建-定时保存亮度-的-systemd-服务"><a class="markdownIt-Anchor" href="#步骤-4创建-定时保存亮度-的-systemd-服务"></a> 步骤 4：创建 “定时保存亮度” 的 systemd 服务</h3>
+<p>创建服务文件：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">sudo</span> nano /etc/systemd/system/save-brightness.service</span><br></pre></td></tr></table></figure>
+<p>粘贴以下内容：</p>
+<figure class="highlight ini"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="section">[Unit]</span></span><br><span class="line"><span class="attr">Description</span>=Save Current Screen Brightness (NVIDIA)</span><br><span class="line"></span><br><span class="line"><span class="section">[Service]</span></span><br><span class="line"><span class="attr">Type</span>=<span class="literal">on</span>eshot</span><br><span class="line"><span class="attr">ExecStart</span>=/usr/local/bin/save_current_brightness.sh</span><br></pre></td></tr></table></figure>
+<p>保存并退出。</p>
+<hr />
+<h3 id="步骤-5创建-定时保存亮度-的-systemd-定时器"><a class="markdownIt-Anchor" href="#步骤-5创建-定时保存亮度-的-systemd-定时器"></a> 步骤 5：创建 “定时保存亮度” 的 systemd 定时器</h3>
+<p>创建定时器文件：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">sudo</span> nano /etc/systemd/system/save-brightness.timer</span><br></pre></td></tr></table></figure>
+<p>粘贴以下内容：</p>
+<figure class="highlight ini"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="section">[Unit]</span></span><br><span class="line"><span class="attr">Description</span>=Timer to save screen brightness every minute</span><br><span class="line"></span><br><span class="line"><span class="section">[Timer]</span></span><br><span class="line"><span class="attr">OnBootSec</span>=<span class="number">1</span>min</span><br><span class="line"><span class="attr">OnUnitActiveSec</span>=<span class="number">1</span>min</span><br><span class="line"></span><br><span class="line"><span class="section">[Install]</span></span><br><span class="line"><span class="attr">WantedBy</span>=timers.target</span><br></pre></td></tr></table></figure>
+<p>保存并退出。</p>
+<p>启用并启动定时器：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">sudo</span> systemctl daemon-reload</span><br><span class="line"><span class="built_in">sudo</span> systemctl <span class="built_in">enable</span> save-brightness.service</span><br><span class="line"><span class="built_in">sudo</span> systemctl <span class="built_in">enable</span> save-brightness.timer</span><br><span class="line"><span class="built_in">sudo</span> systemctl start save-brightness.timer</span><br></pre></td></tr></table></figure>
+<hr />
+<h3 id="步骤-6创建-开机恢复亮度-的-systemd-服务关键"><a class="markdownIt-Anchor" href="#步骤-6创建-开机恢复亮度-的-systemd-服务关键"></a> 步骤 6：创建 “开机恢复亮度” 的 systemd 服务（关键！）</h3>
+<p>创建服务文件：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">sudo</span> nano /etc/systemd/system/restore-brightness.service</span><br></pre></td></tr></table></figure>
+<p>粘贴以下内容（重要：依赖显示管理器，确保开机时屏幕已初始化）：</p>
+<figure class="highlight ini"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="section">[Unit]</span></span><br><span class="line"><span class="attr">Description</span>=Restore NVIDIA Screen Brightness <span class="literal">on</span> Boot (After Display Manager)</span><br><span class="line"><span class="attr">After</span>=display-manager.service graphical.target</span><br><span class="line"><span class="attr">Requires</span>=display-manager.service</span><br><span class="line"></span><br><span class="line"><span class="section">[Service]</span></span><br><span class="line"><span class="attr">Type</span>=<span class="literal">on</span>eshot</span><br><span class="line"><span class="attr">ExecStart</span>=/usr/local/bin/restore_brightness_on_boot.sh</span><br><span class="line"></span><br><span class="line"><span class="section">[Install]</span></span><br><span class="line"><span class="attr">WantedBy</span>=graphical.target</span><br></pre></td></tr></table></figure>
+<p>保存并退出。</p>
+<p>启用该服务：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">sudo</span> systemctl <span class="built_in">enable</span> restore-brightness.service</span><br></pre></td></tr></table></figure>
+<hr />
+<h3 id="步骤-7重启系统测试功能"><a class="markdownIt-Anchor" href="#步骤-7重启系统测试功能"></a> 步骤 7：重启系统，测试功能</h3>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">sudo</span> reboot</span><br></pre></td></tr></table></figure>
+<hr />
+<h2 id="五-测试与验证"><a class="markdownIt-Anchor" href="#五-测试与验证"></a> 🧪 五、测试与验证</h2>
+<h3 id="测试-1查看保存的亮度值"><a class="markdownIt-Anchor" href="#测试-1查看保存的亮度值"></a> 测试 1：查看保存的亮度值</h3>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">cat</span> /var/lib/brightness/last_brightness</span><br></pre></td></tr></table></figure>
+<p>你应该看到一个数字，比如 <code>62</code> 或 <code>500</code>，这就是你上次保存的亮度。</p>
+<h3 id="测试-2查看当前亮度"><a class="markdownIt-Anchor" href="#测试-2查看当前亮度"></a> 测试 2：查看当前亮度</h3>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">cat</span> /sys/class/backlight/nvidia_0/brightness</span><br></pre></td></tr></table></figure>
+<p>如果它和你保存的值一致，说明开机恢复成功 ✅</p>
+<h3 id="测试-3查看服务日志可选"><a class="markdownIt-Anchor" href="#测试-3查看服务日志可选"></a> 测试 3：查看服务日志（可选）</h3>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">journalctl -u restore-brightness.service</span><br><span class="line">journalctl -u save-brightness.service</span><br></pre></td></tr></table></figure>
+<p>查看是否有成功信息，比如：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">已恢复亮度: 500 (最大: 1000)</span><br><span class="line">已保存亮度: 500</span><br></pre></td></tr></table></figure>
+<hr />
+<h2 id="六-文件结构总结"><a class="markdownIt-Anchor" href="#六-文件结构总结"></a> 📁 六、文件结构总结</h2>
+<table>
+<thead>
+<tr>
+<th>路径</th>
+<th>用途</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>/var/lib/brightness/last_brightness</code></td>
+<td>存储你上一次设置的亮度值</td>
+</tr>
+<tr>
+<td><code>/usr/local/bin/save_current_brightness.sh</code></td>
+<td>每分钟自动保存当前亮度</td>
+</tr>
+<tr>
+<td><code>/usr/local/bin/restore_brightness_on_boot.sh</code></td>
+<td>开机时恢复亮度</td>
+</tr>
+<tr>
+<td><code>/etc/systemd/system/save-brightness.service</code></td>
+<td>定义保存亮度的服务</td>
+</tr>
+<tr>
+<td><code>/etc/systemd/system/save-brightness.timer</code></td>
+<td>每分钟触发一次保存</td>
+</tr>
+<tr>
+<td><code>/etc/systemd/system/restore-brightness.service</code></td>
+<td>开机时（显示管理器之后）恢复亮度</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2 id="七-补充说明"><a class="markdownIt-Anchor" href="#七-补充说明"></a> 七、补充说明</h2>
+<table>
+<thead>
+<tr>
+<th>项目</th>
+<th>说明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>适用显卡接口</td>
+<td><code>nvidia_0</code>（你的 NVIDIA 显卡接口名）</td>
+</tr>
+<tr>
+<td>亮度值含义</td>
+<td>是写入 <code>/sys/class/backlight/nvidia_0/brightness</code> 的实际数值，非百分比</td>
+</tr>
+<tr>
+<td>如何手动调亮度</td>
+<td>可以运行：<code>echo 500 | sudo tee /sys/class/backlight/nvidia_0/brightness</code></td>
+</tr>
+<tr>
+<td>如何修改保存频率</td>
+<td>编辑 <code>/etc/systemd/system/save-brightness.timer</code>，比如改为 <code>OnUnitActiveSec=30s</code></td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2 id="八-最终效果"><a class="markdownIt-Anchor" href="#八-最终效果"></a> 八、最终效果</h2>
+<table>
+<thead>
+<tr>
+<th>功能</th>
+<th>是否实现</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>每分钟自动保存当前亮度</td>
+<td>✔️</td>
+</tr>
+<tr>
+<td>开机自动恢复上一次的亮度（而不是最大亮度）</td>
+<td>✔️</td>
+</tr>
+<tr>
+<td>支持 NVIDIA 显卡笔记本（如 RTX 4060 Max-Q）</td>
+<td>✔️</td>
+</tr>
+<tr>
+<td>无需手动操作，全自动化</td>
+<td>✔️</td>
+</tr>
+</tbody>
+</table>
+<hr />
+
+    </div>
+    <footer class="article-footer">
+        <div class="sponsor-wrapper">
+  <div class="sponsor-button">
+      <div class="sponsor-icon rotate"></div>
+    <div class="sponsor-title">赞助</div>
+      <div class="sponsor-icon rotate"></div>
+  </div>
+  <div class="sponsor-tip">请作者喝杯咖啡吧</div>
+    <div class="sponsor-qr">
+        <div class="sponsor-qr-image-wrapper">
+          <img src="/sponsor/alipay.jpg" alt=支付宝 width="200" />
+          <p class="sponsor-qr-name">支付宝</p>
+        </div>
+        <div class="sponsor-qr-image-wrapper">
+          <img src="/sponsor/wechat.png" alt=微信 width="200" />
+          <p class="sponsor-qr-name">微信</p>
+        </div>
+    </div>
+</div>
+        <div class="share-wrapper">
+    <a href="https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Fheureka.space%2F2026%2F03%2F17%2F%25E6%2595%2599%25E7%25A8%258B%25E6%2596%2587%25E6%25A1%25A3%2F01.Ubuntu%25E5%25BC%2580%25E6%259C%25BA%25E4%25BA%25AE%25E5%25BA%25A6%25E6%2597%25A0%25E6%25B3%2595%25E8%2587%25AA%25E5%258A%25A8%25E8%25B0%2583%25E8%258A%2582%2F" target="_blank" rel="noopener noreferrer" title="Ubuntu开机亮度无法自动调节解决办法">
+      <div class="share-icon icon icon-facebook">
+      </div>
+    </a>
+    <a href="https://twitter.com/intent/tweet?url=https%3A%2F%2Fheureka.space%2F2026%2F03%2F17%2F%25E6%2595%2599%25E7%25A8%258B%25E6%2596%2587%25E6%25A1%25A3%2F01.Ubuntu%25E5%25BC%2580%25E6%259C%25BA%25E4%25BA%25AE%25E5%25BA%25A6%25E6%2597%25A0%25E6%25B3%2595%25E8%2587%25AA%25E5%258A%25A8%25E8%25B0%2583%25E8%258A%2582%2F&amp;text=Ubuntu%E5%BC%80%E6%9C%BA%E4%BA%AE%E5%BA%A6%E6%97%A0%E6%B3%95%E8%87%AA%E5%8A%A8%E8%B0%83%E8%8A%82%E8%A7%A3%E5%86%B3%E5%8A%9E%E6%B3%95&amp;via=https%3A%2F%2Fheureka.space" target="_blank" rel="noopener noreferrer" title="Ubuntu开机亮度无法自动调节解决办法">
+      <div class="share-icon icon icon-twitter">
+      </div>
+    </a>
+    <a href="https://www.linkedin.com/shareArticle?url=https%3A%2F%2Fheureka.space%2F2026%2F03%2F17%2F%25E6%2595%2599%25E7%25A8%258B%25E6%2596%2587%25E6%25A1%25A3%2F01.Ubuntu%25E5%25BC%2580%25E6%259C%25BA%25E4%25BA%25AE%25E5%25BA%25A6%25E6%2597%25A0%25E6%25B3%2595%25E8%2587%25AA%25E5%258A%25A8%25E8%25B0%2583%25E8%258A%2582%2F&amp;title=Ubuntu%E5%BC%80%E6%9C%BA%E4%BA%AE%E5%BA%A6%E6%97%A0%E6%B3%95%E8%87%AA%E5%8A%A8%E8%B0%83%E8%8A%82%E8%A7%A3%E5%86%B3%E5%8A%9E%E6%B3%95&amp;summary=Ubuntu%E5%BC%80%E6%9C%BA%E4%BA%AE%E5%BA%A6%E6%97%A0%E6%B3%95%E8%87%AA%E5%8A%A8%E8%B0%83%E8%8A%82%E8%A7%A3%E5%86%B3%E5%8A%9E%E6%B3%95&amp;mini=true&amp;ro=true" target="_blank" rel="noopener noreferrer" title="Ubuntu开机亮度无法自动调节解决办法">
+      <div class="share-icon icon icon-linkedin">
+      </div>
+    </a>
+    <a href="https://www.reddit.com/submit?url=https%3A%2F%2Fheureka.space%2F2026%2F03%2F17%2F%25E6%2595%2599%25E7%25A8%258B%25E6%2596%2587%25E6%25A1%25A3%2F01.Ubuntu%25E5%25BC%2580%25E6%259C%25BA%25E4%25BA%25AE%25E5%25BA%25A6%25E6%2597%25A0%25E6%25B3%2595%25E8%2587%25AA%25E5%258A%25A8%25E8%25B0%2583%25E8%258A%2582%2F&amp;title=Ubuntu%E5%BC%80%E6%9C%BA%E4%BA%AE%E5%BA%A6%E6%97%A0%E6%B3%95%E8%87%AA%E5%8A%A8%E8%B0%83%E8%8A%82%E8%A7%A3%E5%86%B3%E5%8A%9E%E6%B3%95" target="_blank" rel="noopener noreferrer" title="Ubuntu开机亮度无法自动调节解决办法">
+      <div class="share-icon icon icon-reddit">
+      </div>
+    </a>
+    <a href="https://service.weibo.com/share/share.php?url=https%3A%2F%2Fheureka.space%2F2026%2F03%2F17%2F%25E6%2595%2599%25E7%25A8%258B%25E6%2596%2587%25E6%25A1%25A3%2F01.Ubuntu%25E5%25BC%2580%25E6%259C%25BA%25E4%25BA%25AE%25E5%25BA%25A6%25E6%2597%25A0%25E6%25B3%2595%25E8%2587%25AA%25E5%258A%25A8%25E8%25B0%2583%25E8%258A%2582%2F&amp;appkey=&amp;title=Ubuntu%E5%BC%80%E6%9C%BA%E4%BA%AE%E5%BA%A6%E6%97%A0%E6%B3%95%E8%87%AA%E5%8A%A8%E8%B0%83%E8%8A%82%E8%A7%A3%E5%86%B3%E5%8A%9E%E6%B3%95&amp;pic=&amp;ralateUid=" target="_blank" rel="noopener noreferrer" title="Ubuntu开机亮度无法自动调节解决办法">
+      <div class="share-icon icon icon-weibo">
+      </div>
+    </a>
+    <a href="https://connect.qq.com/widget/shareqq/index.html?url=https%3A%2F%2Fheureka.space%2F2026%2F03%2F17%2F%25E6%2595%2599%25E7%25A8%258B%25E6%2596%2587%25E6%25A1%25A3%2F01.Ubuntu%25E5%25BC%2580%25E6%259C%25BA%25E4%25BA%25AE%25E5%25BA%25A6%25E6%2597%25A0%25E6%25B3%2595%25E8%2587%25AA%25E5%258A%25A8%25E8%25B0%2583%25E8%258A%2582%2F&amp;title=Ubuntu%E5%BC%80%E6%9C%BA%E4%BA%AE%E5%BA%A6%E6%97%A0%E6%B3%95%E8%87%AA%E5%8A%A8%E8%B0%83%E8%8A%82%E8%A7%A3%E5%86%B3%E5%8A%9E%E6%B3%95&amp;desc=Ubuntu%E5%BC%80%E6%9C%BA%E4%BA%AE%E5%BA%A6%E6%97%A0%E6%B3%95%E8%87%AA%E5%8A%A8%E8%B0%83%E8%8A%82%E8%A7%A3%E5%86%B3%E5%8A%9E%E6%B3%95&amp;source=https%3A%2F%2Fheureka.space" target="_blank" rel="noopener noreferrer" title="Ubuntu开机亮度无法自动调节解决办法">
+      <div class="share-icon icon icon-qq">
+      </div>
+    </a>
+    <a href="javascript:;"  title="Ubuntu开机亮度无法自动调节解决办法">
+      <div class="share-icon icon icon-weixin">
+          <div id="share-weixin">
+            <div class="share-weixin-dom">
+              <div class="share-weixin-content">
+                <img id="share-weixin-banner"> 
+                <div id="share-weixin-title"></div>
+                <div id="share-weixin-desc"></div>
+              </div>
+              <div class="share-weixin-qrcode">
+                <div class="share-weixin-info">
+                  <div id="share-weixin-author"></div>
+                  <div id="share-weixin-theme">Powered By hexo-theme-reimu</div>
+                </div>
+                <img id="share-weixin-qr" >
+              </div>
+            </div>
+            <div class="share-weixin-canvas"></div>
+          </div>
+      </div>
+    </a>
+</div>
+        <a class="article-category-link" href="/categories/%E6%95%99%E7%A8%8B%E6%96%87%E6%A1%A3/" title="教程文档" data-aos="zoom-in">教程文档</a><a class="article-category-link" href="/categories/%E6%95%99%E7%A8%8B%E6%96%87%E6%A1%A3/Linux/" title="Linux" data-aos="zoom-in">Linux</a>
+
+        <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item" data-aos="zoom-in"><a class="article-tag-list-link" href="/tags/Linux/" rel="tag" title="Linux">Linux</a></li><li class="article-tag-list-item" data-aos="zoom-in"><a class="article-tag-list-link" href="/tags/Ubuntu/" rel="tag" title="Ubuntu">Ubuntu</a></li></ul>
+
+    </footer>
+  </div>
+    <nav id="article-nav" aria-label="Article navigation" data-aos="fade-up">
+      <div class="article-nav-link-wrap left">
+            <img data-src="/covers/1.png" data-sizes="auto" alt="STM32" class="lazyload">
+        <a href="/2026/05/17/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/STM32/" aria-label="前一篇: STM32" title="前一篇: STM32"></a>
+        <div class="article-nav-caption">前一篇</div>
+        <h3 class="article-nav-title">
+            STM32
+        </h3>
+      </div>
+    <div class="article-nav-link-wrap right">
+          <img data-src="/covers/8.png" data-sizes="auto" alt="可自主预警的天气小助手" class="lazyload">
+      <a href="/2026/02/22/%E9%A1%B9%E7%9B%AE%E5%BC%80%E5%8F%91/%E6%88%91%E7%9A%84%E9%A1%B9%E7%9B%AE/%E5%8F%AF%E8%87%AA%E4%B8%BB%E9%A2%84%E8%AD%A6%E7%9A%84%E5%A4%A9%E6%B0%94%E5%B0%8F%E5%8A%A9%E6%89%8B/" aria-label="后一篇: 可自主预警的天气小助手"  title="后一篇: 可自主预警的天气小助手"></a>
+      <div class="article-nav-caption">后一篇</div>
+      <h3 class="article-nav-title">
+          可自主预警的天气小助手
+      </h3>
+    </div>
+  </nav>
+
+</article>
+
+
+</section>
+        </div>
+        <footer id="footer" aria-label="Site footer">
+  <div style="width: 100%; overflow: hidden">
+    <div class="footer-line"></div>
+  </div>
+  <div id="footer-info">
+    <div>
+      <span class="icon-copyright"></span>
+        2025-2026
+        <span class="footer-info-sep rotate"></span>
+      Heureka
+    </div>
+      <div>
+        基于&nbsp;<a href="https://hexo.io/" rel="noopener nofollow noreferrer" target="_blank">Hexo</a>&nbsp;
+        Theme.<a href="https://github.com/D-Sketon/hexo-theme-reimu" rel="noopener nofollow noreferrer" target="_blank">Reimu</a>
+      </div>
+      <div>
+        <span class="icon-brush"></span>
+        33.8k
+        &nbsp;|&nbsp;
+        <span class="icon-coffee"></span>
+        02:21
+      </div>
+      <div class="footer-beian">
+        <a target="_blank" rel="noopener nofollow noreferrer" href="https://beian.miit.gov.cn">滇ICP备2025056091号-2</a>
+      </div>
+      <div>
+        <span class="icon-eye"></span>
+        <span id="busuanzi_container_site_pv">总访问量&nbsp;<span id="busuanzi_value_site_pv"></span></span>
+        &nbsp;|&nbsp;
+        <span class="icon-user"></span>
+        <span id="busuanzi_container_site_uv">总访客量&nbsp;<span id="busuanzi_value_site_uv"></span></span>
+      </div>
+  </div>
+</footer>
+
+          <div class="sidebar-top">
+            <div class="sidebar-top-taichi rotate"></div>
+            <div class="arrow-up"></div>
+          </div>
+        <div id="mask" class="hide"></div>
+      </div>
+      <nav id="mobile-nav" aria-label="Mobile navigation">
+  <div class="sidebar-wrap">
+        <div class="sidebar-toc-sidebar"><h3 class="toc-title">文章目录</h3>
+<div class="sidebar-toc-wrapper toc-div-class" >
+    <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#ubuntu%E8%AE%BE%E7%BD%AE%E5%BC%80%E6%9C%BA%E8%87%AA%E5%8A%A8%E6%81%A2%E5%A4%8D%E4%BA%AE%E5%BA%A6"><span class="toc-number">1.</span> <span class="toc-text"> Ubuntu设置开机自动恢复亮度</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%B8%80-%E9%80%82%E7%94%A8%E5%9C%BA%E6%99%AF%E4%B8%8E%E8%83%8C%E6%99%AF"><span class="toc-number">1.1.</span> <span class="toc-text"> 🧩 一、适用场景与背景</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%BA%8C-%E6%A0%B8%E5%BF%83%E6%80%9D%E8%B7%AF"><span class="toc-number">1.2.</span> <span class="toc-text"> 二、核心思路</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%B8%89-%E6%96%87%E4%BB%B6%E4%B8%8E%E8%84%9A%E6%9C%AC%E8%A7%84%E5%88%92"><span class="toc-number">1.3.</span> <span class="toc-text"> 🗂 三、文件与脚本规划</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%9B%9B-%E8%AF%A6%E7%BB%86%E6%93%8D%E4%BD%9C%E6%AD%A5%E9%AA%A4"><span class="toc-number">1.4.</span> <span class="toc-text"> 🛠 四、详细操作步骤</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%AD%A5%E9%AA%A4-1%E5%88%9B%E5%BB%BA%E4%BF%9D%E5%AD%98%E4%BA%AE%E5%BA%A6%E5%80%BC%E7%9A%84%E7%9B%AE%E5%BD%95%E5%92%8C%E6%96%87%E4%BB%B6"><span class="toc-number">1.4.1.</span> <span class="toc-text"> 步骤 1：创建保存亮度值的目录和文件</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%AD%A5%E9%AA%A4-2%E5%88%9B%E5%BB%BA-%E4%BF%9D%E5%AD%98%E5%BD%93%E5%89%8D%E4%BA%AE%E5%BA%A6-%E7%9A%84%E8%84%9A%E6%9C%AC"><span class="toc-number">1.4.2.</span> <span class="toc-text"> 步骤 2：创建 “保存当前亮度” 的脚本</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%AD%A5%E9%AA%A4-3%E5%88%9B%E5%BB%BA-%E5%BC%80%E6%9C%BA%E6%81%A2%E5%A4%8D%E4%BA%AE%E5%BA%A6-%E7%9A%84%E8%84%9A%E6%9C%AC"><span class="toc-number">1.4.3.</span> <span class="toc-text"> 步骤 3：创建 “开机恢复亮度” 的脚本</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%AD%A5%E9%AA%A4-4%E5%88%9B%E5%BB%BA-%E5%AE%9A%E6%97%B6%E4%BF%9D%E5%AD%98%E4%BA%AE%E5%BA%A6-%E7%9A%84-systemd-%E6%9C%8D%E5%8A%A1"><span class="toc-number">1.4.4.</span> <span class="toc-text"> 步骤 4：创建 “定时保存亮度” 的 systemd 服务</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%AD%A5%E9%AA%A4-5%E5%88%9B%E5%BB%BA-%E5%AE%9A%E6%97%B6%E4%BF%9D%E5%AD%98%E4%BA%AE%E5%BA%A6-%E7%9A%84-systemd-%E5%AE%9A%E6%97%B6%E5%99%A8"><span class="toc-number">1.4.5.</span> <span class="toc-text"> 步骤 5：创建 “定时保存亮度” 的 systemd 定时器</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%AD%A5%E9%AA%A4-6%E5%88%9B%E5%BB%BA-%E5%BC%80%E6%9C%BA%E6%81%A2%E5%A4%8D%E4%BA%AE%E5%BA%A6-%E7%9A%84-systemd-%E6%9C%8D%E5%8A%A1%E5%85%B3%E9%94%AE"><span class="toc-number">1.4.6.</span> <span class="toc-text"> 步骤 6：创建 “开机恢复亮度” 的 systemd 服务（关键！）</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%AD%A5%E9%AA%A4-7%E9%87%8D%E5%90%AF%E7%B3%BB%E7%BB%9F%E6%B5%8B%E8%AF%95%E5%8A%9F%E8%83%BD"><span class="toc-number">1.4.7.</span> <span class="toc-text"> 步骤 7：重启系统，测试功能</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%BA%94-%E6%B5%8B%E8%AF%95%E4%B8%8E%E9%AA%8C%E8%AF%81"><span class="toc-number">1.5.</span> <span class="toc-text"> 🧪 五、测试与验证</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%B5%8B%E8%AF%95-1%E6%9F%A5%E7%9C%8B%E4%BF%9D%E5%AD%98%E7%9A%84%E4%BA%AE%E5%BA%A6%E5%80%BC"><span class="toc-number">1.5.1.</span> <span class="toc-text"> 测试 1：查看保存的亮度值</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%B5%8B%E8%AF%95-2%E6%9F%A5%E7%9C%8B%E5%BD%93%E5%89%8D%E4%BA%AE%E5%BA%A6"><span class="toc-number">1.5.2.</span> <span class="toc-text"> 测试 2：查看当前亮度</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%B5%8B%E8%AF%95-3%E6%9F%A5%E7%9C%8B%E6%9C%8D%E5%8A%A1%E6%97%A5%E5%BF%97%E5%8F%AF%E9%80%89"><span class="toc-number">1.5.3.</span> <span class="toc-text"> 测试 3：查看服务日志（可选）</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%85%AD-%E6%96%87%E4%BB%B6%E7%BB%93%E6%9E%84%E6%80%BB%E7%BB%93"><span class="toc-number">1.6.</span> <span class="toc-text"> 📁 六、文件结构总结</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%B8%83-%E8%A1%A5%E5%85%85%E8%AF%B4%E6%98%8E"><span class="toc-number">1.7.</span> <span class="toc-text"> 七、补充说明</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%85%AB-%E6%9C%80%E7%BB%88%E6%95%88%E6%9E%9C"><span class="toc-number">1.8.</span> <span class="toc-text"> 八、最终效果</span></a></li></ol></li></ol>
+</div>
+</div>
+        <div class="sidebar-common-sidebar hidden"><div class="sidebar-author">
+  <img data-src="/avatar/avatar.webp" data-sizes="auto" alt="Heureka" class="lazyload">
+  <div class="sidebar-author-name">Heureka</div>
+  <div class="sidebar-description">学习笔记、技术心得、实践项目</div>
+</div>
+<div class="sidebar-state">
+  <div class="sidebar-state-article">
+    <div>文章</div>
+    <div class="sidebar-state-number">10</div>
+  </div>
+  <div class="sidebar-state-category">
+    <div>分类</div>
+    <div class="sidebar-state-number">14</div>
+  </div>
+  <div class="sidebar-state-tag">
+    <div>标签</div>
+    <div class="sidebar-state-number">12</div>
+  </div>
+</div>
+<div class="sidebar-social" >
+    <div class="icon-email sidebar-social-icon">
+      <a href=/about/email itemprop="url" target="_blank" aria-label="email" rel="noopener nofollow noreferrer"></a>
+    </div>
+    <div class="icon-bilibili sidebar-social-icon">
+      <a href=https://space.bilibili.com/492369743 itemprop="url" target="_blank" aria-label="bilibili" rel="noopener nofollow noreferrer"></a>
+    </div>
+    <div class="icon-github sidebar-social-icon">
+      <a href=https://github.com/heureka-me itemprop="url" target="_blank" aria-label="github" rel="noopener nofollow noreferrer"></a>
+    </div>
+    <div class="icon-qq sidebar-social-icon">
+      <a href=3455545938 itemprop="url" target="_blank" aria-label="qq" rel="noopener nofollow noreferrer"></a>
+    </div>
+</div>
+<div class="sidebar-menu">
+      <div class="sidebar-menu-link-wrap">
+        <a class="sidebar-menu-link-dummy" href="/" aria-label="首页"></a>
+          <div class="sidebar-menu-icon icon rotate">
+              &#xe62b;
+          </div>
+        <div class="sidebar-menu-link">首页</div>
+      </div>
+      <div class="sidebar-menu-link-wrap">
+        <a class="sidebar-menu-link-dummy" href="/archives" aria-label="归档"></a>
+          <div class="sidebar-menu-icon icon rotate">
+              &#xe62b;
+          </div>
+        <div class="sidebar-menu-link">归档</div>
+      </div>
+      <div class="sidebar-menu-link-wrap">
+        <a class="sidebar-menu-link-dummy" href="/about" aria-label="关于"></a>
+          <div class="sidebar-menu-icon icon rotate">
+              &#xe62b;
+          </div>
+        <div class="sidebar-menu-link">关于</div>
+      </div>
+      <div class="sidebar-menu-link-wrap">
+        <a class="sidebar-menu-link-dummy" href="/friend" aria-label="友链"></a>
+          <div class="sidebar-menu-icon icon rotate">
+              &#xe62b;
+          </div>
+        <div class="sidebar-menu-link">友链</div>
+      </div>
+</div>
+</div>
+  </div>
+      <div class="sidebar-btn-wrapper">
+        <div class="sidebar-toc-btn current"></div>
+        <div class="sidebar-common-btn"></div>
+      </div>
+</nav>
+
+    </div>
+      <div class="site-search">
+        <div class="reimu-popup popup">
+          <div class="reimu-search">
+            <div class="reimu-search-input-icon"></div>
+            <div id="reimu-search-input"></div>
+            <div class="popup-btn-close"></div>
+          </div>
+          <div class="reimu-results">
+            <div id="reimu-stats"></div>
+            <div id="reimu-hits"></div>
+            <div id="reimu-pagination" class="reimu-pagination"></div>
+          </div>
+          <img class="reimu-bg" src="/images/reimu.png" loading="lazy" decoding="async" fetchpriority="low"/>
+        </div>
+      </div>
+    
+<script src="https://npm.webcache.cn/lazysizes@5.3.2/lazysizes.min.js" integrity="sha384-3gT&#x2F;vsepWkfz&#x2F;ff7PpWNUeMzeWoH3cDhm&#x2F;A8jM7ouoAK0&#x2F;fP&#x2F;9bcHHR5kHq2nf+e" crossorigin="anonymous"></script>
+
+
+<script src="https://npm.webcache.cn/clipboard@2.0.11/dist/clipboard.min.js" integrity="sha384-J08i8An&#x2F;QeARD9ExYpvphB8BsyOj3Gh2TSh1aLINKO3L0cMSH2dN3E22zFoXEi0Q" crossorigin="anonymous"></script>
+
+
+
+
+<script src="/js/script.js"></script>
+
+
+  
+<script src="/js/aos.js"></script>
+
+  <script>
+    var aosInit = () => {
+      AOS.init({
+        duration: 1000,
+        easing: "ease",
+        once: true,
+        offset: 50,
+      });
+    };
+    if (document.readyState === 'loading') {
+      document.addEventListener('DOMContentLoaded', aosInit);
+    } else {
+      aosInit();
+    }
+  </script>
+
+
+<script src="/js/pjax_script.js" data-pjax></script>
+
+
+  
+<script src="/js/generator_search.js" defer></script>
+
+
+
+  <script>
+    var setupFirework = () => {
+      if (!false || !window.matchMedia('(max-width: 768px)').matches) {
+        window.firework && window.firework(JSON.parse('{"excludeElements":["a","button"],"particles":[{"shape":"circle","move":["emit"],"easing":"easeOutExpo","colors":["var(--red-1)","var(--red-2)","var(--red-3)","var(--red-4)"],"number":20,"duration":[1200,1800],"shapeOptions":{"radius":[16,32],"alpha":[0.3,0.5]}},{"shape":"circle","move":["diffuse"],"easing":"easeOutExpo","colors":["var(--red-0)"],"number":1,"duration":[1200,1800],"shapeOptions":{"radius":20,"alpha":[0.2,0.5],"lineWidth":6}}]}'));
+      }
+    }
+  </script>
+  
+<script src="https://npm.webcache.cn/mouse-firework@0.2.0/dist/index.umd.js" integrity="sha384-qi9WggRt19tv8Vc7pCHW3ulMNLwrn515zaLEWZjl1px07vz8+pUoWX8n1rgq282T" crossorigin="anonymous" onload="setupFirework()" defer></script>
+
+
+  
+<script src="https://npm.webcache.cn/theme-shokax-pjax@0.0.3/dist/index.umd.js" integrity="sha384-xneY1WY8hOfUzswrE4CrYq35N4BdVcxqxwHPr9zawE&#x2F;jMSCxD+jAPU55x&#x2F;jj3wlf" crossorigin="anonymous"></script>
+
+  
+<script src="/js/pjax.js"></script>
+
+
+
+  
+<script src="https://npm.webcache.cn/live2d-widgets@0.9.0/autoload.js" integrity="sha384-poTN7wN&#x2F;SqNhQqo3jdFeX20ikddWeFGkUkDEzsKjgH&#x2F;ez8aQLn81oI0Cw6q5xNyB" crossorigin="anonymous"></script>
+
+
+
+<div id="lazy-script">
+  <div>
+      
+      
+      <script data-pjax>
+        window.REIMU_POST = {
+          author: "Heureka",
+          title: "Ubuntu开机亮度无法自动调节解决办法",
+          url: "https://heureka.space/2026/03/17/%E6%95%99%E7%A8%8B%E6%96%87%E6%A1%A3/01.Ubuntu%E5%BC%80%E6%9C%BA%E4%BA%AE%E5%BA%A6%E6%97%A0%E6%B3%95%E8%87%AA%E5%8A%A8%E8%B0%83%E8%8A%82/",
+          excerpt: "",
+          description: "",
+          stripContent: " Ubuntu设置开机自动恢复亮度 适用于 NVIDIA 显卡，如 RTX 4060 Max-Q  🎯 目标： 每次关机或重启后，屏幕亮度自动恢复为上次手动调整的亮度，而不是默认最大亮度。   🧩 一、适用场景与背景  系统： Ubuntu（你使用的是 24.04 Noble，或其他版本也可参考） 显卡： NVIDIA（你使用的是 RTX 4060 Max-Q / Mobile，对应的 backlight 接口是 nvidia_0） 问题： 每次重启后，屏幕亮度总是恢复为最大（比如 1000",
+          date: "Tue Mar 17 2026 18:19:02 GMT+0800",
+          updated: "Fri Apr 17 2026 19:47:40 GMT+0800",
+          cover: "/images/banner.webp",
+        };
+      </script>
+        
+<script src="/js/insert_highlight.js" data-pjax></script>
+
+      
+<script src="/js/tabs.js" data-pjax defer></script>
+
+        
+<script src="https://npm.webcache.cn/@zumer/snapdom@1.9.14/dist/snapdom.min.js" integrity="sha384-OEQ+fJp&#x2F;Mvi2uzBREXybtxryJvLytWapuHu4EE6LPwTKUwATYcc55tPPcZTzVcmx" crossorigin="anonymous" defer data-pjax></script>
+
+        
+<script src="https://npm.webcache.cn/qrcode@1.5.1/build/qrcode.js" integrity="sha384-VT1EeewTCEXgndcPMQ0PzV+uVFYjxFIjmAA7s5gcMX9t4Dt5TD+OVQIn7NJWIXn7" crossorigin="anonymous" defer data-pjax></script>
+
+      <script type="module" data-pjax>
+        (async () => {
+          const PhotoSwipeLightbox = (await safeImport("https://npm.webcache.cn/photoswipe@5.4.4/dist/photoswipe-lightbox.esm.min.js", "sha384-DiL6M/gG+wmTxmCRZyD1zee6lIhawn5TGvED0FOh7fXcN9B0aZ9dexSF/N6lrZi/")).default;
+          const initPswp = (gallery, children) => {
+            if (_$$(`${gallery} ${children}`).length > 0) {
+              new PhotoSwipeLightbox({
+                gallery,
+                children,
+                pswpModule: () => safeImport("https://npm.webcache.cn/photoswipe@5.4.4/dist/photoswipe.esm.min.js", "sha384-WkkO3GCmgkC3VQWpaV8DqhKJqpzpF9JoByxDmnV8+oTJ7m3DfYEWX1fu1scuS4+s")
+              }).init();
+            }
+          }
+          const pswp = () => {
+            initPswp('.article-entry', 'a.article-gallery-item');
+            initPswp('.article-gallery', 'a.article-gallery-item');
+          }
+          pswp();
+        })();
+      </script>
+        
+
+
+  </div>
+</div>
+
+
+  <script>
+    console.log(String.raw`%c 
+ ______     ______     __     __    __     __  __    
+/\  == \   /\  ___\   /\ \   /\ "-./  \   /\ \/\ \   
+\ \  __<   \ \  __\   \ \ \  \ \ \-./\ \  \ \ \_\ \  
+ \ \_\ \_\  \ \_____\  \ \_\  \ \_\ \ \_\  \ \_____\ 
+  \/_/ /_/   \/_____/   \/_/   \/_/  \/_/   \/_____/ 
+                                                  
+`,'color: #ff5252;')
+    console.log('%c Theme.Reimu v' + '1.12.3' + ' %c https://github.com/D-Sketon/hexo-theme-reimu ', 'color: white; background: #ff5252; padding:5px 0;', 'padding:4px;border:1px solid #ff5252;')
+  </script>
+  
+
+
+  
+<script src="https://npm.webcache.cn/busuanzi@2.3.0/bsz.pure.mini.js" integrity="sha384-0M75wtSkhjIInv4coYlaJU83+OypaRCIq2SukQVQX04eGTCBXJDuWAbJet56id+S" crossorigin="anonymous" async></script>
+
+
+<script>
+  if ('serviceWorker' in navigator) {
+    navigator.serviceWorker.getRegistrations().then((registrations) => {
+      for (let registration of registrations) {
+        registration.unregister();
+      }
+    });
+  }
+</script>
+
+    
+<script src="https://npm.webcache.cn/katex@0.16.24/dist/katex.min.js" integrity="sha384-MWNUH0WmtsYGhn2cbH6ELRCbf9LG3QDqCC+gqPB3IBNO35xjZK3Ejb6oONRpDbPg" crossorigin="anonymous" defer data-pjax></script>
+
+    
+<script src="https://npm.webcache.cn/katex@0.16.24/dist/contrib/auto-render.min.js" integrity="sha384-hCXGrW6PitJEwbkoStFjeJxv+fSOOQKOPbJxSfM6G5sWZjAyWhXiTIIAmQqnlLlh" crossorigin="anonymous" defer onload="renderMathInElement(_$(&#39;article&#39;), {delimiters: [{left: &#39;$$&#39;, right: &#39;$$&#39;, display: true},{left: &#39;$&#39;, right: &#39;$&#39;, display: false}]});" data-pjax></script>
+
+  
+    <script>
+    var setupAPlayer = () => {
+      if (!false || !window.matchMedia('(max-width: 768px)').matches) {
+        if (window.matchMedia('(max-width: 959px)').matches) {
+          const aplayer = _$('#aplayer');
+          if (aplayer) {
+            const aside = aplayer.parentNode?.parentNode;
+            if (aside?.tagName === 'ASIDE') {
+              aplayer.removeAttribute('data-aos');
+              aplayer.parentNode.removeChild(aplayer);
+              document.body.appendChild(aplayer);
+            }
+          }
+        }
+        new APlayer({
+          theme: "var(--color-link)",
+          container: document.getElementById('aplayer'),
+          audio: [] || [],
+          fixed: isMobile ? true : (false || false),
+          autoplay: false || false,
+          loop: 'all' || 'all',
+          order: 'random' || 'list',
+          preload: 'auto' || 'auto',
+          volume: 0.7 || 0.7,
+          mutex: true || true,
+          listFolded: false || false,
+          lrcType: 0 || 0,
+        });
+      }
+    }
+    </script>
+  
+<script src="https://npm.webcache.cn/aplayer@1.10.1/dist/APlayer.min.js" integrity="sha384-gdGYZwHnfJM54evoZhpO0s6ZF5BQiybkiyW7VXr+h5UfruuRL&#x2F;aORyw+5+HZoU6e" crossorigin="anonymous" defer onload="setupAPlayer()"></script>
+
+
+
+  </body>
+  </html>

@@ -130,8 +130,23 @@
 .icon-github:before {
   content: '\e619';
 }
+.icon-facebook:before {
+  content: '\e60e';
+}
+.icon-twitter:before {
+  content: '\e62a';
+}
+.icon-linkedin:before {
+  content: '\e614';
+}
 .icon-bilibili:before {
   content: '\e603';
+}
+.icon-weibo:before {
+  content: '\e62c';
+}
+.icon-reddit:before {
+  content: '\e61c';
 }
 .icon-email:before {
   content: '\e63c';
@@ -163,6 +178,14 @@
 .icon-taichi:before {
   font-family: 'iconfont';
   content: '\e62b';
+}
+.icon-weixin:before {
+  font-family: 'iconfont';
+  content: '\e640';
+}
+.icon-qq:before {
+  font-family: 'iconfont';
+  content: '\e63e';
 }
 .icon-image:before {
   font-family: 'iconfont';
