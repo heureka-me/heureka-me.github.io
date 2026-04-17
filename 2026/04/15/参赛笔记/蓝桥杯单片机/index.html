@@ -17,16 +17,16 @@
     
 <link rel="stylesheet" href="/css/loader.css">
 
-    <meta name="description" content="&lt;center&gt;蓝桥杯单片机&lt;&#x2F;center&gt;  一、基础知识  01 LED亮灭控制 12345678910111213141516void main()&#123;	while(1)&#123;		P2 &#x3D; ((P2 &amp; 0x1F) | 0x80); &#x2F;&#x2F; 闲鱼清零前三位，在写前三位 138译码器 		LED_Port &#x3D; 0xFF; &#x2F;&#x2F;LED关		P2 &amp;">
+    <meta name="description" content="&lt;center&gt;蓝桥杯单片机 &lt;&#x2F;center&gt;  一、基础知识  01 LED亮灭控制 12345678910111213141516void main()&#123;	while(1)&#123;		P2 &#x3D; ((P2 &amp; 0x1F) | 0x80); &#x2F;&#x2F; 闲鱼清零前三位，在写前三位 138译码器 		LED_Port &#x3D; 0xFF; &#x2F;&#x2F;LED关		P2">
 <meta property="og:type" content="article">
 <meta property="og:title" content="蓝桥杯单片机">
 <meta property="og:url" content="https://heureka.space/2026/04/15/%E5%8F%82%E8%B5%9B%E7%AC%94%E8%AE%B0/%E8%93%9D%E6%A1%A5%E6%9D%AF%E5%8D%95%E7%89%87%E6%9C%BA/index.html">
 <meta property="og:site_name" content="Heureka&#39;s Blog">
-<meta property="og:description" content="&lt;center&gt;蓝桥杯单片机&lt;&#x2F;center&gt;  一、基础知识  01 LED亮灭控制 12345678910111213141516void main()&#123;	while(1)&#123;		P2 &#x3D; ((P2 &amp; 0x1F) | 0x80); &#x2F;&#x2F; 闲鱼清零前三位，在写前三位 138译码器 		LED_Port &#x3D; 0xFF; &#x2F;&#x2F;LED关		P2 &amp;">
+<meta property="og:description" content="&lt;center&gt;蓝桥杯单片机 &lt;&#x2F;center&gt;  一、基础知识  01 LED亮灭控制 12345678910111213141516void main()&#123;	while(1)&#123;		P2 &#x3D; ((P2 &amp; 0x1F) | 0x80); &#x2F;&#x2F; 闲鱼清零前三位，在写前三位 138译码器 		LED_Port &#x3D; 0xFF; &#x2F;&#x2F;LED关		P2">
 <meta property="og:locale" content="zh_CN">
 <meta property="og:image" content="https://heureka.space/2026/04/15/%E5%8F%82%E8%B5%9B%E7%AC%94%E8%AE%B0/%E8%93%9D%E6%A1%A5%E6%9D%AF%E5%8D%95%E7%89%87%E6%9C%BA/image.png">
 <meta property="article:published_time" content="2026-04-15T13:55:05.000Z">
-<meta property="article:modified_time" content="2026-04-16T11:46:55.444Z">
+<meta property="article:modified_time" content="2026-04-17T06:27:27.986Z">
 <meta property="article:author" content="Heureka">
 <meta property="article:tag" content="单片机">
 <meta property="article:tag" content="蓝桥杯">
@@ -153,7 +153,7 @@
     <div class="sidebar-wrap" data-aos="fade-up">
           <div class="sidebar-toc-sidebar"><h3 class="toc-title">文章目录</h3>
 <div class="sidebar-toc-wrapper toc-div-class" >
-    <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#center%E8%93%9D%E6%A1%A5%E6%9D%AF%E5%8D%95%E7%89%87%E6%9C%BAcenter"><span class="toc-number">1.</span> <span class="toc-text"> &lt;center&gt;蓝桥杯单片机&lt;&#x2F;center&gt;</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%B8%80-%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%86"><span class="toc-number">1.1.</span> <span class="toc-text"> 一、基础知识</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#01-led%E4%BA%AE%E7%81%AD%E6%8E%A7%E5%88%B6"><span class="toc-number">1.1.1.</span> <span class="toc-text"> 01 LED亮灭控制</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#02-led%E6%8C%89%E4%BD%8D%E7%A7%BB"><span class="toc-number">1.1.2.</span> <span class="toc-text"> 02 LED按位移</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#03-%E7%8B%AC%E7%AB%8B%E6%8C%89%E9%94%AE%E6%8E%A7%E5%88%B6led%E4%BD%8D%E7%A7%BB"><span class="toc-number">1.1.3.</span> <span class="toc-text"> 03 独立按键控制LED位移</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%BA%8C-%E7%9C%9F%E9%A2%98%E7%BB%83%E4%B9%A0"><span class="toc-number">1.2.</span> <span class="toc-text"> 二、真题练习</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%B8%89-%E7%9B%B8%E5%85%B3%E8%B5%84%E6%96%99"><span class="toc-number">1.3.</span> <span class="toc-text"> 三、相关资料</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#01-%E4%B8%AD%E6%96%AD%E7%B3%BB%E7%BB%9F"><span class="toc-number">1.3.1.</span> <span class="toc-text"> 01 中断系统</span></a></li></ol></li></ol></li></ol>
+    <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#center%E8%93%9D%E6%A1%A5%E6%9D%AF%E5%8D%95%E7%89%87%E6%9C%BA-center"><span class="toc-number">1.</span> <span class="toc-text"> &lt;center&gt;蓝桥杯单片机 &lt;&#x2F;center&gt;</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%B8%80-%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%86"><span class="toc-number">1.1.</span> <span class="toc-text"> 一、基础知识</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#01-led%E4%BA%AE%E7%81%AD%E6%8E%A7%E5%88%B6"><span class="toc-number">1.1.1.</span> <span class="toc-text"> 01 LED亮灭控制</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#02-led%E6%8C%89%E4%BD%8D%E7%A7%BB"><span class="toc-number">1.1.2.</span> <span class="toc-text"> 02 LED按位移</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#03-%E7%8B%AC%E7%AB%8B%E6%8C%89%E9%94%AE%E6%8E%A7%E5%88%B6led%E4%BD%8D%E7%A7%BB"><span class="toc-number">1.1.3.</span> <span class="toc-text"> 03 独立按键控制LED位移</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%BA%8C-%E7%9C%9F%E9%A2%98%E7%BB%83%E4%B9%A0"><span class="toc-number">1.2.</span> <span class="toc-text"> 二、真题练习</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%B8%89-%E7%9B%B8%E5%85%B3%E8%B5%84%E6%96%99"><span class="toc-number">1.3.</span> <span class="toc-text"> 三、相关资料</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#01-%E4%B8%AD%E6%96%AD%E7%B3%BB%E7%BB%9F"><span class="toc-number">1.3.1.</span> <span class="toc-text"> 01 中断系统</span></a></li></ol></li></ol></li></ol>
 </div>
 </div>
           <div class="sidebar-common-sidebar hidden"><div class="sidebar-author">
@@ -234,7 +234,7 @@
       <div class="article-date">
   <span class="article-date-link icon-calendar" data-aos="zoom-in">
     <time datetime="2026-04-15T13:55:05.000Z" itemprop="datePublished">2026-04-15</time>
-    <time style="display: none;" id="post-update-time">2026-04-16</time>
+    <time style="display: none;" id="post-update-time">2026-04-17</time>
   </span>
 </div>
 
@@ -243,7 +243,7 @@
     <div class="hr-line"></div>
     
     <div class="e-content article-entry" itemprop="articleBody">
-        <h1 id="center蓝桥杯单片机center"><a class="markdownIt-Anchor" href="#center蓝桥杯单片机center"></a> <code>&lt;center&gt;</code>蓝桥杯单片机<code>&lt;/center&gt;</code></h1>
+        <h1 id="center蓝桥杯单片机-center"><a class="markdownIt-Anchor" href="#center蓝桥杯单片机-center"></a> <code>&lt;center&gt;</code>蓝桥杯单片机 <code>&lt;/center&gt;</code></h1>
 <h2 id="一-基础知识"><a class="markdownIt-Anchor" href="#一-基础知识"></a> 一、基础知识</h2>
 <h3 id="01-led亮灭控制"><a class="markdownIt-Anchor" href="#01-led亮灭控制"></a> 01 LED亮灭控制</h3>
 <figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"><span class="type">void</span> <span class="title function_">main</span><span class="params">()</span>&#123;</span><br><span class="line"></span><br><span class="line">	<span class="keyword">while</span>(<span class="number">1</span>)&#123;</span><br><span class="line">		P2 = ((P2 &amp; <span class="number">0x1F</span>) | <span class="number">0x80</span>); <span class="comment">// 闲鱼清零前三位，在写前三位 138译码器 </span></span><br><span class="line">		LED_Port = <span class="number">0xFF</span>; <span class="comment">//LED关</span></span><br><span class="line">		P2 &amp;= <span class="number">0x1F</span>; </span><br><span class="line">		delay();</span><br><span class="line"></span><br><span class="line">		P2 = ((P2 &amp; <span class="number">0x1F</span>) | <span class="number">0x80</span>); <span class="comment">// 闲鱼清零前三位，在写前三位 138译码器</span></span><br><span class="line">		LED_Port = <span class="number">0x00</span>; <span class="comment">//LED开</span></span><br><span class="line">		P2 &amp;= <span class="number">0x1F</span>; </span><br><span class="line">		delay();</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"></span><br></pre></td></tr></table></figure>
@@ -254,7 +254,7 @@
 <h2 id="三-相关资料"><a class="markdownIt-Anchor" href="#三-相关资料"></a> 三、相关资料</h2>
 <h3 id="01-中断系统"><a class="markdownIt-Anchor" href="#01-中断系统"></a> 01 中断系统</h3>
 <ul>
-<li>STC15F2K60S2中断结构<code>&lt;/br&gt;</code></li>
+<li>STC15F2K60S2中断结构 <code>&lt;/br&gt;</code></li>
 </ul>
 <table>
 <thead>
@@ -352,7 +352,7 @@
   </div>
     <nav id="article-nav" aria-label="Article navigation" data-aos="fade-up">
     <div class="article-nav-link-wrap right">
-          <img data-src="/covers/8.png" data-sizes="auto" alt="1.ESP32简介" class="lazyload">
+          <img data-src="/covers/1.png" data-sizes="auto" alt="1.ESP32简介" class="lazyload">
       <a href="/2026/04/15/%E5%B5%8C%E5%85%A5%E5%BC%8F/1ESP32%E7%AE%80%E4%BB%8B/" aria-label="后一篇: 1.ESP32简介"  title="后一篇: 1.ESP32简介"></a>
       <div class="article-nav-caption">后一篇</div>
       <h3 class="article-nav-title">
@@ -408,7 +408,7 @@
   <div class="sidebar-wrap">
         <div class="sidebar-toc-sidebar"><h3 class="toc-title">文章目录</h3>
 <div class="sidebar-toc-wrapper toc-div-class" >
-    <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#center%E8%93%9D%E6%A1%A5%E6%9D%AF%E5%8D%95%E7%89%87%E6%9C%BAcenter"><span class="toc-number">1.</span> <span class="toc-text"> &lt;center&gt;蓝桥杯单片机&lt;&#x2F;center&gt;</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%B8%80-%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%86"><span class="toc-number">1.1.</span> <span class="toc-text"> 一、基础知识</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#01-led%E4%BA%AE%E7%81%AD%E6%8E%A7%E5%88%B6"><span class="toc-number">1.1.1.</span> <span class="toc-text"> 01 LED亮灭控制</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#02-led%E6%8C%89%E4%BD%8D%E7%A7%BB"><span class="toc-number">1.1.2.</span> <span class="toc-text"> 02 LED按位移</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#03-%E7%8B%AC%E7%AB%8B%E6%8C%89%E9%94%AE%E6%8E%A7%E5%88%B6led%E4%BD%8D%E7%A7%BB"><span class="toc-number">1.1.3.</span> <span class="toc-text"> 03 独立按键控制LED位移</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%BA%8C-%E7%9C%9F%E9%A2%98%E7%BB%83%E4%B9%A0"><span class="toc-number">1.2.</span> <span class="toc-text"> 二、真题练习</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%B8%89-%E7%9B%B8%E5%85%B3%E8%B5%84%E6%96%99"><span class="toc-number">1.3.</span> <span class="toc-text"> 三、相关资料</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#01-%E4%B8%AD%E6%96%AD%E7%B3%BB%E7%BB%9F"><span class="toc-number">1.3.1.</span> <span class="toc-text"> 01 中断系统</span></a></li></ol></li></ol></li></ol>
+    <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#center%E8%93%9D%E6%A1%A5%E6%9D%AF%E5%8D%95%E7%89%87%E6%9C%BA-center"><span class="toc-number">1.</span> <span class="toc-text"> &lt;center&gt;蓝桥杯单片机 &lt;&#x2F;center&gt;</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%B8%80-%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%86"><span class="toc-number">1.1.</span> <span class="toc-text"> 一、基础知识</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#01-led%E4%BA%AE%E7%81%AD%E6%8E%A7%E5%88%B6"><span class="toc-number">1.1.1.</span> <span class="toc-text"> 01 LED亮灭控制</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#02-led%E6%8C%89%E4%BD%8D%E7%A7%BB"><span class="toc-number">1.1.2.</span> <span class="toc-text"> 02 LED按位移</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#03-%E7%8B%AC%E7%AB%8B%E6%8C%89%E9%94%AE%E6%8E%A7%E5%88%B6led%E4%BD%8D%E7%A7%BB"><span class="toc-number">1.1.3.</span> <span class="toc-text"> 03 独立按键控制LED位移</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%BA%8C-%E7%9C%9F%E9%A2%98%E7%BB%83%E4%B9%A0"><span class="toc-number">1.2.</span> <span class="toc-text"> 二、真题练习</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%B8%89-%E7%9B%B8%E5%85%B3%E8%B5%84%E6%96%99"><span class="toc-number">1.3.</span> <span class="toc-text"> 三、相关资料</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#01-%E4%B8%AD%E6%96%AD%E7%B3%BB%E7%BB%9F"><span class="toc-number">1.3.1.</span> <span class="toc-text"> 01 中断系统</span></a></li></ol></li></ol></li></ol>
 </div>
 </div>
         <div class="sidebar-common-sidebar hidden"><div class="sidebar-author">
@@ -570,10 +570,10 @@
           url: "https://heureka.space/2026/04/15/%E5%8F%82%E8%B5%9B%E7%AC%94%E8%AE%B0/%E8%93%9D%E6%A1%A5%E6%9D%AF%E5%8D%95%E7%89%87%E6%9C%BA/",
           excerpt: "",
           description: "",
-          stripContent: " &amp;lt;center&amp;gt;蓝桥杯单片机&amp;lt;/center&amp;gt;  一、基础知识  01 LED亮灭控制 12345678910111213141516void main()&amp;#123; while(1)&amp;#123;  P2 = ((P2 &amp;amp; 0x1F) | 0x80); // 闲鱼清零前三位，在写前三位 138译码器   LED_Port = 0xFF; //LED关  P2 &amp;amp;= 0x1F;   delay();  P2 = ((P2 &amp;amp; 0x1F) | 0x",
+          stripContent: " &amp;lt;center&amp;gt;蓝桥杯单片机 &amp;lt;/center&amp;gt;  一、基础知识  01 LED亮灭控制 12345678910111213141516void main()&amp;#123; while(1)&amp;#123;  P2 = ((P2 &amp;amp; 0x1F) | 0x80); // 闲鱼清零前三位，在写前三位 138译码器   LED_Port = 0xFF; //LED关  P2 &amp;amp;= 0x1F;   delay();  P2 = ((P2 &amp;amp; 0x1F) | 0",
           date: "Wed Apr 15 2026 21:55:05 GMT+0800",
-          updated: "Thu Apr 16 2026 19:46:55 GMT+0800",
-          cover: "/images/banner.webp",
+          updated: "Fri Apr 17 2026 14:27:27 GMT+0800",
+          cover: "/images/lanqiaobei.png",
         };
       </script>
         
