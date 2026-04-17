@@ -147,22 +147,7 @@
         <div id="content" aria-label="Page content" class="sidebar-left"  >
           <aside id="sidebar" aria-label="Sidebar">
   <div class="sidebar-wrapper-container ">
-      <meting-js
-        theme="var(--color-link)"
-        id="2237805875"
-        server="netease"
-        type="playlist"
-        
-        fixed="false"
-        autoplay="false"
-        loop="all"
-        order="random"
-        preload="auto"
-        volume="0.7"
-        mutex="true"
-        list-folded="false"
-        lrc-type="0"
-      ></meting-js>
+      <div id="aplayer" theme="var(--color-link)" data-aos="fade-up"></div>
   <div class="sidebar-wrapper">
     <div class="sidebar-wrap" data-aos="fade-up">
         <div class="sidebar-author">
@@ -262,19 +247,19 @@
       <div class="widget">
         <ul>
             <li>
-              <a href="/2026/04/15/%E5%89%8D%E7%AB%AF/CSS%E5%9F%BA%E7%A1%80%E4%B8%8E%E9%80%89%E6%8B%A9%E5%99%A8/" title="CSS基础与选择器">CSS基础与选择器</a>
+              <a href="/2026/04/15/%E5%8F%82%E8%B5%9B%E7%AC%94%E8%AE%B0/%E8%93%9D%E6%A1%A5%E6%9D%AF%E5%8D%95%E7%89%87%E6%9C%BA/" title="蓝桥杯单片机">蓝桥杯单片机</a>
             </li>
             <li>
-              <a href="/2026/04/15/%E5%89%8D%E7%AB%AF/ES6%E6%96%B0%E7%89%B9%E6%80%A7/" title="ES6+新特性">ES6+新特性</a>
+              <a href="/2026/04/15/%E5%B5%8C%E5%85%A5%E5%BC%8F/1ESP32%E7%AE%80%E4%BB%8B/" title="1.ESP32简介">1.ESP32简介</a>
             </li>
             <li>
-              <a href="/2026/04/15/%E5%89%8D%E7%AB%AF/DOM%E6%93%8D%E4%BD%9C/" title="DOM操作">DOM操作</a>
+              <a href="/2026/04/15/%E5%B5%8C%E5%85%A5%E5%BC%8F/1Linux%E7%AE%80%E4%BB%8B/" title="1.Linux简介">1.Linux简介</a>
             </li>
             <li>
-              <a href="/2026/04/15/%E5%89%8D%E7%AB%AF/Flexbox%E4%B8%8EGrid%E5%B8%83%E5%B1%80/" title="Flexbox与Grid布局">Flexbox与Grid布局</a>
+              <a href="/2026/04/15/%E5%B5%8C%E5%85%A5%E5%BC%8F/SDCC%E4%BD%BF%E7%94%A8%E6%8C%87%E5%8D%97/" title="SDCC使用指南">SDCC使用指南</a>
             </li>
             <li>
-              <a href="/2026/04/15/%E5%89%8D%E7%AB%AF/HTML%E5%9F%BA%E7%A1%80/" title="HTML基础">HTML基础</a>
+              <a href="/2026/04/15/%E5%B5%8C%E5%85%A5%E5%BC%8F/1STM32%E7%AE%80%E4%BB%8B/" title="1.STM32简介">1.STM32简介</a>
             </li>
         </ul>
       </div>
@@ -289,7 +274,7 @@
         <div class="post-categories-wrap">
           <a class="post-link" href="/categories/%E9%A1%B9%E7%9B%AE%E5%BC%80%E5%8F%91" aria-label="项目开发" title="项目开发"></a>
           <div class="post-categories-cover">
-                <img data-src="/covers/1.png" data-sizes="auto" alt="项目开发" class="lazyload">
+                <img data-src="/covers/7.png" data-sizes="auto" alt="项目开发" class="lazyload">
             <h2>项目开发</h2>
             <h3>3 篇文章</h3>
           </div>
@@ -297,7 +282,7 @@
         <div class="post-categories-wrap">
           <a class="post-link" href="/categories/%E9%A1%B9%E7%9B%AE%E5%A4%8D%E5%88%BB" aria-label="项目复刻" title="项目复刻"></a>
           <div class="post-categories-cover">
-                <img data-src="/covers/3.png" data-sizes="auto" alt="项目复刻" class="lazyload">
+                <img data-src="/covers/1.png" data-sizes="auto" alt="项目复刻" class="lazyload">
             <h2>项目复刻</h2>
             <h3>2 篇文章</h3>
           </div>
@@ -305,177 +290,129 @@
     </div>
       <div class="post-wrapper">
   <div class="post-wrap left" data-aos="fade-up">
-      <a class="post-link" href="/2026/04/15/%E5%89%8D%E7%AB%AF/%E7%BB%84%E4%BB%B6%E5%8C%96%E5%BC%80%E5%8F%91/" aria-label="组件化开发" title="组件化开发"></a>
+      <a class="post-link" href="/2026/04/15/%E5%89%8D%E7%AB%AF/Flexbox%E4%B8%8EGrid%E5%B8%83%E5%B1%80/" aria-label="Flexbox与Grid布局" title="Flexbox与Grid布局"></a>
     <div class="post-cover left">
-          <img data-src="/covers/2.png" data-sizes="auto" alt="组件化开发" class="lazyload">
-    </div>
-    <div class="post-info">
-      <div class="post-meta">
-        <span><span class="icon-calendar"></span>2026-04-15</span>
-        <span><span class="icon-pencil"></span>270 字</span>
-        <span><span class="icon-clock"></span>2 分钟</span>
-      </div>
-      <h2 class="post-title">组件化开发</h2>
-      <article class="post-article">
-           05. 组件化开发
-小程序支持组件化开发，提高代码复用率。
- 一、创建组件
- 1. 组件目录
-123456components/└── my-component/    ├── my-component.js    ├── my-component.json    ├── my-component.wxml    └── my-component.wxss
- 2. 组件配置
-1234// my-component.json&amp;#123;  &amp;quot;component&amp;quot;: true&amp;#125;
- 3. 组件逻辑
-123456789101112131415161718192021Co
-      </article>
-    </div>
-  </div>
-</div>
-      <div class="post-wrapper">
-  <div class="post-wrap right" data-aos="fade-up">
-      <a class="post-link" href="/2026/04/15/%E5%89%8D%E7%AB%AF/WXML%E4%B8%8EWXSS/" aria-label="WXML与WXSS" title="WXML与WXSS"></a>
-    <div class="post-cover right">
-          <img data-src="/covers/3.png" data-sizes="auto" alt="WXML与WXSS" class="lazyload">
-    </div>
-    <div class="post-info">
-      <div class="post-meta">
-        <span><span class="icon-calendar"></span>2026-04-15</span>
-        <span><span class="icon-pencil"></span>295 字</span>
-        <span><span class="icon-clock"></span>2 分钟</span>
-      </div>
-      <h2 class="post-title">WXML与WXSS</h2>
-      <article class="post-article">
-           03. WXML与WXSS
-WXML（WeiXin Markup Language）和 WXSS（WeiXin Style Sheets）是小程序的标记语言和样式语言。
- 一、WXML 基础
- 数据绑定
-1&amp;lt;view&amp;gt;&amp;#123;&amp;#123;message&amp;#125;&amp;#125;&amp;lt;/view&amp;gt;
-12345Page(&amp;#123;    data: &amp;#123;        message: &amp;quot;Hello, 小程序!&amp;quot;    &amp;#125;&amp;#125;);
- 列表渲染
-123&amp;lt;view wx:for=&amp;quot;&amp;#123;&amp;#123;list&amp;
-      </article>
-    </div>
-  </div>
-</div>
-      <div class="post-wrapper">
-  <div class="post-wrap left" data-aos="fade-up">
-      <a class="post-link" href="/2026/04/15/%E5%8F%82%E8%B5%9B%E7%AC%94%E8%AE%B0/%E8%93%9D%E6%A1%A5%E6%9D%AF%E5%8D%95%E7%89%87%E6%9C%BA/" aria-label="蓝桥杯单片机" title="蓝桥杯单片机"></a>
-    <div class="post-cover left">
-          <img data-src="/covers/2.png" data-sizes="auto" alt="蓝桥杯单片机" class="lazyload">
-    </div>
-    <div class="post-info">
-      <div class="post-meta">
-        <span><span class="icon-calendar"></span>2026-04-15</span>
-        <span><span class="icon-pencil"></span>440 字</span>
-        <span><span class="icon-clock"></span>2 分钟</span>
-      </div>
-      <h2 class="post-title">蓝桥杯单片机</h2>
-      <article class="post-article">
-           &amp;lt;center&amp;gt;蓝桥杯单片机&amp;lt;/center&amp;gt;
- 一、基础知识
- 01 LED亮灭控制
-12345678910111213141516void main()&amp;#123;	while(1)&amp;#123;		P2 = ((P2 &amp;amp; 0x1F) | 0x80); // 闲鱼清零前三位，在写前三位 138译码器 		LED_Port = 0xFF; //LED关		P2 &amp;amp;= 0x1F; 		delay();		P2 = ((P2 &amp;amp; 0x1F) | 0x80); // 闲鱼清零前三位，在写前三位 138译码器		LED_Port = 0x00; //L
-      </article>
-    </div>
-  </div>
-</div>
-      <div class="post-wrapper">
-  <div class="post-wrap right" data-aos="fade-up">
-      <a class="post-link" href="/2026/04/15/%E5%B5%8C%E5%85%A5%E5%BC%8F/1ESP32%E7%AE%80%E4%BB%8B/" aria-label="1.ESP32简介" title="1.ESP32简介"></a>
-    <div class="post-cover right">
-          <img data-src="/covers/1.png" data-sizes="auto" alt="1.ESP32简介" class="lazyload">
-    </div>
-    <div class="post-info">
-      <div class="post-meta">
-        <span><span class="icon-calendar"></span>2026-04-15</span>
-        <span><span class="icon-pencil"></span>9 字</span>
-        <span><span class="icon-clock"></span>1 分钟</span>
-      </div>
-      <h2 class="post-title">1.ESP32简介</h2>
-      <article class="post-article">
-           1.ESP32简介
-ESP32 简介内容…
-
-      </article>
-    </div>
-  </div>
-</div>
-      <div class="post-wrapper">
-  <div class="post-wrap left" data-aos="fade-up">
-      <a class="post-link" href="/2026/04/15/%E5%89%8D%E7%AB%AF/%E9%85%8D%E7%BD%AE%E4%B8%8E%E4%B8%BB%E9%A2%98/" aria-label="配置与主题" title="配置与主题"></a>
-    <div class="post-cover left">
-          <img data-src="/covers/1.png" data-sizes="auto" alt="配置与主题" class="lazyload">
-    </div>
-    <div class="post-info">
-      <div class="post-meta">
-        <span><span class="icon-calendar"></span>2026-04-15</span>
-        <span><span class="icon-pencil"></span>297 字</span>
-        <span><span class="icon-clock"></span>2 分钟</span>
-      </div>
-      <h2 class="post-title">配置与主题</h2>
-      <article class="post-article">
-           02. 配置与主题
-VitePress 提供灵活的配置选项和主题系统。
- 一、基础配置
-1234567891011121314151617181920212223242526import &amp;#123; defineConfig &amp;#125; from &amp;quot;vitepress&amp;quot;;export default defineConfig(&amp;#123;    // 网站标题    title: &amp;quot;我的网站&amp;quot;,    // 网站描述    description: &amp;quot;网站描述&amp;quot;,    // 忽略死链接    ignoreDeadLinks: 
-      </article>
-    </div>
-  </div>
-</div>
-      <div class="post-wrapper">
-  <div class="post-wrap right" data-aos="fade-up">
-      <a class="post-link" href="/2026/04/15/%E5%B5%8C%E5%85%A5%E5%BC%8F/1STM32%E7%AE%80%E4%BB%8B/" aria-label="1.STM32简介" title="1.STM32简介"></a>
-    <div class="post-cover right">
-          <img data-src="/covers/2.png" data-sizes="auto" alt="1.STM32简介" class="lazyload">
-    </div>
-    <div class="post-info">
-      <div class="post-meta">
-        <span><span class="icon-calendar"></span>2026-04-15</span>
-        <span><span class="icon-pencil"></span>9 字</span>
-        <span><span class="icon-clock"></span>1 分钟</span>
-      </div>
-      <h2 class="post-title">1.STM32简介</h2>
-      <article class="post-article">
-           1.STM32简介
-STM32 简介内容…
-
-      </article>
-    </div>
-  </div>
-</div>
-      <div class="post-wrapper">
-  <div class="post-wrap left" data-aos="fade-up">
-      <a class="post-link" href="/2026/04/15/%E5%B5%8C%E5%85%A5%E5%BC%8F/Ubuntu%E5%BC%80%E6%9C%BA%E4%BA%AE%E5%BA%A6%E6%97%A0%E6%B3%95%E8%87%AA%E5%8A%A8%E8%B0%83%E8%8A%82/" aria-label="Ubuntu开机亮度无法自动调节" title="Ubuntu开机亮度无法自动调节"></a>
-    <div class="post-cover left">
-          <img data-src="/covers/3.png" data-sizes="auto" alt="Ubuntu开机亮度无法自动调节" class="lazyload">
+          <img data-src="/covers/7.png" data-sizes="auto" alt="Flexbox与Grid布局" class="lazyload">
     </div>
     <div class="post-info">
       <div class="post-meta">
         <span><span class="icon-calendar"></span>2026-04-15</span>
         <span><span class="icon-pencil"></span>1.5k 字</span>
-        <span><span class="icon-clock"></span>7 分钟</span>
+        <span><span class="icon-clock"></span>8 分钟</span>
       </div>
-      <h2 class="post-title">Ubuntu开机亮度无法自动调节</h2>
+      <h2 class="post-title">Flexbox与Grid布局</h2>
       <article class="post-article">
-           Ubuntu设置开机自动恢复亮度
-适用于 NVIDIA 显卡，如 RTX 4060 Max-Q
-
-🎯 目标： 每次关机或重启后，屏幕亮度自动恢复为上次手动调整的亮度，而不是默认最大亮度。
-
- 🧩 一、适用场景与背景
-
-系统： Ubuntu（你使用的是 24.04 Noble，或其他版本也可参考）
-显卡： NVIDIA（你使用的是 RTX 4060 Max-Q / Mobile，对应的 backlight 接口是 nvidia_0）
-问题： 每次重启后，屏幕亮度总是恢复为最大（比如 1000），而不是你调整后的舒适亮度（比如 500 或 62）。
-需求： 实现 “系统自动保存你调整后的亮度
+           06. Flexbox 与 Grid 布局
+Flexbox 和 Grid 是现代 CSS 布局的两大核心，它们让复杂布局变得简单高效。
+ 一、Flexbox 弹性布局
+ 1. 基础概念
+123456789┌─────────────────────────────────────┐│       Main Axis（主轴）              ││  ┌──────┐  ┌─────┐  ┌─────┐       ││  │  1   │  │  2  │  │  3  │  ←───  ││  │      │  │     │  │     │ Cross  ││  │     
       </article>
     </div>
   </div>
 </div>
       <div class="post-wrapper">
   <div class="post-wrap right" data-aos="fade-up">
-      <a class="post-link" href="/2026/04/15/%E9%A1%B9%E7%9B%AE%E5%BC%80%E5%8F%91/00%E9%A1%B9%E7%9B%AE%E8%83%8C%E6%99%AF/" aria-label="00.项目背景" title="00.项目背景"></a>
+      <a class="post-link" href="/2026/04/15/%E5%89%8D%E7%AB%AF/%E5%87%BD%E6%95%B0%E4%B8%8E%E4%BD%9C%E7%94%A8%E5%9F%9F/" aria-label="函数与作用域" title="函数与作用域"></a>
     <div class="post-cover right">
-          <img data-src="/covers/3.png" data-sizes="auto" alt="00.项目背景" class="lazyload">
+          <img data-src="/covers/6.png" data-sizes="auto" alt="函数与作用域" class="lazyload">
+    </div>
+    <div class="post-info">
+      <div class="post-meta">
+        <span><span class="icon-calendar"></span>2026-04-15</span>
+        <span><span class="icon-pencil"></span>1.5k 字</span>
+        <span><span class="icon-clock"></span>8 分钟</span>
+      </div>
+      <h2 class="post-title">函数与作用域</h2>
+      <article class="post-article">
+           1.2 函数与作用域
+函数是 JavaScript 的核心概念，它是可重用的代码块。作用域决定了变量的可访问范围。
+ 一、函数定义
+ 1. 函数声明（命名函数）
+123456function greet(name) &amp;#123;    return &amp;quot;Hello, &amp;quot; + name + &amp;quot;!&amp;quot;;&amp;#125;// 函数声明会被提升（可在声明前调用）console.log(greet(&amp;quot;张三&amp;quot;)); // &amp;quot;Hello, 张三!&amp;quot;
+ 2. 函数表达式（匿名函数）
+123456const greet = functio
+      </article>
+    </div>
+  </div>
+</div>
+      <div class="post-wrapper">
+  <div class="post-wrap left" data-aos="fade-up">
+      <a class="post-link" href="/2026/04/15/%E5%89%8D%E7%AB%AF/%E5%89%8D%E7%AB%AF%E5%BC%80%E5%8F%91%E4%BB%8B%E7%BB%8D-1/" aria-label="前端开发介绍" title="前端开发介绍"></a>
+    <div class="post-cover left">
+          <img data-src="/covers/8.png" data-sizes="auto" alt="前端开发介绍" class="lazyload">
+    </div>
+    <div class="post-info">
+      <div class="post-meta">
+        <span><span class="icon-calendar"></span>2026-04-15</span>
+        <span><span class="icon-pencil"></span>1.1k 字</span>
+        <span><span class="icon-clock"></span>5 分钟</span>
+      </div>
+      <h2 class="post-title">前端开发介绍</h2>
+      <article class="post-article">
+           01. 前端开发介绍
+前端开发是构建 Web 应用的用户界面和用户体验的技术领域，也是现代互联网应用不可或缺的重要组成部分。
+ 一、什么是前端开发
+前端开发是指使用 HTML、CSS、JavaScript 等技术，构建用户可以直接看到和交互的界面部分。
+ 前端的作用
+
+用户界面构建
+交互逻辑实现
+数据展示与处理
+用户体验优化
+
+
+ 二、前端三剑客
+ 1. HTML（结构）
+
+作用：定义网页的结构和内容
+特点：标记语言，使用标签来组织内容
+示例：
+
+12345678910&amp;lt;!DOCTYPE html&amp;gt;&amp;lt;html&amp;gt;&amp;lt;head&amp;gt;    &amp;lt;title&amp;gt;
+      </article>
+    </div>
+  </div>
+</div>
+      <div class="post-wrapper">
+  <div class="post-wrap right" data-aos="fade-up">
+      <a class="post-link" href="/2026/04/15/%E5%89%8D%E7%AB%AF/Vitepress%E7%AE%80%E4%BB%8B/" aria-label="Vitepress简介" title="Vitepress简介"></a>
+    <div class="post-cover right">
+          <img data-src="/covers/49871906.png" data-sizes="auto" alt="Vitepress简介" class="lazyload">
+    </div>
+    <div class="post-info">
+      <div class="post-meta">
+        <span><span class="icon-calendar"></span>2026-04-15</span>
+        <span><span class="icon-pencil"></span>308 字</span>
+        <span><span class="icon-clock"></span>2 分钟</span>
+      </div>
+      <h2 class="post-title">Vitepress简介</h2>
+      <article class="post-article">
+           01. Vitepress 简介
+VitePress 是基于 Vite 的静态网站生成器，专注于文档编写。
+ 一、什么是 VitePress
+VitePress 是 VuePress 的继任者，使用 Vite 作为构建工具，提供更快的开发和构建速度。
+ 特点
+
+⚡️ 使用 Vite，极速热更新
+📝 优秀的内容体验
+🌐 开箱即用的主题
+🔌 插件系统支持
+📦 按需加载路由
+
+
+ 二、创建 VitePress 项目
+ 1. 初始化项目
+12345678910# 创建目录mkdir my-vitepress-sitecd my-vitepress-site# 安装依赖npm init -yn
+      </article>
+    </div>
+  </div>
+</div>
+      <div class="post-wrapper">
+  <div class="post-wrap left" data-aos="fade-up">
+      <a class="post-link" href="/2026/04/15/%E9%A1%B9%E7%9B%AE%E5%BC%80%E5%8F%91/00%E9%A1%B9%E7%9B%AE%E8%83%8C%E6%99%AF/" aria-label="00.项目背景" title="00.项目背景"></a>
+    <div class="post-cover left">
+          <img data-src="/covers/5.png" data-sizes="auto" alt="00.项目背景" class="lazyload">
     </div>
     <div class="post-info">
       <div class="post-meta">
@@ -508,55 +445,129 @@ STM32 简介内容…
   </div>
 </div>
       <div class="post-wrapper">
-  <div class="post-wrap left" data-aos="fade-up">
-      <a class="post-link" href="/2026/04/15/%E5%B5%8C%E5%85%A5%E5%BC%8F/1Linux%E7%AE%80%E4%BB%8B/" aria-label="1.Linux简介" title="1.Linux简介"></a>
-    <div class="post-cover left">
-          <img data-src="/covers/2.png" data-sizes="auto" alt="1.Linux简介" class="lazyload">
+  <div class="post-wrap right" data-aos="fade-up">
+      <a class="post-link" href="/2026/04/15/%E5%89%8D%E7%AB%AF/%E5%B0%8F%E7%A8%8B%E5%BA%8F%E7%9B%AE%E5%BD%95%E7%BB%93%E6%9E%84/" aria-label="小程序目录结构" title="小程序目录结构"></a>
+    <div class="post-cover right">
+          <img data-src="/covers/2.png" data-sizes="auto" alt="小程序目录结构" class="lazyload">
     </div>
     <div class="post-info">
       <div class="post-meta">
         <span><span class="icon-calendar"></span>2026-04-15</span>
-        <span><span class="icon-pencil"></span>9 字</span>
-        <span><span class="icon-clock"></span>1 分钟</span>
+        <span><span class="icon-pencil"></span>558 字</span>
+        <span><span class="icon-clock"></span>3 分钟</span>
       </div>
-      <h2 class="post-title">1.Linux简介</h2>
+      <h2 class="post-title">小程序目录结构</h2>
       <article class="post-article">
-           1.Linux简介
-Linux 简介内容…
-
+           02. 小程序目录结构
+微信小程序有一套完整的目录结构规范，了解它有助于组织项目代码。
+ 标准目录结构
+123456789101112131415project-name/├── pages/                 # 页面目录│   ├── index/            # index 页面│   │   ├── index.js      # 页面逻辑│   │   ├── index.json    # 页面配置│   │   ├── index.wxml    # 页面结构│   │   └── index.wxss    # 页面样式│   └── profile/
+      </article>
+    </div>
+  </div>
+</div>
+      <div class="post-wrapper">
+  <div class="post-wrap left" data-aos="fade-up">
+      <a class="post-link" href="/2026/04/15/%E5%89%8D%E7%AB%AF/%E5%BC%82%E6%AD%A5%E7%BC%96%E7%A8%8B/" aria-label="异步编程" title="异步编程"></a>
+    <div class="post-cover left">
+          <img data-src="/covers/4.png" data-sizes="auto" alt="异步编程" class="lazyload">
+    </div>
+    <div class="post-info">
+      <div class="post-meta">
+        <span><span class="icon-calendar"></span>2026-04-15</span>
+        <span><span class="icon-pencil"></span>1.3k 字</span>
+        <span><span class="icon-clock"></span>7 分钟</span>
+      </div>
+      <h2 class="post-title">异步编程</h2>
+      <article class="post-article">
+           1.5 异步编程
+JavaScript 是单线程语言，异步编程是处理耗时操作（如网络请求、文件读取）的核心机制。
+ 一、同步与异步
+ 同步执行
+1234console.log(&amp;quot;1&amp;quot;);console.log(&amp;quot;2&amp;quot;);console.log(&amp;quot;3&amp;quot;);// 输出：1, 2, 3（按顺序执行）
+ 异步执行
+12345678console.log(&amp;quot;1&amp;quot;);setTimeout(() =&amp;gt; &amp;#123;    console.log(&amp;quot;2&amp;quot;);&amp;#125;, 0);console.log(
       </article>
     </div>
   </div>
 </div>
       <div class="post-wrapper">
   <div class="post-wrap right" data-aos="fade-up">
-      <a class="post-link" href="/2026/04/15/%E9%A1%B9%E7%9B%AE%E5%BC%80%E5%8F%91/%E5%B7%A5%E7%A8%8B%E8%A7%A3%E6%9E%90/" aria-label="工程解析" title="工程解析"></a>
+      <a class="post-link" href="/2026/04/15/%E5%89%8D%E7%AB%AF/%E6%A8%A1%E5%9D%97%E5%8C%96%E4%B8%8E%E5%B7%A5%E7%A8%8B%E5%8C%96/" aria-label="模块化与工程化" title="模块化与工程化"></a>
     <div class="post-cover right">
-          <img data-src="/covers/1.png" data-sizes="auto" alt="工程解析" class="lazyload">
+          <img data-src="/covers/1.png" data-sizes="auto" alt="模块化与工程化" class="lazyload">
     </div>
     <div class="post-info">
       <div class="post-meta">
         <span><span class="icon-calendar"></span>2026-04-15</span>
-        <span><span class="icon-pencil"></span>2.2k 字</span>
-        <span><span class="icon-clock"></span>9 分钟</span>
+        <span><span class="icon-pencil"></span>1.4k 字</span>
+        <span><span class="icon-clock"></span>7 分钟</span>
       </div>
-      <h2 class="post-title">工程解析</h2>
+      <h2 class="post-title">模块化与工程化</h2>
       <article class="post-article">
-           工程解析
-项目文件：weather_alert_system.ino
- 1. 工程目标与功能概览
-这是一个基于 ESP32 的嵌入式天气预警终端，核心思路是：
+           1.7 模块化与工程化
+模块化和工程化是现代前端开发的重要组成部分，它们让代码更易维护、更易协作。
+ 一、模块化
+ 1. 为什么要模块化
 
-通过 Wi-Fi 联网，周期性拉取天气预报与老黄历信息
-通过 NTP 同步当前时间，用于显示与预警时段判断
-通过 OLED 实时展示时间、当前小时天气、老黄历（宜/忌）
-在特定时段（早/中/晚）根据“低温/降雨概率”点亮 WS2812B 指示灯
-通过 DFPlayer Mini 播放对应的语音提示（按键触发播报）
+代码复用：可多次使用
+代码组织：清晰的结构
+依赖管理：明确的引入规则
+作用域隔离：避免全局污染
 
- 2. 工程结构（架构视图）
-当前工程只有一个 Arduino 草图文件，整体架构可以按“分层/模块”理解：
-
-配置层
+ 2. ES6 模块（ES Modules）
+ 导出（Export）
+12345678910111213141516171819202122232425262728// utils.js// 命名导出export const add = (a, b) =&amp;gt; a + b;export const subtract = (a, b) =&amp;gt; a - b
+      </article>
+    </div>
+  </div>
+</div>
+      <div class="post-wrapper">
+  <div class="post-wrap left" data-aos="fade-up">
+      <a class="post-link" href="/2026/04/15/%E5%89%8D%E7%AB%AF/%E7%BB%84%E4%BB%B6%E5%8C%96%E5%BC%80%E5%8F%91/" aria-label="组件化开发" title="组件化开发"></a>
+    <div class="post-cover left">
+          <img data-src="/covers/1.png" data-sizes="auto" alt="组件化开发" class="lazyload">
+    </div>
+    <div class="post-info">
+      <div class="post-meta">
+        <span><span class="icon-calendar"></span>2026-04-15</span>
+        <span><span class="icon-pencil"></span>270 字</span>
+        <span><span class="icon-clock"></span>2 分钟</span>
+      </div>
+      <h2 class="post-title">组件化开发</h2>
+      <article class="post-article">
+           05. 组件化开发
+小程序支持组件化开发，提高代码复用率。
+ 一、创建组件
+ 1. 组件目录
+123456components/└── my-component/    ├── my-component.js    ├── my-component.json    ├── my-component.wxml    └── my-component.wxss
+ 2. 组件配置
+1234// my-component.json&amp;#123;  &amp;quot;component&amp;quot;: true&amp;#125;
+ 3. 组件逻辑
+123456789101112131415161718192021Co
+      </article>
+    </div>
+  </div>
+</div>
+      <div class="post-wrapper">
+  <div class="post-wrap right" data-aos="fade-up">
+      <a class="post-link" href="/2026/04/15/%E5%89%8D%E7%AB%AF/%E7%9B%92%E6%A8%A1%E5%9E%8B%E4%B8%8E%E5%B8%83%E5%B1%80/" aria-label="盒模型与布局" title="盒模型与布局"></a>
+    <div class="post-cover right">
+          <img data-src="/covers/49871906.png" data-sizes="auto" alt="盒模型与布局" class="lazyload">
+    </div>
+    <div class="post-info">
+      <div class="post-meta">
+        <span><span class="icon-calendar"></span>2026-04-15</span>
+        <span><span class="icon-pencil"></span>1.2k 字</span>
+        <span><span class="icon-clock"></span>6 分钟</span>
+      </div>
+      <h2 class="post-title">盒模型与布局</h2>
+      <article class="post-article">
+           05. 盒模型与布局
+理解 CSS 盒模型和布局机制是前端开发的核心，它们决定了元素在页面中的显示方式。
+ 一、盒模型（Box Model）
+ 盒模型结构
+12345678910111213┌─────────────────────────────────┐│         Margin（外边距）         ││  ┌───────────────────────────┐  ││  │      Border（边框）       │  ││  │  ┌─────────────────────┐  │  ││  │  │   Padding（内边距） │  │  ││  │  │
       </article>
     </div>
   </div>
@@ -793,28 +804,38 @@ Linux 简介内容…
 
   
     <script>
-      var setupAPlayer = () => {
-        if (!false || !window.matchMedia('(max-width: 768px)').matches) {
-          if (window.matchMedia('(max-width: 959px)').matches) {
-            const meting = _$('meting-js');
-            if (meting) {
-              meting.setAttribute('fixed', 'true');
-              const aside = meting.parentNode?.parentNode;
-              if (aside?.tagName === 'ASIDE') {
-                meting.parentNode.removeChild(meting);
-                document.body.appendChild(meting);
-              }
+    var setupAPlayer = () => {
+      if (!false || !window.matchMedia('(max-width: 768px)').matches) {
+        if (window.matchMedia('(max-width: 959px)').matches) {
+          const aplayer = _$('#aplayer');
+          if (aplayer) {
+            const aside = aplayer.parentNode?.parentNode;
+            if (aside?.tagName === 'ASIDE') {
+              aplayer.removeAttribute('data-aos');
+              aplayer.parentNode.removeChild(aplayer);
+              document.body.appendChild(aplayer);
             }
           }
         }
-      };
-        var meting_api = "https://api.i-meto.com/meting/api?";
+        new APlayer({
+          theme: "var(--color-link)",
+          container: document.getElementById('aplayer'),
+          audio: [] || [],
+          fixed: isMobile ? true : (false || false),
+          autoplay: false || false,
+          loop: 'all' || 'all',
+          order: 'random' || 'list',
+          preload: 'auto' || 'auto',
+          volume: 0.7 || 0.7,
+          mutex: true || true,
+          listFolded: false || false,
+          lrcType: 0 || 0,
+        });
+      }
+    }
     </script>
   
 <script src="https://npm.webcache.cn/aplayer@1.10.1/dist/APlayer.min.js" integrity="sha384-gdGYZwHnfJM54evoZhpO0s6ZF5BQiybkiyW7VXr+h5UfruuRL&#x2F;aORyw+5+HZoU6e" crossorigin="anonymous" defer onload="setupAPlayer()"></script>
-
-    
-<script src="https://npm.webcache.cn/meting@2.0.1/dist/Meting.min.js" integrity="sha384-ASVlpKF80A22OXTK3tfEjZm1EL6uFMKIC4p8+0maanw1S&#x2F;IyB+Y4JG+ZDU7GpKE8" crossorigin="anonymous" defer></script>
 
 
 

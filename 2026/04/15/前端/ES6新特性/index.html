@@ -148,22 +148,7 @@
         <div id="content" aria-label="Page content" class="sidebar-left"  >
           <aside id="sidebar" aria-label="Sidebar">
   <div class="sidebar-wrapper-container sticky">
-      <meting-js
-        theme="var(--color-link)"
-        id="2237805875"
-        server="netease"
-        type="playlist"
-        
-        fixed="false"
-        autoplay="false"
-        loop="all"
-        order="random"
-        preload="auto"
-        volume="0.7"
-        mutex="true"
-        list-folded="false"
-        lrc-type="0"
-      ></meting-js>
+      <div id="aplayer" theme="var(--color-link)" data-aos="fade-up"></div>
   <div class="sidebar-wrapper">
     <div class="sidebar-wrap" data-aos="fade-up">
           <div class="sidebar-toc-sidebar"><h3 class="toc-title">文章目录</h3>
@@ -336,19 +321,19 @@
   </div>
     <nav id="article-nav" aria-label="Article navigation" data-aos="fade-up">
       <div class="article-nav-link-wrap left">
-            <img data-src="/covers/2.png" data-sizes="auto" alt="CSS基础与选择器" class="lazyload">
-        <a href="/2026/04/15/%E5%89%8D%E7%AB%AF/CSS%E5%9F%BA%E7%A1%80%E4%B8%8E%E9%80%89%E6%8B%A9%E5%99%A8/" aria-label="前一篇: CSS基础与选择器" title="前一篇: CSS基础与选择器"></a>
+            <img data-src="/covers/5.png" data-sizes="auto" alt="DOM操作" class="lazyload">
+        <a href="/2026/04/15/%E5%89%8D%E7%AB%AF/DOM%E6%93%8D%E4%BD%9C/" aria-label="前一篇: DOM操作" title="前一篇: DOM操作"></a>
         <div class="article-nav-caption">前一篇</div>
         <h3 class="article-nav-title">
-            CSS基础与选择器
+            DOM操作
         </h3>
       </div>
     <div class="article-nav-link-wrap right">
-          <img data-src="/covers/3.png" data-sizes="auto" alt="DOM操作" class="lazyload">
-      <a href="/2026/04/15/%E5%89%8D%E7%AB%AF/DOM%E6%93%8D%E4%BD%9C/" aria-label="后一篇: DOM操作"  title="后一篇: DOM操作"></a>
+          <img data-src="/covers/6.png" data-sizes="auto" alt="HTML基础" class="lazyload">
+      <a href="/2026/04/15/%E5%89%8D%E7%AB%AF/HTML%E5%9F%BA%E7%A1%80/" aria-label="后一篇: HTML基础"  title="后一篇: HTML基础"></a>
       <div class="article-nav-caption">后一篇</div>
       <h3 class="article-nav-title">
-          DOM操作
+          HTML基础
       </h3>
     </div>
   </nav>
@@ -636,28 +621,38 @@
 
   
     <script>
-      var setupAPlayer = () => {
-        if (!false || !window.matchMedia('(max-width: 768px)').matches) {
-          if (window.matchMedia('(max-width: 959px)').matches) {
-            const meting = _$('meting-js');
-            if (meting) {
-              meting.setAttribute('fixed', 'true');
-              const aside = meting.parentNode?.parentNode;
-              if (aside?.tagName === 'ASIDE') {
-                meting.parentNode.removeChild(meting);
-                document.body.appendChild(meting);
-              }
+    var setupAPlayer = () => {
+      if (!false || !window.matchMedia('(max-width: 768px)').matches) {
+        if (window.matchMedia('(max-width: 959px)').matches) {
+          const aplayer = _$('#aplayer');
+          if (aplayer) {
+            const aside = aplayer.parentNode?.parentNode;
+            if (aside?.tagName === 'ASIDE') {
+              aplayer.removeAttribute('data-aos');
+              aplayer.parentNode.removeChild(aplayer);
+              document.body.appendChild(aplayer);
             }
           }
         }
-      };
-        var meting_api = "https://api.i-meto.com/meting/api?";
+        new APlayer({
+          theme: "var(--color-link)",
+          container: document.getElementById('aplayer'),
+          audio: [] || [],
+          fixed: isMobile ? true : (false || false),
+          autoplay: false || false,
+          loop: 'all' || 'all',
+          order: 'random' || 'list',
+          preload: 'auto' || 'auto',
+          volume: 0.7 || 0.7,
+          mutex: true || true,
+          listFolded: false || false,
+          lrcType: 0 || 0,
+        });
+      }
+    }
     </script>
   
 <script src="https://npm.webcache.cn/aplayer@1.10.1/dist/APlayer.min.js" integrity="sha384-gdGYZwHnfJM54evoZhpO0s6ZF5BQiybkiyW7VXr+h5UfruuRL&#x2F;aORyw+5+HZoU6e" crossorigin="anonymous" defer onload="setupAPlayer()"></script>
-
-    
-<script src="https://npm.webcache.cn/meting@2.0.1/dist/Meting.min.js" integrity="sha384-ASVlpKF80A22OXTK3tfEjZm1EL6uFMKIC4p8+0maanw1S&#x2F;IyB+Y4JG+ZDU7GpKE8" crossorigin="anonymous" defer></script>
 
 
 

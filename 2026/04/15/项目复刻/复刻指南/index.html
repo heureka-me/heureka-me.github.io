@@ -149,22 +149,7 @@
         <div id="content" aria-label="Page content" class="sidebar-left"  >
           <aside id="sidebar" aria-label="Sidebar">
   <div class="sidebar-wrapper-container sticky">
-      <meting-js
-        theme="var(--color-link)"
-        id="2237805875"
-        server="netease"
-        type="playlist"
-        
-        fixed="false"
-        autoplay="false"
-        loop="all"
-        order="random"
-        preload="auto"
-        volume="0.7"
-        mutex="true"
-        list-folded="false"
-        lrc-type="0"
-      ></meting-js>
+      <div id="aplayer" theme="var(--color-link)" data-aos="fade-up"></div>
   <div class="sidebar-wrapper">
     <div class="sidebar-wrap" data-aos="fade-up">
           <div class="sidebar-toc-sidebar"><h3 class="toc-title">文章目录</h3>
@@ -567,19 +552,19 @@
   </div>
     <nav id="article-nav" aria-label="Article navigation" data-aos="fade-up">
       <div class="article-nav-link-wrap left">
-            <img data-src="/covers/2.png" data-sizes="auto" alt="SDCC使用指南" class="lazyload">
-        <a href="/2026/04/15/%E5%B5%8C%E5%85%A5%E5%BC%8F/SDCC%E4%BD%BF%E7%94%A8%E6%8C%87%E5%8D%97/" aria-label="前一篇: SDCC使用指南" title="前一篇: SDCC使用指南"></a>
+            <img data-src="/covers/5.png" data-sizes="auto" alt="Ubuntu开机亮度无法自动调节" class="lazyload">
+        <a href="/2026/04/15/%E5%B5%8C%E5%85%A5%E5%BC%8F/Ubuntu%E5%BC%80%E6%9C%BA%E4%BA%AE%E5%BA%A6%E6%97%A0%E6%B3%95%E8%87%AA%E5%8A%A8%E8%B0%83%E8%8A%82/" aria-label="前一篇: Ubuntu开机亮度无法自动调节" title="前一篇: Ubuntu开机亮度无法自动调节"></a>
         <div class="article-nav-caption">前一篇</div>
         <h3 class="article-nav-title">
-            SDCC使用指南
+            Ubuntu开机亮度无法自动调节
         </h3>
       </div>
     <div class="article-nav-link-wrap right">
-          <img data-src="/covers/3.png" data-sizes="auto" alt="开发文档" class="lazyload">
-      <a href="/2026/04/15/%E9%A1%B9%E7%9B%AE%E5%BC%80%E5%8F%91/%E5%BC%80%E5%8F%91%E6%96%87%E6%A1%A3/" aria-label="后一篇: 开发文档"  title="后一篇: 开发文档"></a>
+          <img data-src="/covers/49871906.png" data-sizes="auto" alt="项目分析" class="lazyload">
+      <a href="/2026/04/15/%E9%A1%B9%E7%9B%AE%E5%A4%8D%E5%88%BB/%E9%A1%B9%E7%9B%AE%E5%88%86%E6%9E%90/" aria-label="后一篇: 项目分析"  title="后一篇: 项目分析"></a>
       <div class="article-nav-caption">后一篇</div>
       <h3 class="article-nav-title">
-          开发文档
+          项目分析
       </h3>
     </div>
   </nav>
@@ -867,28 +852,38 @@
 
   
     <script>
-      var setupAPlayer = () => {
-        if (!false || !window.matchMedia('(max-width: 768px)').matches) {
-          if (window.matchMedia('(max-width: 959px)').matches) {
-            const meting = _$('meting-js');
-            if (meting) {
-              meting.setAttribute('fixed', 'true');
-              const aside = meting.parentNode?.parentNode;
-              if (aside?.tagName === 'ASIDE') {
-                meting.parentNode.removeChild(meting);
-                document.body.appendChild(meting);
-              }
+    var setupAPlayer = () => {
+      if (!false || !window.matchMedia('(max-width: 768px)').matches) {
+        if (window.matchMedia('(max-width: 959px)').matches) {
+          const aplayer = _$('#aplayer');
+          if (aplayer) {
+            const aside = aplayer.parentNode?.parentNode;
+            if (aside?.tagName === 'ASIDE') {
+              aplayer.removeAttribute('data-aos');
+              aplayer.parentNode.removeChild(aplayer);
+              document.body.appendChild(aplayer);
             }
           }
         }
-      };
-        var meting_api = "https://api.i-meto.com/meting/api?";
+        new APlayer({
+          theme: "var(--color-link)",
+          container: document.getElementById('aplayer'),
+          audio: [] || [],
+          fixed: isMobile ? true : (false || false),
+          autoplay: false || false,
+          loop: 'all' || 'all',
+          order: 'random' || 'list',
+          preload: 'auto' || 'auto',
+          volume: 0.7 || 0.7,
+          mutex: true || true,
+          listFolded: false || false,
+          lrcType: 0 || 0,
+        });
+      }
+    }
     </script>
   
 <script src="https://npm.webcache.cn/aplayer@1.10.1/dist/APlayer.min.js" integrity="sha384-gdGYZwHnfJM54evoZhpO0s6ZF5BQiybkiyW7VXr+h5UfruuRL&#x2F;aORyw+5+HZoU6e" crossorigin="anonymous" defer onload="setupAPlayer()"></script>
-
-    
-<script src="https://npm.webcache.cn/meting@2.0.1/dist/Meting.min.js" integrity="sha384-ASVlpKF80A22OXTK3tfEjZm1EL6uFMKIC4p8+0maanw1S&#x2F;IyB+Y4JG+ZDU7GpKE8" crossorigin="anonymous" defer></script>
 
 
 
