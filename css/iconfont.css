@@ -130,6 +130,9 @@
 .icon-github:before {
   content: '\e619';
 }
+.icon-bilibili:before {
+  content: '\e603';
+}
 .icon-email:before {
   content: '\e63c';
 }

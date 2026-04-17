@@ -389,6 +389,9 @@ body [data-aos='zoom-in'] {
 .icon-github:before {
   content: '\e619';
 }
+.icon-bilibili:before {
+  content: '\e603';
+}
 .icon-email:before {
   content: '\e63c';
 }
@@ -3272,6 +3275,9 @@ pre .emphasis {
 }
 [data-theme='dark'] .icon-github {
   color: #bc88ff;
+}
+.icon-bilibili {
+  color: #00a1d6;
 }
 .sidebar-social .icon-qq {
   color: #12b7f5;

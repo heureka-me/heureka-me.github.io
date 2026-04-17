@@ -140,6 +140,9 @@
 .icon-github:before {
   content: '\f09b';
 }
+.icon-bilibili:before {
+  content: '\e3d9';
+}
 .icon-email:before {
   content: '\f0e0';
   font-weight: 900;
